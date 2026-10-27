@@ -1,6 +1,6 @@
 ════════════════════════════════════════════════════════════════════════════
   cann/npu-simulator   Issue / PR 看板
-  2026-10-27T05:56:01Z    GitCode CLI · 全自算 · 自然时间口径
+  2026-10-27T06:18:36Z    GitCode CLI · 全自算 · 自然时间口径
 ════════════════════════════════════════════════════════════════════════════
 
 1. 总览指标        不合规 8 · 合规 0 · 仅展示 6
@@ -73,7 +73,7 @@
         https://gitcode.com/cann/npu-simulator/merge_requests/19
 
   #9    fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件…
-        open · 关联 Issue #5 · 停留 24.8 天 · 0 评论 · @lizhe_li
+        open · 关联 Issue #5 · 停留 24.9 天 · 0 评论 · @lizhe_li
         fix/readonly-db-uri-resolve-encode → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/9
 
