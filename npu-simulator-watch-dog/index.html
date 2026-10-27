@@ -7,28 +7,38 @@
   <meta name="description" content="cann/npu-simulator GitCode Issue 与 PR 实时 SLA 监控看板，指标全自算，自然时间口径。">
   <style>
     :root {
-      --bg: #080c14;
-      --bg-card: rgba(17, 24, 39, 0.7);
-      --bg-card-hover: rgba(26, 36, 56, 0.85);
-      --border: rgba(255, 255, 255, 0.08);
-      --border-focus: rgba(99, 102, 241, 0.5);
-      --text: #f1f5f9;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
-      --primary: #6366f1;
-      --primary-hover: #4f46e5;
-      --ok: #10b981;
-      --ok-bg: rgba(16, 185, 129, 0.12);
-      --ok-border: rgba(16, 185, 129, 0.35);
-      --bad: #f43f5e;
-      --bad-bg: rgba(244, 63, 94, 0.12);
-      --bad-border: rgba(244, 63, 94, 0.35);
-      --warn: #f59e0b;
-      --warn-bg: rgba(245, 158, 11, 0.12);
-      --warn-border: rgba(245, 158, 11, 0.35);
-      --info: #38bdf8;
-      --info-bg: rgba(56, 189, 248, 0.12);
-      --info-border: rgba(56, 189, 248, 0.3);
+      --bg: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-hover: #fcfdfe;
+      --border: #e2e8f0;
+      --border-subtle: #f1f5f9;
+      --border-focus: rgba(79, 70, 229, 0.4);
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #94a3b8;
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-light: #eef2ff;
+      --primary-border: #c7d2fe;
+      --ok: #059669;
+      --ok-bg: #ecfdf5;
+      --ok-border: #a7f3d0;
+      --ok-text: #047857;
+      --bad: #e11d48;
+      --bad-bg: #fff1f2;
+      --bad-border: #fecdd3;
+      --bad-text: #be123c;
+      --warn: #d97706;
+      --warn-bg: #fffbeb;
+      --warn-border: #fde68a;
+      --warn-text: #b45309;
+      --info: #0284c7;
+      --info-bg: #f0f9ff;
+      --info-border: #bae6fd;
+      --info-text: #0369a1;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
       --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
     }
@@ -39,8 +49,8 @@
       margin: 0;
       background-color: var(--bg);
       background-image: 
-        radial-gradient(circle at 15% 5%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 35%);
+        radial-gradient(circle at 10% 8%, rgba(99, 102, 241, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 90% 12%, rgba(16, 185, 129, 0.04) 0%, transparent 35%);
       background-attachment: fixed;
       color: var(--text);
       font-family: var(--font);
@@ -56,8 +66,9 @@
       z-index: 100;
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      background: rgba(8, 12, 20, 0.85);
+      background: rgba(255, 255, 255, 0.94);
       border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
     }
     .header-inner {
       max-width: 1400px;
@@ -78,11 +89,11 @@
       width: 36px;
       height: 36px;
       border-radius: 10px;
-      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      background: linear-gradient(135deg, #4f46e5, #0ea5e9);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
       color: #fff;
     }
     .brand-titles h1 {
@@ -90,6 +101,7 @@
       font-size: 17px;
       font-weight: 700;
       letter-spacing: -0.01em;
+      color: #0f172a;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -97,17 +109,17 @@
     .repo-pill {
       font-size: 12px;
       font-weight: 500;
-      background: rgba(255, 255, 255, 0.08);
+      background: #f1f5f9;
       border: 1px solid var(--border);
-      color: #cbd5e1;
+      color: #475569;
       padding: 2px 8px;
       border-radius: 6px;
       text-decoration: none;
       transition: all 0.2s;
     }
     .repo-pill:hover {
-      background: rgba(255, 255, 255, 0.15);
-      color: #fff;
+      background: #e2e8f0;
+      color: #0f172a;
     }
     .live-status {
       display: flex;
@@ -118,11 +130,11 @@
       margin-top: 2px;
     }
     .pulse-dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--ok);
-      box-shadow: 0 0 8px var(--ok);
+      box-shadow: 0 0 6px rgba(5, 150, 105, 0.5);
       animation: pulse 2s infinite;
     }
     @keyframes pulse {
@@ -140,10 +152,10 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--border);
-      color: #e2e8f0;
-      padding: 7px 12px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 7px 13px;
       border-radius: 8px;
       font-size: 13px;
       font-weight: 500;
@@ -151,21 +163,25 @@
       text-decoration: none;
       transition: all 0.2s;
       white-space: nowrap;
+      box-shadow: var(--shadow-sm);
     }
     .btn:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.2);
-      color: #fff;
+      background: #f8fafc;
+      border-color: #94a3b8;
+      color: #0f172a;
       transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
     }
     .btn-primary {
       background: var(--primary);
       border-color: var(--primary);
       color: #fff;
+      box-shadow: 0 2px 4px rgba(79, 70, 229, 0.25);
     }
     .btn-primary:hover {
       background: var(--primary-hover);
       border-color: var(--primary-hover);
+      color: #fff;
     }
 
     /* Container */
@@ -177,14 +193,12 @@
 
     /* Executive Health Banner */
     .health-banner {
-      background: var(--bg-card);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 20px 24px;
       margin-bottom: 24px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--shadow-sm);
     }
     .banner-top {
       display: flex;
@@ -211,12 +225,12 @@
     .status-badge-lg.bad {
       background: var(--bad-bg);
       border: 1px solid var(--bad-border);
-      color: #fb7185;
+      color: var(--bad-text);
     }
     .status-badge-lg.ok {
       background: var(--ok-bg);
       border: 1px solid var(--ok-border);
-      color: #34d399;
+      color: var(--ok-text);
     }
     .banner-desc {
       color: var(--text-muted);
@@ -231,7 +245,7 @@
     /* Progress bar */
     .health-bar {
       height: 8px;
-      background: rgba(255, 255, 255, 0.05);
+      background: #f1f5f9;
       border-radius: 4px;
       overflow: hidden;
       display: flex;
@@ -243,7 +257,7 @@
     }
     .health-bar-seg.ok { background: var(--ok); }
     .health-bar-seg.bad { background: var(--bad); }
-    .health-bar-seg.info { background: #475569; }
+    .health-bar-seg.info { background: #cbd5e1; }
 
     /* Highlights row */
     .highlights-grid {
@@ -252,7 +266,7 @@
       gap: 12px;
     }
     .highlight-card {
-      background: rgba(255, 255, 255, 0.03);
+      background: #f8fafc;
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 12px 14px;
@@ -260,9 +274,10 @@
       transition: all 0.2s;
     }
     .highlight-card:hover {
-      background: rgba(255, 255, 255, 0.07);
-      border-color: rgba(99, 102, 241, 0.4);
+      background: #ffffff;
+      border-color: #818cf8;
       transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
     }
     .hl-header {
       display: flex;
@@ -276,9 +291,9 @@
       font-weight: 700;
       font-family: var(--mono);
       margin: 4px 0 2px;
-      color: #fff;
+      color: #0f172a;
     }
-    .hl-count.alert { color: #fb7185; }
+    .hl-count.alert { color: var(--bad-text); }
     .hl-desc {
       font-size: 12px;
       color: var(--text-dim);
@@ -298,19 +313,21 @@
       font-weight: 700;
       letter-spacing: -0.01em;
       margin: 0;
+      color: #0f172a;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .filter-pills {
+    .view-switch-box {
       display: flex;
+      align-items: center;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.03);
+      background: #f1f5f9;
       padding: 4px;
       border-radius: 10px;
       border: 1px solid var(--border);
     }
-    .filter-btn {
+    .view-switch-btn {
       background: transparent;
       border: 0;
       color: var(--text-muted);
@@ -321,50 +338,249 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-    .filter-btn:hover {
-      color: #fff;
-    }
-    .filter-btn.active {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
+    .view-switch-btn.active {
+      background: #ffffff;
+      color: var(--primary);
       font-weight: 600;
+      box-shadow: var(--shadow-sm);
     }
 
-    /* KPI Cards Grid */
+    /* Consolidated Overview Cards (Section 1 - Merged Cards) */
+    .grp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+    }
+    .grp-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .grp-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .grp-card.bad {
+      border-color: #fecdd3;
+      background: linear-gradient(180deg, #fff5f6 0%, #ffffff 80px);
+    }
+    .grp-card.bad:hover {
+      border-color: #fca5a5;
+    }
+    .grp-card.ok {
+      border-color: #a7f3d0;
+      background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 80px);
+    }
+    .grp-card.info {
+      border-color: #bae6fd;
+      background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 80px);
+    }
+
+    .grp-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .grp-title-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .grp-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .grp-icon.alert { background: var(--bad-bg); color: var(--bad-text); }
+    .grp-icon.check { background: var(--ok-bg); color: var(--ok-text); }
+    .grp-icon.pr { background: var(--primary-light); color: var(--primary); }
+    .grp-icon.info { background: var(--info-bg); color: var(--info-text); }
+
+    .grp-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .grp-hero {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+    }
+    .grp-hero-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .grp-hero-val {
+      font-size: 32px;
+      font-weight: 800;
+      font-family: var(--mono);
+      font-variant-numeric: tabular-nums;
+      line-height: 1.15;
+      margin: 4px 0 6px;
+      color: #0f172a;
+    }
+    .grp-hero-val.bad { color: var(--bad-text); }
+    .grp-hero-val.warn { color: var(--warn-text); }
+    .grp-hero-val.ok { color: var(--ok-text); }
+    .grp-hero-val.info { color: var(--info-text); }
+    .grp-th-tag {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .sub-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .sub-metric-item {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 12px;
+      transition: all 0.15s;
+    }
+    .sub-metric-item:hover {
+      border-color: #cbd5e1;
+      background: #f8fafc;
+    }
+    .sub-metric-item.bad {
+      border-color: #fecdd3;
+      background: #fff8f8;
+    }
+    .sub-metric-item.bad .sm-val { color: var(--bad-text); }
+    .sub-metric-item.ok {
+      border-color: #a7f3d0;
+      background: #f4fdf8;
+    }
+    .sub-metric-item.ok .sm-val { color: var(--ok-text); }
+
+    .sm-lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+    .sm-val {
+      font-size: 17px;
+      font-weight: 700;
+      font-family: var(--mono);
+      color: #0f172a;
+    }
+    .sm-th {
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    .grp-diag {
+      font-size: 12px;
+      line-height: 1.5;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-top: auto;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .grp-diag.bad {
+      background: var(--bad-bg);
+      border: 1px solid var(--bad-border);
+      color: var(--bad-text);
+    }
+    .grp-diag.warn {
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      color: var(--warn-text);
+    }
+    .grp-diag.ok {
+      background: var(--ok-bg);
+      border: 1px solid var(--ok-border);
+      color: var(--ok-text);
+    }
+    .grp-diag.info {
+      background: var(--info-bg);
+      border: 1px solid var(--info-border);
+      color: var(--info-text);
+    }
+
+    .grp-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+    }
+    .grp-btn {
+      background: #ffffff;
+      border: 1px solid var(--primary-border);
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+    .grp-btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary-hover);
+    }
+
+    /* Granular KPI Cards Grid (available if toggled) */
     .kpi-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 14px;
     }
     .kpi-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 16px;
       transition: all 0.2s ease;
       position: relative;
+      box-shadow: var(--shadow-sm);
     }
     .kpi-card:hover {
       background: var(--bg-card-hover);
-      border-color: rgba(255, 255, 255, 0.18);
+      border-color: #cbd5e1;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: var(--shadow-md);
     }
     .kpi-card.has-action {
       cursor: pointer;
     }
     .kpi-card.bad {
       border-color: var(--bad-border);
-      background: linear-gradient(180deg, rgba(244, 63, 94, 0.08) 0%, rgba(17, 24, 39, 0.7) 100%);
+      background: linear-gradient(180deg, #fff5f6 0%, #ffffff 80px);
     }
     .kpi-card.bad:hover {
-      border-color: rgba(244, 63, 94, 0.6);
+      border-color: #fca5a5;
     }
     .kpi-card.ok {
       border-color: var(--ok-border);
-      background: linear-gradient(180deg, rgba(16, 185, 129, 0.06) 0%, rgba(17, 24, 39, 0.7) 100%);
+      background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 80px);
     }
     .kpi-head {
       display: flex;
@@ -391,23 +607,23 @@
     }
     .kpi-status-badge.bad {
       background: var(--bad-bg);
-      color: #fb7185;
+      color: var(--bad-text);
       border: 1px solid var(--bad-border);
     }
     .kpi-status-badge.ok {
       background: var(--ok-bg);
-      color: #34d399;
+      color: var(--ok-text);
       border: 1px solid var(--ok-border);
     }
     .kpi-status-badge.info {
-      background: rgba(255, 255, 255, 0.06);
+      background: #f1f5f9;
       color: var(--text-muted);
       border: 1px solid var(--border);
     }
     .kpi-label {
       font-size: 13px;
       font-weight: 600;
-      color: #e2e8f0;
+      color: #1e293b;
       margin-bottom: 6px;
     }
     .kpi-value {
@@ -415,7 +631,7 @@
       font-weight: 700;
       font-family: var(--mono);
       font-variant-numeric: tabular-nums;
-      color: #fff;
+      color: #0f172a;
       line-height: 1.1;
       margin-bottom: 8px;
     }
@@ -430,22 +646,23 @@
       font-size: 10px;
       padding: 1px 5px;
       border-radius: 4px;
-      background: rgba(255, 255, 255, 0.07);
-      color: var(--text-dim);
+      background: #f1f5f9;
+      color: var(--text-muted);
     }
     .kpi-reason {
       margin-top: 10px;
       padding-top: 8px;
-      border-top: 1px dashed rgba(244, 63, 94, 0.3);
+      border-top: 1px dashed var(--bad-border);
       font-size: 11px;
-      color: #fca5a5;
+      color: var(--bad-text);
       line-height: 1.4;
     }
     .kpi-action-hint {
       margin-top: 8px;
       font-size: 11px;
-      color: #818cf8;
+      color: var(--primary);
       text-align: right;
+      font-weight: 500;
     }
 
     /* Workboard Controls */
@@ -453,14 +670,12 @@
       scroll-margin-top: 80px;
     }
     .workboard-panel {
-      background: var(--bg-card);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 20px;
       margin-top: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--shadow-sm);
     }
     .work-controls {
       display: flex;
@@ -478,7 +693,7 @@
       flex-wrap: wrap;
     }
     .work-tab {
-      background: rgba(255, 255, 255, 0.04);
+      background: #f8fafc;
       border: 1px solid var(--border);
       color: var(--text-muted);
       padding: 7px 14px;
@@ -492,21 +707,26 @@
       transition: all 0.2s;
     }
     .work-tab:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
+      background: #f1f5f9;
+      color: #0f172a;
     }
     .work-tab.active {
       background: var(--primary);
       border-color: var(--primary);
       color: #fff;
       font-weight: 600;
+      box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
     }
     .tab-count {
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.12);
       padding: 1px 7px;
       border-radius: 10px;
       font-size: 11px;
       font-family: var(--mono);
+    }
+    .work-tab.active .tab-count {
+      background: rgba(255, 255, 255, 0.25);
+      color: #fff;
     }
 
     .work-tools {
@@ -527,32 +747,33 @@
       pointer-events: none;
     }
     .search-input {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid var(--border);
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
       border-radius: 8px;
-      color: #fff;
+      color: #0f172a;
       padding: 7px 12px 7px 32px;
       font-size: 13px;
       font-family: var(--font);
       outline: none;
       width: 240px;
       transition: all 0.2s;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
     }
     .search-input:focus {
-      border-color: var(--border-focus);
-      background: rgba(15, 23, 42, 0.9);
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
       width: 280px;
     }
     .sort-select {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid var(--border);
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
       border-radius: 8px;
-      color: #cbd5e1;
+      color: #334155;
       padding: 7px 12px;
       font-size: 13px;
       outline: none;
       cursor: pointer;
+      box-shadow: var(--shadow-sm);
     }
 
     /* Work Item Cards */
@@ -562,7 +783,7 @@
       gap: 10px;
     }
     .work-card {
-      background: rgba(255, 255, 255, 0.02);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 14px 16px;
@@ -570,11 +791,13 @@
       align-items: flex-start;
       gap: 16px;
       transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
     }
     .work-card:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.16);
+      background: var(--bg-card-hover);
+      border-color: #cbd5e1;
       transform: translateX(2px);
+      box-shadow: var(--shadow-md);
     }
     .card-left {
       display: flex;
@@ -587,10 +810,9 @@
       font-family: var(--mono);
       font-size: 15px;
       font-weight: 700;
-      color: #fff;
     }
-    .card-num.pr { color: #a78bfa; }
-    .card-num.issue { color: #60a5fa; }
+    .card-num.pr { color: var(--primary); }
+    .card-num.issue { color: #0284c7; }
     .card-kind-badge {
       font-size: 10px;
       font-weight: 600;
@@ -602,14 +824,14 @@
       gap: 3px;
     }
     .card-kind-badge.pr {
-      background: rgba(167, 139, 250, 0.15);
-      color: #c4b5fd;
-      border: 1px solid rgba(167, 139, 250, 0.3);
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid var(--primary-border);
     }
     .card-kind-badge.issue {
-      background: rgba(96, 165, 250, 0.15);
-      color: #93c5fd;
-      border: 1px solid rgba(96, 165, 250, 0.3);
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
     }
 
     .card-main {
@@ -622,7 +844,7 @@
     .card-title {
       font-size: 14px;
       font-weight: 600;
-      color: #f1f5f9;
+      color: #0f172a;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -631,10 +853,10 @@
       transition: color 0.2s;
     }
     .card-title:hover {
-      color: #60a5fa;
+      color: var(--primary);
     }
     .ext-icon {
-      opacity: 0.5;
+      opacity: 0.4;
       display: inline-flex;
       transition: opacity 0.2s;
     }
@@ -653,8 +875,8 @@
       font-size: 11px;
       padding: 2px 8px;
       border-radius: 6px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       color: var(--text-muted);
       display: inline-flex;
       align-items: center;
@@ -662,58 +884,65 @@
       white-space: nowrap;
     }
     .tag-state.open {
-      background: rgba(59, 130, 246, 0.12);
-      color: #93c5fd;
-      border-color: rgba(59, 130, 246, 0.25);
+      background: #f0fdf4;
+      color: #15803d;
+      border-color: #bbf7d0;
+      font-weight: 600;
     }
     .tag-age.fresh {
-      color: #34d399;
+      color: #047857;
+      background: var(--ok-bg);
+      border-color: var(--ok-border);
     }
     .tag-age.warn {
       background: var(--warn-bg);
       border-color: var(--warn-border);
-      color: #fbbf24;
+      color: var(--warn-text);
+      font-weight: 600;
     }
     .tag-age.danger {
       background: var(--bad-bg);
       border-color: var(--bad-border);
-      color: #fb7185;
-      font-weight: 600;
+      color: var(--bad-text);
+      font-weight: 700;
     }
     .tag-branch code {
       font-family: var(--mono);
       font-size: 11px;
-      color: #e2e8f0;
-      background: rgba(0, 0, 0, 0.2);
+      color: #334155;
+      background: #f1f5f9;
       padding: 1px 4px;
       border-radius: 4px;
     }
-    .tag-diff .add { color: #34d399; font-weight: 600; }
-    .tag-diff .del { color: #fb7185; font-weight: 600; }
+    .tag-diff .add { color: var(--ok-text); font-weight: 600; }
+    .tag-diff .del { color: var(--bad-text); font-weight: 600; }
     .tag-merge.ok {
       background: var(--ok-bg);
       border-color: var(--ok-border);
-      color: #34d399;
+      color: var(--ok-text);
+      font-weight: 600;
     }
     .tag-merge.bad {
       background: var(--bad-bg);
       border-color: var(--bad-border);
-      color: #fb7185;
+      color: var(--bad-text);
+      font-weight: 600;
     }
     .tag-link {
-      background: rgba(99, 102, 241, 0.12);
-      border-color: rgba(99, 102, 241, 0.3);
-      color: #c7d2fe;
+      background: var(--primary-light);
+      border-color: var(--primary-border);
+      color: var(--primary);
       text-decoration: none;
+      font-weight: 600;
     }
     .tag-link:hover {
-      background: rgba(99, 102, 241, 0.25);
-      color: #fff;
+      background: #e0e7ff;
+      color: var(--primary-hover);
     }
     .tag-label {
-      background: rgba(255, 255, 255, 0.07);
-      border-color: rgba(255, 255, 255, 0.12);
-      color: #cbd5e1;
+      background: #f1f5f9;
+      border-color: #e2e8f0;
+      color: #475569;
     }
 
     .card-actions {
@@ -722,7 +951,7 @@
       gap: 6px;
     }
     .btn-icon {
-      background: rgba(255, 255, 255, 0.05);
+      background: #ffffff;
       border: 1px solid var(--border);
       color: var(--text-muted);
       width: 30px;
@@ -733,16 +962,18 @@
       justify-content: center;
       cursor: pointer;
       transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
     }
     .btn-icon:hover {
-      background: rgba(255, 255, 255, 0.15);
-      color: #fff;
+      background: #f8fafc;
+      border-color: #94a3b8;
+      color: #0f172a;
     }
     .btn-subtle {
       font-size: 12px;
       padding: 5px 10px;
       border-radius: 6px;
-      background: rgba(255, 255, 255, 0.05);
+      background: #ffffff;
       border: 1px solid var(--border);
       color: var(--text-muted);
       text-decoration: none;
@@ -750,10 +981,12 @@
       align-items: center;
       gap: 4px;
       transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
     }
     .btn-subtle:hover {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
+      background: #f8fafc;
+      border-color: #94a3b8;
+      color: #0f172a;
     }
 
     .empty-state {
@@ -774,32 +1007,31 @@
       justify-content: space-between;
       gap: 16px;
       flex-wrap: wrap;
-      color: var(--text-dim);
+      color: var(--text-muted);
       font-size: 12px;
     }
     footer a {
-      color: var(--text-muted);
+      color: var(--primary);
       text-decoration: none;
     }
     footer a:hover {
-      color: var(--text);
       text-decoration: underline;
     }
 
     /* Modal */
     dialog {
-      background: #0f172a;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
       border-radius: 16px;
       color: var(--text);
       max-width: 760px;
       width: 90vw;
       padding: 0;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: var(--shadow-lg);
     }
     dialog::backdrop {
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(8px);
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(4px);
     }
     .modal-head {
       padding: 18px 24px;
@@ -812,6 +1044,7 @@
       margin: 0;
       font-size: 16px;
       font-weight: 700;
+      color: #0f172a;
     }
     .modal-close {
       background: transparent;
@@ -821,12 +1054,16 @@
       cursor: pointer;
       padding: 4px 8px;
     }
+    .modal-close:hover {
+      color: #0f172a;
+    }
     .modal-body {
       padding: 24px;
       max-height: 70vh;
       overflow-y: auto;
       font-size: 13px;
       line-height: 1.7;
+      color: #334155;
     }
     .modal-body table {
       width: 100%;
@@ -839,8 +1076,9 @@
       text-align: left;
     }
     .modal-body th {
-      background: rgba(255, 255, 255, 0.04);
-      color: #fff;
+      background: #f8fafc;
+      color: #0f172a;
+      font-weight: 600;
     }
 
     /* Toast */
@@ -849,9 +1087,9 @@
       bottom: 24px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid var(--primary);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      background: #0f172a;
+      border: 1px solid #334155;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       color: #fff;
       padding: 10px 20px;
       border-radius: 30px;
@@ -872,6 +1110,7 @@
 
     @media (max-width: 768px) {
       .container { padding: 14px; }
+      .grp-grid { grid-template-columns: 1fr; }
       .kpi-grid { grid-template-columns: 1fr; }
       .work-card { flex-direction: column; gap: 10px; }
       .card-left { flex-direction: row; align-items: center; width: 100%; justify-content: space-between; }
@@ -931,11 +1170,11 @@
             SLA 待改进 8 项
           </span>
           <span class="banner-desc">
-            全口径自算：不合规 <b style="color:#fb7185">8</b> · 合规 <b style="color:#34d399">0</b> · 规模参考 <b>6</b>
+            全口径自算：不合规 <b style="color:var(--bad-text)">8</b> · 合规 <b style="color:var(--ok-text)">0</b> · 规模参考 <b>6</b>
           </span>
         </div>
         <div class="update-time-tag" id="update-time-box">
-          更新于: 2026-10-27T03:40:02Z
+          更新于: 2026-10-27T04:00:23Z
         </div>
       </div>
 
@@ -973,7 +1212,7 @@
           <div class="hl-desc">未关联任何 Issue，需求来源不可溯</div>
         </div>
 
-        <div class="highlight-card" onclick="filterKpiCards('bad')">
+        <div class="highlight-card" onclick="activateWorkTab('all')">
           <div class="hl-header">
             <span>响应超时数</span>
             <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
@@ -984,22 +1223,195 @@
       </div>
     </section>
 
-    <!-- 1. KPI Overview Metrics -->
+    <!-- 1. KPI Overview Metrics (Consolidated by default) -->
     <section>
       <div class="section-header">
         <h2 class="section-title">
           <span>1. 总览指标</span>
-          <span style="font-size: 13px; font-weight: 400; color: var(--text-dim);">SLA 达标线与规模看板</span>
+          <span style="font-size: 13px; font-weight: 400; color: var(--text-dim);">响应时效 · 闭环率 · 链路追溯 · 规模底数</span>
         </h2>
-        <div class="filter-pills" id="kpi-filter-pills">
-          <button class="filter-btn active" data-filter="all" onclick="filterKpiCards('all')">全部 (14)</button>
-          <button class="filter-btn" data-filter="bad" onclick="filterKpiCards('bad')">不合规 (8)</button>
-          <button class="filter-btn" data-filter="ok" onclick="filterKpiCards('ok')">合规 (0)</button>
-          <button class="filter-btn" data-filter="info" onclick="filterKpiCards('info')">仅展示 (6)</button>
+        <div class="view-switch-box">
+          <button class="view-switch-btn active" id="btn-view-grouped" onclick="toggleMetricView('grouped')">合并视图 (4 组)</button>
+          <button class="view-switch-btn" id="btn-view-granular" onclick="toggleMetricView('granular')">展开明细 (14 项)</button>
         </div>
       </div>
 
-      <div class="kpi-grid" id="kpi-grid">
+      <!-- Consolidated 4-Card View (Default) -->
+      <div class="grp-grid" id="consolidated-metrics-view">
+        
+      <!-- Group 1: 首次响应 SLA -->
+      <div class="grp-card bad" id="grp-response">
+        <div class="grp-head">
+          <div class="grp-title-box">
+            <span class="grp-icon alert"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            <span class="grp-title">1. 首次响应 SLA</span>
+          </div>
+          <span class="kpi-status-badge bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> 不合规 (5 项未达标)</span>
+        </div>
+        <div class="grp-hero">
+          <div class="grp-hero-label">核心指标 · 首次响应达标率</div>
+          <div class="grp-hero-val bad">33%</div>
+          <div class="grp-th-tag">平台阈值：蓝 ≥80%，橙 50%~80%，红 &lt;50% · <span style="color:var(--bad-text);font-weight:600;">落在红区</span></div>
+        </div>
+        <div class="sub-metrics-grid">
+          <div class="sub-metric-item bad">
+            <div class="sm-lbl">平均首次响应</div>
+            <div class="sm-val">60.2h</div>
+            <div class="sm-th">阈值 ≤ 24h</div>
+          </div>
+          <div class="sub-metric-item bad">
+            <div class="sm-lbl">开启未响应超时</div>
+            <div class="sm-val">2 个</div>
+            <div class="sm-th">停留 >24h · 阈值 = 0</div>
+          </div>
+          <div class="sub-metric-item bad">
+            <div class="sm-lbl">开启且未响应数</div>
+            <div class="sm-val">7 个</div>
+            <div class="sm-th">阈值 = 0</div>
+          </div>
+          <div class="sub-metric-item bad">
+            <div class="sm-lbl">首响未达标总数</div>
+            <div class="sm-val">12 个</div>
+            <div class="sm-th">>24h或超时 · 阈值 = 0</div>
+          </div>
+        </div>
+        <div class="grp-diag bad">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> 诊断：首次响应达标率仅 <b>33%</b>，严重落入红区；平均首响达 <b>60.2h</b>（超标 36.2h）；当前有 <b>2 个</b>开启 Issue 停留超 24h 仍未收到任何非创建者回复。
+        </div>
+      </div>
+
+      <!-- Group 2: 闭环流转 SLA -->
+      <div class="grp-card bad" id="grp-closure">
+        <div class="grp-head">
+          <div class="grp-title-box">
+            <span class="grp-icon check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="grp-title">2. 闭环流转 SLA</span>
+          </div>
+          <span class="kpi-status-badge bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> 不合规 (1 项未达标)</span>
+        </div>
+        <div class="grp-hero">
+          <div class="grp-hero-label">核心指标 · Issue 闭环率</div>
+          <div class="grp-hero-val warn">56%</div>
+          <div class="grp-th-tag">平台阈值：蓝 ≥90%，橙 50%~90%，红 &lt;50% · <span style="color:var(--warn-text);font-weight:600;">落在橙区</span></div>
+        </div>
+        <div class="sub-metrics-grid">
+          <div class="sub-metric-item">
+            <div class="sm-lbl">平均闭环时长</div>
+            <div class="sm-val">11.5 天</div>
+            <div class="sm-th">自然时间（含周末节假日）</div>
+          </div>
+          <div class="sub-metric-item">
+            <div class="sm-lbl">已闭环 Issue</div>
+            <div class="sm-val">10 个</div>
+            <div class="sm-th">闭环耗时样本</div>
+          </div>
+          <div class="sub-metric-item">
+            <div class="sm-lbl">未闭环开启 Issue</div>
+            <div class="sm-val">8 个</div>
+            <div class="sm-th">仍在开启推进</div>
+          </div>
+          <div class="sub-metric-item">
+            <div class="sm-lbl">全周期 Issue 总数</div>
+            <div class="sm-val">18 个</div>
+            <div class="sm-th">历史累计底数</div>
+          </div>
+        </div>
+        <div class="grp-diag warn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> 诊断：Issue 闭环率 <b>56%</b> 未达 90% 蓝线标准，处于橙区；平均闭环耗时 <b>11.5 天</b>（自然时间口径）；需加快待办事项解决以提高闭环比率。
+        </div>
+      </div>
+
+      <!-- Group 3: 需求关联与协同链路 -->
+      <div class="grp-card bad" id="grp-linkage">
+        <div class="grp-head">
+          <div class="grp-title-box">
+            <span class="grp-icon pr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg></span>
+            <span class="grp-title">3. 需求关联与协同链路</span>
+          </div>
+          <span class="kpi-status-badge bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> 异常 3 项</span>
+        </div>
+        <div class="grp-hero">
+          <div class="grp-hero-label">核心指标 · 链路异常事项</div>
+          <div class="grp-hero-val bad">3 项</div>
+          <div class="grp-th-tag">规则口径：零容忍规则，阈值 = 0</div>
+        </div>
+        <div class="sub-metrics-grid">
+          <div class="sub-metric-item bad" onclick="activateWorkTab('should-reply')" style="cursor:pointer;" title="点击查看待承接 Issue">
+            <div class="sm-lbl">无关联 PR 的开启 Issue</div>
+            <div class="sm-val">2 个</div>
+            <div class="sm-th">阈值 = 0 · 点击查看 ↗</div>
+          </div>
+          <div class="sub-metric-item bad" onclick="activateWorkTab('orphan-pr')" style="cursor:pointer;" title="点击查看孤儿 PR">
+            <div class="sm-lbl">无 Issue 关联的开启 PR</div>
+            <div class="sm-val">1 个</div>
+            <div class="sm-th">阈值 = 0 · 点击查看 ↗</div>
+          </div>
+          <div class="sub-metric-item ok" onclick="activateWorkTab('watched-pr')" style="cursor:pointer;" title="点击查看推进中 PR">
+            <div class="sm-lbl">有关联 Issue 的开启 PR</div>
+            <div class="sm-val">6 个</div>
+            <div class="sm-th">链路健全 · 点击查看 ↗</div>
+          </div>
+          <div class="sub-metric-item">
+            <div class="sm-lbl">开启 PR 总数</div>
+            <div class="sm-val">7 个</div>
+            <div class="sm-th">活跃代码合并分支</div>
+          </div>
+        </div>
+        <div class="grp-diag bad">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> 诊断：当前有 <b>2 个开启 Issue</b> 尚未由任何 PR 承接推进；有 <b>1 个开启 PR</b> 正文未关联任何 Issue（需求来源不可溯，无法评估背景）；建议为孤儿 PR 补全关联。
+        </div>
+        <div class="grp-actions">
+          <button class="grp-btn" onclick="activateWorkTab('should-reply')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> 查看待承接 Issue (2) ↘</button>
+          <button class="grp-btn" onclick="activateWorkTab('orphan-pr')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> 查看孤儿 PR (1) ↘</button>
+          <button class="grp-btn" onclick="activateWorkTab('watched-pr')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg> 查看推进中 PR (6) ↘</button>
+        </div>
+      </div>
+
+      <!-- Group 4: 仓储规模与底数 -->
+      <div class="grp-card info" id="grp-scale">
+        <div class="grp-head">
+          <div class="grp-title-box">
+            <span class="grp-icon info"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+            <span class="grp-title">4. 仓储规模底数</span>
+          </div>
+          <span class="kpi-status-badge info"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> 规模展示</span>
+        </div>
+        <div class="grp-hero">
+          <div class="grp-hero-label">核心指标 · 活跃事项总数</div>
+          <div class="grp-hero-val info">9 项</div>
+          <div class="grp-th-tag">包含开启 Issue 与开启 PR</div>
+        </div>
+        <div class="sub-metrics-grid">
+          <div class="sub-metric-item">
+            <div class="sm-lbl">开启 Issue</div>
+            <div class="sm-val">8 个</div>
+            <div class="sm-th">实时待处理</div>
+          </div>
+          <div class="sub-metric-item">
+            <div class="sm-lbl">开启 PR</div>
+            <div class="sm-val">7 个</div>
+            <div class="sm-th">待审查与合并</div>
+          </div>
+          <div class="sub-metric-item">
+            <div class="sm-lbl">已闭环 Issue</div>
+            <div class="sm-val">10 个</div>
+            <div class="sm-th">历史已解决归档</div>
+          </div>
+          <div class="sub-metric-item">
+            <div class="sm-lbl">Issue 历史总量</div>
+            <div class="sm-val">18 个</div>
+            <div class="sm-th">累计建单总数</div>
+          </div>
+        </div>
+        <div class="grp-diag info">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> 数据说明：GitCode CLI + Open API 实时现算，自然时间口径。历史累计归档关闭 10 个事项，当前正活跃流转 9 项。
+        </div>
+      </div>
+    
+      </div>
+
+      <!-- Granular 14-Card View (Hidden by default) -->
+      <div class="kpi-grid" id="granular-metrics-view" style="display: none;">
         
       <div class="kpi-card info " 
            data-status="info" 
@@ -1191,7 +1603,7 @@
       <div class="section-header">
         <h2 class="section-title">
           <span>2. 待办工作台</span>
-          <span style="font-size: 13px; font-weight: 400; color: var(--text-dim);">需回复 Issue 与待关注 PR 列表</span>
+          <span style="font-size: 13px; font-weight: 400; color: var(--text-dim);">停留时长最长置顶 · 紧急优先</span>
         </h2>
       </div>
 
@@ -1219,8 +1631,8 @@
             </div>
 
             <select id="work-sort" class="sort-select" onchange="handleSort(this.value)">
-              <option value="age-desc">停留时长 (长 → 短 · 紧急优先)</option>
-              <option value="age-asc">停留时长 (短 → 长)</option>
+              <option value="age-desc" selected>停留时长 (最长 → 最短 · 紧急优先)</option>
+              <option value="age-asc">停留时长 (最短 → 最长)</option>
               <option value="comments-desc">评论数 (多 → 少)</option>
               <option value="num-desc">编号 (# 从大到小)</option>
             </select>
@@ -1230,10 +1642,63 @@
         <div class="work-list" id="work-list">
           
       <article class="work-card" 
+               data-category="orphan-pr"
+               data-kind="pr"
+               data-number="11"
+               data-age="8.1"
+               data-comments="0"
+               data-title="docs: 修复中文标点前多余空格（1 处）"
+               data-author="gcw_2C7pfVg4"
+               data-search="11 docs: 修复中文标点前多余空格（1 处） gcw_2c7pfvg4 docs/fix-punct-space master cann-cla/no ci-pipeline-passed 孤儿pr">
+        <div class="card-left">
+          <span class="card-num pr">#11</span>
+          <span class="card-kind-badge pr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg> PR</span>
+        </div>
+        <div class="card-main">
+          <div class="card-title-row">
+            <a href="https://gitcode.com/cann/npu-simulator/merge_requests/11" target="_blank" class="card-title" rel="noopener noreferrer">
+              docs: 修复中文标点前多余空格（1 处）
+              <span class="ext-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+            </a>
+          </div>
+
+          <div class="card-meta-row">
+            <span class="tag-pill tag-state open">open</span>
+            <span class="tag-pill tag-age danger"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 8.1 天 · 亟待处理</span>
+            <span class="tag-pill tag-comments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 0 评论</span>
+            <span class="tag-pill tag-author"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> @gcw_2C7pfVg4</span>
+            
+          </div>
+
+          
+          <div class="card-pr-row">
+            <span class="tag-pill tag-branch"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> <code>docs/fix-punct-space</code> → <code>master</code></span>
+            
+            <span class="tag-pill tag-merge ok">可合并 ✅</span>
+            
+          </div>
+
+          
+          <div class="card-tags-row">
+            
+            <span class="tag-pill tag-label">cann-cla/no</span><span class="tag-pill tag-label">ci-pipeline-passed</span>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button class="btn-icon" onclick="copyCardRef('cann/npu-simulator#11', this)" title="复制仓库引用 (如 cann/npu-simulator#11)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </button>
+          <a href="https://gitcode.com/cann/npu-simulator/merge_requests/11" target="_blank" class="btn-subtle" rel="noopener noreferrer" title="在 GitCode 中打开">
+            直达 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="work-card" 
                data-category="should-reply"
                data-kind="issue"
                data-number="9"
-               data-age="0.7"
+               data-age="0.8"
                data-comments="0"
                data-title="[建议] npu-simulator 文档补充性能调优章节"
                data-author="2601_96050445"
@@ -1252,7 +1717,7 @@
 
           <div class="card-meta-row">
             <span class="tag-pill tag-state open">open</span>
-            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.7 天</span>
+            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.8 天</span>
             <span class="tag-pill tag-comments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 0 评论</span>
             <span class="tag-pill tag-author"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> @2601_96050445</span>
             <span class="tag-pill tag-date">创建于 2026-10-22</span>
@@ -1319,7 +1784,7 @@
                data-category="watched-pr"
                data-kind="pr"
                data-number="23"
-               data-age="0"
+               data-age="0.1"
                data-comments="0"
                data-title="fix: preserve first-root artifact when names collide"
                data-author="gxhgxh2475698"
@@ -1338,7 +1803,7 @@
 
           <div class="card-meta-row">
             <span class="tag-pill tag-state open">open</span>
-            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0 天</span>
+            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.1 天</span>
             <span class="tag-pill tag-comments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 0 评论</span>
             <span class="tag-pill tag-author"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> @gxhgxh2475698</span>
             
@@ -1584,11 +2049,11 @@
                data-category="watched-pr"
                data-kind="pr"
                data-number="9"
-               data-age="0.1"
+               data-age="0"
                data-comments="0"
                data-title="fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError"
                data-author="lizhe_li"
-               data-search="9 fix(report): 只读 db uri 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 valueerror lizhe_li fix/readonly-db-uri-resolve-encode master stat/needs-squash cann-cla/yes ci-pipeline-passed 推进中pr">
+               data-search="9 fix(report): 只读 db uri 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 valueerror lizhe_li fix/readonly-db-uri-resolve-encode master cann-cla/yes ci-pipeline-running 推进中pr">
         <div class="card-left">
           <span class="card-num pr">#9</span>
           <span class="card-kind-badge pr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg> PR</span>
@@ -1603,7 +2068,7 @@
 
           <div class="card-meta-row">
             <span class="tag-pill tag-state open">open</span>
-            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.1 天</span>
+            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0 天</span>
             <span class="tag-pill tag-comments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 0 评论</span>
             <span class="tag-pill tag-author"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> @lizhe_li</span>
             
@@ -1620,7 +2085,7 @@
           
           <div class="card-tags-row">
             <a href="https://gitcode.com/cann/npu-simulator/issues/5" target="_blank" class="tag-pill tag-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Issue #5</a>
-            <span class="tag-pill tag-label">stat/needs-squash</span><span class="tag-pill tag-label">cann-cla/yes</span><span class="tag-pill tag-label">ci-pipeline-passed</span>
+            <span class="tag-pill tag-label">cann-cla/yes</span><span class="tag-pill tag-label">ci-pipeline-running</span>
           </div>
         </div>
 
@@ -1629,59 +2094,6 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
           </button>
           <a href="https://gitcode.com/cann/npu-simulator/merge_requests/9" target="_blank" class="btn-subtle" rel="noopener noreferrer" title="在 GitCode 中打开">
-            直达 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-      </article>
-      <article class="work-card" 
-               data-category="orphan-pr"
-               data-kind="pr"
-               data-number="11"
-               data-age="8.1"
-               data-comments="0"
-               data-title="docs: 修复中文标点前多余空格（1 处）"
-               data-author="gcw_2C7pfVg4"
-               data-search="11 docs: 修复中文标点前多余空格（1 处） gcw_2c7pfvg4 docs/fix-punct-space master cann-cla/no ci-pipeline-passed 孤儿pr">
-        <div class="card-left">
-          <span class="card-num pr">#11</span>
-          <span class="card-kind-badge pr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg> PR</span>
-        </div>
-        <div class="card-main">
-          <div class="card-title-row">
-            <a href="https://gitcode.com/cann/npu-simulator/merge_requests/11" target="_blank" class="card-title" rel="noopener noreferrer">
-              docs: 修复中文标点前多余空格（1 处）
-              <span class="ext-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-            </a>
-          </div>
-
-          <div class="card-meta-row">
-            <span class="tag-pill tag-state open">open</span>
-            <span class="tag-pill tag-age danger"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 8.1 天</span>
-            <span class="tag-pill tag-comments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 0 评论</span>
-            <span class="tag-pill tag-author"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> @gcw_2C7pfVg4</span>
-            
-          </div>
-
-          
-          <div class="card-pr-row">
-            <span class="tag-pill tag-branch"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> <code>docs/fix-punct-space</code> → <code>master</code></span>
-            
-            <span class="tag-pill tag-merge ok">可合并 ✅</span>
-            
-          </div>
-
-          
-          <div class="card-tags-row">
-            
-            <span class="tag-pill tag-label">cann-cla/no</span><span class="tag-pill tag-label">ci-pipeline-passed</span>
-          </div>
-        </div>
-
-        <div class="card-actions">
-          <button class="btn-icon" onclick="copyCardRef('cann/npu-simulator#11', this)" title="复制仓库引用 (如 cann/npu-simulator#11)">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          </button>
-          <a href="https://gitcode.com/cann/npu-simulator/merge_requests/11" target="_blank" class="btn-subtle" rel="noopener noreferrer" title="在 GitCode 中打开">
             直达 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
         </div>
@@ -1726,8 +2138,8 @@
           <tr><th>指标</th><th>合规线</th><th>达标标准</th></tr>
         </thead>
         <tbody>
-          <tr><td>Issue 闭环率</td><td>蓝 ≥90%，橙 50%~90%，红 <50%</td><td>落在蓝区为合规</td></tr>
-          <tr><td>首次响应达标率</td><td>蓝 ≥80%，橙 50%~80%，红 <50%</td><td>落在蓝区为合规</td></tr>
+          <tr><td>Issue 闭环率</td><td>蓝 ≥90%，橙 50%~90%，红 &lt;50%</td><td>落在蓝区为合规</td></tr>
+          <tr><td>首次响应达标率</td><td>蓝 ≥80%，橙 50%~80%，红 &lt;50%</td><td>落在蓝区为合规</td></tr>
           <tr><td>平均首次响应(H)</td><td>≤ 24h</td><td>超过 24h 即不达标</td></tr>
           <tr><td>未响应 / 孤儿 PR</td><td>= 0</td><td>零容忍，>0 即不合规</td></tr>
         </tbody>
@@ -1743,7 +2155,7 @@
   <!-- Raw Data Store -->
   <script id="board-text-raw" type="text/plain">════════════════════════════════════════════════════════════════════════════
   cann/npu-simulator   Issue / PR 看板
-  2026-10-27T03:40:02Z    GitCode CLI · 全自算 · 自然时间口径
+  2026-10-27T04:00:23Z    GitCode CLI · 全自算 · 自然时间口径
 ════════════════════════════════════════════════════════════════════════════
 
 1. 总览指标        不合规 8 · 合规 0 · 仅展示 6
@@ -1779,7 +2191,7 @@
 2. 应该回复的 Issue（2，无关联 PR）
   ────────────────────────────────────────────────────────────────────────────
   #9    [建议] npu-simulator 文档补充性能调优章节
-        open · 无关联 PR · 停留 0.7 天 · 0 评论 · @2601_96050445
+        open · 无关联 PR · 停留 0.8 天 · 0 评论 · @2601_96050445
         创建 2026-10-22 · labels: 无
         https://gitcode.com/cann/npu-simulator/issues/9
 
@@ -1791,7 +2203,7 @@
 3. 应该关注的 PR（6，有 Issue 关联）
   ────────────────────────────────────────────────────────────────────────────
   #23   fix: preserve first-root artifact when names collide
-        open · 关联 Issue #18 · 停留 0 天 · 0 评论 · @gxhgxh2475698
+        open · 关联 Issue #18 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
         fix/preserve-first-asset-root-20261027 → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/23
 
@@ -1816,7 +2228,7 @@
         https://gitcode.com/cann/npu-simulator/merge_requests/19
 
   #9    fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件…
-        open · 关联 Issue #5 · 停留 0.1 天 · 0 评论 · @lizhe_li
+        open · 关联 Issue #5 · 停留 0 天 · 0 评论 · @lizhe_li
         fix/readonly-db-uri-resolve-encode → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/9
 
@@ -1834,7 +2246,7 @@
 ────────────────────────────────────────────────────────────────────────────</script>
   <script id="board-md-raw" type="text/plain"># cann/npu-simulator 看板
 
-更新：2026-10-27T03:40:02Z　·　数据源：GitCode CLI（全指标自算，自然时间口径）
+更新：2026-10-27T04:00:23Z　·　数据源：GitCode CLI（全指标自算，自然时间口径）
 
 ## 1. 总览指标
 
@@ -1867,7 +2279,7 @@
 ## 2. 应该回复的 Issue（2，无关联 PR）
 
 - **#9 [建议] npu-simulator 文档补充性能调优章节**  ·  [打开](https://gitcode.com/cann/npu-simulator/issues/9)
-  open · 无关联 PR · 停留 0.7 天 · 0 评论 · @2601_96050445
+  open · 无关联 PR · 停留 0.8 天 · 0 评论 · @2601_96050445
   创建 2026-10-22 · labels: 无
 - **#12 "[Bug-Report|缺陷反馈] 仿真器跨核同步 flag 内部状态池在大规模高频 set/wait 场景下溢出——flagId 合法（10/11 < 16）仍报 "flag ID overflows"，导致仿真崩溃或同步语义损坏**  ·  [打开](https://gitcode.com/cann/npu-simulator/issues/12)
   open · 无关联 PR · 停留 0.1 天 · 1 评论 · @chenjiayi_
@@ -1876,7 +2288,7 @@
 ## 3. 应该关注的 PR（6，有 Issue 关联）
 
 - **#23 fix: preserve first-root artifact when names collide**  ·  [打开](https://gitcode.com/cann/npu-simulator/merge_requests/23)
-  open · 关联 Issue #18 · 停留 0 天 · 0 评论 · @gxhgxh2475698
+  open · 关联 Issue #18 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
   fix/preserve-first-asset-root-20261027 → master · 可合并 ✅
 - **#22 docs: match in-page links to rendered heading IDs**  ·  [打开](https://gitcode.com/cann/npu-simulator/merge_requests/22)
   open · 关联 Issue #17 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
@@ -1891,7 +2303,7 @@
   open · 关联 Issue #14 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
   fix/python37-hccl-restore-unlink-20261027 → master · 可合并 ✅
 - **#9 fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError**  ·  [打开](https://gitcode.com/cann/npu-simulator/merge_requests/9)
-  open · 关联 Issue #5 · 停留 0.1 天 · 0 评论 · @lizhe_li
+  open · 关联 Issue #5 · 停留 0 天 · 0 评论 · @lizhe_li
   fix/readonly-db-uri-resolve-encode → master · 可合并 ✅
 
 ## 4. 无 Issue 关联的 PR（1）
@@ -1904,7 +2316,7 @@
 
 口径：见 docs/metrics.md（自然时间，不剔除周末/节假日）。
 </script>
-  <script id="board-json-raw" type="application/json">{"repo":"cann/npu-simulator","generatedAt":"2026-10-27T03:40:02Z","summary":{"violations":8,"compliant":0,"infoOnly":6},"metrics":{"total":18,"openCount":8,"closedCount":10,"closeRate":0.5555555555555556,"avgCloseDays":11.53119212962963,"openNoResp":7,"openNoRespTimeout":2,"responded":2,"firstRespUnqualified":12,"firstRespRate":0.3333333333333333,"avgFirstRespHours":60.18291666666667},"overview":[{"group":"实时","label":"开启 Issue","value":8,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"实时","label":"开启 PR","value":7,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"实时","label":"无关联 PR 的开启 Issue","value":2,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 2 个 —— 这些开启 issue 没有任何 PR 承接，需要回复或建 PR","src":"规则：>0 即不合规"}},{"group":"实时","label":"有关联 Issue 的开启 PR","value":6,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"可追溯的 PR，越多越好","src":"—"}},{"group":"实时","label":"无 Issue 关联的开启 PR","value":1,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 1 个 —— 这些 PR 没有关联 issue，无法回溯需求来源","src":"规则：>0 即不合规"}},{"group":"自算","label":"Issue 总数","value":18,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"自算","label":"开启总数","value":8,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"自算","label":"Issue 闭环率","value":"56%","rule":{"status":"bad","verdict":"不合规","threshold":"蓝 ≥90%，橙 50%~90%，红 <50%","reason":"56% 未达 90% 蓝线，落在橙区","src":"自然时间口径；阈值取自平台 tooltip"}},{"group":"自算","label":"平均闭环时长(D)","value":11.5,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"样本 10 个已关闭 issue","src":"自然时间口径（含周末/节假日）"}},{"group":"自算","label":"开启且未响应数","value":7,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 7 个 —— 仍有开启 issue 未收到任何非创建者（非机器人）回复","src":"规则：>0 即不合规"}},{"group":"自算","label":"开启未响应超时数","value":2,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 2 个 —— 未响应且停留 >24h","src":"规则：>0 即不合规"}},{"group":"自算","label":"首次响应未达标数","value":12,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 12 个 —— 首次响应 >24h 或未响应且停留 >24h","src":"规则：>0 即不合规"}},{"group":"自算","label":"首次响应达标率","value":"33%","rule":{"status":"bad","verdict":"不合规","threshold":"蓝 ≥80%，橙 50%~80%，红 <50%","reason":"33% 未达 80% 蓝线，落在红区","src":"自然时间口径；阈值取自平台 tooltip"}},{"group":"自算","label":"平均首次响应(H)","value":60.2,"rule":{"status":"bad","verdict":"不合规","threshold":"≤ 24h","reason":"60.2h 超过 24h 达标线","src":"平台 tooltip：达标线 24h"}}],"shouldReplyIssues":[{"kind":"issue","number":9,"title":"[建议] npu-simulator 文档补充性能调优章节","url":"https://gitcode.com/cann/npu-simulator/issues/9","state":"open","author":"2601_96050445","comments":0,"ageDays":0.7,"createdAt":"2026-10-22T04:16:35+08:00","labels":[]},{"kind":"issue","number":12,"title":"\"[Bug-Report|缺陷反馈] 仿真器跨核同步 flag 内部状态池在大规模高频 set/wait 场景下溢出——flagId 合法（10/11 < 16）仍报 \"flag ID overflows\"，导致仿真崩溃或同步语义损坏","url":"https://gitcode.com/cann/npu-simulator/issues/12","state":"open","author":"chenjiayi_","comments":1,"ageDays":0.1,"createdAt":"2026-10-22T14:24:45+08:00","labels":[]}],"watchedPRs":[{"kind":"pr","number":23,"title":"fix: preserve first-root artifact when names collide","url":"https://gitcode.com/cann/npu-simulator/merge_requests/23","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0,"linkedIssues":[18],"head":"fix/preserve-first-asset-root-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]},{"kind":"pr","number":22,"title":"docs: match in-page links to rendered heading IDs","url":"https://gitcode.com/cann/npu-simulator/merge_requests/22","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[17],"head":"docs/fix-rendered-anchors-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-failed"]},{"kind":"pr","number":21,"title":"fix: reserve separate output directories for same-second runs","url":"https://gitcode.com/cann/npu-simulator/merge_requests/21","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[16],"head":"fix/unique-record-output-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-failed"]},{"kind":"pr","number":20,"title":"docs: quote multiword record command examples","url":"https://gitcode.com/cann/npu-simulator/merge_requests/20","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[15],"head":"docs/quote-user-app-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]},{"kind":"pr","number":19,"title":"fix: preserve Python 3.7 HCCL backup cleanup","url":"https://gitcode.com/cann/npu-simulator/merge_requests/19","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[14],"head":"fix/python37-hccl-restore-unlink-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]},{"kind":"pr","number":9,"title":"fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError","url":"https://gitcode.com/cann/npu-simulator/merge_requests/9","state":"open","author":"lizhe_li","comments":0,"ageDays":0.1,"linkedIssues":[5],"head":"fix/readonly-db-uri-resolve-encode","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["stat/needs-squash","cann-cla/yes","ci-pipeline-passed"]}],"orphanPRs":[{"kind":"pr","number":11,"title":"docs: 修复中文标点前多余空格（1 处）","url":"https://gitcode.com/cann/npu-simulator/merge_requests/11","state":"open","author":"gcw_2C7pfVg4","comments":0,"ageDays":8.1,"linkedIssues":[],"head":"docs/fix-punct-space","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/no","ci-pipeline-passed"]}]}</script>
+  <script id="board-json-raw" type="application/json">{"repo":"cann/npu-simulator","generatedAt":"2026-10-27T04:00:23Z","summary":{"violations":8,"compliant":0,"infoOnly":6},"metrics":{"total":18,"openCount":8,"closedCount":10,"closeRate":0.5555555555555556,"avgCloseDays":11.53119212962963,"openNoResp":7,"openNoRespTimeout":2,"responded":2,"firstRespUnqualified":12,"firstRespRate":0.3333333333333333,"avgFirstRespHours":60.18291666666667},"overview":[{"group":"实时","label":"开启 Issue","value":8,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"实时","label":"开启 PR","value":7,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"实时","label":"无关联 PR 的开启 Issue","value":2,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 2 个 —— 这些开启 issue 没有任何 PR 承接，需要回复或建 PR","src":"规则：>0 即不合规"}},{"group":"实时","label":"有关联 Issue 的开启 PR","value":6,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"可追溯的 PR，越多越好","src":"—"}},{"group":"实时","label":"无 Issue 关联的开启 PR","value":1,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 1 个 —— 这些 PR 没有关联 issue，无法回溯需求来源","src":"规则：>0 即不合规"}},{"group":"自算","label":"Issue 总数","value":18,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"自算","label":"开启总数","value":8,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"自算","label":"Issue 闭环率","value":"56%","rule":{"status":"bad","verdict":"不合规","threshold":"蓝 ≥90%，橙 50%~90%，红 <50%","reason":"56% 未达 90% 蓝线，落在橙区","src":"自然时间口径；阈值取自平台 tooltip"}},{"group":"自算","label":"平均闭环时长(D)","value":11.5,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"样本 10 个已关闭 issue","src":"自然时间口径（含周末/节假日）"}},{"group":"自算","label":"开启且未响应数","value":7,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 7 个 —— 仍有开启 issue 未收到任何非创建者（非机器人）回复","src":"规则：>0 即不合规"}},{"group":"自算","label":"开启未响应超时数","value":2,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 2 个 —— 未响应且停留 >24h","src":"规则：>0 即不合规"}},{"group":"自算","label":"首次响应未达标数","value":12,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 12 个 —— 首次响应 >24h 或未响应且停留 >24h","src":"规则：>0 即不合规"}},{"group":"自算","label":"首次响应达标率","value":"33%","rule":{"status":"bad","verdict":"不合规","threshold":"蓝 ≥80%，橙 50%~80%，红 <50%","reason":"33% 未达 80% 蓝线，落在红区","src":"自然时间口径；阈值取自平台 tooltip"}},{"group":"自算","label":"平均首次响应(H)","value":60.2,"rule":{"status":"bad","verdict":"不合规","threshold":"≤ 24h","reason":"60.2h 超过 24h 达标线","src":"平台 tooltip：达标线 24h"}}],"shouldReplyIssues":[{"kind":"issue","number":9,"title":"[建议] npu-simulator 文档补充性能调优章节","url":"https://gitcode.com/cann/npu-simulator/issues/9","state":"open","author":"2601_96050445","comments":0,"ageDays":0.8,"createdAt":"2026-10-22T04:16:35+08:00","labels":[]},{"kind":"issue","number":12,"title":"\"[Bug-Report|缺陷反馈] 仿真器跨核同步 flag 内部状态池在大规模高频 set/wait 场景下溢出——flagId 合法（10/11 < 16）仍报 \"flag ID overflows\"，导致仿真崩溃或同步语义损坏","url":"https://gitcode.com/cann/npu-simulator/issues/12","state":"open","author":"chenjiayi_","comments":1,"ageDays":0.1,"createdAt":"2026-10-22T14:24:45+08:00","labels":[]}],"watchedPRs":[{"kind":"pr","number":23,"title":"fix: preserve first-root artifact when names collide","url":"https://gitcode.com/cann/npu-simulator/merge_requests/23","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[18],"head":"fix/preserve-first-asset-root-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]},{"kind":"pr","number":22,"title":"docs: match in-page links to rendered heading IDs","url":"https://gitcode.com/cann/npu-simulator/merge_requests/22","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[17],"head":"docs/fix-rendered-anchors-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-failed"]},{"kind":"pr","number":21,"title":"fix: reserve separate output directories for same-second runs","url":"https://gitcode.com/cann/npu-simulator/merge_requests/21","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[16],"head":"fix/unique-record-output-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-failed"]},{"kind":"pr","number":20,"title":"docs: quote multiword record command examples","url":"https://gitcode.com/cann/npu-simulator/merge_requests/20","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[15],"head":"docs/quote-user-app-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]},{"kind":"pr","number":19,"title":"fix: preserve Python 3.7 HCCL backup cleanup","url":"https://gitcode.com/cann/npu-simulator/merge_requests/19","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[14],"head":"fix/python37-hccl-restore-unlink-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]},{"kind":"pr","number":9,"title":"fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError","url":"https://gitcode.com/cann/npu-simulator/merge_requests/9","state":"open","author":"lizhe_li","comments":0,"ageDays":0,"linkedIssues":[5],"head":"fix/readonly-db-uri-resolve-encode","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-running"]}],"orphanPRs":[{"kind":"pr","number":11,"title":"docs: 修复中文标点前多余空格（1 处）","url":"https://gitcode.com/cann/npu-simulator/merge_requests/11","state":"open","author":"gcw_2C7pfVg4","comments":0,"ageDays":8.1,"linkedIssues":[],"head":"docs/fix-punct-space","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/no","ci-pipeline-passed"]}]}</script>
 
   <script>
     // State
@@ -1959,20 +2371,24 @@
       }
     });
 
-    // KPI Filter
-    function filterKpiCards(type) {
-      const cards = document.querySelectorAll('.kpi-card');
-      const pills = document.querySelectorAll('#kpi-filter-pills .filter-btn');
-      pills.forEach((p) => p.classList.toggle('active', p.getAttribute('data-filter') === type));
+    // Metric View Toggle (Grouped vs Granular)
+    function toggleMetricView(view) {
+      const grpView = document.getElementById('consolidated-metrics-view');
+      const granView = document.getElementById('granular-metrics-view');
+      const btnGrp = document.getElementById('btn-view-grouped');
+      const btnGran = document.getElementById('btn-view-granular');
 
-      cards.forEach((c) => {
-        const s = c.getAttribute('data-status');
-        if (type === 'all' || s === type) {
-          c.style.display = '';
-        } else {
-          c.style.display = 'none';
-        }
-      });
+      if (view === 'grouped') {
+        grpView.style.display = 'grid';
+        granView.style.display = 'none';
+        btnGrp.classList.add('active');
+        btnGran.classList.remove('active');
+      } else {
+        grpView.style.display = 'none';
+        granView.style.display = 'grid';
+        btnGran.classList.add('active');
+        btnGrp.classList.remove('active');
+      }
     }
 
     // Workboard Tab
@@ -1989,14 +2405,6 @@
       const el = document.getElementById('workboard');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
-
-    // KPI Click action binding
-    document.querySelectorAll('.kpi-card[data-target-tab]').forEach((card) => {
-      card.addEventListener('click', () => {
-        const target = card.getAttribute('data-target-tab');
-        if (target) activateWorkTab(target);
-      });
-    });
 
     // Search & Sort
     function handleSearch(val) {
@@ -2054,7 +2462,7 @@
 
     // Relative Time calculation
     try {
-      const isoStr = '2026-10-27T03:40:02Z';
+      const isoStr = '2026-10-27T04:00:23Z';
       const genTime = new Date(isoStr).getTime();
       const diffMin = Math.round((Date.now() - genTime) / 60000);
       let humanTime = '刚刚';
@@ -2067,7 +2475,7 @@
       const localTime = new Date(genTime).toLocaleString('zh-CN', { hour12: false });
       const timeBox = document.getElementById('update-time-box');
       if (timeBox) {
-        timeBox.innerHTML = '更新于 ' + localTime + ' <span style="color:#60a5fa">(' + humanTime + ')</span>';
+        timeBox.innerHTML = '更新于 ' + localTime + ' <span style="color:var(--primary)">(' + humanTime + ')</span>';
       }
     } catch (_) {}
 
@@ -2082,6 +2490,9 @@
         }
       }
     });
+
+    // Run sort immediately on initialization to guarantee longest dwell time is on top!
+    handleSort('age-desc');
   </script>
 </body>
 </html>

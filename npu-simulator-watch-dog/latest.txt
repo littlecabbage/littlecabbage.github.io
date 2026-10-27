@@ -1,6 +1,6 @@
 ════════════════════════════════════════════════════════════════════════════
   cann/npu-simulator   Issue / PR 看板
-  2026-10-27T03:40:02Z    GitCode CLI · 全自算 · 自然时间口径
+  2026-10-27T04:00:23Z    GitCode CLI · 全自算 · 自然时间口径
 ════════════════════════════════════════════════════════════════════════════
 
 1. 总览指标        不合规 8 · 合规 0 · 仅展示 6
@@ -36,7 +36,7 @@
 2. 应该回复的 Issue（2，无关联 PR）
   ────────────────────────────────────────────────────────────────────────────
   #9    [建议] npu-simulator 文档补充性能调优章节
-        open · 无关联 PR · 停留 0.7 天 · 0 评论 · @2601_96050445
+        open · 无关联 PR · 停留 0.8 天 · 0 评论 · @2601_96050445
         创建 2026-10-22 · labels: 无
         https://gitcode.com/cann/npu-simulator/issues/9
 
@@ -48,7 +48,7 @@
 3. 应该关注的 PR（6，有 Issue 关联）
   ────────────────────────────────────────────────────────────────────────────
   #23   fix: preserve first-root artifact when names collide
-        open · 关联 Issue #18 · 停留 0 天 · 0 评论 · @gxhgxh2475698
+        open · 关联 Issue #18 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
         fix/preserve-first-asset-root-20261027 → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/23
 
@@ -73,7 +73,7 @@
         https://gitcode.com/cann/npu-simulator/merge_requests/19
 
   #9    fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件…
-        open · 关联 Issue #5 · 停留 0.1 天 · 0 评论 · @lizhe_li
+        open · 关联 Issue #5 · 停留 0 天 · 0 评论 · @lizhe_li
         fix/readonly-db-uri-resolve-encode → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/9
 
