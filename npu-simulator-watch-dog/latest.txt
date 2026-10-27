@@ -1,6 +1,6 @@
 ════════════════════════════════════════════════════════════════════════════
   cann/npu-simulator   Issue / PR 看板
-  2026-10-27T03:02:10Z    实时状态 gitcode CLI    指标 CANN Issue SLA
+  2026-10-27T03:05:09Z    实时状态 gitcode CLI    指标 CANN Issue SLA
 ════════════════════════════════════════════════════════════════════════════
 
 1. 总览指标        不合规 8 · 合规 0 · 仅展示 6
@@ -68,7 +68,7 @@
         https://gitcode.com/cann/npu-simulator/merge_requests/20
 
   #19   fix: preserve Python 3.7 HCCL backup cleanup
-        open · 关联 Issue #14 · 停留 0 天 · 0 评论 · @gxhgxh2475698
+        open · 关联 Issue #14 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
         fix/python37-hccl-restore-unlink-20261027 → master · +4/-1（1 文件） · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/19
 
