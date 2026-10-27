@@ -1,6 +1,6 @@
 ════════════════════════════════════════════════════════════════════════════
   cann/npu-simulator   Issue / PR 看板
-  2026-10-27T04:00:23Z    GitCode CLI · 全自算 · 自然时间口径
+  2026-10-27T04:44:19Z    GitCode CLI · 全自算 · 自然时间口径
 ════════════════════════════════════════════════════════════════════════════
 
 1. 总览指标        不合规 8 · 合规 0 · 仅展示 6
@@ -36,12 +36,12 @@
 2. 应该回复的 Issue（2，无关联 PR）
   ────────────────────────────────────────────────────────────────────────────
   #9    [建议] npu-simulator 文档补充性能调优章节
-        open · 无关联 PR · 停留 0.8 天 · 0 评论 · @2601_96050445
+        open · 无关联 PR · 停留 5.4 天 · 0 评论 · @2601_96050445
         创建 2026-10-22 · labels: 无
         https://gitcode.com/cann/npu-simulator/issues/9
 
   #12   "[Bug-Report|缺陷反馈] 仿真器跨核同步 flag 内部状态池在大规模高频…
-        open · 无关联 PR · 停留 0.1 天 · 1 评论 · @chenjiayi_
+        open · 无关联 PR · 停留 4.9 天 · 1 评论 · @chenjiayi_
         创建 2026-10-22 · labels: 无
         https://gitcode.com/cann/npu-simulator/issues/12
 
@@ -73,14 +73,14 @@
         https://gitcode.com/cann/npu-simulator/merge_requests/19
 
   #9    fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件…
-        open · 关联 Issue #5 · 停留 0 天 · 0 评论 · @lizhe_li
+        open · 关联 Issue #5 · 停留 24.8 天 · 0 评论 · @lizhe_li
         fix/readonly-db-uri-resolve-encode → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/9
 
 4. 无 Issue 关联的 PR（1）
   ────────────────────────────────────────────────────────────────────────────
   #11   docs: 修复中文标点前多余空格（1 处）
-        open · 无关联 Issue · 停留 8.1 天 · 0 评论 · @gcw_2C7pfVg4
+        open · 无关联 Issue · 停留 10.4 天 · 0 评论 · @gcw_2C7pfVg4
         docs/fix-punct-space → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/11
 
