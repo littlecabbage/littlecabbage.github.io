@@ -1,6 +1,6 @@
 ════════════════════════════════════════════════════════════════════════════
   cann/npu-simulator   Issue / PR 看板
-  2026-10-27T04:44:19Z    GitCode CLI · 全自算 · 自然时间口径
+  2026-10-27T05:56:01Z    GitCode CLI · 全自算 · 自然时间口径
 ════════════════════════════════════════════════════════════════════════════
 
 1. 总览指标        不合规 8 · 合规 0 · 仅展示 6
@@ -41,34 +41,34 @@
         https://gitcode.com/cann/npu-simulator/issues/9
 
   #12   "[Bug-Report|缺陷反馈] 仿真器跨核同步 flag 内部状态池在大规模高频…
-        open · 无关联 PR · 停留 4.9 天 · 1 评论 · @chenjiayi_
+        open · 无关联 PR · 停留 5 天 · 1 评论 · @chenjiayi_
         创建 2026-10-22 · labels: 无
         https://gitcode.com/cann/npu-simulator/issues/12
 
 3. 应该关注的 PR（6，有 Issue 关联）
   ────────────────────────────────────────────────────────────────────────────
   #23   fix: preserve first-root artifact when names collide
-        open · 关联 Issue #18 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
+        open · 关联 Issue #18 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
         fix/preserve-first-asset-root-20261027 → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/23
 
   #22   docs: match in-page links to rendered heading IDs
-        open · 关联 Issue #17 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
-        docs/fix-rendered-anchors-20261027 → master · 可合并 ✅
+        open · 关联 Issue #17 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
+        docs/fix-rendered-anchors-20261027 → master · 不可合并 ❌（缺少 ci-pipeline-passed）
         https://gitcode.com/cann/npu-simulator/merge_requests/22
 
   #21   fix: reserve separate output directories for same-second runs
-        open · 关联 Issue #16 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
-        fix/unique-record-output-20261027 → master · 可合并 ✅
+        open · 关联 Issue #16 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
+        fix/unique-record-output-20261027 → master · 不可合并 ❌（缺少 ci-pipeline-passed）
         https://gitcode.com/cann/npu-simulator/merge_requests/21
 
   #20   docs: quote multiword record command examples
-        open · 关联 Issue #15 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
+        open · 关联 Issue #15 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
         docs/quote-user-app-20261027 → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/20
 
   #19   fix: preserve Python 3.7 HCCL backup cleanup
-        open · 关联 Issue #14 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
+        open · 关联 Issue #14 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
         fix/python37-hccl-restore-unlink-20261027 → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/19
 
@@ -80,8 +80,8 @@
 4. 无 Issue 关联的 PR（1）
   ────────────────────────────────────────────────────────────────────────────
   #11   docs: 修复中文标点前多余空格（1 处）
-        open · 无关联 Issue · 停留 10.4 天 · 0 评论 · @gcw_2C7pfVg4
-        docs/fix-punct-space → master · 可合并 ✅
+        open · 无关联 Issue · 停留 10.5 天 · 0 评论 · @gcw_2C7pfVg4
+        docs/fix-punct-space → master · 不可合并 ❌（缺少 cann-cla/yes）
         https://gitcode.com/cann/npu-simulator/merge_requests/11
 
 ────────────────────────────────────────────────────────────────────────────

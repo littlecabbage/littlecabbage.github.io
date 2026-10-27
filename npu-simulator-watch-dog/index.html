@@ -490,13 +490,35 @@
 
     .grp-diag {
       font-size: 12px;
-      line-height: 1.5;
+      line-height: 1.6;
       padding: 10px 12px;
       border-radius: 8px;
       margin-top: auto;
       display: flex;
       align-items: flex-start;
-      gap: 6px;
+      gap: 8px;
+    }
+    .grp-diag-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .grp-diag-icon svg,
+    .grp-diag > svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+    .grp-diag-body {
+      flex: 1;
+      min-width: 0;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+    .grp-diag-body b {
+      font-weight: 600;
     }
     .grp-diag.bad {
       background: var(--bad-bg);
@@ -1174,7 +1196,7 @@
           </span>
         </div>
         <div class="update-time-tag" id="update-time-box">
-          更新于: 2026-10-27T04:44:19Z
+          更新于: 2026-10-27T05:56:01Z
         </div>
       </div>
 
@@ -1276,7 +1298,8 @@
           </div>
         </div>
         <div class="grp-diag bad">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> 诊断：首次响应达标率仅 <b>33%</b>，严重落入红区；平均首响达 <b>60.2h</b>（超标 36.2h）；当前有 <b>2 个</b>开启 Issue 停留超 24h 仍未收到任何非创建者回复。
+          <span class="grp-diag-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+          <div class="grp-diag-body">诊断：首次响应达标率仅 <b>33%</b>，严重落入红区；平均首响达 <b>60.2h</b>（超标 36.2h）；当前有 <b>2 个</b>开启 Issue 停留超 24h 仍未收到任何非创建者回复。</div>
         </div>
       </div>
 
@@ -1317,7 +1340,8 @@
           </div>
         </div>
         <div class="grp-diag warn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> 诊断：Issue 闭环率 <b>56%</b> 未达 90% 蓝线标准，处于橙区；平均闭环耗时 <b>11.5 天</b>（自然时间口径）；需加快待办事项解决以提高闭环比率。
+          <span class="grp-diag-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
+          <div class="grp-diag-body">诊断：Issue 闭环率 <b>56%</b> 未达 90% 蓝线标准，处于橙区；平均闭环耗时 <b>11.5 天</b>（自然时间口径）；需加快待办事项解决以提高闭环比率。</div>
         </div>
       </div>
 
@@ -1358,7 +1382,8 @@
           </div>
         </div>
         <div class="grp-diag bad">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> 诊断：当前有 <b>2 个开启 Issue</b> 尚未由任何 PR 承接推进；有 <b>1 个开启 PR</b> 正文未关联任何 Issue（需求来源不可溯，无法评估背景）；建议为孤儿 PR 补全关联。
+          <span class="grp-diag-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+          <div class="grp-diag-body">诊断：当前有 <b>2 个开启 Issue</b> 尚未由任何 PR 承接推进；有 <b>1 个开启 PR</b> 正文未关联任何 Issue（需求来源不可溯，无法评估背景）；建议为孤儿 PR 补全关联。</div>
         </div>
         <div class="grp-actions">
           <button class="grp-btn" onclick="activateWorkTab('should-reply')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> 查看待承接 Issue (2) ↘</button>
@@ -1404,7 +1429,8 @@
           </div>
         </div>
         <div class="grp-diag info">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> 数据说明：GitCode CLI + Open API 实时现算，自然时间口径。历史累计归档关闭 10 个事项，当前正活跃流转 9 项。
+          <span class="grp-diag-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
+          <div class="grp-diag-body">数据说明：GitCode CLI + Open API 实时现算，自然时间口径。历史累计归档关闭 10 个事项，当前正活跃流转 9 项。</div>
         </div>
       </div>
     
@@ -1649,7 +1675,7 @@
                data-comments="0"
                data-title="fix(report): 只读 DB URI 统一 resolve+编码，修复 &#39;#&#39; 路径读错文件与相对路径 ValueError"
                data-author="lizhe_li"
-               data-search="9 fix(report): 只读 db uri 统一 resolve+编码，修复 &#39;#&#39; 路径读错文件与相对路径 valueerror lizhe_li fix/readonly-db-uri-resolve-encode master cann-cla/yes ci-pipeline-passed 推进中pr">
+               data-search="9 fix(report): 只读 db uri 统一 resolve+编码，修复 &#39;#&#39; 路径读错文件与相对路径 valueerror lizhe_li fix/readonly-db-uri-resolve-encode master cann-cla/yes ci-pipeline-passed 可合并 ✅ 推进中pr">
         <div class="card-left">
           <span class="card-num pr">#9</span>
           <span class="card-kind-badge pr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg> PR</span>
@@ -1698,11 +1724,11 @@
                data-category="orphan-pr"
                data-kind="pr"
                data-number="11"
-               data-age="10.4"
+               data-age="10.5"
                data-comments="0"
                data-title="docs: 修复中文标点前多余空格（1 处）"
                data-author="gcw_2C7pfVg4"
-               data-search="11 docs: 修复中文标点前多余空格（1 处） gcw_2c7pfvg4 docs/fix-punct-space master cann-cla/no ci-pipeline-passed 孤儿pr">
+               data-search="11 docs: 修复中文标点前多余空格（1 处） gcw_2c7pfvg4 docs/fix-punct-space master cann-cla/no ci-pipeline-passed 不可合并 ❌（缺少 cann-cla/yes） 孤儿pr">
         <div class="card-left">
           <span class="card-num pr">#11</span>
           <span class="card-kind-badge pr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg> PR</span>
@@ -1717,7 +1743,7 @@
 
           <div class="card-meta-row">
             <span class="tag-pill tag-state open">open</span>
-            <span class="tag-pill tag-age danger"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 10.4 天 · 亟待处理</span>
+            <span class="tag-pill tag-age danger"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 10.5 天 · 亟待处理</span>
             <span class="tag-pill tag-comments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 0 评论</span>
             <span class="tag-pill tag-author"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> @gcw_2C7pfVg4</span>
             
@@ -1727,7 +1753,7 @@
           <div class="card-pr-row">
             <span class="tag-pill tag-branch"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> <code>docs/fix-punct-space</code> → <code>master</code></span>
             
-            <span class="tag-pill tag-merge ok">可合并 ✅</span>
+            <span class="tag-pill tag-merge bad">不可合并 ❌（缺少 cann-cla/yes）</span>
             
           </div>
 
@@ -1755,7 +1781,7 @@
                data-comments="0"
                data-title="[建议] npu-simulator 文档补充性能调优章节"
                data-author="2601_96050445"
-               data-search="9 [建议] npu-simulator 文档补充性能调优章节 2601_96050445    待承接issue">
+               data-search="9 [建议] npu-simulator 文档补充性能调优章节 2601_96050445     待承接issue">
         <div class="card-left">
           <span class="card-num issue">#9</span>
           <span class="card-kind-badge issue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Issue</span>
@@ -1794,11 +1820,11 @@
                data-category="should-reply"
                data-kind="issue"
                data-number="12"
-               data-age="4.9"
+               data-age="5"
                data-comments="1"
                data-title="&quot;[Bug-Report|缺陷反馈] 仿真器跨核同步 flag 内部状态池在大规模高频 set/wait 场景下溢出——flagId 合法（10/11 &lt; 16）仍报 &quot;flag ID overflows&quot;，导致仿真崩溃或同步语义损坏"
                data-author="chenjiayi_"
-               data-search="12 &quot;[bug-report|缺陷反馈] 仿真器跨核同步 flag 内部状态池在大规模高频 set/wait 场景下溢出——flagid 合法（10/11 &lt; 16）仍报 &quot;flag id overflows&quot;，导致仿真崩溃或同步语义损坏 chenjiayi_    待承接issue">
+               data-search="12 &quot;[bug-report|缺陷反馈] 仿真器跨核同步 flag 内部状态池在大规模高频 set/wait 场景下溢出——flagid 合法（10/11 &lt; 16）仍报 &quot;flag id overflows&quot;，导致仿真崩溃或同步语义损坏 chenjiayi_     待承接issue">
         <div class="card-left">
           <span class="card-num issue">#12</span>
           <span class="card-kind-badge issue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Issue</span>
@@ -1813,7 +1839,7 @@
 
           <div class="card-meta-row">
             <span class="tag-pill tag-state open">open</span>
-            <span class="tag-pill tag-age warn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 4.9 天</span>
+            <span class="tag-pill tag-age warn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 5 天</span>
             <span class="tag-pill tag-comments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 1 评论</span>
             <span class="tag-pill tag-author"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> @chenjiayi_</span>
             <span class="tag-pill tag-date">创建于 2026-10-22</span>
@@ -1837,11 +1863,11 @@
                data-category="watched-pr"
                data-kind="pr"
                data-number="23"
-               data-age="0.1"
+               data-age="0.2"
                data-comments="0"
                data-title="fix: preserve first-root artifact when names collide"
                data-author="gxhgxh2475698"
-               data-search="23 fix: preserve first-root artifact when names collide gxhgxh2475698 fix/preserve-first-asset-root-20261027 master cann-cla/yes ci-pipeline-passed 推进中pr">
+               data-search="23 fix: preserve first-root artifact when names collide gxhgxh2475698 fix/preserve-first-asset-root-20261027 master cann-cla/yes ci-pipeline-passed 可合并 ✅ 推进中pr">
         <div class="card-left">
           <span class="card-num pr">#23</span>
           <span class="card-kind-badge pr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg> PR</span>
@@ -1856,7 +1882,7 @@
 
           <div class="card-meta-row">
             <span class="tag-pill tag-state open">open</span>
-            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.1 天</span>
+            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.2 天</span>
             <span class="tag-pill tag-comments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 0 评论</span>
             <span class="tag-pill tag-author"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> @gxhgxh2475698</span>
             
@@ -1890,11 +1916,11 @@
                data-category="watched-pr"
                data-kind="pr"
                data-number="22"
-               data-age="0.1"
+               data-age="0.2"
                data-comments="0"
                data-title="docs: match in-page links to rendered heading IDs"
                data-author="gxhgxh2475698"
-               data-search="22 docs: match in-page links to rendered heading ids gxhgxh2475698 docs/fix-rendered-anchors-20261027 master cann-cla/yes ci-pipeline-failed 推进中pr">
+               data-search="22 docs: match in-page links to rendered heading ids gxhgxh2475698 docs/fix-rendered-anchors-20261027 master cann-cla/yes ci-pipeline-failed 不可合并 ❌（缺少 ci-pipeline-passed） 推进中pr">
         <div class="card-left">
           <span class="card-num pr">#22</span>
           <span class="card-kind-badge pr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg> PR</span>
@@ -1909,7 +1935,7 @@
 
           <div class="card-meta-row">
             <span class="tag-pill tag-state open">open</span>
-            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.1 天</span>
+            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.2 天</span>
             <span class="tag-pill tag-comments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 0 评论</span>
             <span class="tag-pill tag-author"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> @gxhgxh2475698</span>
             
@@ -1919,7 +1945,7 @@
           <div class="card-pr-row">
             <span class="tag-pill tag-branch"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> <code>docs/fix-rendered-anchors-20261027</code> → <code>master</code></span>
             
-            <span class="tag-pill tag-merge ok">可合并 ✅</span>
+            <span class="tag-pill tag-merge bad">不可合并 ❌（缺少 ci-pipeline-passed）</span>
             
           </div>
 
@@ -1943,11 +1969,11 @@
                data-category="watched-pr"
                data-kind="pr"
                data-number="21"
-               data-age="0.1"
+               data-age="0.2"
                data-comments="0"
                data-title="fix: reserve separate output directories for same-second runs"
                data-author="gxhgxh2475698"
-               data-search="21 fix: reserve separate output directories for same-second runs gxhgxh2475698 fix/unique-record-output-20261027 master cann-cla/yes ci-pipeline-failed 推进中pr">
+               data-search="21 fix: reserve separate output directories for same-second runs gxhgxh2475698 fix/unique-record-output-20261027 master cann-cla/yes ci-pipeline-failed 不可合并 ❌（缺少 ci-pipeline-passed） 推进中pr">
         <div class="card-left">
           <span class="card-num pr">#21</span>
           <span class="card-kind-badge pr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg> PR</span>
@@ -1962,7 +1988,7 @@
 
           <div class="card-meta-row">
             <span class="tag-pill tag-state open">open</span>
-            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.1 天</span>
+            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.2 天</span>
             <span class="tag-pill tag-comments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 0 评论</span>
             <span class="tag-pill tag-author"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> @gxhgxh2475698</span>
             
@@ -1972,7 +1998,7 @@
           <div class="card-pr-row">
             <span class="tag-pill tag-branch"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> <code>fix/unique-record-output-20261027</code> → <code>master</code></span>
             
-            <span class="tag-pill tag-merge ok">可合并 ✅</span>
+            <span class="tag-pill tag-merge bad">不可合并 ❌（缺少 ci-pipeline-passed）</span>
             
           </div>
 
@@ -1996,11 +2022,11 @@
                data-category="watched-pr"
                data-kind="pr"
                data-number="20"
-               data-age="0.1"
+               data-age="0.2"
                data-comments="0"
                data-title="docs: quote multiword record command examples"
                data-author="gxhgxh2475698"
-               data-search="20 docs: quote multiword record command examples gxhgxh2475698 docs/quote-user-app-20261027 master cann-cla/yes ci-pipeline-passed 推进中pr">
+               data-search="20 docs: quote multiword record command examples gxhgxh2475698 docs/quote-user-app-20261027 master cann-cla/yes ci-pipeline-passed 可合并 ✅ 推进中pr">
         <div class="card-left">
           <span class="card-num pr">#20</span>
           <span class="card-kind-badge pr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg> PR</span>
@@ -2015,7 +2041,7 @@
 
           <div class="card-meta-row">
             <span class="tag-pill tag-state open">open</span>
-            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.1 天</span>
+            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.2 天</span>
             <span class="tag-pill tag-comments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 0 评论</span>
             <span class="tag-pill tag-author"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> @gxhgxh2475698</span>
             
@@ -2049,11 +2075,11 @@
                data-category="watched-pr"
                data-kind="pr"
                data-number="19"
-               data-age="0.1"
+               data-age="0.2"
                data-comments="0"
                data-title="fix: preserve Python 3.7 HCCL backup cleanup"
                data-author="gxhgxh2475698"
-               data-search="19 fix: preserve python 3.7 hccl backup cleanup gxhgxh2475698 fix/python37-hccl-restore-unlink-20261027 master cann-cla/yes ci-pipeline-passed 推进中pr">
+               data-search="19 fix: preserve python 3.7 hccl backup cleanup gxhgxh2475698 fix/python37-hccl-restore-unlink-20261027 master cann-cla/yes ci-pipeline-passed 可合并 ✅ 推进中pr">
         <div class="card-left">
           <span class="card-num pr">#19</span>
           <span class="card-kind-badge pr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg> PR</span>
@@ -2068,7 +2094,7 @@
 
           <div class="card-meta-row">
             <span class="tag-pill tag-state open">open</span>
-            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.1 天</span>
+            <span class="tag-pill tag-age fresh"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 停留 0.2 天</span>
             <span class="tag-pill tag-comments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 0 评论</span>
             <span class="tag-pill tag-author"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> @gxhgxh2475698</span>
             
@@ -2131,6 +2157,7 @@
         <li><b>自然时间口径</b>：计算时长时不剔除周末与法定节假日。时长数字客观反映外部开发者的真实等待时长。</li>
         <li><b>首次响应定义</b>：第一条非创建者且非机器人的评论时间。</li>
         <li><b>关联规则</b>：PR 正文中明确出现 <code>#n</code> 且 <code>n</code> 存在于本仓 Issue 列表。</li>
+        <li><b>PR 可合并判定</b>：Git 底层可合并且必须同时包含 <code>cann-cla/yes</code>（CLA 签署）与 <code>ci-pipeline-passed</code>（门禁流水线通过）两个标签。</li>
       </ul>
 
       <table>
@@ -2142,6 +2169,7 @@
           <tr><td>首次响应达标率</td><td>蓝 ≥80%，橙 50%~80%，红 &lt;50%</td><td>落在蓝区为合规</td></tr>
           <tr><td>平均首次响应(H)</td><td>≤ 24h</td><td>超过 24h 即不达标</td></tr>
           <tr><td>未响应 / 孤儿 PR</td><td>= 0</td><td>零容忍，>0 即不合规</td></tr>
+          <tr><td>PR 可合并门禁</td><td>无冲突 + 必备标签</td><td>包含 cann-cla/yes 与 ci-pipeline-passed 且 mergeable</td></tr>
         </tbody>
       </table>
     </div>
@@ -2155,7 +2183,7 @@
   <!-- Raw Data Store -->
   <script id="board-text-raw" type="text/plain">════════════════════════════════════════════════════════════════════════════
   cann/npu-simulator   Issue / PR 看板
-  2026-10-27T04:44:19Z    GitCode CLI · 全自算 · 自然时间口径
+  2026-10-27T05:56:01Z    GitCode CLI · 全自算 · 自然时间口径
 ════════════════════════════════════════════════════════════════════════════
 
 1. 总览指标        不合规 8 · 合规 0 · 仅展示 6
@@ -2196,34 +2224,34 @@
         https://gitcode.com/cann/npu-simulator/issues/9
 
   #12   "[Bug-Report|缺陷反馈] 仿真器跨核同步 flag 内部状态池在大规模高频…
-        open · 无关联 PR · 停留 4.9 天 · 1 评论 · @chenjiayi_
+        open · 无关联 PR · 停留 5 天 · 1 评论 · @chenjiayi_
         创建 2026-10-22 · labels: 无
         https://gitcode.com/cann/npu-simulator/issues/12
 
 3. 应该关注的 PR（6，有 Issue 关联）
   ────────────────────────────────────────────────────────────────────────────
   #23   fix: preserve first-root artifact when names collide
-        open · 关联 Issue #18 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
+        open · 关联 Issue #18 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
         fix/preserve-first-asset-root-20261027 → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/23
 
   #22   docs: match in-page links to rendered heading IDs
-        open · 关联 Issue #17 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
-        docs/fix-rendered-anchors-20261027 → master · 可合并 ✅
+        open · 关联 Issue #17 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
+        docs/fix-rendered-anchors-20261027 → master · 不可合并 ❌（缺少 ci-pipeline-passed）
         https://gitcode.com/cann/npu-simulator/merge_requests/22
 
   #21   fix: reserve separate output directories for same-second runs
-        open · 关联 Issue #16 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
-        fix/unique-record-output-20261027 → master · 可合并 ✅
+        open · 关联 Issue #16 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
+        fix/unique-record-output-20261027 → master · 不可合并 ❌（缺少 ci-pipeline-passed）
         https://gitcode.com/cann/npu-simulator/merge_requests/21
 
   #20   docs: quote multiword record command examples
-        open · 关联 Issue #15 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
+        open · 关联 Issue #15 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
         docs/quote-user-app-20261027 → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/20
 
   #19   fix: preserve Python 3.7 HCCL backup cleanup
-        open · 关联 Issue #14 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
+        open · 关联 Issue #14 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
         fix/python37-hccl-restore-unlink-20261027 → master · 可合并 ✅
         https://gitcode.com/cann/npu-simulator/merge_requests/19
 
@@ -2235,8 +2263,8 @@
 4. 无 Issue 关联的 PR（1）
   ────────────────────────────────────────────────────────────────────────────
   #11   docs: 修复中文标点前多余空格（1 处）
-        open · 无关联 Issue · 停留 10.4 天 · 0 评论 · @gcw_2C7pfVg4
-        docs/fix-punct-space → master · 可合并 ✅
+        open · 无关联 Issue · 停留 10.5 天 · 0 评论 · @gcw_2C7pfVg4
+        docs/fix-punct-space → master · 不可合并 ❌（缺少 cann-cla/yes）
         https://gitcode.com/cann/npu-simulator/merge_requests/11
 
 ────────────────────────────────────────────────────────────────────────────
@@ -2246,7 +2274,7 @@
 ────────────────────────────────────────────────────────────────────────────</script>
   <script id="board-md-raw" type="text/plain"># cann/npu-simulator 看板
 
-更新：2026-10-27T04:44:19Z　·　数据源：GitCode CLI（全指标自算，自然时间口径）
+更新：2026-10-27T05:56:01Z　·　数据源：GitCode CLI（全指标自算，自然时间口径）
 
 ## 1. 总览指标
 
@@ -2282,25 +2310,25 @@
   open · 无关联 PR · 停留 5.4 天 · 0 评论 · @2601_96050445
   创建 2026-10-22 · labels: 无
 - **#12 "[Bug-Report|缺陷反馈] 仿真器跨核同步 flag 内部状态池在大规模高频 set/wait 场景下溢出——flagId 合法（10/11 < 16）仍报 "flag ID overflows"，导致仿真崩溃或同步语义损坏**  ·  [打开](https://gitcode.com/cann/npu-simulator/issues/12)
-  open · 无关联 PR · 停留 4.9 天 · 1 评论 · @chenjiayi_
+  open · 无关联 PR · 停留 5 天 · 1 评论 · @chenjiayi_
   创建 2026-10-22 · labels: 无
 
 ## 3. 应该关注的 PR（6，有 Issue 关联）
 
 - **#23 fix: preserve first-root artifact when names collide**  ·  [打开](https://gitcode.com/cann/npu-simulator/merge_requests/23)
-  open · 关联 Issue #18 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
+  open · 关联 Issue #18 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
   fix/preserve-first-asset-root-20261027 → master · 可合并 ✅
 - **#22 docs: match in-page links to rendered heading IDs**  ·  [打开](https://gitcode.com/cann/npu-simulator/merge_requests/22)
-  open · 关联 Issue #17 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
-  docs/fix-rendered-anchors-20261027 → master · 可合并 ✅
+  open · 关联 Issue #17 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
+  docs/fix-rendered-anchors-20261027 → master · 不可合并 ❌（缺少 ci-pipeline-passed）
 - **#21 fix: reserve separate output directories for same-second runs**  ·  [打开](https://gitcode.com/cann/npu-simulator/merge_requests/21)
-  open · 关联 Issue #16 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
-  fix/unique-record-output-20261027 → master · 可合并 ✅
+  open · 关联 Issue #16 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
+  fix/unique-record-output-20261027 → master · 不可合并 ❌（缺少 ci-pipeline-passed）
 - **#20 docs: quote multiword record command examples**  ·  [打开](https://gitcode.com/cann/npu-simulator/merge_requests/20)
-  open · 关联 Issue #15 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
+  open · 关联 Issue #15 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
   docs/quote-user-app-20261027 → master · 可合并 ✅
 - **#19 fix: preserve Python 3.7 HCCL backup cleanup**  ·  [打开](https://gitcode.com/cann/npu-simulator/merge_requests/19)
-  open · 关联 Issue #14 · 停留 0.1 天 · 0 评论 · @gxhgxh2475698
+  open · 关联 Issue #14 · 停留 0.2 天 · 0 评论 · @gxhgxh2475698
   fix/python37-hccl-restore-unlink-20261027 → master · 可合并 ✅
 - **#9 fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError**  ·  [打开](https://gitcode.com/cann/npu-simulator/merge_requests/9)
   open · 关联 Issue #5 · 停留 24.8 天 · 0 评论 · @lizhe_li
@@ -2309,14 +2337,14 @@
 ## 4. 无 Issue 关联的 PR（1）
 
 - **#11 docs: 修复中文标点前多余空格（1 处）**  ·  [打开](https://gitcode.com/cann/npu-simulator/merge_requests/11)
-  open · 无关联 Issue · 停留 10.4 天 · 0 评论 · @gcw_2C7pfVg4
-  docs/fix-punct-space → master · 可合并 ✅
+  open · 无关联 Issue · 停留 10.5 天 · 0 评论 · @gcw_2C7pfVg4
+  docs/fix-punct-space → master · 不可合并 ❌（缺少 cann-cla/yes）
 
 ---
 
 口径：见 docs/metrics.md（自然时间，不剔除周末/节假日）。
 </script>
-  <script id="board-json-raw" type="application/json">{"repo":"cann/npu-simulator","generatedAt":"2026-10-27T04:44:19Z","summary":{"violations":8,"compliant":0,"infoOnly":6},"metrics":{"total":18,"openCount":8,"closedCount":10,"closedWithTimeCount":10,"closeRate":0.5555555555555556,"avgCloseDays":11.53119212962963,"openNoResp":7,"openNoRespTimeout":2,"responded":2,"firstRespUnqualified":12,"firstRespRate":0.3333333333333333,"avgFirstRespHours":60.18291666666667},"overview":[{"group":"实时","label":"开启 Issue","value":8,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"实时","label":"开启 PR","value":7,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"实时","label":"无关联 PR 的开启 Issue","value":2,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 2 个 —— 这些开启 issue 没有任何 PR 承接，需要回复或建 PR","src":"规则：>0 即不合规"}},{"group":"实时","label":"有关联 Issue 的开启 PR","value":6,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"可追溯的 PR，越多越好","src":"—"}},{"group":"实时","label":"无 Issue 关联的开启 PR","value":1,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 1 个 —— 这些 PR 没有关联 issue，无法回溯需求来源","src":"规则：>0 即不合规"}},{"group":"自算","label":"Issue 总数","value":18,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"自算","label":"开启总数","value":8,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"自算","label":"Issue 闭环率","value":"56%","rule":{"status":"bad","verdict":"不合规","threshold":"蓝 ≥90%，橙 50%~90%，红 <50%","reason":"56% 未达 90% 蓝线，落在橙区","src":"自然时间口径；阈值取自平台 tooltip"}},{"group":"自算","label":"平均闭环时长(D)","value":11.5,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"样本 10 个带关闭时间的已关闭 issue","src":"自然时间口径（含周末/节假日）"}},{"group":"自算","label":"开启且未响应数","value":7,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 7 个 —— 仍有开启 issue 未收到任何非创建者（非机器人）回复","src":"规则：>0 即不合规"}},{"group":"自算","label":"开启未响应超时数","value":2,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 2 个 —— 未响应且停留 >24h","src":"规则：>0 即不合规"}},{"group":"自算","label":"首次响应未达标数","value":12,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 12 个 —— 首次响应 >24h 或未响应且停留 >24h","src":"规则：>0 即不合规"}},{"group":"自算","label":"首次响应达标率","value":"33%","rule":{"status":"bad","verdict":"不合规","threshold":"蓝 ≥80%，橙 50%~80%，红 <50%","reason":"33% 未达 80% 蓝线，落在红区","src":"自然时间口径；阈值取自平台 tooltip"}},{"group":"自算","label":"平均首次响应(H)","value":60.2,"rule":{"status":"bad","verdict":"不合规","threshold":"≤ 24h","reason":"60.2h 超过 24h 达标线","src":"平台 tooltip：达标线 24h"}}],"shouldReplyIssues":[{"kind":"issue","number":9,"title":"[建议] npu-simulator 文档补充性能调优章节","url":"https://gitcode.com/cann/npu-simulator/issues/9","state":"open","author":"2601_96050445","comments":0,"ageDays":5.4,"createdAt":"2026-10-22T04:16:35+08:00","updatedAt":"2026-10-26T17:51:43+08:00","labels":[]},{"kind":"issue","number":12,"title":"\"[Bug-Report|缺陷反馈] 仿真器跨核同步 flag 内部状态池在大规模高频 set/wait 场景下溢出——flagId 合法（10/11 < 16）仍报 \"flag ID overflows\"，导致仿真崩溃或同步语义损坏","url":"https://gitcode.com/cann/npu-simulator/issues/12","state":"open","author":"chenjiayi_","comments":1,"ageDays":4.9,"createdAt":"2026-10-22T14:24:45+08:00","updatedAt":"2026-10-27T09:57:35+08:00","labels":[]}],"watchedPRs":[{"kind":"pr","number":23,"title":"fix: preserve first-root artifact when names collide","url":"https://gitcode.com/cann/npu-simulator/merge_requests/23","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[18],"createdAt":"2026-10-27T10:16:44+08:00","updatedAt":"2026-10-27T10:39:14+08:00","head":"fix/preserve-first-asset-root-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]},{"kind":"pr","number":22,"title":"docs: match in-page links to rendered heading IDs","url":"https://gitcode.com/cann/npu-simulator/merge_requests/22","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[17],"createdAt":"2026-10-27T10:05:30+08:00","updatedAt":"2026-10-27T10:13:19+08:00","head":"docs/fix-rendered-anchors-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-failed"]},{"kind":"pr","number":21,"title":"fix: reserve separate output directories for same-second runs","url":"https://gitcode.com/cann/npu-simulator/merge_requests/21","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[16],"createdAt":"2026-10-27T09:54:35+08:00","updatedAt":"2026-10-27T10:20:14+08:00","head":"fix/unique-record-output-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-failed"]},{"kind":"pr","number":20,"title":"docs: quote multiword record command examples","url":"https://gitcode.com/cann/npu-simulator/merge_requests/20","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[15],"createdAt":"2026-10-27T09:43:19+08:00","updatedAt":"2026-10-27T10:06:13+08:00","head":"docs/quote-user-app-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]},{"kind":"pr","number":19,"title":"fix: preserve Python 3.7 HCCL backup cleanup","url":"https://gitcode.com/cann/npu-simulator/merge_requests/19","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.1,"linkedIssues":[14],"createdAt":"2026-10-27T09:32:12+08:00","updatedAt":"2026-10-27T09:52:26+08:00","head":"fix/python37-hccl-restore-unlink-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]},{"kind":"pr","number":9,"title":"fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError","url":"https://gitcode.com/cann/npu-simulator/merge_requests/9","state":"open","author":"lizhe_li","comments":0,"ageDays":24.8,"linkedIssues":[5],"createdAt":"2026-10-02T17:34:39+08:00","updatedAt":"2026-10-27T12:23:58+08:00","head":"fix/readonly-db-uri-resolve-encode","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]}],"orphanPRs":[{"kind":"pr","number":11,"title":"docs: 修复中文标点前多余空格（1 处）","url":"https://gitcode.com/cann/npu-simulator/merge_requests/11","state":"open","author":"gcw_2C7pfVg4","comments":0,"ageDays":10.4,"linkedIssues":[],"createdAt":"2026-10-17T02:37:51+08:00","updatedAt":"2026-10-19T09:58:34+08:00","head":"docs/fix-punct-space","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/no","ci-pipeline-passed"]}]}</script>
+  <script id="board-json-raw" type="application/json">{"repo":"cann/npu-simulator","generatedAt":"2026-10-27T05:56:01Z","summary":{"violations":8,"compliant":0,"infoOnly":6},"metrics":{"total":18,"openCount":8,"closedCount":10,"closedWithTimeCount":10,"closeRate":0.5555555555555556,"avgCloseDays":11.53119212962963,"openNoResp":7,"openNoRespTimeout":2,"responded":2,"firstRespUnqualified":12,"firstRespRate":0.3333333333333333,"avgFirstRespHours":60.18291666666667},"overview":[{"group":"实时","label":"开启 Issue","value":8,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"实时","label":"开启 PR","value":7,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"实时","label":"无关联 PR 的开启 Issue","value":2,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 2 个 —— 这些开启 issue 没有任何 PR 承接，需要回复或建 PR","src":"规则：>0 即不合规"}},{"group":"实时","label":"有关联 Issue 的开启 PR","value":6,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"可追溯的 PR，越多越好","src":"—"}},{"group":"实时","label":"无 Issue 关联的开启 PR","value":1,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 1 个 —— 这些 PR 没有关联 issue，无法回溯需求来源","src":"规则：>0 即不合规"}},{"group":"自算","label":"Issue 总数","value":18,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"自算","label":"开启总数","value":8,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"规模指标，无阈值","src":"—"}},{"group":"自算","label":"Issue 闭环率","value":"56%","rule":{"status":"bad","verdict":"不合规","threshold":"蓝 ≥90%，橙 50%~90%，红 <50%","reason":"56% 未达 90% 蓝线，落在橙区","src":"自然时间口径；阈值取自平台 tooltip"}},{"group":"自算","label":"平均闭环时长(D)","value":11.5,"rule":{"status":"info","verdict":"仅展示","threshold":"—","reason":"样本 10 个带关闭时间的已关闭 issue","src":"自然时间口径（含周末/节假日）"}},{"group":"自算","label":"开启且未响应数","value":7,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 7 个 —— 仍有开启 issue 未收到任何非创建者（非机器人）回复","src":"规则：>0 即不合规"}},{"group":"自算","label":"开启未响应超时数","value":2,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 2 个 —— 未响应且停留 >24h","src":"规则：>0 即不合规"}},{"group":"自算","label":"首次响应未达标数","value":12,"rule":{"status":"bad","verdict":"不合规","threshold":"= 0","reason":"当前 12 个 —— 首次响应 >24h 或未响应且停留 >24h","src":"规则：>0 即不合规"}},{"group":"自算","label":"首次响应达标率","value":"33%","rule":{"status":"bad","verdict":"不合规","threshold":"蓝 ≥80%，橙 50%~80%，红 <50%","reason":"33% 未达 80% 蓝线，落在红区","src":"自然时间口径；阈值取自平台 tooltip"}},{"group":"自算","label":"平均首次响应(H)","value":60.2,"rule":{"status":"bad","verdict":"不合规","threshold":"≤ 24h","reason":"60.2h 超过 24h 达标线","src":"平台 tooltip：达标线 24h"}}],"shouldReplyIssues":[{"kind":"issue","number":9,"title":"[建议] npu-simulator 文档补充性能调优章节","url":"https://gitcode.com/cann/npu-simulator/issues/9","state":"open","author":"2601_96050445","comments":0,"ageDays":5.4,"createdAt":"2026-10-22T04:16:35+08:00","updatedAt":"2026-10-26T17:51:43+08:00","labels":[]},{"kind":"issue","number":12,"title":"\"[Bug-Report|缺陷反馈] 仿真器跨核同步 flag 内部状态池在大规模高频 set/wait 场景下溢出——flagId 合法（10/11 < 16）仍报 \"flag ID overflows\"，导致仿真崩溃或同步语义损坏","url":"https://gitcode.com/cann/npu-simulator/issues/12","state":"open","author":"chenjiayi_","comments":1,"ageDays":5,"createdAt":"2026-10-22T14:24:45+08:00","updatedAt":"2026-10-27T09:57:35+08:00","labels":[]}],"watchedPRs":[{"kind":"pr","number":23,"title":"fix: preserve first-root artifact when names collide","url":"https://gitcode.com/cann/npu-simulator/merge_requests/23","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.2,"linkedIssues":[18],"createdAt":"2026-10-27T10:16:44+08:00","updatedAt":"2026-10-27T10:39:14+08:00","head":"fix/preserve-first-asset-root-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]},{"kind":"pr","number":22,"title":"docs: match in-page links to rendered heading IDs","url":"https://gitcode.com/cann/npu-simulator/merge_requests/22","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.2,"linkedIssues":[17],"createdAt":"2026-10-27T10:05:30+08:00","updatedAt":"2026-10-27T10:13:19+08:00","head":"docs/fix-rendered-anchors-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"不可合并 ❌（缺少 ci-pipeline-passed）","labels":["cann-cla/yes","ci-pipeline-failed"]},{"kind":"pr","number":21,"title":"fix: reserve separate output directories for same-second runs","url":"https://gitcode.com/cann/npu-simulator/merge_requests/21","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.2,"linkedIssues":[16],"createdAt":"2026-10-27T09:54:35+08:00","updatedAt":"2026-10-27T10:20:14+08:00","head":"fix/unique-record-output-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"不可合并 ❌（缺少 ci-pipeline-passed）","labels":["cann-cla/yes","ci-pipeline-failed"]},{"kind":"pr","number":20,"title":"docs: quote multiword record command examples","url":"https://gitcode.com/cann/npu-simulator/merge_requests/20","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.2,"linkedIssues":[15],"createdAt":"2026-10-27T09:43:19+08:00","updatedAt":"2026-10-27T10:06:13+08:00","head":"docs/quote-user-app-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]},{"kind":"pr","number":19,"title":"fix: preserve Python 3.7 HCCL backup cleanup","url":"https://gitcode.com/cann/npu-simulator/merge_requests/19","state":"open","author":"gxhgxh2475698","comments":0,"ageDays":0.2,"linkedIssues":[14],"createdAt":"2026-10-27T09:32:12+08:00","updatedAt":"2026-10-27T09:52:26+08:00","head":"fix/python37-hccl-restore-unlink-20261027","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]},{"kind":"pr","number":9,"title":"fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError","url":"https://gitcode.com/cann/npu-simulator/merge_requests/9","state":"open","author":"lizhe_li","comments":0,"ageDays":24.8,"linkedIssues":[5],"createdAt":"2026-10-02T17:34:39+08:00","updatedAt":"2026-10-27T12:23:58+08:00","head":"fix/readonly-db-uri-resolve-encode","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"可合并 ✅","labels":["cann-cla/yes","ci-pipeline-passed"]}],"orphanPRs":[{"kind":"pr","number":11,"title":"docs: 修复中文标点前多余空格（1 处）","url":"https://gitcode.com/cann/npu-simulator/merge_requests/11","state":"open","author":"gcw_2C7pfVg4","comments":0,"ageDays":10.5,"linkedIssues":[],"createdAt":"2026-10-17T02:37:51+08:00","updatedAt":"2026-10-19T09:58:34+08:00","head":"docs/fix-punct-space","base":"master","commits":0,"changedFiles":0,"additions":0,"deletions":0,"draft":false,"mergeNote":"不可合并 ❌（缺少 cann-cla/yes）","labels":["cann-cla/no","ci-pipeline-passed"]}]}</script>
 
   <script>
     // State
@@ -2478,7 +2506,7 @@
 
     // Relative Time calculation
     try {
-      const isoStr = '2026-10-27T04:44:19Z';
+      const isoStr = '2026-10-27T05:56:01Z';
       const genTime = new Date(isoStr).getTime();
       const diffMin = Math.round((Date.now() - genTime) / 60000);
       let humanTime = '刚刚';
