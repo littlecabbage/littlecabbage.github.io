@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-10-29T18:37:43.725Z",
-  "runAtCst": "2026-10-30 02:37",
+  "runAt": "2026-10-29T23:31:22.481Z",
+  "runAtCst": "2026-10-30 07:31",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -85,7 +85,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 386.6,
+      "waitHours": 391.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/9"
     },
     {
@@ -96,7 +96,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 65.1,
+      "waitHours": 70,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/19"
     },
     {
@@ -107,7 +107,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 64.9,
+      "waitHours": 69.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20"
     },
     {
@@ -118,7 +118,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 64.7,
+      "waitHours": 69.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21"
     },
     {
@@ -129,7 +129,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 64.5,
+      "waitHours": 69.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22"
     },
     {
@@ -140,7 +140,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 64.3,
+      "waitHours": 69.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23"
     },
     {
@@ -151,7 +151,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 5.7,
+      "waitHours": 10.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/25"
     },
     {
@@ -162,7 +162,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 3.1,
+      "waitHours": 7.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26"
     },
     {
@@ -171,7 +171,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 cann-cla/yes",
-      "waitHours": 218.6,
+      "waitHours": 223.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11"
     }
   ]
