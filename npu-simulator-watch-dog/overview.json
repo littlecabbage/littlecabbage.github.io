@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-10-29T12:34:30.211Z",
-  "runAtCst": "2026-10-29 20:34",
+  "runAt": "2026-10-29T18:37:43.725Z",
+  "runAtCst": "2026-10-30 02:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -19,30 +19,32 @@
     "3",
     "4",
     "5",
+    "7",
     "10",
     "11",
     "14",
     "15",
     "16",
     "17",
-    "18"
+    "18",
+    "19"
   ],
   "closeLoop": {
-    "issuesTotal": 18,
-    "openTotal": 8,
+    "issuesTotal": 19,
+    "openTotal": 9,
     "month": {
-      "total": 18,
+      "total": 19,
       "closed": 10,
-      "rate": 55.6,
+      "rate": 52.6,
       "rateColor": "orange",
       "avgCloseHours": 151.5,
       "avgCloseDays": 6.3,
       "durSamples": 10
     },
     "year": {
-      "total": 18,
+      "total": 19,
       "closed": 10,
-      "rate": 55.6,
+      "rate": 52.6,
       "rateColor": "orange",
       "avgCloseHours": 151.5,
       "avgCloseDays": 6.3,
@@ -55,19 +57,19 @@
       "overdue": 0
     },
     "month": {
-      "total": 6,
+      "total": 5,
       "qualified": 1,
-      "unqualified": 5,
-      "rate": 16.7,
+      "unqualified": 4,
+      "rate": 20,
       "rateColor": "red",
       "avgFirstRespHours": 65.9,
       "respSamples": 3
     },
     "year": {
-      "total": 6,
+      "total": 5,
       "qualified": 1,
-      "unqualified": 5,
-      "rate": 16.7,
+      "unqualified": 4,
+      "rate": 20,
       "rateColor": "red",
       "avgFirstRespHours": 65.9,
       "respSamples": 3
@@ -83,7 +85,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 380.6,
+      "waitHours": 386.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/9"
     },
     {
@@ -94,7 +96,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 59,
+      "waitHours": 65.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/19"
     },
     {
@@ -105,7 +107,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 58.9,
+      "waitHours": 64.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20"
     },
     {
@@ -116,7 +118,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 58.7,
+      "waitHours": 64.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21"
     },
     {
@@ -127,7 +129,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 58.5,
+      "waitHours": 64.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22"
     },
     {
@@ -138,8 +140,30 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 58.3,
+      "waitHours": 64.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23"
+    },
+    {
+      "number": "25",
+      "title": "fix: multi-chip report pipeline (per-chip DB routing, -m merge, aarch64 HCCL mock)",
+      "linkedIssues": [
+        "7"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 5.7,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/25"
+    },
+    {
+      "number": "26",
+      "title": "fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失",
+      "linkedIssues": [
+        "19"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 3.1,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26"
     },
     {
       "number": "11",
@@ -147,7 +171,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 cann-cla/yes",
-      "waitHours": 212.6,
+      "waitHours": 218.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11"
     }
   ]

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>总览指标 · cann/npu-simulator · 2026-10-29 20:34</title>
+<title>总览指标 · cann/npu-simulator · 2026-10-30 02:37</title>
 <style>
   body { font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif; background:#f6f8fc; color:#172b4d; margin:0; padding:32px; }
   h1 { font-size:24px; margin:0 0 4px; }
@@ -25,24 +25,24 @@
   a { color:#245fc9; text-decoration:none; }
 </style></head>
 <body>
-  <h1>总览指标 · cann/npu-simulator · 2026-10-29 20:34 (UTC+8)</h1>
+  <h1>总览指标 · cann/npu-simulator · 2026-10-30 02:37 (UTC+8)</h1>
   <div class="meta">归组基准 UTC+8 2026-10 · working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)</div>
   <h2>闭环情况</h2>
   <div class="grid">
-    <div class="card"><div class="lbl">Issue 总数</div><div class="val" style="color:#56677e">18</div><div class="sub">全仓 Issue</div></div>
-<div class="card"><div class="lbl">开启总数</div><div class="val" style="color:#56677e">8</div><div class="sub">当前 open</div></div>
-<div class="card"><div class="lbl">月度闭环率</div><div class="val" style="color:#c47f1d">55.6%</div><div class="sub">10/18</div></div>
-<div class="card"><div class="lbl">年度闭环率</div><div class="val" style="color:#c47f1d">55.6%</div><div class="sub">10/18</div></div>
+    <div class="card"><div class="lbl">Issue 总数</div><div class="val" style="color:#56677e">19</div><div class="sub">全仓 Issue</div></div>
+<div class="card"><div class="lbl">开启总数</div><div class="val" style="color:#56677e">9</div><div class="sub">当前 open</div></div>
+<div class="card"><div class="lbl">月度闭环率</div><div class="val" style="color:#c47f1d">52.6%</div><div class="sub">10/19</div></div>
+<div class="card"><div class="lbl">年度闭环率</div><div class="val" style="color:#c47f1d">52.6%</div><div class="sub">10/19</div></div>
 <div class="card"><div class="lbl">月度平均闭环时长</div><div class="val" style="color:#56677e">6.3天</div><div class="sub">样本 10</div></div>
 <div class="card"><div class="lbl">年度平均闭环时长</div><div class="val" style="color:#56677e">6.3天</div><div class="sub">样本 10</div></div>
   </div>
   <h2>响应情况（非自处理 Issue）</h2>
   <div class="grid">
     <div class="card"><div class="lbl">开启未响应 超时/总数</div><div class="val" style="color:#56677e">0/0</div><div class="sub">当前 open·非自处理·未响应</div></div>
-<div class="card"><div class="lbl">月度首响未达标数</div><div class="val" style="color:#56677e">5</div><div class="sub">统计 6</div></div>
-<div class="card"><div class="lbl">年度首响未达标数</div><div class="val" style="color:#56677e">5</div><div class="sub">统计 6</div></div>
-<div class="card"><div class="lbl">月度首响达标率</div><div class="val" style="color:#c0392b">16.7%</div><div class="sub">1/6</div></div>
-<div class="card"><div class="lbl">年度首响达标率</div><div class="val" style="color:#c0392b">16.7%</div><div class="sub">1/6</div></div>
+<div class="card"><div class="lbl">月度首响未达标数</div><div class="val" style="color:#56677e">4</div><div class="sub">统计 5</div></div>
+<div class="card"><div class="lbl">年度首响未达标数</div><div class="val" style="color:#56677e">4</div><div class="sub">统计 5</div></div>
+<div class="card"><div class="lbl">月度首响达标率</div><div class="val" style="color:#c0392b">20%</div><div class="sub">1/5</div></div>
+<div class="card"><div class="lbl">年度首响达标率</div><div class="val" style="color:#c0392b">20%</div><div class="sub">1/5</div></div>
 <div class="card"><div class="lbl">月度平均首响</div><div class="val" style="color:#56677e">65.9H</div><div class="sub">样本 3</div></div>
 <div class="card"><div class="lbl">年度平均首响</div><div class="val" style="color:#56677e">65.9H</div><div class="sub">样本 3</div></div>
   </div>
@@ -50,16 +50,18 @@
   <h2>oncall 待处理 · 待首次响应的用户问题 (0)</h2>
   <div class="empty">无待首次响应的用户问题 🎉</div>
 
-  <h2>committer 待 Review / 合并 · open PR (7，可合入 6)</h2>
+  <h2>committer 待 Review / 合并 · open PR (9，可合入 8)</h2>
   <table>
     <tr><th>PR</th><th>可否合入</th><th>关联 Issue</th><th>停留时长</th><th>标题</th></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/9" target="_blank">#9</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#5</td><td>380.6H</td><td>fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError</td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/19" target="_blank">#19</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#14</td><td>59H</td><td>fix: preserve Python 3.7 HCCL backup cleanup</td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/20" target="_blank">#20</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#15</td><td>58.9H</td><td>docs: quote multiword record command examples</td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/21" target="_blank">#21</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#16</td><td>58.7H</td><td>fix: reserve separate output directories for same-second runs</td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/22" target="_blank">#22</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#17</td><td>58.5H</td><td>docs: match in-page links to rendered heading IDs</td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/23" target="_blank">#23</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#18</td><td>58.3H</td><td>fix: preserve first-root artifact when names collide</td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/11" target="_blank">#11</a></td><td class="tag-bad">❌ 缺 cann-cla/yes</td><td class="muted2">—</td><td>212.6H</td><td>docs: 修复中文标点前多余空格（1 处）</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/9" target="_blank">#9</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#5</td><td>386.6H</td><td>fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/19" target="_blank">#19</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#14</td><td>65.1H</td><td>fix: preserve Python 3.7 HCCL backup cleanup</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/20" target="_blank">#20</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#15</td><td>64.9H</td><td>docs: quote multiword record command examples</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/21" target="_blank">#21</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#16</td><td>64.7H</td><td>fix: reserve separate output directories for same-second runs</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/22" target="_blank">#22</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#17</td><td>64.5H</td><td>docs: match in-page links to rendered heading IDs</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/23" target="_blank">#23</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#18</td><td>64.3H</td><td>fix: preserve first-root artifact when names collide</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/25" target="_blank">#25</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#7</td><td>5.7H</td><td>fix: multi-chip report pipeline (per-chip DB routing, -m merge, aarch64 HCCL mock)</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/26" target="_blank">#26</a></td><td class="tag-ok">✅ 可合入</td><td class="muted2">#19</td><td>3.1H</td><td>fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/11" target="_blank">#11</a></td><td class="tag-bad">❌ 缺 cann-cla/yes</td><td class="muted2">—</td><td>218.6H</td><td>docs: 修复中文标点前多余空格（1 处）</td></tr>
   </table>
 
   <div class="note">

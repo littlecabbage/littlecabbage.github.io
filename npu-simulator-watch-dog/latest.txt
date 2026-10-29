@@ -1,34 +1,36 @@
-总览指标 · cann/npu-simulator · 2026-10-29 20:34 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-10-30 02:37 (UTC+8)
 归组基准 UTC+8 2026-10 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
 ❌ 不合规 (2 项)
-  闭环率：月 55.6% / 年 55.6%  (月 10/18 · 年 10/18（阈值 ≥90%）)
-      原因：月 55.6% 落在橙区（50%~90%）；年 55.6% 落在橙区（50%~90%）
-  首响达标率：月 16.7% / 年 16.7%  (月 1/6 · 年 1/6（阈值 ≥80%）)
-      原因：月 16.7% 落在红区；年 16.7% 落在红区
+  闭环率：月 52.6% / 年 52.6%  (月 10/19 · 年 10/19（阈值 ≥90%）)
+      原因：月 52.6% 落在橙区（50%~90%）；年 52.6% 落在橙区（50%~90%）
+  首响达标率：月 20% / 年 20%  (月 1/5 · 年 1/5（阈值 ≥80%）)
+      原因：月 20% 落在红区；年 20% 落在红区
 
 ✅ 合规 (0 项)
   （无）
 
 ➖ 仅展示 (6 项)
-  Issue 总数：18  (全仓 Issue)
-  开启总数：8  (当前 open)
+  Issue 总数：19  (全仓 Issue)
+  开启总数：9  (当前 open)
   平均闭环时长：月 6.3天 / 年 6.3天  (月样本 10 · 年样本 10)
   开启未响应 超时/总数：0/0  (当前 open·非自处理·未响应)
-  首响未达标数：月 5 / 年 5  (月统计 6 · 年统计 6)
+  首响未达标数：月 4 / 年 4  (月统计 5 · 年统计 5)
   平均首响：月 65.9H / 年 65.9H  (月样本 3 · 年样本 3)
 
 【oncall 待处理】待首次响应的用户问题 (0)
   （无）
 
-【committer 待 Review / 合并】open PR (7，可合入 6)
-  PR #9 ✅可合入 · 停留 380.6H → Issue #5  fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError
-  PR #19 ✅可合入 · 停留 59H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
-  PR #20 ✅可合入 · 停留 58.9H → Issue #15  docs: quote multiword record command examples
-  PR #21 ✅可合入 · 停留 58.7H → Issue #16  fix: reserve separate output directories for same-second runs
-  PR #22 ✅可合入 · 停留 58.5H → Issue #17  docs: match in-page links to rendered heading IDs
-  PR #23 ✅可合入 · 停留 58.3H → Issue #18  fix: preserve first-root artifact when names collide
-  PR #11 ❌缺 cann-cla/yes · 停留 212.6H  docs: 修复中文标点前多余空格（1 处）
+【committer 待 Review / 合并】open PR (9，可合入 8)
+  PR #9 ✅可合入 · 停留 386.6H → Issue #5  fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError
+  PR #19 ✅可合入 · 停留 65.1H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
+  PR #20 ✅可合入 · 停留 64.9H → Issue #15  docs: quote multiword record command examples
+  PR #21 ✅可合入 · 停留 64.7H → Issue #16  fix: reserve separate output directories for same-second runs
+  PR #22 ✅可合入 · 停留 64.5H → Issue #17  docs: match in-page links to rendered heading IDs
+  PR #23 ✅可合入 · 停留 64.3H → Issue #18  fix: preserve first-root artifact when names collide
+  PR #25 ✅可合入 · 停留 5.7H → Issue #7  fix: multi-chip report pipeline (per-chip DB routing, -m merge, aarch64 HCCL mock)
+  PR #26 ✅可合入 · 停留 3.1H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
+  PR #11 ❌缺 cann-cla/yes · 停留 218.6H  docs: 修复中文标点前多余空格（1 处）
 
 闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
