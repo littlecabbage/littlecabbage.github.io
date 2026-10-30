@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-10-30T02:51:48.687Z",
-  "runAtCst": "2026-10-30 10:51",
+  "runAt": "2026-10-30T10:24:00.483Z",
+  "runAtCst": "2026-10-30 18:24",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -85,7 +85,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 394.9,
+      "waitHours": 402.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/9"
     },
     {
@@ -96,7 +96,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 73.3,
+      "waitHours": 80.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/19"
     },
     {
@@ -107,7 +107,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 73.1,
+      "waitHours": 80.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20"
     },
     {
@@ -118,7 +118,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 73,
+      "waitHours": 80.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21"
     },
     {
@@ -129,7 +129,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 72.8,
+      "waitHours": 80.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22"
     },
     {
@@ -140,8 +140,19 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 72.6,
+      "waitHours": 80.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23"
+    },
+    {
+      "number": "25",
+      "title": "fix: multi-chip report pipeline (per-chip DB routing, -m merge, aarch64 HCCL mock)",
+      "linkedIssues": [
+        "7"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 21.5,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/25"
     },
     {
       "number": "26",
@@ -151,7 +162,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 11.3,
+      "waitHours": 18.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26"
     },
     {
@@ -160,19 +171,8 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 cann-cla/yes",
-      "waitHours": 226.9,
+      "waitHours": 234.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11"
-    },
-    {
-      "number": "25",
-      "title": "fix: multi-chip report pipeline (per-chip DB routing, -m merge, aarch64 HCCL mock)",
-      "linkedIssues": [
-        "7"
-      ],
-      "mergeable": false,
-      "reason": "缺 ci-pipeline-passed",
-      "waitHours": 14,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/25"
     }
   ]
 }
