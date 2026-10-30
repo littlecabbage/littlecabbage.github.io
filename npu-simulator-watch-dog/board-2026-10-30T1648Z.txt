@@ -1,0 +1,36 @@
+总览指标 · cann/npu-simulator · 2026-10-31 00:48 (UTC+8)
+归组基准 UTC+8 2026-10 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
+概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
+
+❌ 不合规 (2 项)
+  闭环率：月 52.6% / 年 52.6%  (月 10/19 · 年 10/19（阈值 ≥90%）)
+      原因：月 52.6% 落在橙区（50%~90%）；年 52.6% 落在橙区（50%~90%）
+  首响达标率：月 20% / 年 20%  (月 1/5 · 年 1/5（阈值 ≥80%）)
+      原因：月 20% 落在红区；年 20% 落在红区
+
+✅ 合规 (0 项)
+  （无）
+
+➖ 仅展示 (6 项)
+  Issue 总数：19  (全仓 Issue)
+  开启总数：9  (当前 open)
+  平均闭环时长：月 6.3天 / 年 6.3天  (月样本 10 · 年样本 10)
+  开启未响应 超时/总数：0/0  (当前 open·非自处理·未响应)
+  首响未达标数：月 4 / 年 4  (月统计 5 · 年统计 5)
+  平均首响：月 65.9H / 年 65.9H  (月样本 3 · 年样本 3)
+
+【oncall 待处理】待首次响应的用户问题 (0)
+  （无）
+
+【committer 待 Review / 合并】open PR (9，可合入 8)
+  PR #9 ✅可合入 · 停留 408H → Issue #5  fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError
+  PR #19 ✅可合入 · 停留 86.5H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
+  PR #20 ✅可合入 · 停留 86.3H → Issue #15  docs: quote multiword record command examples
+  PR #21 ✅可合入 · 停留 86.1H → Issue #16  fix: reserve separate output directories for same-second runs
+  PR #22 ✅可合入 · 停留 85.9H → Issue #17  docs: match in-page links to rendered heading IDs
+  PR #23 ✅可合入 · 停留 85.7H → Issue #18  fix: preserve first-root artifact when names collide
+  PR #25 ✅可合入 · 停留 27.1H → Issue #7  fix: multi-chip report pipeline (per-chip DB routing, -m merge, aarch64 HCCL mock)
+  PR #26 ✅可合入 · 停留 24.4H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
+  PR #11 ❌缺 cann-cla/yes · 停留 240H  docs: 修复中文标点前多余空格（1 处）
+
+闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
