@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-10-31T08:45:11.709Z",
-  "runAtCst": "2026-10-31 16:45",
+  "runAt": "2026-10-31T15:29:00.711Z",
+  "runAtCst": "2026-10-31 23:29",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -77,17 +77,6 @@
   },
   "oncallList": [],
   "committerList": [
-    {
-      "number": "9",
-      "title": "fix(report): 只读 DB URI 统一 resolve+编码，修复 '#' 路径读错文件与相对路径 ValueError",
-      "linkedIssues": [
-        "5"
-      ],
-      "mergeable": true,
-      "reason": "",
-      "waitHours": 408,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/9"
-    },
     {
       "number": "19",
       "title": "fix: preserve Python 3.7 HCCL backup cleanup",
