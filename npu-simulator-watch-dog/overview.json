@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-02T08:09:21.253Z",
-  "runAtCst": "2026-11-02 16:09",
+  "runAt": "2026-11-02T18:45:21.197Z",
+  "runAtCst": "2026-11-03 02:45",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -79,6 +79,17 @@
   "oncallList": [],
   "committerList": [
     {
+      "number": "4",
+      "title": "feat(detection):add data race detection",
+      "linkedIssues": [
+        "20"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 447.3,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/4"
+    },
+    {
       "number": "19",
       "title": "fix: preserve Python 3.7 HCCL backup cleanup",
       "linkedIssues": [
@@ -86,7 +97,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 102.6,
+      "waitHours": 113.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/19"
     },
     {
@@ -97,7 +108,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 102.4,
+      "waitHours": 113,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20"
     },
     {
@@ -108,7 +119,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 102.2,
+      "waitHours": 112.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21"
     },
     {
@@ -119,7 +130,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 102.1,
+      "waitHours": 112.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22"
     },
     {
@@ -130,7 +141,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 101.9,
+      "waitHours": 112.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23"
     },
     {
@@ -141,7 +152,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 43.3,
+      "waitHours": 53.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/25"
     },
     {
@@ -152,19 +163,8 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 40.6,
+      "waitHours": 51.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26"
-    },
-    {
-      "number": "4",
-      "title": "feat(detection):add data race detection",
-      "linkedIssues": [
-        "20"
-      ],
-      "mergeable": false,
-      "reason": "缺 ci-pipeline-passed",
-      "waitHours": 436.7,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/4"
     },
     {
       "number": "11",
@@ -172,7 +172,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 cann-cla/yes",
-      "waitHours": 256.2,
+      "waitHours": 266.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11"
     }
   ]
