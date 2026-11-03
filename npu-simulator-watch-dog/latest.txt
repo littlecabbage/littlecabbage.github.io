@@ -1,4 +1,4 @@
-总览指标 · cann/npu-simulator · 2026-11-03 02:45 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-03 09:44 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
@@ -23,14 +23,14 @@
   （无）
 
 【committer 待 Review / 合并】open PR (9，可合入 8)
-  PR #4 ✅可合入 · 停留 447.3H → Issue #20  feat(detection):add data race detection
-  PR #19 ✅可合入 · 停留 113.2H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
-  PR #20 ✅可合入 · 停留 113H → Issue #15  docs: quote multiword record command examples
-  PR #21 ✅可合入 · 停留 112.8H → Issue #16  fix: reserve separate output directories for same-second runs
-  PR #22 ✅可合入 · 停留 112.7H → Issue #17  docs: match in-page links to rendered heading IDs
-  PR #23 ✅可合入 · 停留 112.5H → Issue #18  fix: preserve first-root artifact when names collide
-  PR #25 ✅可合入 · 停留 53.9H → Issue #7  fix: multi-chip report pipeline (per-chip DB routing, -m merge, aarch64 HCCL mock)
-  PR #26 ✅可合入 · 停留 51.2H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
-  PR #11 ❌缺 cann-cla/yes · 停留 266.8H  docs: 修复中文标点前多余空格（1 处）
+  PR #4 ✅可合入 · 停留 454.3H → Issue #20  feat(detection):add data race detection
+  PR #19 ✅可合入 · 停留 120.2H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
+  PR #20 ✅可合入 · 停留 120H → Issue #15  docs: quote multiword record command examples
+  PR #21 ✅可合入 · 停留 119.8H → Issue #16  fix: reserve separate output directories for same-second runs
+  PR #22 ✅可合入 · 停留 119.7H → Issue #17  docs: match in-page links to rendered heading IDs
+  PR #23 ✅可合入 · 停留 119.5H → Issue #18  fix: preserve first-root artifact when names collide
+  PR #25 ✅可合入 · 停留 60.9H → Issue #7  fix: multi-chip report pipeline (per-chip DB routing, -m merge, aarch64 HCCL mock)
+  PR #26 ✅可合入 · 停留 58.2H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
+  PR #11 ❌缺 cann-cla/yes · 停留 273.7H  docs: 修复中文标点前多余空格（1 处）
 
 闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
