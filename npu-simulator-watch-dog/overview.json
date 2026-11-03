@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-03T09:56:39.870Z",
-  "runAtCst": "2026-11-03 17:56",
+  "runAt": "2026-11-03T17:59:32.583Z",
+  "runAtCst": "2026-11-04 01:59",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -54,7 +54,7 @@
   },
   "response": {
     "openNoResponse": {
-      "total": 1,
+      "total": 0,
       "overdue": 0
     },
     "month": {
@@ -63,8 +63,8 @@
       "unqualified": 0,
       "rate": 100,
       "rateColor": "blue",
-      "avgFirstRespHours": null,
-      "respSamples": 0
+      "avgFirstRespHours": 3.9,
+      "respSamples": 1
     },
     "year": {
       "total": 6,
@@ -72,31 +72,12 @@
       "unqualified": 4,
       "rate": 33.3,
       "rateColor": "red",
-      "avgFirstRespHours": 65.9,
-      "respSamples": 3
+      "avgFirstRespHours": 50.4,
+      "respSamples": 4
     }
   },
-  "oncallList": [
-    {
-      "number": "21",
-      "title": "[Documentation|文档反馈]统一 AI Core口径；更新vf产物目录；",
-      "waitHours": 2.5,
-      "overdue": false,
-      "url": "https://gitcode.com/cann/npu-simulator/issues/21"
-    }
-  ],
+  "oncallList": [],
   "committerList": [
-    {
-      "number": "4",
-      "title": "feat(detection):add data race detection",
-      "linkedIssues": [
-        "20"
-      ],
-      "mergeable": true,
-      "reason": "",
-      "waitHours": 462.5,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/4"
-    },
     {
       "number": "19",
       "title": "fix: preserve Python 3.7 HCCL backup cleanup",
@@ -105,7 +86,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 128.4,
+      "waitHours": 136.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/19"
     },
     {
@@ -116,7 +97,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 128.2,
+      "waitHours": 136.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20"
     },
     {
@@ -127,7 +108,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 128,
+      "waitHours": 136.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21"
     },
     {
@@ -138,7 +119,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 127.9,
+      "waitHours": 135.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22"
     },
     {
@@ -149,7 +130,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 127.7,
+      "waitHours": 135.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23"
     },
     {
@@ -160,7 +141,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 69.1,
+      "waitHours": 77.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/25"
     },
     {
@@ -171,7 +152,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 66.4,
+      "waitHours": 74.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26"
     },
     {
@@ -180,7 +161,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 cann-cla/yes",
-      "waitHours": 281.9,
+      "waitHours": 290,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11"
     },
     {
@@ -189,7 +170,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 8.1,
+      "waitHours": 16.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/27"
     },
     {
@@ -198,7 +179,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 2.5,
+      "waitHours": 10.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/28"
     }
   ]
