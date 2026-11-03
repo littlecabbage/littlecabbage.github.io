@@ -1,4 +1,4 @@
-总览指标 · cann/npu-simulator · 2026-11-04 01:59 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-04 07:37 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
@@ -23,15 +23,15 @@
   （无）
 
 【committer 待 Review / 合并】open PR (10，可合入 7)
-  PR #19 ✅可合入 · 停留 136.5H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
-  PR #20 ✅可合入 · 停留 136.3H → Issue #15  docs: quote multiword record command examples
-  PR #21 ✅可合入 · 停留 136.1H → Issue #16  fix: reserve separate output directories for same-second runs
-  PR #22 ✅可合入 · 停留 135.9H → Issue #17  docs: match in-page links to rendered heading IDs
-  PR #23 ✅可合入 · 停留 135.7H → Issue #18  fix: preserve first-root artifact when names collide
-  PR #25 ✅可合入 · 停留 77.1H → Issue #7  fix: multi-chip report pipeline (per-chip DB routing, -m merge, aarch64 HCCL mock)
-  PR #26 ✅可合入 · 停留 74.4H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
-  PR #11 ❌缺 cann-cla/yes · 停留 290H  docs: 修复中文标点前多余空格（1 处）
-  PR #27 ❌缺 ci-pipeline-passed · 停留 16.2H  update: 更新文件 .gitattributes
-  PR #28 ❌缺 ci-pipeline-passed · 停留 10.6H  docs：统一 AI Core口径；更新vf产物目录；
+  PR #19 ✅可合入 · 停留 142.1H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
+  PR #20 ✅可合入 · 停留 141.9H → Issue #15  docs: quote multiword record command examples
+  PR #21 ✅可合入 · 停留 141.7H → Issue #16  fix: reserve separate output directories for same-second runs
+  PR #22 ✅可合入 · 停留 141.5H → Issue #17  docs: match in-page links to rendered heading IDs
+  PR #23 ✅可合入 · 停留 141.3H → Issue #18  fix: preserve first-root artifact when names collide
+  PR #25 ✅可合入 · 停留 82.7H → Issue #7  fix: multi-chip report pipeline (per-chip DB routing, -m merge, aarch64 HCCL mock)
+  PR #26 ✅可合入 · 停留 80H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
+  PR #11 ❌缺 cann-cla/yes · 停留 295.6H  docs: 修复中文标点前多余空格（1 处）
+  PR #27 ❌缺 ci-pipeline-passed · 停留 21.8H  update: 更新文件 .gitattributes
+  PR #28 ❌缺 ci-pipeline-passed · 停留 16.2H  docs：统一 AI Core口径；更新vf产物目录；
 
 闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
