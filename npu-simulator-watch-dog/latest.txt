@@ -1,36 +1,38 @@
-总览指标 · cann/npu-simulator · 2026-11-03 09:44 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-03 17:56 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
 ❌ 不合规 (2 项)
-  闭环率：月 0% / 年 55%  (月 0/1 · 年 11/20（阈值 ≥90%）)
-      原因：月 0% 落在红区；年 55% 落在橙区（50%~90%）
-  首响达标率：月 — / 年 20%  (月 0/0 · 年 1/5（阈值 ≥80%）)
-      原因：月 无样本；年 20% 落在红区
+  闭环率：月 0% / 年 52.4%  (月 0/2 · 年 11/21（阈值 ≥90%）)
+      原因：月 0% 落在红区；年 52.4% 落在橙区（50%~90%）
+  首响达标率：月 100% / 年 33.3%  (月 1/1 · 年 2/6（阈值 ≥80%）)
+      原因：月 100% 达蓝线；年 33.3% 落在红区
 
 ✅ 合规 (0 项)
   （无）
 
 ➖ 仅展示 (6 项)
-  Issue 总数：20  (全仓 Issue)
-  开启总数：9  (当前 open)
+  Issue 总数：21  (全仓 Issue)
+  开启总数：10  (当前 open)
   平均闭环时长：月 — / 年 6.4天  (月样本 0 · 年样本 11)
-  开启未响应 超时/总数：0/0  (当前 open·非自处理·未响应)
-  首响未达标数：月 0 / 年 4  (月统计 0 · 年统计 5)
+  开启未响应 超时/总数：0/1  (当前 open·非自处理·未响应)
+  首响未达标数：月 0 / 年 4  (月统计 1 · 年统计 6)
   平均首响：月 — / 年 65.9H  (月样本 0 · 年样本 3)
 
-【oncall 待处理】待首次响应的用户问题 (0)
-  （无）
+【oncall 待处理】待首次响应的用户问题 (1)
+  #21 停留 2.5H  [Documentation|文档反馈]统一 AI Core口径；更新vf产物目录；
 
-【committer 待 Review / 合并】open PR (9，可合入 8)
-  PR #4 ✅可合入 · 停留 454.3H → Issue #20  feat(detection):add data race detection
-  PR #19 ✅可合入 · 停留 120.2H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
-  PR #20 ✅可合入 · 停留 120H → Issue #15  docs: quote multiword record command examples
-  PR #21 ✅可合入 · 停留 119.8H → Issue #16  fix: reserve separate output directories for same-second runs
-  PR #22 ✅可合入 · 停留 119.7H → Issue #17  docs: match in-page links to rendered heading IDs
-  PR #23 ✅可合入 · 停留 119.5H → Issue #18  fix: preserve first-root artifact when names collide
-  PR #25 ✅可合入 · 停留 60.9H → Issue #7  fix: multi-chip report pipeline (per-chip DB routing, -m merge, aarch64 HCCL mock)
-  PR #26 ✅可合入 · 停留 58.2H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
-  PR #11 ❌缺 cann-cla/yes · 停留 273.7H  docs: 修复中文标点前多余空格（1 处）
+【committer 待 Review / 合并】open PR (11，可合入 8)
+  PR #4 ✅可合入 · 停留 462.5H → Issue #20  feat(detection):add data race detection
+  PR #19 ✅可合入 · 停留 128.4H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
+  PR #20 ✅可合入 · 停留 128.2H → Issue #15  docs: quote multiword record command examples
+  PR #21 ✅可合入 · 停留 128H → Issue #16  fix: reserve separate output directories for same-second runs
+  PR #22 ✅可合入 · 停留 127.9H → Issue #17  docs: match in-page links to rendered heading IDs
+  PR #23 ✅可合入 · 停留 127.7H → Issue #18  fix: preserve first-root artifact when names collide
+  PR #25 ✅可合入 · 停留 69.1H → Issue #7  fix: multi-chip report pipeline (per-chip DB routing, -m merge, aarch64 HCCL mock)
+  PR #26 ✅可合入 · 停留 66.4H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
+  PR #11 ❌缺 cann-cla/yes · 停留 281.9H  docs: 修复中文标点前多余空格（1 处）
+  PR #27 ❌缺 ci-pipeline-passed · 停留 8.1H  update: 更新文件 .gitattributes
+  PR #28 ❌缺 ci-pipeline-passed · 停留 2.5H  docs：统一 AI Core口径；更新vf产物目录；
 
 闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
