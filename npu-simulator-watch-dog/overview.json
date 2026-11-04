@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-03T23:37:02.005Z",
-  "runAtCst": "2026-11-04 07:37",
+  "runAt": "2026-11-04T03:11:14.456Z",
+  "runAtCst": "2026-11-04 11:11",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -86,7 +86,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 142.1,
+      "waitHours": 145.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/19"
     },
     {
@@ -97,7 +97,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 141.9,
+      "waitHours": 145.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20"
     },
     {
@@ -108,7 +108,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 141.7,
+      "waitHours": 145.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21"
     },
     {
@@ -119,7 +119,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 141.5,
+      "waitHours": 145.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22"
     },
     {
@@ -130,7 +130,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 141.3,
+      "waitHours": 144.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23"
     },
     {
@@ -141,7 +141,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 82.7,
+      "waitHours": 86.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/25"
     },
     {
@@ -152,7 +152,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 80,
+      "waitHours": 83.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26"
     },
     {
@@ -161,17 +161,8 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 cann-cla/yes",
-      "waitHours": 295.6,
+      "waitHours": 299.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11"
-    },
-    {
-      "number": "27",
-      "title": "update: 更新文件 .gitattributes",
-      "linkedIssues": [],
-      "mergeable": false,
-      "reason": "缺 ci-pipeline-passed",
-      "waitHours": 21.8,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/27"
     },
     {
       "number": "28",
@@ -179,7 +170,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 16.2,
+      "waitHours": 19.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/28"
     }
   ]
