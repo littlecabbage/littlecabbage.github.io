@@ -1,4 +1,4 @@
-总览指标 · cann/npu-simulator · 2026-11-04 19:28 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-05 02:47 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
@@ -23,14 +23,14 @@
   （无）
 
 【committer 待 Review / 合并】open PR (9，可合入 6)
-  PR #20 ✅可合入 · 停留 153.8H → Issue #15  docs: quote multiword record command examples
-  PR #22 ✅可合入 · 停留 153.4H → Issue #17  docs: match in-page links to rendered heading IDs
-  PR #23 ✅可合入 · 停留 153.2H → Issue #18  fix: preserve first-root artifact when names collide
-  PR #26 ✅可合入 · 停留 91.9H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
-  PR #28 ✅可合入 · 停留 28H  docs：统一 AI Core口径；更新vf产物目录；
-  PR #29 ✅可合入 · 停留 7.9H → Issue #22  ci(smoke): 支持 aarch64 主机运行 pre_smoke_for_action
-  PR #11 ❌缺 cann-cla/yes · 停留 307.5H  docs: 修复中文标点前多余空格（1 处）
-  PR #19 ❌存在冲突/不可合 · 停留 153.9H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
-  PR #21 ❌存在冲突/不可合 · 停留 153.6H → Issue #16  fix: reserve separate output directories for same-second runs
+  PR #20 ✅可合入 · 停留 161.1H → Issue #15  docs: quote multiword record command examples
+  PR #22 ✅可合入 · 停留 160.7H → Issue #17  docs: match in-page links to rendered heading IDs
+  PR #23 ✅可合入 · 停留 160.5H → Issue #18  fix: preserve first-root artifact when names collide
+  PR #26 ✅可合入 · 停留 99.2H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
+  PR #28 ✅可合入 · 停留 35.4H  docs：统一 AI Core口径；更新vf产物目录；
+  PR #29 ✅可合入 · 停留 15.2H → Issue #22  ci(smoke): 支持 aarch64 主机运行 pre_smoke_for_action
+  PR #11 ❌缺 cann-cla/yes · 停留 314.8H  docs: 修复中文标点前多余空格（1 处）
+  PR #19 ❌存在冲突/不可合 · 停留 161.3H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
+  PR #21 ❌存在冲突/不可合 · 停留 160.9H → Issue #16  fix: reserve separate output directories for same-second runs
 
 闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
