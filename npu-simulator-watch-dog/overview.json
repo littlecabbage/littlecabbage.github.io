@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-05T00:29:37.994Z",
-  "runAtCst": "2026-11-05 08:29",
+  "runAt": "2026-11-05T07:16:53.123Z",
+  "runAtCst": "2026-11-05 15:16",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -33,24 +33,24 @@
   ],
   "closeLoop": {
     "issuesTotal": 22,
-    "openTotal": 10,
+    "openTotal": 8,
     "month": {
       "total": 3,
-      "closed": 1,
-      "rate": 33.3,
-      "rateColor": "red",
-      "avgCloseHours": 47.7,
+      "closed": 2,
+      "rate": 66.7,
+      "rateColor": "orange",
+      "avgCloseHours": 47.4,
       "avgCloseDays": 2,
-      "durSamples": 1
+      "durSamples": 2
     },
     "year": {
       "total": 22,
-      "closed": 12,
-      "rate": 54.5,
+      "closed": 14,
+      "rate": 63.6,
       "rateColor": "orange",
       "avgCloseHours": 144.1,
       "avgCloseDays": 6,
-      "durSamples": 12
+      "durSamples": 14
     }
   },
   "response": {
@@ -87,7 +87,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 166.8,
+      "waitHours": 173.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20"
     },
     {
@@ -98,7 +98,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 166.4,
+      "waitHours": 173.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22"
     },
     {
@@ -109,7 +109,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 166.2,
+      "waitHours": 173,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23"
     },
     {
@@ -120,28 +120,8 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 104.9,
+      "waitHours": 111.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26"
-    },
-    {
-      "number": "28",
-      "title": "docs：统一 AI Core口径；更新vf产物目录；",
-      "linkedIssues": [],
-      "mergeable": true,
-      "reason": "",
-      "waitHours": 41.1,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/28"
-    },
-    {
-      "number": "29",
-      "title": "ci(smoke): 支持 aarch64 主机运行 pre_smoke_for_action",
-      "linkedIssues": [
-        "22"
-      ],
-      "mergeable": true,
-      "reason": "",
-      "waitHours": 20.9,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/29"
     },
     {
       "number": "11",
@@ -149,7 +129,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 cann-cla/yes",
-      "waitHours": 320.5,
+      "waitHours": 327.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11"
     },
     {
@@ -160,7 +140,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合",
-      "waitHours": 167,
+      "waitHours": 173.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/19"
     },
     {
@@ -171,7 +151,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合",
-      "waitHours": 166.6,
+      "waitHours": 173.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21"
     }
   ]

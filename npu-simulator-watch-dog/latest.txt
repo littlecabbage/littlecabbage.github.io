@@ -1,10 +1,10 @@
-总览指标 · cann/npu-simulator · 2026-11-05 08:29 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-05 15:16 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
 ❌ 不合规 (2 项)
-  闭环率：月 33.3% / 年 54.5%  (月 1/3 · 年 12/22（阈值 ≥90%）)
-      原因：月 33.3% 落在红区；年 54.5% 落在橙区（50%~90%）
+  闭环率：月 66.7% / 年 63.6%  (月 2/3 · 年 14/22（阈值 ≥90%）)
+      原因：月 66.7% 落在橙区（50%~90%）；年 63.6% 落在橙区（50%~90%）
   首响达标率：月 100% / 年 33.3%  (月 1/1 · 年 2/6（阈值 ≥80%）)
       原因：月 100% 达蓝线；年 33.3% 落在红区
 
@@ -13,8 +13,8 @@
 
 ➖ 仅展示 (6 项)
   Issue 总数：22  (全仓 Issue)
-  开启总数：10  (当前 open)
-  平均闭环时长：月 2天 / 年 6天  (月样本 1 · 年样本 12)
+  开启总数：8  (当前 open)
+  平均闭环时长：月 2天 / 年 6天  (月样本 2 · 年样本 14)
   开启未响应 超时/总数：0/0  (当前 open·非自处理·未响应)
   首响未达标数：月 0 / 年 4  (月统计 1 · 年统计 6)
   平均首响：月 3.9H / 年 50.4H  (月样本 1 · 年样本 4)
@@ -22,15 +22,13 @@
 【oncall 待处理】待首次响应的用户问题 (0)
   （无）
 
-【committer 待 Review / 合并】open PR (9，可合入 6)
-  PR #20 ✅可合入 · 停留 166.8H → Issue #15  docs: quote multiword record command examples
-  PR #22 ✅可合入 · 停留 166.4H → Issue #17  docs: match in-page links to rendered heading IDs
-  PR #23 ✅可合入 · 停留 166.2H → Issue #18  fix: preserve first-root artifact when names collide
-  PR #26 ✅可合入 · 停留 104.9H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
-  PR #28 ✅可合入 · 停留 41.1H  docs：统一 AI Core口径；更新vf产物目录；
-  PR #29 ✅可合入 · 停留 20.9H → Issue #22  ci(smoke): 支持 aarch64 主机运行 pre_smoke_for_action
-  PR #11 ❌缺 cann-cla/yes · 停留 320.5H  docs: 修复中文标点前多余空格（1 处）
-  PR #19 ❌存在冲突/不可合 · 停留 167H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
-  PR #21 ❌存在冲突/不可合 · 停留 166.6H → Issue #16  fix: reserve separate output directories for same-second runs
+【committer 待 Review / 合并】open PR (7，可合入 4)
+  PR #20 ✅可合入 · 停留 173.6H → Issue #15  docs: quote multiword record command examples
+  PR #22 ✅可合入 · 停留 173.2H → Issue #17  docs: match in-page links to rendered heading IDs
+  PR #23 ✅可合入 · 停留 173H → Issue #18  fix: preserve first-root artifact when names collide
+  PR #26 ✅可合入 · 停留 111.7H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
+  PR #11 ❌缺 cann-cla/yes · 停留 327.3H  docs: 修复中文标点前多余空格（1 处）
+  PR #19 ❌存在冲突/不可合 · 停留 173.7H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
+  PR #21 ❌存在冲突/不可合 · 停留 173.4H → Issue #16  fix: reserve separate output directories for same-second runs
 
 闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
