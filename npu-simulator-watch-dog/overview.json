@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-05T15:44:44.923Z",
-  "runAtCst": "2026-11-05 23:44",
+  "runAt": "2026-11-05T22:12:59.443Z",
+  "runAtCst": "2026-11-06 06:12",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -88,7 +88,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 182,
+      "waitHours": 188.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20"
     },
     {
@@ -99,7 +99,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 181.5,
+      "waitHours": 187.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23"
     },
     {
@@ -110,7 +110,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 120.2,
+      "waitHours": 126.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26"
     },
     {
@@ -119,7 +119,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 cann-cla/yes",
-      "waitHours": 335.7,
+      "waitHours": 342.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11"
     },
     {
@@ -130,7 +130,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合",
-      "waitHours": 182.2,
+      "waitHours": 188.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/19"
     },
     {
@@ -141,7 +141,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合",
-      "waitHours": 181.8,
+      "waitHours": 188.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21"
     },
     {
@@ -152,7 +152,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 181.7,
+      "waitHours": 188.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22"
     },
     {
@@ -164,7 +164,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 6.7,
+      "waitHours": 13.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/30"
     }
   ]
