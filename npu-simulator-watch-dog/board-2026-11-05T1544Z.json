@@ -1,0 +1,171 @@
+{
+  "repo": "cann/npu-simulator",
+  "runAt": "2026-11-05T15:44:44.923Z",
+  "runAtCst": "2026-11-05 23:44",
+  "tz": "UTC+8",
+  "cursor": {
+    "year": 2026,
+    "month": 11
+  },
+  "timeRule": "working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)",
+  "holidayTableYears": [
+    2024,
+    2025,
+    2026
+  ],
+  "selfHandledIssues": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "7",
+    "10",
+    "11",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "22",
+    "23"
+  ],
+  "closeLoop": {
+    "issuesTotal": 23,
+    "openTotal": 9,
+    "month": {
+      "total": 4,
+      "closed": 2,
+      "rate": 50,
+      "rateColor": "orange",
+      "avgCloseHours": 47.4,
+      "avgCloseDays": 2,
+      "durSamples": 2
+    },
+    "year": {
+      "total": 23,
+      "closed": 14,
+      "rate": 60.9,
+      "rateColor": "orange",
+      "avgCloseHours": 144.1,
+      "avgCloseDays": 6,
+      "durSamples": 14
+    }
+  },
+  "response": {
+    "openNoResponse": {
+      "total": 0,
+      "overdue": 0
+    },
+    "month": {
+      "total": 1,
+      "qualified": 1,
+      "unqualified": 0,
+      "rate": 100,
+      "rateColor": "blue",
+      "avgFirstRespHours": 3.9,
+      "respSamples": 1
+    },
+    "year": {
+      "total": 6,
+      "qualified": 2,
+      "unqualified": 4,
+      "rate": 33.3,
+      "rateColor": "red",
+      "avgFirstRespHours": 50.4,
+      "respSamples": 4
+    }
+  },
+  "oncallList": [],
+  "committerList": [
+    {
+      "number": "20",
+      "title": "docs: quote multiword record command examples",
+      "linkedIssues": [
+        "15"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 182,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20"
+    },
+    {
+      "number": "23",
+      "title": "fix: preserve first-root artifact when names collide",
+      "linkedIssues": [
+        "18"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 181.5,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23"
+    },
+    {
+      "number": "26",
+      "title": "fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失",
+      "linkedIssues": [
+        "19"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 120.2,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26"
+    },
+    {
+      "number": "11",
+      "title": "docs: 修复中文标点前多余空格（1 处）",
+      "linkedIssues": [],
+      "mergeable": false,
+      "reason": "缺 cann-cla/yes",
+      "waitHours": 335.7,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11"
+    },
+    {
+      "number": "19",
+      "title": "fix: preserve Python 3.7 HCCL backup cleanup",
+      "linkedIssues": [
+        "14"
+      ],
+      "mergeable": false,
+      "reason": "存在冲突/不可合",
+      "waitHours": 182.2,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/19"
+    },
+    {
+      "number": "21",
+      "title": "fix: reserve separate output directories for same-second runs",
+      "linkedIssues": [
+        "16"
+      ],
+      "mergeable": false,
+      "reason": "存在冲突/不可合",
+      "waitHours": 181.8,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21"
+    },
+    {
+      "number": "22",
+      "title": "docs: match in-page links to rendered heading IDs",
+      "linkedIssues": [
+        "17"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 181.7,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22"
+    },
+    {
+      "number": "30",
+      "title": "ci: 增加 Actions 冒烟测试并修复 wheel 与空 DB 报告问题",
+      "linkedIssues": [
+        "23",
+        "22"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 6.7,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/30"
+    }
+  ]
+}
