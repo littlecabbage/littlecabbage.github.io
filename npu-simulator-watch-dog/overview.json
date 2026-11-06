@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-06T11:24:08.468Z",
-  "runAtCst": "2026-11-06 19:24",
+  "runAt": "2026-11-06T18:19:10.074Z",
+  "runAtCst": "2026-11-07 02:19",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -87,7 +87,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 201.7,
+      "waitHours": 206.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20"
     },
     {
@@ -98,7 +98,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 201.1,
+      "waitHours": 205.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23"
     },
     {
@@ -109,7 +109,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 139.8,
+      "waitHours": 144.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26"
     },
     {
@@ -118,7 +118,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 cann-cla/yes",
-      "waitHours": 355.4,
+      "waitHours": 360,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11"
     },
     {
@@ -129,7 +129,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合",
-      "waitHours": 201.9,
+      "waitHours": 206.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/19"
     },
     {
@@ -139,8 +139,8 @@
         "16"
       ],
       "mergeable": false,
-      "reason": "存在冲突/不可合",
-      "waitHours": 201.5,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 206.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21"
     },
     {
@@ -151,7 +151,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 201.3,
+      "waitHours": 205.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22"
     },
     {
@@ -162,7 +162,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 5.6,
+      "waitHours": 10.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/31"
     }
   ]
