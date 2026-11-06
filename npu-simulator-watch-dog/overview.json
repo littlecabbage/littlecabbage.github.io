@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-06T02:46:21.284Z",
-  "runAtCst": "2026-11-06 10:46",
+  "runAt": "2026-11-06T11:24:08.468Z",
+  "runAtCst": "2026-11-06 19:24",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -28,24 +28,25 @@
     "17",
     "18",
     "19",
-    "20"
+    "20",
+    "26"
   ],
   "closeLoop": {
-    "issuesTotal": 25,
-    "openTotal": 9,
+    "issuesTotal": 26,
+    "openTotal": 10,
     "month": {
-      "total": 6,
+      "total": 7,
       "closed": 4,
-      "rate": 66.7,
+      "rate": 57.1,
       "rateColor": "orange",
       "avgCloseHours": 39.7,
       "avgCloseDays": 1.7,
       "durSamples": 4
     },
     "year": {
-      "total": 25,
+      "total": 26,
       "closed": 16,
-      "rate": 64,
+      "rate": 61.5,
       "rateColor": "orange",
       "avgCloseHours": 130.1,
       "avgCloseDays": 5.4,
@@ -54,7 +55,7 @@
   },
   "response": {
     "openNoResponse": {
-      "total": 2,
+      "total": 0,
       "overdue": 0
     },
     "month": {
@@ -63,8 +64,8 @@
       "unqualified": 2,
       "rate": 60,
       "rateColor": "orange",
-      "avgFirstRespHours": 3.9,
-      "respSamples": 1
+      "avgFirstRespHours": 1.5,
+      "respSamples": 3
     },
     "year": {
       "total": 10,
@@ -72,26 +73,11 @@
       "unqualified": 6,
       "rate": 40,
       "rateColor": "red",
-      "avgFirstRespHours": 50.4,
-      "respSamples": 4
+      "avgFirstRespHours": 33.7,
+      "respSamples": 6
     }
   },
-  "oncallList": [
-    {
-      "number": "25",
-      "title": "[Requirement|需求/特性]: Actions smoke 测试脚本支持 ARM（aarch64）主机",
-      "waitHours": 0.2,
-      "overdue": false,
-      "url": "https://gitcode.com/cann/npu-simulator/issues/25"
-    },
-    {
-      "number": "24",
-      "title": "\"[Bug-Report|缺陷反馈][Bug-Report|缺陷反馈]: 空 kernel DB 导致 npusim record -g 报告生成失败",
-      "waitHours": 0.2,
-      "overdue": false,
-      "url": "https://gitcode.com/cann/npu-simulator/issues/24"
-    }
-  ],
+  "oncallList": [],
   "committerList": [
     {
       "number": "20",
@@ -101,7 +87,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 193.1,
+      "waitHours": 201.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20"
     },
     {
@@ -112,7 +98,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 192.5,
+      "waitHours": 201.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23"
     },
     {
@@ -123,7 +109,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 131.2,
+      "waitHours": 139.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26"
     },
     {
@@ -132,7 +118,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 cann-cla/yes",
-      "waitHours": 346.8,
+      "waitHours": 355.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11"
     },
     {
@@ -143,7 +129,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合",
-      "waitHours": 193.2,
+      "waitHours": 201.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/19"
     },
     {
@@ -154,7 +140,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合",
-      "waitHours": 192.9,
+      "waitHours": 201.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21"
     },
     {
@@ -165,8 +151,19 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 192.7,
+      "waitHours": 201.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22"
+    },
+    {
+      "number": "31",
+      "title": "fix(report): guard the summary metrics against zero denominators",
+      "linkedIssues": [
+        "26"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 5.6,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/31"
     }
   ]
 }
