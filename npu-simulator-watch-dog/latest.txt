@@ -1,35 +1,35 @@
-总览指标 · cann/npu-simulator · 2026-11-06 06:12 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-06 10:46 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
 ❌ 不合规 (2 项)
-  闭环率：月 50% / 年 60.9%  (月 2/4 · 年 14/23（阈值 ≥90%）)
-      原因：月 50% 落在橙区（50%~90%）；年 60.9% 落在橙区（50%~90%）
-  首响达标率：月 100% / 年 33.3%  (月 1/1 · 年 2/6（阈值 ≥80%）)
-      原因：月 100% 达蓝线；年 33.3% 落在红区
+  闭环率：月 66.7% / 年 64%  (月 4/6 · 年 16/25（阈值 ≥90%）)
+      原因：月 66.7% 落在橙区（50%~90%）；年 64% 落在橙区（50%~90%）
+  首响达标率：月 60% / 年 40%  (月 3/5 · 年 4/10（阈值 ≥80%）)
+      原因：月 60% 落在橙区（50%~80%）；年 40% 落在红区
 
 ✅ 合规 (0 项)
   （无）
 
 ➖ 仅展示 (6 项)
-  Issue 总数：23  (全仓 Issue)
+  Issue 总数：25  (全仓 Issue)
   开启总数：9  (当前 open)
-  平均闭环时长：月 2天 / 年 6天  (月样本 2 · 年样本 14)
-  开启未响应 超时/总数：0/0  (当前 open·非自处理·未响应)
-  首响未达标数：月 0 / 年 4  (月统计 1 · 年统计 6)
+  平均闭环时长：月 1.7天 / 年 5.4天  (月样本 4 · 年样本 16)
+  开启未响应 超时/总数：0/2  (当前 open·非自处理·未响应)
+  首响未达标数：月 2 / 年 6  (月统计 5 · 年统计 10)
   平均首响：月 3.9H / 年 50.4H  (月样本 1 · 年样本 4)
 
-【oncall 待处理】待首次响应的用户问题 (0)
-  （无）
+【oncall 待处理】待首次响应的用户问题 (2)
+  #25 停留 0.2H  [Requirement|需求/特性]: Actions smoke 测试脚本支持 ARM（aarch64）主机
+  #24 停留 0.2H  "[Bug-Report|缺陷反馈][Bug-Report|缺陷反馈]: 空 kernel DB 导致 npusim record -g 报告生成失败
 
-【committer 待 Review / 合并】open PR (8，可合入 3)
-  PR #20 ✅可合入 · 停留 188.5H → Issue #15  docs: quote multiword record command examples
-  PR #23 ✅可合入 · 停留 187.9H → Issue #18  fix: preserve first-root artifact when names collide
-  PR #26 ✅可合入 · 停留 126.6H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
-  PR #11 ❌缺 cann-cla/yes · 停留 342.2H  docs: 修复中文标点前多余空格（1 处）
-  PR #19 ❌存在冲突/不可合 · 停留 188.7H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
-  PR #21 ❌存在冲突/不可合 · 停留 188.3H → Issue #16  fix: reserve separate output directories for same-second runs
-  PR #22 ❌缺 ci-pipeline-passed · 停留 188.1H → Issue #17  docs: match in-page links to rendered heading IDs
-  PR #30 ❌缺 ci-pipeline-passed · 停留 13.2H → Issue #23,#22  ci: 增加 Actions 冒烟测试并修复 wheel 与空 DB 报告问题
+【committer 待 Review / 合并】open PR (7，可合入 3)
+  PR #20 ✅可合入 · 停留 193.1H → Issue #15  docs: quote multiword record command examples
+  PR #23 ✅可合入 · 停留 192.5H → Issue #18  fix: preserve first-root artifact when names collide
+  PR #26 ✅可合入 · 停留 131.2H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
+  PR #11 ❌缺 cann-cla/yes · 停留 346.8H  docs: 修复中文标点前多余空格（1 处）
+  PR #19 ❌存在冲突/不可合 · 停留 193.2H → Issue #14  fix: preserve Python 3.7 HCCL backup cleanup
+  PR #21 ❌存在冲突/不可合 · 停留 192.9H → Issue #16  fix: reserve separate output directories for same-second runs
+  PR #22 ❌缺 ci-pipeline-passed · 停留 192.7H → Issue #17  docs: match in-page links to rendered heading IDs
 
 闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
