@@ -1,0 +1,41 @@
+总览指标 · cann/npu-simulator · 2026-11-08 04:37 (UTC+8)
+归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
+概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
+
+❌ 不合规 (2 项)
+  闭环率：月 57.1% / 年 61.5%  (月 4/7 · 年 16/26（阈值 ≥90%）)
+      原因：月 57.1% 落在橙区（50%~90%）；年 61.5% 落在橙区（50%~90%）
+  首响达标率：月 60% / 年 40%  (月 3/5 · 年 4/10（阈值 ≥80%）)
+      原因：月 60% 落在橙区（50%~80%）；年 40% 落在红区
+
+✅ 合规 (0 项)
+  （无）
+
+➖ 仅展示 (6 项)
+  Issue 总数：26  (全仓 Issue)
+  开启总数：10  (当前 open)
+  平均闭环时长：月 1.7天 / 年 5.4天  (月样本 4 · 年样本 16)
+  开启未响应 超时/总数：0/0  (当前 open·非自处理·未响应)
+  首响未达标数：月 2 / 年 6  (月统计 5 · 年统计 10)
+  平均首响：月 1.5H / 年 33.7H  (月样本 3 · 年样本 6)
+
+【oncall 待处理】待首次响应的用户问题 (0)
+  （无）
+
+【committer 待 Review / 合并】open PR (7，可合入 3 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 1)
+  PR #20 ✅可合入 · 停留 206.3H → Issue #15  docs: quote multiword record command examples
+      └─ 🤖 值得合入：为 record 帮助与中文指南中的多词命令示例补上引号 ｜ 建议：已获 approved 且门禁全绿无阻塞，建议直接合入
+  PR #23 ✅可合入 · 停留 205.7H → Issue #18  fix: preserve first-root artifact when names collide
+      └─ 🤖 值得合入：修复多来源目录同名产物归档时后来源覆盖首选来源的问题 ｜ 建议：门禁全绿且关联 Issue 已闭环，建议直接合入
+  PR #26 ✅可合入 · 停留 144.4H → Issue #19  fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
+      └─ 🤖 值得合入：保留 trace 分片序号，修复 report 后处理覆盖分片导致事件丢失 ｜ 建议：已获 approved 且门禁全绿，建议直接合入
+  PR #11 ❌CLA未签(cann-cla/no) · 停留 360H  docs: 修复中文标点前多余空格（1 处）
+      └─ 🤖 低价值候选：仅删除文档中1处中文标点前多余空格 ｜ 建议：建议直接关闭；如保留需作者补签 CLA 并重跑门禁
+  PR #21 ❌缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 206.1H → Issue #16  fix: reserve separate output directories for same-second runs
+      └─ 🤖 阻塞待解：用独占 mkdir 分配 _N 后缀目录，避免同秒运行复用输出目录 ｜ 建议：需作者 squash 提交并补 ci-pipeline-passed 后再合入
+  PR #22 ❌缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 205.9H → Issue #17  docs: match in-page links to rendered heading IDs
+      └─ 🤖 阻塞待解：修正README、用户指南与安全声明共四处页内锚点链接 ｜ 建议：需作者squash提交并重跑CI，门禁全绿后再合入
+  PR #31 ❌缺 ci-pipeline-passed · 停留 10.2H → Issue #26  fix(report): guard the summary metrics against zero denominators
+      └─ 🤖 阻塞待解：为 summary 报告两处除法补零分母保护，避免报告崩溃 ｜ 建议：需补 ci-pipeline-passed 门禁并重跑 CI 全绿后再合入
+
+闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
