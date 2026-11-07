@@ -1,0 +1,267 @@
+{
+  "repo": "cann/npu-simulator",
+  "runAt": "2026-11-07T06:37:28.076Z",
+  "runAtCst": "2026-11-07 14:37",
+  "tz": "UTC+8",
+  "cursor": {
+    "year": 2026,
+    "month": 11
+  },
+  "timeRule": "working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)",
+  "holidayTableYears": [
+    2024,
+    2025,
+    2026
+  ],
+  "prReviewModel": "cannbot/deepseek-v4.1-flash",
+  "selfHandledIssues": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "7",
+    "10",
+    "11",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "26"
+  ],
+  "closeLoop": {
+    "issuesTotal": 26,
+    "openTotal": 10,
+    "month": {
+      "total": 7,
+      "closed": 4,
+      "rate": 57.1,
+      "rateColor": "orange",
+      "avgCloseHours": 39.7,
+      "avgCloseDays": 1.7,
+      "durSamples": 4
+    },
+    "year": {
+      "total": 26,
+      "closed": 16,
+      "rate": 61.5,
+      "rateColor": "orange",
+      "avgCloseHours": 130.1,
+      "avgCloseDays": 5.4,
+      "durSamples": 16
+    }
+  },
+  "response": {
+    "openNoResponse": {
+      "total": 0,
+      "overdue": 0
+    },
+    "month": {
+      "total": 5,
+      "qualified": 3,
+      "unqualified": 2,
+      "rate": 60,
+      "rateColor": "orange",
+      "avgFirstRespHours": 1.5,
+      "respSamples": 3
+    },
+    "year": {
+      "total": 10,
+      "qualified": 4,
+      "unqualified": 6,
+      "rate": 40,
+      "rateColor": "red",
+      "avgFirstRespHours": 33.7,
+      "respSamples": 6
+    }
+  },
+  "oncallList": [],
+  "committerList": [
+    {
+      "number": "20",
+      "title": "docs: quote multiword record command examples",
+      "linkedIssues": [
+        "15"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 206.3,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20",
+      "agentReview": {
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "为 record 帮助与中文指南中的多词命令示例补上引号",
+        "issue_alignment": "已针对性修复 #15 命令示例缺引号问题",
+        "committer_action": "已获 approved 且门禁全绿无阻塞，建议直接合入",
+        "detail_points": [
+          "main.py 中 user_app 帮助改为带引号示例，并说明含空格命令需整体作为一个参数传入",
+          "同步修正 01_user_guide.md 参数表，作者已用 argparse 复现验证；仅改文档与提示、风险低"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-07T06:07:14.774Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "23",
+      "title": "fix: preserve first-root artifact when names collide",
+      "linkedIssues": [
+        "18"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 205.7,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23",
+      "agentReview": {
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "修复多来源目录同名产物归档时后来源覆盖首选来源的问题",
+        "issue_alignment": "已针对性修复 #18 三处归档覆盖缺陷",
+        "committer_action": "门禁全绿且关联 Issue 已闭环，建议直接合入",
+        "detail_points": [
+          "三个归档入口新增按文件名去重，仅保留首个来源，符合优先级语义",
+          "新增三路径回归用例覆盖 FIRST/SECOND 场景，含目标不可用清理分支验证"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-07T06:07:01.636Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "26",
+      "title": "fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失",
+      "linkedIssues": [
+        "19"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 144.4,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26",
+      "agentReview": {
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "保留 trace 分片序号，修复 report 后处理覆盖分片导致事件丢失",
+        "issue_alignment": "针对性修复 #19 分片覆盖与合并漏读缺陷",
+        "committer_action": "已获 approved 且门禁全绿，建议直接合入",
+        "detail_points": [
+          "_TRACE_REPORT_RE 捕获分片序号，重命名不再覆盖同名文件",
+          "TRACE_FILE_RE 支持带序号分片，merge-trace 可读全部分片",
+          "新增两个回归测试覆盖分片保留与合并读取场景"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-07T06:06:58.824Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "11",
+      "title": "docs: 修复中文标点前多余空格（1 处）",
+      "linkedIssues": [],
+      "mergeable": false,
+      "reason": "CLA未签(cann-cla/no)",
+      "waitHours": 360,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11",
+      "agentReview": {
+        "verdict": "LOW_VALUE",
+        "verdict_label": "🤖 低价值候选",
+        "summary": "仅删除文档中1处中文标点前多余空格",
+        "issue_alignment": "无关联 Issue，纯排版修正",
+        "committer_action": "建议直接关闭；如保留需作者补签 CLA 并重跑门禁",
+        "detail_points": [
+          "diff 仅 1 行空格调整，属表面改动，无实质代码或逻辑变更",
+          "cann-cla/no 未签署且无关联 Issue、无测试，合入收益极低"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-07T06:07:19.094Z"
+      },
+      "triageVerdict": "CLOSE"
+    },
+    {
+      "number": "21",
+      "title": "fix: reserve separate output directories for same-second runs",
+      "linkedIssues": [
+        "16"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
+      "waitHours": 206.1,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "用独占 mkdir 分配 _N 后缀目录，避免同秒运行复用输出目录",
+        "issue_alignment": "已针对性修复 #16 同秒目录复用缺陷",
+        "committer_action": "需作者 squash 提交并补 ci-pipeline-passed 后再合入",
+        "detail_points": [
+          "create_unique_target_dir 以独占 mkdir 抢锁并递增后缀，消除存在即复用竞态，ktest 与 record 共用同一实现",
+          "runtime.py 改用 copy2+unlink 兼容 Python 3.7，保留缺失容忍但不再吞掉其他异常，方向正确",
+          "两种模式各补一个同秒回归测试（46 行），但需确认重试边界与 _N 目录命名上限是否被测试覆盖",
+          "门禁仍缺 ci-pipeline-passed 且带 needs-squash，需压缩为单提交并重跑全量兼容性检查"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-07T06:07:10.794Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "22",
+      "title": "docs: match in-page links to rendered heading IDs",
+      "linkedIssues": [
+        "17"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
+      "waitHours": 205.9,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "修正README、用户指南与安全声明共四处页内锚点链接",
+        "issue_alignment": "针对性修复 #17 锚点不匹配",
+        "committer_action": "需作者squash提交并重跑CI，门禁全绿后再合入",
+        "detail_points": [
+          "diff 仅调整 Markdown 链接片段，无代码改动，风险极低",
+          "缺 ci-pipeline-passed，且带 needs-squash，CI 多次未通过"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-07T06:07:05.915Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "31",
+      "title": "fix(report): guard the summary metrics against zero denominators",
+      "linkedIssues": [
+        "26"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 10.2,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/31",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "为 summary 报告两处除法补零分母保护，避免报告崩溃",
+        "issue_alignment": "针对性修复 #26 除零崩溃缺陷",
+        "committer_action": "需补 ci-pipeline-passed 门禁并重跑 CI 全绿后再合入",
+        "detail_points": [
+          "get_imbalance_ratio 过滤零跨度核并空列表返回 0.0，规避 ZeroDivisionError",
+          "建议同步为标量指令占比补零分母保护，并补一条零跨度单测"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-07T06:06:55.913Z"
+      },
+      "triageVerdict": "KEEP"
+    }
+  ]
+}
