@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-09T08:37:21.888Z",
-  "generatedAtCst": "2026-11-09 16:37",
+  "generatedAt": "2026-11-09T09:37:33.544Z",
+  "generatedAtCst": "2026-11-09 17:37",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 26,
     "issues_keep": 26,
     "issues_close": 0,
-    "prs_open": 7,
+    "prs_open": 8,
     "prs_merge_ready": 3,
     "prs_low_value": 1,
     "cache_hits": 7,
-    "agent_calls": 0
+    "agent_calls": 1
   },
   "reviews": {
     "11": {
@@ -353,6 +353,52 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-07T06:06:55.913Z"
+      }
+    },
+    "32": {
+      "number": 32,
+      "title": "feat: --pv 替换为 --sim_mode，支持 ca/pv 两种仿真模式",
+      "author": "zhiweiyuan",
+      "fingerprint": "1d4f8e7e48a68e77",
+      "triage_verdict": "KEEP",
+      "guard_allowed": false,
+      "verdict_reasons": [
+        "substantive_diff: 6 file(s)",
+        "adds_tests"
+      ],
+      "signals": [
+        "pr_substantive_diff",
+        "pr_has_tests"
+      ],
+      "merge_ready": false,
+      "blockers": [
+        "missing_label:ci-pipeline-passed"
+      ],
+      "diff_stats": {
+        "files": 6,
+        "added_lines": 81,
+        "removed_lines": 22,
+        "surface_files": 0,
+        "substantive_files": 6,
+        "test_files": 2,
+        "test_added_lines": 48,
+        "docs_only": false,
+        "files_without_patch": 0
+      },
+      "linked_issues": [],
+      "agent_review": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "用 --sim_mode {ca,pv} 替代 --pv 布尔参数，默认 ca 保持原行为",
+        "issue_alignment": "无关联 Issue，属 CLI 参数重构与测试补充",
+        "committer_action": "需补齐 ci-pipeline-passed 标签并确认全量测试通过后再合入",
+        "detail_points": [
+          "argparse 用 choices 校验 --sim_mode，非法值退出码 2，type=str.lower 实现大小写不敏感，接口语义更清晰",
+          "normalize_sim_mode 归一化为 CA/PV 后注入 CAMODEL_SIM_TYPE，下游 runtime 无需改动，兼容性风险低"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-09T09:37:33.537Z"
       }
     }
   }

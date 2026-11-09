@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-09T08:37:22.023Z",
-  "runAtCst": "2026-11-09 16:37",
+  "runAt": "2026-11-09T09:37:33.684Z",
+  "runAtCst": "2026-11-09 17:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -88,7 +88,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 222.9,
+      "waitHours": 223.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -114,7 +114,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 222.3,
+      "waitHours": 223.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -140,7 +140,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 161,
+      "waitHours": 162,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -165,7 +165,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "CLA未签(cann-cla/no)",
-      "waitHours": 376.6,
+      "waitHours": 377.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11",
       "agentReview": {
         "verdict": "LOW_VALUE",
@@ -191,7 +191,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 222.7,
+      "waitHours": 223.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -219,7 +219,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 222.5,
+      "waitHours": 223.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -245,7 +245,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 26.8,
+      "waitHours": 27.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/31",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -260,6 +260,30 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-07T06:06:55.913Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "32",
+      "title": "feat: --pv 替换为 --sim_mode，支持 ca/pv 两种仿真模式",
+      "linkedIssues": [],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 0.1,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/32",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "用 --sim_mode {ca,pv} 替代 --pv 布尔参数，默认 ca 保持原行为",
+        "issue_alignment": "无关联 Issue，属 CLI 参数重构与测试补充",
+        "committer_action": "需补齐 ci-pipeline-passed 标签并确认全量测试通过后再合入",
+        "detail_points": [
+          "argparse 用 choices 校验 --sim_mode，非法值退出码 2，type=str.lower 实现大小写不敏感，接口语义更清晰",
+          "normalize_sim_mode 归一化为 CA/PV 后注入 CAMODEL_SIM_TYPE，下游 runtime 无需改动，兼容性风险低"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-09T09:37:33.537Z"
       },
       "triageVerdict": "KEEP"
     }

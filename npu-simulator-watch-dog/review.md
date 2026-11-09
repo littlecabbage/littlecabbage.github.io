@@ -3,7 +3,7 @@
 | 维度 | 详情 |
 |---|---|
 | **目标仓库** | [cann/npu-simulator](https://gitcode.com/cann/npu-simulator)（GitCode） |
-| **巡检时间** | 2026-11-09 16:37 (UTC+8) |
+| **巡检时间** | 2026-11-09 17:37 (UTC+8) |
 | **分析引擎** | `gitcode-issue-triage` 确定性守卫 + Pi Agent (`cannbot/deepseek-v4.1-flash`) |
 | **判定原则** | 宁漏勿错：强灌水信号 + 无安全否决 → 低价值候选；有任何实质代码/测试/关联 Issue → 保留并给出合路建议 |
 
@@ -12,15 +12,16 @@
 ## 一、执行摘要（供 on-call & committer 速览）
 
 - **Issue 巡检**：共扫描 **26** 条 Issue，判定 KEEP **26** / CLOSE 候选 **0** / 待人工复核 **0**。
-- **Open PR 总览（共 7 个）**：
+- **Open PR 总览（共 8 个）**：
   - ✅ **可立即合入（3 个）**：#26、#23、#20
-  - ⚠️ **实质贡献但门禁阻塞（3 个）**：#31、#22、#21
+  - ⚠️ **实质贡献但门禁阻塞（4 个）**：#32、#31、#22、#21
   - 🧹 **低价值/表面改动候选（1 个）**：#11
 
 ## 二、Open PR 逐条深度评审与行动清单
 
 | PR | AI 结论 | 合路门禁 | 关联 Issue | 改动规模 (实质文件) | AI 改动摘要与关联对齐 | committer 建议动作 |
 |---|---|---|---|---|---|---|
+| [#32](https://gitcode.com/cann/npu-simulator/pulls/32) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | — | +81/-22 (6/6 实质) | 用 --sim_mode {ca,pv} 替代 --pv 布尔参数，默认 ca 保持原行为（无关联 Issue，属 CLI 参数重构与测试补充） | 需补齐 ci-pipeline-passed 标签并确认全量测试通过后再合入 |
 | [#31](https://gitcode.com/cann/npu-simulator/pulls/31) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | [#26](https://gitcode.com/cann/npu-simulator/issues/26) | +7/-2 (1/1 实质) | 为 summary 报告两处除法补零分母保护，避免报告崩溃（针对性修复 #26 除零崩溃缺陷） | 需补 ci-pipeline-passed 门禁并重跑 CI 全绿后再合入 |
 | [#26](https://gitcode.com/cann/npu-simulator/pulls/26) | **🤖 值得合入** | ✅ 可合入 (已 approved) | [#19](https://gitcode.com/cann/npu-simulator/issues/19) | +136/-31 (4/4 实质) | 保留 trace 分片序号，修复 report 后处理覆盖分片导致事件丢失（针对性修复 #19 分片覆盖与合并漏读缺陷） | 已获 approved 且门禁全绿，建议直接合入 |
 | [#23](https://gitcode.com/cann/npu-simulator/pulls/23) | **🤖 值得合入** | ✅ 可合入 | [#18](https://gitcode.com/cann/npu-simulator/issues/18) | +34/-3 (2/2 实质) | 修复多来源目录同名产物归档时后来源覆盖首选来源的问题（已针对性修复 #18 三处归档覆盖缺陷） | 门禁全绿且关联 Issue 已闭环，建议直接合入 |
@@ -29,9 +30,19 @@
 | [#20](https://gitcode.com/cann/npu-simulator/pulls/20) | **🤖 值得合入** | ✅ 可合入 (已 approved) | [#15](https://gitcode.com/cann/npu-simulator/issues/15) | +3/-2 (2/2 实质) | 为 record 帮助与中文指南中的多词命令示例补上引号（已针对性修复 #15 命令示例缺引号问题） | 已获 approved 且门禁全绿无阻塞，建议直接合入 |
 | [#11](https://gitcode.com/cann/npu-simulator/pulls/11) | **🤖 低价值候选** | ❌ CLA 未签 (cann-cla/no)；缺 cann-cla/yes | — | +1/-1 (0/1 实质) | 仅删除文档中1处中文标点前多余空格（无关联 Issue，纯排版修正） | 建议直接关闭；如保留需作者补签 CLA 并重跑门禁 |
 
+### PR #32：feat: --pv 替换为 --sim_mode，支持 ca/pv 两种仿真模式
+
+- **作者**：`@zhiweiyuan` · **停留自然时长**：0.1h · **AI 判定**：**🤖 阻塞待解**
+- **代码规模**：6 个文件（实质改动文件 6 个，表面改动文件 0 个，新增测试 +48 行）
+- **关联 Issue 对齐**：无关联 Issue，属 CLI 参数重构与测试补充
+- **核心改动摘要**：用 --sim_mode {ca,pv} 替代 --pv 布尔参数，默认 ca 保持原行为
+  - argparse 用 choices 校验 --sim_mode，非法值退出码 2，type=str.lower 实现大小写不敏感，接口语义更清晰
+  - normalize_sim_mode 归一化为 CA/PV 后注入 CAMODEL_SIM_TYPE，下游 runtime 无需改动，兼容性风险低
+- **committer 建议动作**：**需补齐 ci-pipeline-passed 标签并确认全量测试通过后再合入**
+
 ### PR #31：fix(report): guard the summary metrics against zero denominators
 
-- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：74.8h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：75.8h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性修复 #26 除零崩溃缺陷
 - **核心改动摘要**：为 summary 报告两处除法补零分母保护，避免报告崩溃
@@ -41,7 +52,7 @@
 
 ### PR #26：fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失
 
-- **作者**：`@lizhe_li` · **停留自然时长**：257h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@lizhe_li` · **停留自然时长**：258h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：4 个文件（实质改动文件 4 个，表面改动文件 0 个，新增测试 +67 行）
 - **关联 Issue 对齐**：针对性修复 #19 分片覆盖与合并漏读缺陷
 - **核心改动摘要**：保留 trace 分片序号，修复 report 后处理覆盖分片导致事件丢失
@@ -52,7 +63,7 @@
 
 ### PR #23：fix: preserve first-root artifact when names collide
 
-- **作者**：`@gxhgxh2475698` · **停留自然时长**：318.3h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@gxhgxh2475698` · **停留自然时长**：319.3h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +25 行）
 - **关联 Issue 对齐**：已针对性修复 #18 三处归档覆盖缺陷
 - **核心改动摘要**：修复多来源目录同名产物归档时后来源覆盖首选来源的问题
@@ -62,7 +73,7 @@
 
 ### PR #22：docs: match in-page links to rendered heading IDs
 
-- **作者**：`@gxhgxh2475698` · **停留自然时长**：318.5h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@gxhgxh2475698` · **停留自然时长**：319.5h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：3 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复#17锚点不匹配缺陷
 - **核心改动摘要**：修正README等三份文档共4处页内锚点链接，匹配GitCode渲染标题ID
@@ -72,7 +83,7 @@
 
 ### PR #21：fix: reserve separate output directories for same-second runs
 
-- **作者**：`@gxhgxh2475698` · **停留自然时长**：318.7h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@gxhgxh2475698` · **停留自然时长**：319.7h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：5 个文件（实质改动文件 5 个，表面改动文件 0 个，新增测试 +46 行）
 - **关联 Issue 对齐**：已针对性修复 #16 同秒目录复用缺陷
 - **核心改动摘要**：用独占 mkdir 分配 _N 后缀目录，避免同秒运行复用输出目录
@@ -84,7 +95,7 @@
 
 ### PR #20：docs: quote multiword record command examples
 
-- **作者**：`@gxhgxh2475698` · **停留自然时长**：318.9h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@gxhgxh2475698` · **停留自然时长**：319.9h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #15 命令示例缺引号问题
 - **核心改动摘要**：为 record 帮助与中文指南中的多词命令示例补上引号
@@ -94,7 +105,7 @@
 
 ### PR #11：docs: 修复中文标点前多余空格（1 处）
 
-- **作者**：`@gcw_2C7pfVg4` · **停留自然时长**：566h · **AI 判定**：**🤖 低价值候选**
+- **作者**：`@gcw_2C7pfVg4` · **停留自然时长**：567h · **AI 判定**：**🤖 低价值候选**
 - **代码规模**：1 个文件（实质改动文件 0 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，纯排版修正
 - **核心改动摘要**：仅删除文档中1处中文标点前多余空格
