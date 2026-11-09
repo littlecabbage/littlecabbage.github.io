@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-09T11:37:29.710Z",
-  "generatedAtCst": "2026-11-09 19:37",
+  "generatedAt": "2026-11-09T12:37:42.677Z",
+  "generatedAtCst": "2026-11-09 20:37",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 26,
     "issues_keep": 26,
     "issues_close": 0,
-    "prs_open": 9,
-    "prs_merge_ready": 3,
+    "prs_open": 10,
+    "prs_merge_ready": 4,
     "prs_low_value": 2,
     "cache_hits": 8,
-    "agent_calls": 1
+    "agent_calls": 2
   },
   "reviews": {
     "11": {
@@ -405,7 +405,7 @@
       "number": 33,
       "title": "Align UbAccessType enum with data contract",
       "author": "fomichevoleg5",
-      "fingerprint": "5823f7564926450a",
+      "fingerprint": "9e24b541fa48dea2",
       "triage_verdict": "CLOSE",
       "guard_allowed": true,
       "verdict_reasons": [],
@@ -413,10 +413,8 @@
         "no_substantive_change",
         "tiny_surface_diff"
       ],
-      "merge_ready": false,
-      "blockers": [
-        "missing_label:ci-pipeline-passed"
-      ],
+      "merge_ready": true,
+      "blockers": [],
       "diff_stats": {
         "files": 1,
         "added_lines": 2,
@@ -432,16 +430,64 @@
       "agent_review": {
         "verdict": "LOW_VALUE",
         "verdict_label": "🤖 低价值候选",
-        "summary": "调整UbAccessType枚举顺序以对齐数据契约定义",
-        "issue_alignment": "无关联 Issue，属枚举顺序微调",
-        "committer_action": "纯常量重排无实质逻辑，建议关闭或要求补充验证",
+        "summary": "重排 UbAccessType 枚举常量顺序以对齐 DB 数据契约",
+        "issue_alignment": "无关联 Issue，仅对齐枚举与数据契约",
+        "committer_action": "建议人工确认契约影响后决定合入或关闭",
         "detail_points": [
-          "仅交换两个枚举常量顺序，未改动业务逻辑或测试",
-          "缺少关联 Issue 与流水线通过证据，验证不充分"
+          "diff 仅为枚举常量顺序互换共 2 行，无逻辑与测试变更，属表面改动",
+          "枚举顺序直接影响 SIMD-UB 链路吞吐计算，需确认是否属实质缺陷修复"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-09T11:37:29.698Z"
+        "reviewed_at": "2026-11-09T12:37:42.660Z"
+      }
+    },
+    "34": {
+      "number": 34,
+      "title": "update smoke",
+      "author": "ZhouBX",
+      "fingerprint": "2ed0ce75d65fb83d",
+      "triage_verdict": "KEEP",
+      "guard_allowed": false,
+      "verdict_reasons": [
+        "substantive_diff: 21 file(s)",
+        "adds_tests"
+      ],
+      "signals": [
+        "pr_substantive_diff",
+        "pr_has_tests"
+      ],
+      "merge_ready": false,
+      "blockers": [
+        "missing_label:ci-pipeline-passed",
+        "blocking_label:stat/needs-squash"
+      ],
+      "diff_stats": {
+        "files": 34,
+        "added_lines": 1156,
+        "removed_lines": 538,
+        "surface_files": 13,
+        "substantive_files": 21,
+        "test_files": 9,
+        "test_added_lines": 60,
+        "docs_only": false,
+        "files_without_patch": 0
+      },
+      "linked_issues": [],
+      "agent_review": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "重构 CI 流水线与冒烟脚本，并修复空 kernel DB 报表除零崩溃",
+        "issue_alignment": "无关联 Issue，属 CI 基建重构与缺陷修复",
+        "committer_action": "需作者 squash 提交并补跑 CI，门禁全绿后再评审合入",
+        "detail_points": [
+          "新增 compile、llt、smoke 工作流与脚本，删除 codecheck、staticcheck 流程，需要确认检查覆盖未被削弱",
+          "reporters.py 跳过没有已执行指令的空 DB，避免除零错误；新增 test_reporters.py 覆盖场景",
+          "secret_scan_allowlist 新增 runner 路径与 OBS 域名，需要复核其范围是否最小且不泄露内网信息"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-09T12:37:37.420Z"
       }
     }
   }

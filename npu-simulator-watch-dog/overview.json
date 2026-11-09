@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-09T11:37:29.907Z",
-  "runAtCst": "2026-11-09 19:37",
+  "runAt": "2026-11-09T12:37:42.881Z",
+  "runAtCst": "2026-11-09 20:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -88,7 +88,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 225.9,
+      "waitHours": 226.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -114,7 +114,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 225.3,
+      "waitHours": 226.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -140,7 +140,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 164,
+      "waitHours": 165.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -160,12 +160,36 @@
       "triageVerdict": "KEEP"
     },
     {
+      "number": "33",
+      "title": "Align UbAccessType enum with data contract",
+      "linkedIssues": [],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 1.2,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/33",
+      "agentReview": {
+        "verdict": "LOW_VALUE",
+        "verdict_label": "🤖 低价值候选",
+        "summary": "重排 UbAccessType 枚举常量顺序以对齐 DB 数据契约",
+        "issue_alignment": "无关联 Issue，仅对齐枚举与数据契约",
+        "committer_action": "建议人工确认契约影响后决定合入或关闭",
+        "detail_points": [
+          "diff 仅为枚举常量顺序互换共 2 行，无逻辑与测试变更，属表面改动",
+          "枚举顺序直接影响 SIMD-UB 链路吞吐计算，需确认是否属实质缺陷修复"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-09T12:37:42.660Z"
+      },
+      "triageVerdict": "CLOSE"
+    },
+    {
       "number": "11",
       "title": "docs: 修复中文标点前多余空格（1 处）",
       "linkedIssues": [],
       "mergeable": false,
       "reason": "CLA未签(cann-cla/no)",
-      "waitHours": 379.6,
+      "waitHours": 380.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11",
       "agentReview": {
         "verdict": "LOW_VALUE",
@@ -191,7 +215,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 225.7,
+      "waitHours": 226.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -219,7 +243,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 225.5,
+      "waitHours": 226.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -245,7 +269,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 29.8,
+      "waitHours": 30.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/31",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -269,7 +293,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 2.1,
+      "waitHours": 3.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/32",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -288,28 +312,29 @@
       "triageVerdict": "KEEP"
     },
     {
-      "number": "33",
-      "title": "Align UbAccessType enum with data contract",
+      "number": "34",
+      "title": "update smoke",
       "linkedIssues": [],
       "mergeable": false,
-      "reason": "缺 ci-pipeline-passed",
-      "waitHours": 0.2,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/33",
+      "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
+      "waitHours": 0.1,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/34",
       "agentReview": {
-        "verdict": "LOW_VALUE",
-        "verdict_label": "🤖 低价值候选",
-        "summary": "调整UbAccessType枚举顺序以对齐数据契约定义",
-        "issue_alignment": "无关联 Issue，属枚举顺序微调",
-        "committer_action": "纯常量重排无实质逻辑，建议关闭或要求补充验证",
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "重构 CI 流水线与冒烟脚本，并修复空 kernel DB 报表除零崩溃",
+        "issue_alignment": "无关联 Issue，属 CI 基建重构与缺陷修复",
+        "committer_action": "需作者 squash 提交并补跑 CI，门禁全绿后再评审合入",
         "detail_points": [
-          "仅交换两个枚举常量顺序，未改动业务逻辑或测试",
-          "缺少关联 Issue 与流水线通过证据，验证不充分"
+          "新增 compile、llt、smoke 工作流与脚本，删除 codecheck、staticcheck 流程，需要确认检查覆盖未被削弱",
+          "reporters.py 跳过没有已执行指令的空 DB，避免除零错误；新增 test_reporters.py 覆盖场景",
+          "secret_scan_allowlist 新增 runner 路径与 OBS 域名，需要复核其范围是否最小且不泄露内网信息"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-09T11:37:29.698Z"
+        "reviewed_at": "2026-11-09T12:37:37.420Z"
       },
-      "triageVerdict": "CLOSE"
+      "triageVerdict": "KEEP"
     }
   ]
 }
