@@ -1,111 +1,19 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-09T12:37:42.677Z",
-  "generatedAtCst": "2026-11-09 20:37",
+  "generatedAt": "2026-11-09T13:37:36.886Z",
+  "generatedAtCst": "2026-11-09 21:37",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 26,
     "issues_keep": 26,
     "issues_close": 0,
-    "prs_open": 10,
-    "prs_merge_ready": 4,
-    "prs_low_value": 2,
-    "cache_hits": 8,
+    "prs_open": 7,
+    "prs_merge_ready": 2,
+    "prs_low_value": 1,
+    "cache_hits": 5,
     "agent_calls": 2
   },
   "reviews": {
-    "11": {
-      "number": 11,
-      "title": "docs: 修复中文标点前多余空格（1 处）",
-      "author": "gcw_2C7pfVg4",
-      "fingerprint": "103bcae3a259d999",
-      "triage_verdict": "CLOSE",
-      "guard_allowed": true,
-      "verdict_reasons": [],
-      "signals": [
-        "no_substantive_change",
-        "tiny_surface_diff"
-      ],
-      "merge_ready": false,
-      "blockers": [
-        "cla_not_signed(cann-cla/no)",
-        "missing_label:cann-cla/yes"
-      ],
-      "diff_stats": {
-        "files": 1,
-        "added_lines": 1,
-        "removed_lines": 1,
-        "surface_files": 1,
-        "substantive_files": 0,
-        "test_files": 0,
-        "test_added_lines": 0,
-        "docs_only": true,
-        "files_without_patch": 0
-      },
-      "linked_issues": [],
-      "agent_review": {
-        "verdict": "LOW_VALUE",
-        "verdict_label": "🤖 低价值候选",
-        "summary": "仅删除文档中1处中文标点前多余空格",
-        "issue_alignment": "无关联 Issue，纯排版修正",
-        "committer_action": "建议直接关闭；如保留需作者补签 CLA 并重跑门禁",
-        "detail_points": [
-          "diff 仅 1 行空格调整，属表面改动，无实质代码或逻辑变更",
-          "cann-cla/no 未签署且无关联 Issue、无测试，合入收益极低"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-07T06:07:19.094Z"
-      }
-    },
-    "20": {
-      "number": 20,
-      "title": "docs: quote multiword record command examples",
-      "author": "gxhgxh2475698",
-      "fingerprint": "87f197d545eee6ee",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "approved_label",
-        "substantive_diff: 2 file(s)",
-        "linked_issue_legit: #15",
-        "external_participant: liangbinglong"
-      ],
-      "signals": [
-        "pr_substantive_diff",
-        "linked_issues:15"
-      ],
-      "merge_ready": true,
-      "blockers": [],
-      "diff_stats": {
-        "files": 2,
-        "added_lines": 3,
-        "removed_lines": 2,
-        "surface_files": 0,
-        "substantive_files": 2,
-        "test_files": 0,
-        "test_added_lines": 0,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [
-        15
-      ],
-      "agent_review": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "为 record 帮助与中文指南中的多词命令示例补上引号",
-        "issue_alignment": "已针对性修复 #15 命令示例缺引号问题",
-        "committer_action": "已获 approved 且门禁全绿无阻塞，建议直接合入",
-        "detail_points": [
-          "main.py 中 user_app 帮助改为带引号示例，并说明含空格命令需整体作为一个参数传入",
-          "同步修正 01_user_guide.md 参数表，作者已用 argparse 复现验证；仅改文档与提示、风险低"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-07T06:07:14.774Z"
-      }
-    },
     "21": {
       "number": 21,
       "title": "fix: reserve separate output directories for same-second runs",
@@ -256,57 +164,6 @@
         "reviewed_at": "2026-11-07T06:07:01.636Z"
       }
     },
-    "26": {
-      "number": 26,
-      "title": "fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失",
-      "author": "lizhe_li",
-      "fingerprint": "0e5f81e649e41f4c",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "approved_label",
-        "substantive_diff: 4 file(s)",
-        "adds_tests",
-        "linked_issue_legit: #19",
-        "external_participant: liangbinglong"
-      ],
-      "signals": [
-        "pr_substantive_diff",
-        "pr_has_tests",
-        "linked_issues:19"
-      ],
-      "merge_ready": true,
-      "blockers": [],
-      "diff_stats": {
-        "files": 4,
-        "added_lines": 136,
-        "removed_lines": 31,
-        "surface_files": 0,
-        "substantive_files": 4,
-        "test_files": 2,
-        "test_added_lines": 67,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [
-        19
-      ],
-      "agent_review": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "保留 trace 分片序号，修复 report 后处理覆盖分片导致事件丢失",
-        "issue_alignment": "针对性修复 #19 分片覆盖与合并漏读缺陷",
-        "committer_action": "已获 approved 且门禁全绿，建议直接合入",
-        "detail_points": [
-          "_TRACE_REPORT_RE 捕获分片序号，重命名不再覆盖同名文件",
-          "TRACE_FILE_RE 支持带序号分片，merge-trace 可读全部分片",
-          "新增两个回归测试覆盖分片保留与合并读取场景"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-07T06:06:58.824Z"
-      }
-    },
     "31": {
       "number": 31,
       "title": "fix(report): guard the summary metrics against zero denominators",
@@ -359,7 +216,7 @@
       "number": 32,
       "title": "feat: --pv 替换为 --sim_mode，支持 ca/pv 两种仿真模式",
       "author": "zhiweiyuan",
-      "fingerprint": "1d4f8e7e48a68e77",
+      "fingerprint": "bce0b002dc09b502",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -372,7 +229,8 @@
       ],
       "merge_ready": false,
       "blockers": [
-        "missing_label:ci-pipeline-passed"
+        "missing_label:ci-pipeline-passed",
+        "merge_conflicts"
       ],
       "diff_stats": {
         "files": 6,
@@ -389,16 +247,18 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "用 --sim_mode {ca,pv} 替代 --pv 布尔参数，默认 ca 保持原行为",
-        "issue_alignment": "无关联 Issue，属 CLI 参数重构与测试补充",
-        "committer_action": "需补齐 ci-pipeline-passed 标签并确认全量测试通过后再合入",
+        "summary": "用 --sim_mode {ca,pv} 替换 --pv，支持两种仿真模式",
+        "issue_alignment": "无关联 Issue，属自驱 CLI 接口改进",
+        "committer_action": "需作者解决合并冲突，并补跑 CI 以取得 ci-pipeline-passed 标签后再合入",
         "detail_points": [
-          "argparse 用 choices 校验 --sim_mode，非法值退出码 2，type=str.lower 实现大小写不敏感，接口语义更清晰",
-          "normalize_sim_mode 归一化为 CA/PV 后注入 CAMODEL_SIM_TYPE，下游 runtime 无需改动，兼容性风险低"
+          "接口语义由布尔开关升级为枚举模式，默认 ca 保持兼容，大小写不敏感，非法值由 argparse 拒绝",
+          "新增 normalize_sim_mode 归一化为 CA/PV，注入 CAMODEL_SIM_TYPE，下游无需改动；两条 record 路径均覆盖",
+          "单测覆盖默认值、大写、非法值、ktest 路径，共 48 行测试；文档同步更新",
+          "存在合并冲突且缺 ci-pipeline-passed，暂不满足合入门禁"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-09T09:37:33.537Z"
+        "reviewed_at": "2026-11-09T13:37:36.880Z"
       }
     },
     "33": {
@@ -444,50 +304,54 @@
     },
     "34": {
       "number": 34,
-      "title": "update smoke",
+      "title": "ci: 重构Action CI 流水线并支持 ARM smoke，修复空 kernel DB 报告失败",
       "author": "ZhouBX",
-      "fingerprint": "2ed0ce75d65fb83d",
+      "fingerprint": "2bced7fe205feda2",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
-        "substantive_diff: 21 file(s)",
-        "adds_tests"
+        "substantive_diff: 16 file(s)",
+        "adds_tests",
+        "linked_issue_legit: #24",
+        "linked_issue_legit: #25"
       ],
       "signals": [
         "pr_substantive_diff",
-        "pr_has_tests"
+        "pr_has_tests",
+        "linked_issues:24,25"
       ],
       "merge_ready": false,
       "blockers": [
-        "missing_label:ci-pipeline-passed",
         "blocking_label:stat/needs-squash"
       ],
       "diff_stats": {
-        "files": 34,
-        "added_lines": 1156,
-        "removed_lines": 538,
-        "surface_files": 13,
-        "substantive_files": 21,
-        "test_files": 9,
-        "test_added_lines": 60,
+        "files": 16,
+        "added_lines": 1005,
+        "removed_lines": 369,
+        "surface_files": 0,
+        "substantive_files": 16,
+        "test_files": 2,
+        "test_added_lines": 53,
         "docs_only": false,
         "files_without_patch": 0
       },
-      "linked_issues": [],
+      "linked_issues": [
+        24,
+        25
+      ],
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "重构 CI 流水线与冒烟脚本，并修复空 kernel DB 报表除零崩溃",
-        "issue_alignment": "无关联 Issue，属 CI 基建重构与缺陷修复",
-        "committer_action": "需作者 squash 提交并补跑 CI，门禁全绿后再评审合入",
+        "summary": "修复空 kernel DB 导致报告失败，重构 CI 流水线并支持 ARM smoke",
+        "issue_alignment": "针对性修复 #24、#25，含测试覆盖",
+        "committer_action": "需作者 squash 提交并重跑 CI，门禁全绿后再评审合入",
         "detail_points": [
-          "新增 compile、llt、smoke 工作流与脚本，删除 codecheck、staticcheck 流程，需要确认检查覆盖未被削弱",
-          "reporters.py 跳过没有已执行指令的空 DB，避免除零错误；新增 test_reporters.py 覆盖场景",
-          "secret_scan_allowlist 新增 runner 路径与 OBS 域名，需要复核其范围是否最小且不泄露内网信息"
+          "reporters.py 在分析前检查 ExecutedInstructions 表为空则跳过，规避 exec_time_ticks=0 除零，并新增 test_reporters.py 用例",
+          "CI 工作流与脚本重构幅度大（删 codecheck/staticcheck，新增 compile/llt/scan/py37），需确认门禁覆盖未降级"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-09T12:37:37.420Z"
+        "reviewed_at": "2026-11-09T13:37:31.541Z"
       }
     }
   }

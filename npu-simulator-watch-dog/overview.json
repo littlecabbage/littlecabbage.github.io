@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-09T12:37:42.881Z",
-  "runAtCst": "2026-11-09 20:37",
+  "runAt": "2026-11-09T13:37:37.063Z",
+  "runAtCst": "2026-11-09 21:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -34,7 +34,7 @@
   ],
   "closeLoop": {
     "issuesTotal": 26,
-    "openTotal": 10,
+    "openTotal": 8,
     "month": {
       "total": 7,
       "closed": 4,
@@ -46,12 +46,12 @@
     },
     "year": {
       "total": 26,
-      "closed": 16,
-      "rate": 61.5,
+      "closed": 18,
+      "rate": 69.2,
       "rateColor": "orange",
-      "avgCloseHours": 130.1,
-      "avgCloseDays": 5.4,
-      "durSamples": 16
+      "avgCloseHours": 137.4,
+      "avgCloseDays": 5.7,
+      "durSamples": 18
     }
   },
   "response": {
@@ -81,32 +81,6 @@
   "oncallList": [],
   "committerList": [
     {
-      "number": "20",
-      "title": "docs: quote multiword record command examples",
-      "linkedIssues": [
-        "15"
-      ],
-      "mergeable": true,
-      "reason": "",
-      "waitHours": 226.9,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20",
-      "agentReview": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "为 record 帮助与中文指南中的多词命令示例补上引号",
-        "issue_alignment": "已针对性修复 #15 命令示例缺引号问题",
-        "committer_action": "已获 approved 且门禁全绿无阻塞，建议直接合入",
-        "detail_points": [
-          "main.py 中 user_app 帮助改为带引号示例，并说明含空格命令需整体作为一个参数传入",
-          "同步修正 01_user_guide.md 参数表，作者已用 argparse 复现验证；仅改文档与提示、风险低"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-07T06:07:14.774Z"
-      },
-      "triageVerdict": "KEEP"
-    },
-    {
       "number": "23",
       "title": "fix: preserve first-root artifact when names collide",
       "linkedIssues": [
@@ -114,7 +88,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 226.3,
+      "waitHours": 227.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -133,39 +107,12 @@
       "triageVerdict": "KEEP"
     },
     {
-      "number": "26",
-      "title": "fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失",
-      "linkedIssues": [
-        "19"
-      ],
-      "mergeable": true,
-      "reason": "",
-      "waitHours": 165.1,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26",
-      "agentReview": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "保留 trace 分片序号，修复 report 后处理覆盖分片导致事件丢失",
-        "issue_alignment": "针对性修复 #19 分片覆盖与合并漏读缺陷",
-        "committer_action": "已获 approved 且门禁全绿，建议直接合入",
-        "detail_points": [
-          "_TRACE_REPORT_RE 捕获分片序号，重命名不再覆盖同名文件",
-          "TRACE_FILE_RE 支持带序号分片，merge-trace 可读全部分片",
-          "新增两个回归测试覆盖分片保留与合并读取场景"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-07T06:06:58.824Z"
-      },
-      "triageVerdict": "KEEP"
-    },
-    {
       "number": "33",
       "title": "Align UbAccessType enum with data contract",
       "linkedIssues": [],
       "mergeable": true,
       "reason": "",
-      "waitHours": 1.2,
+      "waitHours": 2.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/33",
       "agentReview": {
         "verdict": "LOW_VALUE",
@@ -184,30 +131,6 @@
       "triageVerdict": "CLOSE"
     },
     {
-      "number": "11",
-      "title": "docs: 修复中文标点前多余空格（1 处）",
-      "linkedIssues": [],
-      "mergeable": false,
-      "reason": "CLA未签(cann-cla/no)",
-      "waitHours": 380.6,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11",
-      "agentReview": {
-        "verdict": "LOW_VALUE",
-        "verdict_label": "🤖 低价值候选",
-        "summary": "仅删除文档中1处中文标点前多余空格",
-        "issue_alignment": "无关联 Issue，纯排版修正",
-        "committer_action": "建议直接关闭；如保留需作者补签 CLA 并重跑门禁",
-        "detail_points": [
-          "diff 仅 1 行空格调整，属表面改动，无实质代码或逻辑变更",
-          "cann-cla/no 未签署且无关联 Issue、无测试，合入收益极低"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-07T06:07:19.094Z"
-      },
-      "triageVerdict": "CLOSE"
-    },
-    {
       "number": "21",
       "title": "fix: reserve separate output directories for same-second runs",
       "linkedIssues": [
@@ -215,7 +138,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 226.7,
+      "waitHours": 227.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -243,7 +166,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 226.5,
+      "waitHours": 227.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -269,7 +192,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 30.8,
+      "waitHours": 31.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/31",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -292,47 +215,51 @@
       "title": "feat: --pv 替换为 --sim_mode，支持 ca/pv 两种仿真模式",
       "linkedIssues": [],
       "mergeable": false,
-      "reason": "缺 ci-pipeline-passed",
-      "waitHours": 3.1,
+      "reason": "存在冲突/不可合、缺 ci-pipeline-passed",
+      "waitHours": 4.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/32",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "用 --sim_mode {ca,pv} 替代 --pv 布尔参数，默认 ca 保持原行为",
-        "issue_alignment": "无关联 Issue，属 CLI 参数重构与测试补充",
-        "committer_action": "需补齐 ci-pipeline-passed 标签并确认全量测试通过后再合入",
+        "summary": "用 --sim_mode {ca,pv} 替换 --pv，支持两种仿真模式",
+        "issue_alignment": "无关联 Issue，属自驱 CLI 接口改进",
+        "committer_action": "需作者解决合并冲突，并补跑 CI 以取得 ci-pipeline-passed 标签后再合入",
         "detail_points": [
-          "argparse 用 choices 校验 --sim_mode，非法值退出码 2，type=str.lower 实现大小写不敏感，接口语义更清晰",
-          "normalize_sim_mode 归一化为 CA/PV 后注入 CAMODEL_SIM_TYPE，下游 runtime 无需改动，兼容性风险低"
+          "接口语义由布尔开关升级为枚举模式，默认 ca 保持兼容，大小写不敏感，非法值由 argparse 拒绝",
+          "新增 normalize_sim_mode 归一化为 CA/PV，注入 CAMODEL_SIM_TYPE，下游无需改动；两条 record 路径均覆盖",
+          "单测覆盖默认值、大写、非法值、ktest 路径，共 48 行测试；文档同步更新",
+          "存在合并冲突且缺 ci-pipeline-passed，暂不满足合入门禁"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-09T09:37:33.537Z"
+        "reviewed_at": "2026-11-09T13:37:36.880Z"
       },
       "triageVerdict": "KEEP"
     },
     {
       "number": "34",
-      "title": "update smoke",
-      "linkedIssues": [],
+      "title": "ci: 重构Action CI 流水线并支持 ARM smoke，修复空 kernel DB 报告失败",
+      "linkedIssues": [
+        "24",
+        "25"
+      ],
       "mergeable": false,
-      "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 0.1,
+      "reason": "需squash(stat/needs-squash)",
+      "waitHours": 1.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/34",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "重构 CI 流水线与冒烟脚本，并修复空 kernel DB 报表除零崩溃",
-        "issue_alignment": "无关联 Issue，属 CI 基建重构与缺陷修复",
-        "committer_action": "需作者 squash 提交并补跑 CI，门禁全绿后再评审合入",
+        "summary": "修复空 kernel DB 导致报告失败，重构 CI 流水线并支持 ARM smoke",
+        "issue_alignment": "针对性修复 #24、#25，含测试覆盖",
+        "committer_action": "需作者 squash 提交并重跑 CI，门禁全绿后再评审合入",
         "detail_points": [
-          "新增 compile、llt、smoke 工作流与脚本，删除 codecheck、staticcheck 流程，需要确认检查覆盖未被削弱",
-          "reporters.py 跳过没有已执行指令的空 DB，避免除零错误；新增 test_reporters.py 覆盖场景",
-          "secret_scan_allowlist 新增 runner 路径与 OBS 域名，需要复核其范围是否最小且不泄露内网信息"
+          "reporters.py 在分析前检查 ExecutedInstructions 表为空则跳过，规避 exec_time_ticks=0 除零，并新增 test_reporters.py 用例",
+          "CI 工作流与脚本重构幅度大（删 codecheck/staticcheck，新增 compile/llt/scan/py37），需确认门禁覆盖未降级"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-09T12:37:37.420Z"
+        "reviewed_at": "2026-11-09T13:37:31.541Z"
       },
       "triageVerdict": "KEEP"
     }
