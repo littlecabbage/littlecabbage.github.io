@@ -1,0 +1,321 @@
+{
+  "repo": "cann/npu-simulator",
+  "runAt": "2026-11-09T14:19:40.076Z",
+  "runAtCst": "2026-11-09 22:19",
+  "tz": "UTC+8",
+  "cursor": {
+    "year": 2026,
+    "month": 11
+  },
+  "timeRule": "working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)",
+  "holidayTableYears": [
+    2024,
+    2025,
+    2026
+  ],
+  "prReviewModel": "cannbot/deepseek-v4.1-flash",
+  "selfHandledIssues": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "7",
+    "10",
+    "11",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "26"
+  ],
+  "botLogins": [
+    "CANN-robot",
+    "cann-robot",
+    "simulator-bot"
+  ],
+  "botActionLogins": [
+    "simulator-bot"
+  ],
+  "botActions": [
+    {
+      "kind": "pr",
+      "number": "21",
+      "title": "fix: reserve separate output directories for same-second runs",
+      "url": "https://gitcode.com/cann/npu-simulator/pulls/21",
+      "action": "pr_nudge",
+      "at": "2026-11-09T21:52:46+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "pr",
+      "number": "33",
+      "title": "Align UbAccessType enum with data contract",
+      "url": "https://gitcode.com/cann/npu-simulator/pulls/33",
+      "action": "pr_nudge",
+      "at": "2026-11-09T21:52:43+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "pr",
+      "number": "34",
+      "title": "ci: 重构Action CI 流水线并支持 ARM smoke，修复空 kernel DB 报告失败",
+      "url": "https://gitcode.com/cann/npu-simulator/pulls/34",
+      "action": "pr_nudge",
+      "at": "2026-11-09T21:52:41+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "pr",
+      "number": "23",
+      "title": "fix: preserve first-root artifact when names collide",
+      "url": "https://gitcode.com/cann/npu-simulator/pulls/23",
+      "action": "pr_nudge",
+      "at": "2026-11-09T21:49:07+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    }
+  ],
+  "botActionsByType": {
+    "pr_nudge": 4
+  },
+  "closeLoop": {
+    "issuesTotal": 26,
+    "openTotal": 8,
+    "month": {
+      "total": 7,
+      "closed": 4,
+      "rate": 57.1,
+      "rateColor": "orange",
+      "avgCloseHours": 39.7,
+      "avgCloseDays": 1.7,
+      "durSamples": 4
+    },
+    "year": {
+      "total": 26,
+      "closed": 18,
+      "rate": 69.2,
+      "rateColor": "orange",
+      "avgCloseHours": 137.4,
+      "avgCloseDays": 5.7,
+      "durSamples": 18
+    }
+  },
+  "response": {
+    "openNoResponse": {
+      "total": 0,
+      "overdue": 0
+    },
+    "month": {
+      "total": 5,
+      "qualified": 3,
+      "unqualified": 2,
+      "rate": 60,
+      "rateColor": "orange",
+      "avgFirstRespHours": 1.5,
+      "respSamples": 3
+    },
+    "year": {
+      "total": 10,
+      "qualified": 4,
+      "unqualified": 6,
+      "rate": 40,
+      "rateColor": "red",
+      "avgFirstRespHours": 33.7,
+      "respSamples": 6
+    }
+  },
+  "oncallList": [],
+  "committerList": [
+    {
+      "number": "23",
+      "title": "fix: preserve first-root artifact when names collide",
+      "linkedIssues": [
+        "18"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 228,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23",
+      "agentReview": {
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "修复多来源同名产物归档时被后来源覆盖的问题",
+        "issue_alignment": "针对性修复 #18 同名产物覆盖缺陷",
+        "committer_action": "CLA 已签、CI 通过且无阻塞，建议直接合入",
+        "detail_points": [
+          "通配符归档加入 seen_names 去重，三个归档入口统一按首个来源优先，逻辑一致",
+          "新增覆盖三条归档路径的回归用例，验证首来源保留且目标缺失时清理行为不变"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-09T14:19:31.498Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "33",
+      "title": "Align UbAccessType enum with data contract",
+      "linkedIssues": [],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 2.9,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/33",
+      "agentReview": {
+        "verdict": "LOW_VALUE",
+        "verdict_label": "🤖 低价值候选",
+        "summary": "重排 UbAccessType 枚举顺序以匹配数据契约，修正吞吐统计",
+        "issue_alignment": "无关联 Issue，属独立缺陷修复",
+        "committer_action": "纯枚举重排无实质改动，可在说明风险后低优先级关闭",
+        "detail_points": [
+          "仅调整 SIMD/SIMT 读写常量定义顺序，未改变取值语义与逻辑",
+          "需确认依赖枚举序号的调用方及 DB 契约，避免隐式兼容性破坏"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-09T14:19:27.532Z"
+      },
+      "triageVerdict": "CLOSE"
+    },
+    {
+      "number": "21",
+      "title": "fix: reserve separate output directories for same-second runs",
+      "linkedIssues": [
+        "16"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
+      "waitHours": 228.4,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "用独占 mkdir 分配运行目录，避免同秒运行复用归档",
+        "issue_alignment": "针对性修复 #16 目录复用缺陷",
+        "committer_action": "请作者 squash 提交并补 CI 通过标签后再评审合入",
+        "detail_points": [
+          "新增 create_unique_target_dir 以独占 mkdir 加 _N 后缀，record 与 ktest 两模式共用，逻辑正确",
+          "附带修复 runtime.py 备份清理的 Py3.7 兼容问题，但 os.rename 改 copy2 需确认语义无回退",
+          "两模式各新增同秒回归测试，覆盖仍开放 #16 的复现场景，建议补并发竞争用例"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-09T14:19:39.890Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "22",
+      "title": "docs: match in-page links to rendered heading IDs",
+      "linkedIssues": [
+        "17"
+      ],
+      "mergeable": false,
+      "reason": "需squash(stat/needs-squash)",
+      "waitHours": 228.2,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "修正 README、用户指南、安全声明三处文档的页内锚点链接，使其匹配渲染后的标题 ID",
+        "issue_alignment": "已针对性修复 #17 锚点不匹配缺陷",
+        "committer_action": "需作者 squash 提交解除 needs-squash 阻塞，再重跑门禁后合入",
+        "detail_points": [
+          "锚点统一改为渲染后的小写、去标点 ID，与 GitCode 实际标题 id 一致",
+          "纯文档改动无代码风险，CLA 与 CI 已通过且有人工 /approve",
+          "唯一门禁阻塞为 stat/needs-squash，需压缩为单一提交后再合入"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-09T14:19:35.821Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "31",
+      "title": "fix(report): guard the summary metrics against zero denominators",
+      "linkedIssues": [
+        "26"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 32.5,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/31",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "为 summary 报告两处除法补零分母保护，避免报告崩溃",
+        "issue_alignment": "针对性修复 #26 除零崩溃缺陷",
+        "committer_action": "需补 ci-pipeline-passed 门禁并重跑 CI 全绿后再合入",
+        "detail_points": [
+          "get_imbalance_ratio 过滤零跨度核并空列表返回 0.0，规避 ZeroDivisionError",
+          "建议同步为标量指令占比补零分母保护，并补一条零跨度单测"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-07T06:06:55.913Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "32",
+      "title": "feat: --pv 替换为 --sim_mode，支持 ca/pv 两种仿真模式",
+      "linkedIssues": [],
+      "mergeable": false,
+      "reason": "存在冲突/不可合、缺 ci-pipeline-passed",
+      "waitHours": 4.8,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/32",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "用 --sim_mode {ca,pv} 替换 --pv，支持两种仿真模式",
+        "issue_alignment": "无关联 Issue，属自驱 CLI 接口改进",
+        "committer_action": "需作者解决合并冲突，并补跑 CI 以取得 ci-pipeline-passed 标签后再合入",
+        "detail_points": [
+          "接口语义由布尔开关升级为枚举模式，默认 ca 保持兼容，大小写不敏感，非法值由 argparse 拒绝",
+          "新增 normalize_sim_mode 归一化为 CA/PV，注入 CAMODEL_SIM_TYPE，下游无需改动；两条 record 路径均覆盖",
+          "单测覆盖默认值、大写、非法值、ktest 路径，共 48 行测试；文档同步更新",
+          "存在合并冲突且缺 ci-pipeline-passed，暂不满足合入门禁"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-09T13:37:36.880Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "34",
+      "title": "ci: 重构Action CI 流水线并支持 ARM smoke，修复空 kernel DB 报告失败",
+      "linkedIssues": [
+        "24",
+        "25"
+      ],
+      "mergeable": false,
+      "reason": "需squash(stat/needs-squash)",
+      "waitHours": 1.8,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/34",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "重构 CI 流水线并支持 ARM smoke，空 kernel DB 时跳过报告避免除零失败",
+        "issue_alignment": "针对性修复 #24 空 DB 报告失败，并落地 #25 ARM 适配",
+        "committer_action": "需作者 squash 提交历史后重跑门禁，全绿再合入",
+        "detail_points": [
+          "reporters.py 在分析前检查 ExecutedInstructions 表为空则跳过，新增 2 个测试覆盖",
+          "新增 compile/llt/scan/py37 工作流与脚本，pre_smoke 归一化架构并校验 en_dtypes 编译依赖",
+          "仍存在 stat/needs-squash 阻塞，需压缩提交后重新触发 CI 验证"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-09T14:19:22.977Z"
+      },
+      "triageVerdict": "KEEP"
+    }
+  ]
+}

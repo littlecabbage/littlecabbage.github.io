@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-09T13:37:36.886Z",
-  "generatedAtCst": "2026-11-09 21:37",
+  "generatedAt": "2026-11-09T14:19:39.896Z",
+  "generatedAtCst": "2026-11-09 22:19",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 26,
@@ -10,15 +10,15 @@
     "prs_open": 7,
     "prs_merge_ready": 2,
     "prs_low_value": 1,
-    "cache_hits": 5,
-    "agent_calls": 2
+    "cache_hits": 2,
+    "agent_calls": 5
   },
   "reviews": {
     "21": {
       "number": 21,
       "title": "fix: reserve separate output directories for same-second runs",
       "author": "gxhgxh2475698",
-      "fingerprint": "9c90a60160b5ca15",
+      "fingerprint": "408b656207cf07f9",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -53,25 +53,24 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "用独占 mkdir 分配 _N 后缀目录，避免同秒运行复用输出目录",
-        "issue_alignment": "已针对性修复 #16 同秒目录复用缺陷",
-        "committer_action": "需作者 squash 提交并补 ci-pipeline-passed 后再合入",
+        "summary": "用独占 mkdir 分配运行目录，避免同秒运行复用归档",
+        "issue_alignment": "针对性修复 #16 目录复用缺陷",
+        "committer_action": "请作者 squash 提交并补 CI 通过标签后再评审合入",
         "detail_points": [
-          "create_unique_target_dir 以独占 mkdir 抢锁并递增后缀，消除存在即复用竞态，ktest 与 record 共用同一实现",
-          "runtime.py 改用 copy2+unlink 兼容 Python 3.7，保留缺失容忍但不再吞掉其他异常，方向正确",
-          "两种模式各补一个同秒回归测试（46 行），但需确认重试边界与 _N 目录命名上限是否被测试覆盖",
-          "门禁仍缺 ci-pipeline-passed 且带 needs-squash，需压缩为单提交并重跑全量兼容性检查"
+          "新增 create_unique_target_dir 以独占 mkdir 加 _N 后缀，record 与 ktest 两模式共用，逻辑正确",
+          "附带修复 runtime.py 备份清理的 Py3.7 兼容问题，但 os.rename 改 copy2 需确认语义无回退",
+          "两模式各新增同秒回归测试，覆盖仍开放 #16 的复现场景，建议补并发竞争用例"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-07T06:07:10.794Z"
+        "reviewed_at": "2026-11-09T14:19:39.890Z"
       }
     },
     "22": {
       "number": 22,
       "title": "docs: match in-page links to rendered heading IDs",
       "author": "gxhgxh2475698",
-      "fingerprint": "2d2d2c892e50621c",
+      "fingerprint": "7d9e9ccabfbb9639",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -104,23 +103,24 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "修正README等三份文档共4处页内锚点链接，匹配GitCode渲染标题ID",
-        "issue_alignment": "已针对性修复#17锚点不匹配缺陷",
-        "committer_action": "需作者squash为单提交并重跑CI门禁，全绿后再合入",
+        "summary": "修正 README、用户指南、安全声明三处文档的页内锚点链接，使其匹配渲染后的标题 ID",
+        "issue_alignment": "已针对性修复 #17 锚点不匹配缺陷",
+        "committer_action": "需作者 squash 提交解除 needs-squash 阻塞，再重跑门禁后合入",
         "detail_points": [
-          "改动仅调整4处链接片段，与#17所列三个文件的渲染ID逐一对应，未触及正文",
-          "已有liangbinglong的/approve，但存在stat/needs-squash阻塞，需压缩提交后重跑流水线"
+          "锚点统一改为渲染后的小写、去标点 ID，与 GitCode 实际标题 id 一致",
+          "纯文档改动无代码风险，CLA 与 CI 已通过且有人工 /approve",
+          "唯一门禁阻塞为 stat/needs-squash，需压缩为单一提交后再合入"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-09T04:37:23.976Z"
+        "reviewed_at": "2026-11-09T14:19:35.821Z"
       }
     },
     "23": {
       "number": 23,
       "title": "fix: preserve first-root artifact when names collide",
       "author": "gxhgxh2475698",
-      "fingerprint": "2fab13e719b37864",
+      "fingerprint": "9d1147e347e41a6a",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -152,16 +152,16 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修复多来源目录同名产物归档时后来源覆盖首选来源的问题",
-        "issue_alignment": "已针对性修复 #18 三处归档覆盖缺陷",
-        "committer_action": "门禁全绿且关联 Issue 已闭环，建议直接合入",
+        "summary": "修复多来源同名产物归档时被后来源覆盖的问题",
+        "issue_alignment": "针对性修复 #18 同名产物覆盖缺陷",
+        "committer_action": "CLA 已签、CI 通过且无阻塞，建议直接合入",
         "detail_points": [
-          "三个归档入口新增按文件名去重，仅保留首个来源，符合优先级语义",
-          "新增三路径回归用例覆盖 FIRST/SECOND 场景，含目标不可用清理分支验证"
+          "通配符归档加入 seen_names 去重，三个归档入口统一按首个来源优先，逻辑一致",
+          "新增覆盖三条归档路径的回归用例，验证首来源保留且目标缺失时清理行为不变"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-07T06:07:01.636Z"
+        "reviewed_at": "2026-11-09T14:19:31.498Z"
       }
     },
     "31": {
@@ -265,7 +265,7 @@
       "number": 33,
       "title": "Align UbAccessType enum with data contract",
       "author": "fomichevoleg5",
-      "fingerprint": "9e24b541fa48dea2",
+      "fingerprint": "4181736d0a3cd1d9",
       "triage_verdict": "CLOSE",
       "guard_allowed": true,
       "verdict_reasons": [],
@@ -290,23 +290,23 @@
       "agent_review": {
         "verdict": "LOW_VALUE",
         "verdict_label": "🤖 低价值候选",
-        "summary": "重排 UbAccessType 枚举常量顺序以对齐 DB 数据契约",
-        "issue_alignment": "无关联 Issue，仅对齐枚举与数据契约",
-        "committer_action": "建议人工确认契约影响后决定合入或关闭",
+        "summary": "重排 UbAccessType 枚举顺序以匹配数据契约，修正吞吐统计",
+        "issue_alignment": "无关联 Issue，属独立缺陷修复",
+        "committer_action": "纯枚举重排无实质改动，可在说明风险后低优先级关闭",
         "detail_points": [
-          "diff 仅为枚举常量顺序互换共 2 行，无逻辑与测试变更，属表面改动",
-          "枚举顺序直接影响 SIMD-UB 链路吞吐计算，需确认是否属实质缺陷修复"
+          "仅调整 SIMD/SIMT 读写常量定义顺序，未改变取值语义与逻辑",
+          "需确认依赖枚举序号的调用方及 DB 契约，避免隐式兼容性破坏"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-09T12:37:42.660Z"
+        "reviewed_at": "2026-11-09T14:19:27.532Z"
       }
     },
     "34": {
       "number": 34,
       "title": "ci: 重构Action CI 流水线并支持 ARM smoke，修复空 kernel DB 报告失败",
       "author": "ZhouBX",
-      "fingerprint": "2bced7fe205feda2",
+      "fingerprint": "9323b770d6501f7e",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -342,16 +342,17 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "修复空 kernel DB 导致报告失败，重构 CI 流水线并支持 ARM smoke",
-        "issue_alignment": "针对性修复 #24、#25，含测试覆盖",
-        "committer_action": "需作者 squash 提交并重跑 CI，门禁全绿后再评审合入",
+        "summary": "重构 CI 流水线并支持 ARM smoke，空 kernel DB 时跳过报告避免除零失败",
+        "issue_alignment": "针对性修复 #24 空 DB 报告失败，并落地 #25 ARM 适配",
+        "committer_action": "需作者 squash 提交历史后重跑门禁，全绿再合入",
         "detail_points": [
-          "reporters.py 在分析前检查 ExecutedInstructions 表为空则跳过，规避 exec_time_ticks=0 除零，并新增 test_reporters.py 用例",
-          "CI 工作流与脚本重构幅度大（删 codecheck/staticcheck，新增 compile/llt/scan/py37），需确认门禁覆盖未降级"
+          "reporters.py 在分析前检查 ExecutedInstructions 表为空则跳过，新增 2 个测试覆盖",
+          "新增 compile/llt/scan/py37 工作流与脚本，pre_smoke 归一化架构并校验 en_dtypes 编译依赖",
+          "仍存在 stat/needs-squash 阻塞，需压缩提交后重新触发 CI 验证"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-09T13:37:31.541Z"
+        "reviewed_at": "2026-11-09T14:19:22.977Z"
       }
     }
   }
