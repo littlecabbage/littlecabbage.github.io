@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-09T02:37:28.176Z",
-  "generatedAtCst": "2026-11-09 10:37",
+  "generatedAt": "2026-11-09T03:37:32.553Z",
+  "generatedAtCst": "2026-11-09 11:37",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 26,
@@ -10,8 +10,8 @@
     "prs_open": 7,
     "prs_merge_ready": 3,
     "prs_low_value": 1,
-    "cache_hits": 7,
-    "agent_calls": 0
+    "cache_hits": 6,
+    "agent_calls": 1
   },
   "reviews": {
     "11": {
@@ -163,7 +163,7 @@
       "number": 22,
       "title": "docs: match in-page links to rendered heading IDs",
       "author": "gxhgxh2475698",
-      "fingerprint": "583963f78035dfbc",
+      "fingerprint": "15acd0a3a108db8f",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -197,16 +197,16 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "修正README、用户指南与安全声明共四处页内锚点链接",
-        "issue_alignment": "针对性修复 #17 锚点不匹配",
-        "committer_action": "需作者squash提交并重跑CI，门禁全绿后再合入",
+        "summary": "修正四处文档页内锚点链接，使其匹配 GitCode 渲染标题 ID",
+        "issue_alignment": "已针对性修复 #17 锚点不匹配缺陷",
+        "committer_action": "需作者 squash 提交并等待 CI 通过后再合入",
         "detail_points": [
-          "diff 仅调整 Markdown 链接片段，无代码改动，风险极低",
-          "缺 ci-pipeline-passed，且带 needs-squash，CI 多次未通过"
+          "README 去掉多余前导连字符，用户指南改为小写 aicore利用率报告，安全声明移除括号并小写，均对照渲染 ID 校验",
+          "仅改链接片段、不动正文，风险极低且有 liangbinglong 的 /approve；但 ci-pipeline 仍在跑且带 needs-squash，门禁未齐"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-07T06:07:05.915Z"
+        "reviewed_at": "2026-11-09T03:37:32.545Z"
       }
     },
     "23": {
