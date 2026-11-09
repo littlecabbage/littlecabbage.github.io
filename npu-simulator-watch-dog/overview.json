@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-09T10:37:29.243Z",
-  "runAtCst": "2026-11-09 18:37",
+  "runAt": "2026-11-09T11:37:29.907Z",
+  "runAtCst": "2026-11-09 19:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -88,7 +88,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 224.9,
+      "waitHours": 225.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/20",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -114,7 +114,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 224.3,
+      "waitHours": 225.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -140,7 +140,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 163,
+      "waitHours": 164,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/26",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -165,7 +165,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "CLA未签(cann-cla/no)",
-      "waitHours": 378.6,
+      "waitHours": 379.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/11",
       "agentReview": {
         "verdict": "LOW_VALUE",
@@ -191,7 +191,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 224.7,
+      "waitHours": 225.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -219,7 +219,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 224.5,
+      "waitHours": 225.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -245,7 +245,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 28.8,
+      "waitHours": 29.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/31",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -269,7 +269,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 1.1,
+      "waitHours": 2.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/32",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -286,6 +286,30 @@
         "reviewed_at": "2026-11-09T09:37:33.537Z"
       },
       "triageVerdict": "KEEP"
+    },
+    {
+      "number": "33",
+      "title": "Align UbAccessType enum with data contract",
+      "linkedIssues": [],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 0.2,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/33",
+      "agentReview": {
+        "verdict": "LOW_VALUE",
+        "verdict_label": "🤖 低价值候选",
+        "summary": "调整UbAccessType枚举顺序以对齐数据契约定义",
+        "issue_alignment": "无关联 Issue，属枚举顺序微调",
+        "committer_action": "纯常量重排无实质逻辑，建议关闭或要求补充验证",
+        "detail_points": [
+          "仅交换两个枚举常量顺序，未改动业务逻辑或测试",
+          "缺少关联 Issue 与流水线通过证据，验证不充分"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-09T11:37:29.698Z"
+      },
+      "triageVerdict": "CLOSE"
     }
   ]
 }

@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-09T10:37:29.067Z",
-  "generatedAtCst": "2026-11-09 18:37",
+  "generatedAt": "2026-11-09T11:37:29.710Z",
+  "generatedAtCst": "2026-11-09 19:37",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 26,
     "issues_keep": 26,
     "issues_close": 0,
-    "prs_open": 8,
+    "prs_open": 9,
     "prs_merge_ready": 3,
-    "prs_low_value": 1,
+    "prs_low_value": 2,
     "cache_hits": 8,
-    "agent_calls": 0
+    "agent_calls": 1
   },
   "reviews": {
     "11": {
@@ -399,6 +399,49 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-09T09:37:33.537Z"
+      }
+    },
+    "33": {
+      "number": 33,
+      "title": "Align UbAccessType enum with data contract",
+      "author": "fomichevoleg5",
+      "fingerprint": "5823f7564926450a",
+      "triage_verdict": "CLOSE",
+      "guard_allowed": true,
+      "verdict_reasons": [],
+      "signals": [
+        "no_substantive_change",
+        "tiny_surface_diff"
+      ],
+      "merge_ready": false,
+      "blockers": [
+        "missing_label:ci-pipeline-passed"
+      ],
+      "diff_stats": {
+        "files": 1,
+        "added_lines": 2,
+        "removed_lines": 2,
+        "surface_files": 1,
+        "substantive_files": 0,
+        "test_files": 0,
+        "test_added_lines": 0,
+        "docs_only": false,
+        "files_without_patch": 0
+      },
+      "linked_issues": [],
+      "agent_review": {
+        "verdict": "LOW_VALUE",
+        "verdict_label": "🤖 低价值候选",
+        "summary": "调整UbAccessType枚举顺序以对齐数据契约定义",
+        "issue_alignment": "无关联 Issue，属枚举顺序微调",
+        "committer_action": "纯常量重排无实质逻辑，建议关闭或要求补充验证",
+        "detail_points": [
+          "仅交换两个枚举常量顺序，未改动业务逻辑或测试",
+          "缺少关联 Issue 与流水线通过证据，验证不充分"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-09T11:37:29.698Z"
       }
     }
   }
