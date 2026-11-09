@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-09T04:37:23.981Z",
-  "generatedAtCst": "2026-11-09 12:37",
+  "generatedAt": "2026-11-09T05:37:28.009Z",
+  "generatedAtCst": "2026-11-09 13:37",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 26,
@@ -10,8 +10,8 @@
     "prs_open": 7,
     "prs_merge_ready": 3,
     "prs_low_value": 1,
-    "cache_hits": 6,
-    "agent_calls": 1
+    "cache_hits": 7,
+    "agent_calls": 0
   },
   "reviews": {
     "11": {
