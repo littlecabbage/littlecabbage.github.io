@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>总览指标 · cann/npu-simulator · 2026-11-09 08:37</title>
+<title>总览指标 · cann/npu-simulator · 2026-11-09 09:37</title>
 <style>
   body { font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif; background:#f6f8fc; color:#172b4d; margin:0; padding:32px; }
   h1 { font-size:24px; margin:0 0 4px; }
@@ -25,7 +25,7 @@
   a { color:#245fc9; text-decoration:none; }
 </style></head>
 <body>
-  <h1>总览指标 · cann/npu-simulator · 2026-11-09 08:37 (UTC+8)</h1>
+  <h1>总览指标 · cann/npu-simulator · 2026-11-09 09:37 (UTC+8)</h1>
   <div class="meta">归组基准 UTC+8 2026-11 · working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)</div>
   <h2>闭环情况</h2>
   <div class="grid">
@@ -53,13 +53,13 @@
   <h2>committer 待 Review / 合并 · open PR (7，可合入 3 · AI 模型 cannbot/deepseek-v4.1-flash)</h2>
   <table>
     <tr><th>PR</th><th>可否合入</th><th>AI 价值判定</th><th>关联 Issue</th><th>停留时长</th><th>标题与 AI 评审建议</th></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/20" target="_blank">#20</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#15</td><td>214.9H</td><td><div>docs: quote multiword record command examples</div><div style="margin-top:4px;font-size:13px;color:#56677e;">为 record 帮助与中文指南中的多词命令示例补上引号 · <b>建议：已获 approved 且门禁全绿无阻塞，建议直接合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/23" target="_blank">#23</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#18</td><td>214.3H</td><td><div>fix: preserve first-root artifact when names collide</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修复多来源目录同名产物归档时后来源覆盖首选来源的问题 · <b>建议：门禁全绿且关联 Issue 已闭环，建议直接合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/26" target="_blank">#26</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#19</td><td>153H</td><td><div>fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失</div><div style="margin-top:4px;font-size:13px;color:#56677e;">保留 trace 分片序号，修复 report 后处理覆盖分片导致事件丢失 · <b>建议：已获 approved 且门禁全绿，建议直接合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/11" target="_blank">#11</a></td><td class="tag-bad">❌ CLA未签(cann-cla/no)</td><td><span class="tag-bad">🤖 低价值候选</span></td><td class="muted2">—</td><td>368.6H</td><td><div>docs: 修复中文标点前多余空格（1 处）</div><div style="margin-top:4px;font-size:13px;color:#56677e;">仅删除文档中1处中文标点前多余空格 · <b>建议：建议直接关闭；如保留需作者补签 CLA 并重跑门禁</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/21" target="_blank">#21</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#16</td><td>214.7H</td><td><div>fix: reserve separate output directories for same-second runs</div><div style="margin-top:4px;font-size:13px;color:#56677e;">用独占 mkdir 分配 _N 后缀目录，避免同秒运行复用输出目录 · <b>建议：需作者 squash 提交并补 ci-pipeline-passed 后再合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/22" target="_blank">#22</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#17</td><td>214.5H</td><td><div>docs: match in-page links to rendered heading IDs</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修正README、用户指南与安全声明共四处页内锚点链接 · <b>建议：需作者squash提交并重跑CI，门禁全绿后再合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/31" target="_blank">#31</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#26</td><td>18.8H</td><td><div>fix(report): guard the summary metrics against zero denominators</div><div style="margin-top:4px;font-size:13px;color:#56677e;">为 summary 报告两处除法补零分母保护，避免报告崩溃 · <b>建议：需补 ci-pipeline-passed 门禁并重跑 CI 全绿后再合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/20" target="_blank">#20</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#15</td><td>215.9H</td><td><div>docs: quote multiword record command examples</div><div style="margin-top:4px;font-size:13px;color:#56677e;">为 record 帮助与中文指南中的多词命令示例补上引号 · <b>建议：已获 approved 且门禁全绿无阻塞，建议直接合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/23" target="_blank">#23</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#18</td><td>215.3H</td><td><div>fix: preserve first-root artifact when names collide</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修复多来源目录同名产物归档时后来源覆盖首选来源的问题 · <b>建议：门禁全绿且关联 Issue 已闭环，建议直接合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/26" target="_blank">#26</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#19</td><td>154H</td><td><div>fix(report): 保留 trace 分片序号，修复 --json-max-size 分片被覆盖丢失</div><div style="margin-top:4px;font-size:13px;color:#56677e;">保留 trace 分片序号，修复 report 后处理覆盖分片导致事件丢失 · <b>建议：已获 approved 且门禁全绿，建议直接合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/11" target="_blank">#11</a></td><td class="tag-bad">❌ CLA未签(cann-cla/no)</td><td><span class="tag-bad">🤖 低价值候选</span></td><td class="muted2">—</td><td>369.6H</td><td><div>docs: 修复中文标点前多余空格（1 处）</div><div style="margin-top:4px;font-size:13px;color:#56677e;">仅删除文档中1处中文标点前多余空格 · <b>建议：建议直接关闭；如保留需作者补签 CLA 并重跑门禁</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/21" target="_blank">#21</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#16</td><td>215.7H</td><td><div>fix: reserve separate output directories for same-second runs</div><div style="margin-top:4px;font-size:13px;color:#56677e;">用独占 mkdir 分配 _N 后缀目录，避免同秒运行复用输出目录 · <b>建议：需作者 squash 提交并补 ci-pipeline-passed 后再合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/22" target="_blank">#22</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#17</td><td>215.5H</td><td><div>docs: match in-page links to rendered heading IDs</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修正README、用户指南与安全声明共四处页内锚点链接 · <b>建议：需作者squash提交并重跑CI，门禁全绿后再合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/31" target="_blank">#31</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#26</td><td>19.8H</td><td><div>fix(report): guard the summary metrics against zero denominators</div><div style="margin-top:4px;font-size:13px;color:#56677e;">为 summary 报告两处除法补零分母保护，避免报告崩溃 · <b>建议：需补 ci-pipeline-passed 门禁并重跑 CI 全绿后再合入</b></div></td></tr>
   </table>
 
   <div class="note">
