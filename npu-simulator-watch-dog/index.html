@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>总览指标 · cann/npu-simulator · 2026-11-11 19:37</title>
+<title>总览指标 · cann/npu-simulator · 2026-11-11 20:37</title>
 <style>
   body { font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif; background:#f6f8fc; color:#172b4d; margin:0; padding:32px; }
   h1 { font-size:24px; margin:0 0 4px; }
@@ -25,20 +25,20 @@
   a { color:#245fc9; text-decoration:none; }
 </style></head>
 <body>
-  <h1>总览指标 · cann/npu-simulator · 2026-11-11 19:37 (UTC+8)</h1>
+  <h1>总览指标 · cann/npu-simulator · 2026-11-11 20:37 (UTC+8)</h1>
   <div class="meta">归组基准 UTC+8 2026-11 · working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)</div>
   <h2>闭环情况</h2>
   <div class="grid">
     <div class="card"><div class="lbl">Issue 总数</div><div class="val" style="color:#56677e">39</div><div class="sub">全仓 Issue</div></div>
-<div class="card"><div class="lbl">开启总数</div><div class="val" style="color:#56677e">15</div><div class="sub">当前 open</div></div>
-<div class="card"><div class="lbl">月度闭环率</div><div class="val" style="color:#c47f1d">50%</div><div class="sub">10/20</div></div>
-<div class="card"><div class="lbl">年度闭环率</div><div class="val" style="color:#c47f1d">61.5%</div><div class="sub">24/39</div></div>
-<div class="card"><div class="lbl">月度平均闭环时长</div><div class="val" style="color:#56677e">1.7天</div><div class="sub">样本 10</div></div>
-<div class="card"><div class="lbl">年度平均闭环时长</div><div class="val" style="color:#56677e">4.7天</div><div class="sub">样本 24</div></div>
+<div class="card"><div class="lbl">开启总数</div><div class="val" style="color:#56677e">13</div><div class="sub">当前 open</div></div>
+<div class="card"><div class="lbl">月度闭环率</div><div class="val" style="color:#c47f1d">60%</div><div class="sub">12/20</div></div>
+<div class="card"><div class="lbl">年度闭环率</div><div class="val" style="color:#c47f1d">66.7%</div><div class="sub">26/39</div></div>
+<div class="card"><div class="lbl">月度平均闭环时长</div><div class="val" style="color:#56677e">1.7天</div><div class="sub">样本 12</div></div>
+<div class="card"><div class="lbl">年度平均闭环时长</div><div class="val" style="color:#56677e">4.5天</div><div class="sub">样本 26</div></div>
   </div>
   <h2>响应情况（非自处理 Issue）</h2>
   <div class="grid">
-    <div class="card"><div class="lbl">开启未响应 超时/总数</div><div class="val" style="color:#56677e">6/6</div><div class="sub">当前 open·非自处理·未响应</div></div>
+    <div class="card"><div class="lbl">开启未响应 超时/总数</div><div class="val" style="color:#56677e">4/4</div><div class="sub">当前 open·非自处理·未响应</div></div>
 <div class="card"><div class="lbl">月度首响未达标数</div><div class="val" style="color:#56677e">10</div><div class="sub">统计 15</div></div>
 <div class="card"><div class="lbl">年度首响未达标数</div><div class="val" style="color:#56677e">14</div><div class="sub">统计 20</div></div>
 <div class="card"><div class="lbl">月度首响达标率</div><div class="val" style="color:#c0392b">33.3%</div><div class="sub">5/15</div></div>
@@ -47,27 +47,24 @@
 <div class="card"><div class="lbl">年度平均首响</div><div class="val" style="color:#56677e">27.9H</div><div class="sub">样本 8</div></div>
   </div>
 
-  <h2>oncall 待处理 · 待首次响应的用户问题 (6)</h2>
+  <h2>oncall 待处理 · 待首次响应的用户问题 (4)</h2>
   <table>
     <tr><th>Issue</th><th>停留时长</th><th>标题</th></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/issues/37" target="_blank">#37</a></td><td class="tag-bad">44.7H ⚠超 24H</td><td>[Documentation|文档反馈]: mc2 多卡文档称 record -n 默认仅 core 0，实际默认不注入 CORE_ENABLE_MASK（全开）</td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/issues/36" target="_blank">#36</a></td><td class="tag-bad">44.7H ⚠超 24H</td><td>[Documentation|文档反馈]: 数据竞争检测文档称无 record DB 时 report 不会失败，实际直接失败退出</td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/issues/33" target="_blank">#33</a></td><td class="tag-bad">44.7H ⚠超 24H</td><td>[Bug-Report|缺陷反馈]: -m 合并对 kernel_&lt;launch&gt;_&lt;name&gt;_reports 解析出的 kernel 索引恒为 0，合并文件互相覆盖并丢 kernel</td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/issues/32" target="_blank">#32</a></td><td class="tag-bad">44.7H ⚠超 24H</td><td>[Bug-Report|缺陷反馈]: record -c（ktest 模式）下 --chip/-n/-u 被接受但静默忽略，不报错也不生效</td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/issues/30" target="_blank">#30</a></td><td class="tag-bad">44.7H ⚠超 24H</td><td>[Bug-Report|缺陷反馈]: 数据竞争检测按 (low32(instr_id), CoreId) 关联访存与指令，MemoryRWAccesses.CoreId 恒为 0 导致跨核访存归属错误并漏检竞争</td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/issues/28" target="_blank">#28</a></td><td class="tag-bad">44.7H ⚠超 24H</td><td>[Bug-Report|缺陷反馈]: 同步/数据竞争检测把多 kernel、多 core 的事件并入同一 scope，误报与漏报并存</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/issues/36" target="_blank">#36</a></td><td class="tag-bad">45.7H ⚠超 24H</td><td>[Documentation|文档反馈]: 数据竞争检测文档称无 record DB 时 report 不会失败，实际直接失败退出</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/issues/32" target="_blank">#32</a></td><td class="tag-bad">45.7H ⚠超 24H</td><td>[Bug-Report|缺陷反馈]: record -c（ktest 模式）下 --chip/-n/-u 被接受但静默忽略，不报错也不生效</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/issues/30" target="_blank">#30</a></td><td class="tag-bad">45.7H ⚠超 24H</td><td>[Bug-Report|缺陷反馈]: 数据竞争检测按 (low32(instr_id), CoreId) 关联访存与指令，MemoryRWAccesses.CoreId 恒为 0 导致跨核访存归属错误并漏检竞争</td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/issues/28" target="_blank">#28</a></td><td class="tag-bad">45.7H ⚠超 24H</td><td>[Bug-Report|缺陷反馈]: 同步/数据竞争检测把多 kernel、多 core 的事件并入同一 scope，误报与漏报并存</td></tr>
   </table>
 
-  <h2>自动化 Bot 行为记录 (22)</h2>
+  <h2>自动化 Bot 行为记录 (21)</h2>
   <div class="meta" style="margin:-6px 0 12px">账号：simulator-bot · 数据源为 GitCode 实际评论（PR 侧仅统计 open PR；CANN-robot 的流水线回声不计入）</div>
   <table>
     <tr><th>时间 (UTC+8)</th><th>行为</th><th>对象</th><th>账号</th><th>评论摘要</th></tr>
-    <tr><td class="muted2">2026-11-11 18:17</td><td>PR 首响催办</td><td><a href="https://gitcode.com/cann/npu-simulator/pulls/39" target="_blank">PR #39</a><div class="muted2" style="font-size:12px">docs: 统一 -n 默认行为描述为模型默认（core 0）</div></td><td>simulator-bot</td><td class="muted2">提醒作者联系 committer 进行代码 review</td></tr>
+    <tr><td class="muted2">2026-11-11 20:17</td><td>PR 首响催办</td><td><a href="https://gitcode.com/cann/npu-simulator/pulls/37" target="_blank">PR #37</a><div class="muted2" style="font-size:12px">fix(record): 不再在用户工作目录创建/搬运 log、run_log，</div></td><td>simulator-bot</td><td class="muted2">提醒作者联系 committer 进行代码 review</td></tr>
     <tr><td class="muted2">2026-11-11 18:17</td><td>PR 首响催办</td><td><a href="https://gitcode.com/cann/npu-simulator/pulls/44" target="_blank">PR #44</a><div class="muted2" style="font-size:12px">docs: 修正无 record DB 时 report 的行为说明</div></td><td>simulator-bot</td><td class="muted2">提醒作者联系 committer 进行代码 review</td></tr>
     <tr><td class="muted2">2026-11-11 18:17</td><td>PR 首响催办</td><td><a href="https://gitcode.com/cann/npu-simulator/pulls/45" target="_blank">PR #45</a><div class="muted2" style="font-size:12px">fix(report): 跳过无执行指令的空 kernel DB</div></td><td>simulator-bot</td><td class="muted2">提醒作者联系 committer 进行代码 review</td></tr>
     <tr><td class="muted2">2026-11-11 18:17</td><td>PR 首响催办</td><td><a href="https://gitcode.com/cann/npu-simulator/pulls/46" target="_blank">PR #46</a><div class="muted2" style="font-size:12px">ci: 重构 Action CI 流水线并支持 ARM smoke</div></td><td>simulator-bot</td><td class="muted2">提醒作者联系 committer 进行代码 review</td></tr>
     <tr><td class="muted2">2026-11-11 18:17</td><td>PR 首响催办</td><td><a href="https://gitcode.com/cann/npu-simulator/pulls/47" target="_blank">PR #47</a><div class="muted2" style="font-size:12px">fix(detection): 按 kernel/core 隔离同步检测并修复跨</div></td><td>simulator-bot</td><td class="muted2">提醒作者联系 committer 进行代码 review</td></tr>
-    <tr><td class="muted2">2026-11-11 16:18</td><td>PR 首响催办</td><td><a href="https://gitcode.com/cann/npu-simulator/pulls/40" target="_blank">PR #40</a><div class="muted2" style="font-size:12px">fix(report): 识别 prof_demo kernel_&lt;launch</div></td><td>simulator-bot</td><td class="muted2">提醒作者联系 committer 进行代码 review</td></tr>
     <tr><td class="muted2">2026-11-11 16:18</td><td>PR 首响催办</td><td><a href="https://gitcode.com/cann/npu-simulator/pulls/41" target="_blank">PR #41</a><div class="muted2" style="font-size:12px">feat(record): -c 模式支持 -n 并明确 --chip/-u 不</div></td><td>simulator-bot</td><td class="muted2">提醒作者联系 committer 进行代码 review</td></tr>
     <tr><td class="muted2">2026-11-10 21:18</td><td>Issue 已收到</td><td><a href="https://gitcode.com/cann/npu-simulator/issues/39" target="_blank">Issue #39</a><div class="muted2" style="font-size:12px">CANN开发者共建计划--[Documentation|文档反馈] 更正ops安</div></td><td>simulator-bot</td><td class="muted2">回应「你的 issue 已收到」</td></tr>
     <tr><td class="muted2">2026-11-10 20:18</td><td>PR 首响催办</td><td><a href="https://gitcode.com/cann/npu-simulator/pulls/36" target="_blank">PR #36</a><div class="muted2" style="font-size:12px">fix(record): 同名产物按来源优先级归档，低优先级不再覆盖（#18）</div></td><td>simulator-bot</td><td class="muted2">提醒作者联系 committer 进行代码 review</td></tr>
@@ -86,21 +83,19 @@
     <tr><td class="muted2">2026-11-09 21:49</td><td>PR 首响催办</td><td><a href="https://gitcode.com/cann/npu-simulator/pulls/23" target="_blank">PR #23</a><div class="muted2" style="font-size:12px">fix: preserve first-root artifact when n</div></td><td>simulator-bot</td><td class="muted2">提醒作者联系 committer 进行代码 review</td></tr>
   </table>
 
-  <h2>committer 待 Review / 合并 · open PR (12，可合入 9 · AI 模型 cannbot/deepseek-v4.1-flash)</h2>
+  <h2>committer 待 Review / 合并 · open PR (10，可合入 7 · AI 模型 cannbot/deepseek-v4.1-flash)</h2>
   <table>
     <tr><th>PR</th><th>可否合入</th><th>AI 价值判定</th><th>关联 Issue</th><th>停留时长</th><th>标题与 AI 评审建议</th></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/23" target="_blank">#23</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#18</td><td>273.4H</td><td><div>fix: preserve first-root artifact when names collide</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修复多来源同名产物归档时被后来源覆盖的问题 · <b>建议：CLA 已签、CI 通过且无阻塞，建议直接合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/36" target="_blank">#36</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#18</td><td>24.4H</td><td><div>fix(record): 同名产物按来源优先级归档，低优先级不再覆盖（#18）</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修复归档同名产物被低优先级来源覆盖的问题 · <b>建议：CLA 与 CI 均通过且无冲突，建议直接合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/41" target="_blank">#41</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#32</td><td>4.7H</td><td><div>feat(record): -c 模式支持 -n 并明确 --chip/-u 不生效</div><div style="margin-top:4px;font-size:13px;color:#56677e;">-c 模式下 -n 生效，--chip/-u 改为显式告警 · <b>建议：CLA 与 CI 均通过，无阻塞，建议直接合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/40" target="_blank">#40</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#33</td><td>4.7H</td><td><div>fix(report): 识别 prof_demo kernel_&lt;launch&gt;_&lt;name&gt;_reports 命名</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修复 prof_demo 报告目录名解析，kernel 索引取 launch 号不再塌缩为 0 · <b>建议：CLA 与 CI 全绿且无冲突，建议直接合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/39" target="_blank">#39</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#37</td><td>4.7H</td><td><div>docs: 统一 -n 默认行为描述为模型默认（core 0）</div><div style="margin-top:4px;font-size:13px;color:#56677e;">统一 -n 默认行为为模型默认 core 0，修正帮助文本与用户指南措辞 · <b>建议：CLA 与 CI 门禁全绿，文档与帮助文本已对齐，建议直接合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/47" target="_blank">#47</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#28</td><td>2H</td><td><div>fix(detection): 按 kernel/core 隔离同步检测并修复跨核与 buffer 误报</div><div style="margin-top:4px;font-size:13px;color:#56677e;">按 kernel/core 隔离同步与竞争检测，修复跨核与 buffer 误报 · <b>建议：CLA 通过且 CI 全绿、无冲突，建议直接合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/46" target="_blank">#46</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#25</td><td>2H</td><td><div>ci: 重构 Action CI 流水线并支持 ARM smoke</div><div style="margin-top:4px;font-size:13px;color:#56677e;">重构 Action CI 流水线，新增 ARM smoke 支持 · <b>建议：CLA 与 CI 全绿且无冲突，建议直接合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/45" target="_blank">#45</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#24</td><td>2H</td><td><div>fix(report): 跳过无执行指令的空 kernel DB</div><div style="margin-top:4px;font-size:13px;color:#56677e;">分析前检查空 kernel DB 并跳过，避免除零导致报告生成失败 · <b>建议：CLA 与 CI 均通过且无冲突，建议直接合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/44" target="_blank">#44</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#36</td><td>2H</td><td><div>docs: 修正无 record DB 时 report 的行为说明</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修正数据竞争检测文档，明确 report 缺 record DB 时直接失败退出 · <b>建议：CLA 与 CI 均通过、无冲突，建议直接合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/21" target="_blank">#21</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#16</td><td>273.7H</td><td><div>fix: reserve separate output directories for same-second runs</div><div style="margin-top:4px;font-size:13px;color:#56677e;">用独占 mkdir 分配目录，修复同秒运行复用归档目录 · <b>建议：需作者 squash 为单提交并重跑 CI 取得通过标签后合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/22" target="_blank">#22</a></td><td class="tag-bad">❌ 存在冲突/不可合、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#17</td><td>273.5H</td><td><div>docs: match in-page links to rendered heading IDs</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修正 README、用户指南与安全声明中 4 处页内锚点链接以匹配渲染标题 ID · <b>建议：需作者先解决合并冲突并 squash，同时按评审意见复核 README 与用户指南两处锚点是否正确</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/37" target="_blank">#37</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#29</td><td>23.6H</td><td><div>fix(record): 不再在用户工作目录创建/搬运 log、run_log，避免静默删除用户数据</div><div style="margin-top:4px;font-size:13px;color:#56677e;">移除 record 运行时目录搬运逻辑，防止静默删除用户 log 数据 · <b>建议：需要作者先压缩提交并等待 CI 通过，之后才能复核合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/22" target="_blank">#22</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#17</td><td>274.5H</td><td><div>docs: match in-page links to rendered heading IDs</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修正安全说明两处附录锚点链接，恢复文档跳转定位 · <b>建议：已获 approved 且门禁全绿，建议直接合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/23" target="_blank">#23</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#18</td><td>274.4H</td><td><div>fix: preserve first-root artifact when names collide</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修复多来源同名产物归档时被后来源覆盖的问题 · <b>建议：CLA 已签、CI 通过且无阻塞，建议直接合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/36" target="_blank">#36</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#18</td><td>25.4H</td><td><div>fix(record): 同名产物按来源优先级归档，低优先级不再覆盖（#18）</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修复归档同名产物被低优先级来源覆盖的问题 · <b>建议：CLA 与 CI 均通过且无冲突，建议直接合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/47" target="_blank">#47</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#28</td><td>3H</td><td><div>fix(detection): 按 kernel/core 隔离同步检测并修复跨核与 buffer 误报</div><div style="margin-top:4px;font-size:13px;color:#56677e;">按 kernel/core 隔离同步与竞争检测，修复跨核与 buffer 误报 · <b>建议：CLA 通过且 CI 全绿、无冲突，建议直接合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/46" target="_blank">#46</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#25</td><td>3H</td><td><div>ci: 重构 Action CI 流水线并支持 ARM smoke</div><div style="margin-top:4px;font-size:13px;color:#56677e;">重构 Action CI 流水线，新增 ARM smoke 支持 · <b>建议：CLA 与 CI 全绿且无冲突，建议直接合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/45" target="_blank">#45</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#24</td><td>3H</td><td><div>fix(report): 跳过无执行指令的空 kernel DB</div><div style="margin-top:4px;font-size:13px;color:#56677e;">分析前检查空 kernel DB 并跳过，避免除零导致报告生成失败 · <b>建议：CLA 与 CI 均通过且无冲突，建议直接合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/44" target="_blank">#44</a></td><td class="tag-ok">✅ 可合入</td><td><span class="tag-ok">🤖 值得合入</span></td><td class="muted2">#36</td><td>3H</td><td><div>docs: 修正无 record DB 时 report 的行为说明</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修正数据竞争检测文档，明确 report 缺 record DB 时直接失败退出 · <b>建议：CLA 与 CI 均通过、无冲突，建议直接合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/21" target="_blank">#21</a></td><td class="tag-bad">❌ 需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#16</td><td>274.7H</td><td><div>fix: reserve separate output directories for same-second runs</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修复同秒运行复用输出目录，改用独占 mkdir 分配 · <b>建议：需作者 squash 压缩提交历史后重跑门禁再合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/37" target="_blank">#37</a></td><td class="tag-bad">❌ 需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#29</td><td>24.6H</td><td><div>fix(record): 不再在用户工作目录创建/搬运 log、run_log，避免静默删除用户数据</div><div style="margin-top:4px;font-size:13px;color:#56677e;">移除 cwd 下 log/run_log 的创建、归档与删除逻辑，避免误删用户数据 · <b>建议：功能与测试均认可，需作者 squash 为单提交后合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/41" target="_blank">#41</a></td><td class="tag-bad">❌ 存在冲突/不可合</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#32</td><td>5.7H</td><td><div>feat(record): -c 模式支持 -n 并明确 --chip/-u 不生效</div><div style="margin-top:4px;font-size:13px;color:#56677e;">修复 record -c 下 -n 不生效、--chip/-u 静默忽略的问题 · <b>建议：需作者先解决 merge 冲突并重跑 CI，全绿后再合入</b></div></td></tr>
   </table>
 
   <div class="note">

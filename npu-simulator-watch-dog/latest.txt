@@ -1,10 +1,10 @@
-总览指标 · cann/npu-simulator · 2026-11-11 19:37 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-11 20:37 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
 ❌ 不合规 (2 项)
-  闭环率：月 50% / 年 61.5%  (月 10/20 · 年 24/39（阈值 ≥90%）)
-      原因：月 50% 落在橙区（50%~90%）；年 61.5% 落在橙区（50%~90%）
+  闭环率：月 60% / 年 66.7%  (月 12/20 · 年 26/39（阈值 ≥90%）)
+      原因：月 60% 落在橙区（50%~90%）；年 66.7% 落在橙区（50%~90%）
   首响达标率：月 33.3% / 年 30%  (月 5/15 · 年 6/20（阈值 ≥80%）)
       原因：月 33.3% 落在红区；年 30% 落在红区
 
@@ -13,57 +13,51 @@
 
 ➖ 仅展示 (6 项)
   Issue 总数：39  (全仓 Issue)
-  开启总数：15  (当前 open)
-  平均闭环时长：月 1.7天 / 年 4.7天  (月样本 10 · 年样本 24)
-  开启未响应 超时/总数：6/6  (当前 open·非自处理·未响应)
+  开启总数：13  (当前 open)
+  平均闭环时长：月 1.7天 / 年 4.5天  (月样本 12 · 年样本 26)
+  开启未响应 超时/总数：4/4  (当前 open·非自处理·未响应)
   首响未达标数：月 10 / 年 14  (月统计 15 · 年统计 20)
   平均首响：月 5.1H / 年 27.9H  (月样本 5 · 年样本 8)
 
-【oncall 待处理】待首次响应的用户问题 (6)
-  #37 停留 44.7H ⚠超 24H  [Documentation|文档反馈]: mc2 多卡文档称 record -n 默认仅 core 0，实际默认不注入 CORE_ENABLE_MASK（全开）
-  #36 停留 44.7H ⚠超 24H  [Documentation|文档反馈]: 数据竞争检测文档称无 record DB 时 report 不会失败，实际直接失败退出
-  #33 停留 44.7H ⚠超 24H  [Bug-Report|缺陷反馈]: -m 合并对 kernel_<launch>_<name>_reports 解析出的 kernel 索引恒为 0，合并文件互相覆盖并丢 kernel
-  #32 停留 44.7H ⚠超 24H  [Bug-Report|缺陷反馈]: record -c（ktest 模式）下 --chip/-n/-u 被接受但静默忽略，不报错也不生效
-  #30 停留 44.7H ⚠超 24H  [Bug-Report|缺陷反馈]: 数据竞争检测按 (low32(instr_id), CoreId) 关联访存与指令，MemoryRWAccesses.CoreId 恒为 0 导致跨核访存归属错误并漏检竞争
-  #28 停留 44.7H ⚠超 24H  [Bug-Report|缺陷反馈]: 同步/数据竞争检测把多 kernel、多 core 的事件并入同一 scope，误报与漏报并存
+【oncall 待处理】待首次响应的用户问题 (4)
+  #36 停留 45.7H ⚠超 24H  [Documentation|文档反馈]: 数据竞争检测文档称无 record DB 时 report 不会失败，实际直接失败退出
+  #32 停留 45.7H ⚠超 24H  [Bug-Report|缺陷反馈]: record -c（ktest 模式）下 --chip/-n/-u 被接受但静默忽略，不报错也不生效
+  #30 停留 45.7H ⚠超 24H  [Bug-Report|缺陷反馈]: 数据竞争检测按 (low32(instr_id), CoreId) 关联访存与指令，MemoryRWAccesses.CoreId 恒为 0 导致跨核访存归属错误并漏检竞争
+  #28 停留 45.7H ⚠超 24H  [Bug-Report|缺陷反馈]: 同步/数据竞争检测把多 kernel、多 core 的事件并入同一 scope，误报与漏报并存
 
-【committer 待 Review / 合并】open PR (12，可合入 9 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
-  PR #23 ✅可合入 · 停留 273.4H → Issue #18  fix: preserve first-root artifact when names collide
+【committer 待 Review / 合并】open PR (10，可合入 7 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
+  PR #22 ✅可合入 · 停留 274.5H → Issue #17  docs: match in-page links to rendered heading IDs
+      └─ 🤖 值得合入：修正安全说明两处附录锚点链接，恢复文档跳转定位 ｜ 建议：已获 approved 且门禁全绿，建议直接合入
+  PR #23 ✅可合入 · 停留 274.4H → Issue #18  fix: preserve first-root artifact when names collide
       └─ 🤖 值得合入：修复多来源同名产物归档时被后来源覆盖的问题 ｜ 建议：CLA 已签、CI 通过且无阻塞，建议直接合入
-  PR #36 ✅可合入 · 停留 24.4H → Issue #18  fix(record): 同名产物按来源优先级归档，低优先级不再覆盖（#18）
+  PR #36 ✅可合入 · 停留 25.4H → Issue #18  fix(record): 同名产物按来源优先级归档，低优先级不再覆盖（#18）
       └─ 🤖 值得合入：修复归档同名产物被低优先级来源覆盖的问题 ｜ 建议：CLA 与 CI 均通过且无冲突，建议直接合入
-  PR #41 ✅可合入 · 停留 4.7H → Issue #32  feat(record): -c 模式支持 -n 并明确 --chip/-u 不生效
-      └─ 🤖 值得合入：-c 模式下 -n 生效，--chip/-u 改为显式告警 ｜ 建议：CLA 与 CI 均通过，无阻塞，建议直接合入
-  PR #40 ✅可合入 · 停留 4.7H → Issue #33  fix(report): 识别 prof_demo kernel_<launch>_<name>_reports 命名
-      └─ 🤖 值得合入：修复 prof_demo 报告目录名解析，kernel 索引取 launch 号不再塌缩为 0 ｜ 建议：CLA 与 CI 全绿且无冲突，建议直接合入
-  PR #39 ✅可合入 · 停留 4.7H → Issue #37  docs: 统一 -n 默认行为描述为模型默认（core 0）
-      └─ 🤖 值得合入：统一 -n 默认行为为模型默认 core 0，修正帮助文本与用户指南措辞 ｜ 建议：CLA 与 CI 门禁全绿，文档与帮助文本已对齐，建议直接合入
-  PR #47 ✅可合入 · 停留 2H → Issue #28  fix(detection): 按 kernel/core 隔离同步检测并修复跨核与 buffer 误报
+  PR #47 ✅可合入 · 停留 3H → Issue #28  fix(detection): 按 kernel/core 隔离同步检测并修复跨核与 buffer 误报
       └─ 🤖 值得合入：按 kernel/core 隔离同步与竞争检测，修复跨核与 buffer 误报 ｜ 建议：CLA 通过且 CI 全绿、无冲突，建议直接合入
-  PR #46 ✅可合入 · 停留 2H → Issue #25  ci: 重构 Action CI 流水线并支持 ARM smoke
+  PR #46 ✅可合入 · 停留 3H → Issue #25  ci: 重构 Action CI 流水线并支持 ARM smoke
       └─ 🤖 值得合入：重构 Action CI 流水线，新增 ARM smoke 支持 ｜ 建议：CLA 与 CI 全绿且无冲突，建议直接合入
-  PR #45 ✅可合入 · 停留 2H → Issue #24  fix(report): 跳过无执行指令的空 kernel DB
+  PR #45 ✅可合入 · 停留 3H → Issue #24  fix(report): 跳过无执行指令的空 kernel DB
       └─ 🤖 值得合入：分析前检查空 kernel DB 并跳过，避免除零导致报告生成失败 ｜ 建议：CLA 与 CI 均通过且无冲突，建议直接合入
-  PR #44 ✅可合入 · 停留 2H → Issue #36  docs: 修正无 record DB 时 report 的行为说明
+  PR #44 ✅可合入 · 停留 3H → Issue #36  docs: 修正无 record DB 时 report 的行为说明
       └─ 🤖 值得合入：修正数据竞争检测文档，明确 report 缺 record DB 时直接失败退出 ｜ 建议：CLA 与 CI 均通过、无冲突，建议直接合入
-  PR #21 ❌缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 273.7H → Issue #16  fix: reserve separate output directories for same-second runs
-      └─ 🤖 阻塞待解：用独占 mkdir 分配目录，修复同秒运行复用归档目录 ｜ 建议：需作者 squash 为单提交并重跑 CI 取得通过标签后合入
-  PR #22 ❌存在冲突/不可合、需squash(stat/needs-squash) · 停留 273.5H → Issue #17  docs: match in-page links to rendered heading IDs
-      └─ 🤖 阻塞待解：修正 README、用户指南与安全声明中 4 处页内锚点链接以匹配渲染标题 ID ｜ 建议：需作者先解决合并冲突并 squash，同时按评审意见复核 README 与用户指南两处锚点是否正确
-  PR #37 ❌缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 23.6H → Issue #29  fix(record): 不再在用户工作目录创建/搬运 log、run_log，避免静默删除用户数据
-      └─ 🤖 阻塞待解：移除 record 运行时目录搬运逻辑，防止静默删除用户 log 数据 ｜ 建议：需要作者先压缩提交并等待 CI 通过，之后才能复核合入
+  PR #21 ❌需squash(stat/needs-squash) · 停留 274.7H → Issue #16  fix: reserve separate output directories for same-second runs
+      └─ 🤖 阻塞待解：修复同秒运行复用输出目录，改用独占 mkdir 分配 ｜ 建议：需作者 squash 压缩提交历史后重跑门禁再合入
+  PR #37 ❌需squash(stat/needs-squash) · 停留 24.6H → Issue #29  fix(record): 不再在用户工作目录创建/搬运 log、run_log，避免静默删除用户数据
+      └─ 🤖 阻塞待解：移除 cwd 下 log/run_log 的创建、归档与删除逻辑，避免误删用户数据 ｜ 建议：功能与测试均认可，需作者 squash 为单提交后合入
+  PR #41 ❌存在冲突/不可合 · 停留 5.7H → Issue #32  feat(record): -c 模式支持 -n 并明确 --chip/-u 不生效
+      └─ 🤖 阻塞待解：修复 record -c 下 -n 不生效、--chip/-u 静默忽略的问题 ｜ 建议：需作者先解决 merge 冲突并重跑 CI，全绿后再合入
 
-【自动化 Bot 行为记录】22 条（PR 首响催办 10 / Issue 已收到 12）
-  2026-11-11 18:17  PR 首响催办 · PR #39  docs: 统一 -n 默认行为描述为模型默认（core 0）
+【自动化 Bot 行为记录】21 条（PR 首响催办 9 / Issue 已收到 12）
+  2026-11-11 20:17  PR 首响催办 · PR #37  fix(record): 不再在用户工作目录创建/搬运 log、run_
   2026-11-11 18:17  PR 首响催办 · PR #44  docs: 修正无 record DB 时 report 的行为说明
   2026-11-11 18:17  PR 首响催办 · PR #45  fix(report): 跳过无执行指令的空 kernel DB
   2026-11-11 18:17  PR 首响催办 · PR #46  ci: 重构 Action CI 流水线并支持 ARM smoke
   2026-11-11 18:17  PR 首响催办 · PR #47  fix(detection): 按 kernel/core 隔离同步检测
-  2026-11-11 16:18  PR 首响催办 · PR #40  fix(report): 识别 prof_demo kernel_<la
   2026-11-11 16:18  PR 首响催办 · PR #41  feat(record): -c 模式支持 -n 并明确 --chip/
   2026-11-10 21:18  Issue 已收到 · Issue #39  CANN开发者共建计划--[Documentation|文档反馈] 更正
   2026-11-10 20:18  PR 首响催办 · PR #36  fix(record): 同名产物按来源优先级归档，低优先级不再覆盖（#
   2026-11-09 23:17  Issue 已收到 · Issue #27  [Bug-Report|缺陷反馈]: LOAD_2D 的 k_start
-  … 其余 12 条见网页
+  2026-11-09 23:17  Issue 已收到 · Issue #28  [Bug-Report|缺陷反馈]: 同步/数据竞争检测把多 kerne
+  … 其余 11 条见网页
 
 闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
