@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-11T11:18:33.174Z",
-  "generatedAtCst": "2026-11-11 19:18",
+  "generatedAt": "2026-11-11T11:37:53.938Z",
+  "generatedAtCst": "2026-11-11 19:37",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 39,
@@ -10,15 +10,15 @@
     "prs_open": 12,
     "prs_merge_ready": 9,
     "prs_low_value": 0,
-    "cache_hits": 12,
-    "agent_calls": 0
+    "cache_hits": 9,
+    "agent_calls": 3
   },
   "reviews": {
     "21": {
       "number": 21,
       "title": "fix: reserve separate output directories for same-second runs",
       "author": "gxhgxh2475698",
-      "fingerprint": "408b656207cf07f9",
+      "fingerprint": "612bd0c5b89f3556",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -53,24 +53,23 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "用独占 mkdir 分配运行目录，避免同秒运行复用归档",
-        "issue_alignment": "针对性修复 #16 目录复用缺陷",
-        "committer_action": "请作者 squash 提交并补 CI 通过标签后再评审合入",
+        "summary": "用独占 mkdir 分配目录，修复同秒运行复用归档目录",
+        "issue_alignment": "针对性修复 #16 同秒输出目录复用缺陷",
+        "committer_action": "需作者 squash 为单提交并重跑 CI 取得通过标签后合入",
         "detail_points": [
-          "新增 create_unique_target_dir 以独占 mkdir 加 _N 后缀，record 与 ktest 两模式共用，逻辑正确",
-          "附带修复 runtime.py 备份清理的 Py3.7 兼容问题，但 os.rename 改 copy2 需确认语义无回退",
-          "两模式各新增同秒回归测试，覆盖仍开放 #16 的复现场景，建议补并发竞争用例"
+          "新增 create_unique_target_dir 以独占 mkdir 预留目录，冲突时递增 _1/_2 后缀，逻辑正确且可回归",
+          "record 与 ktest 两种模式均改用预留路径并同步 OUTPUT PATH 上下文，两个同秒回归测试覆盖到位"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-09T14:19:39.890Z"
+        "reviewed_at": "2026-11-11T11:37:53.935Z"
       }
     },
     "22": {
       "number": 22,
       "title": "docs: match in-page links to rendered heading IDs",
       "author": "gxhgxh2475698",
-      "fingerprint": "c0eda960697c3d25",
+      "fingerprint": "a396e1ee3001baad",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -104,16 +103,17 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "修正三份文档中四处页内锚点链接，匹配 GitCode 渲染标题 ID",
-        "issue_alignment": "精准修复 #17 的四处锚点失配",
-        "committer_action": "需作者解决合并冲突、squash 后重跑 CI，再合入",
+        "summary": "修正 README、用户指南与安全声明中 4 处页内锚点链接以匹配渲染标题 ID",
+        "issue_alignment": "针对性修复 #17 锚点不匹配问题",
+        "committer_action": "需作者先解决合并冲突并 squash，同时按评审意见复核 README 与用户指南两处锚点是否正确",
         "detail_points": [
-          "READM E、用户指南、安全声明四处 fragment 均对照渲染 HTML 核实，改动正确且无副作用",
-          "已获 liangbinglong /approve 且 CI 通过，但仍有冲突与 needs-squash 阻塞，暂不可合"
+          "security_statement 两处锚点去括号小写化经核对正确，可保留",
+          "评审指出 README 与用户指南两处改后链接反而失效，需回退或重新核对渲染 ID",
+          "当前存在合并冲突与 stat/needs-squash 阻塞，需解决并重跑 CI 后再合"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-11T10:38:04.191Z"
+        "reviewed_at": "2026-11-11T11:37:49.800Z"
       }
     },
     "23": {
@@ -216,7 +216,7 @@
       "number": 37,
       "title": "fix(record): 不再在用户工作目录创建/搬运 log、run_log，避免静默删除用户数据",
       "author": "zengzihui",
-      "fingerprint": "4aea78a1391af108",
+      "fingerprint": "c332eef50c68f9b4",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -231,12 +231,13 @@
       ],
       "merge_ready": false,
       "blockers": [
-        "missing_label:ci-pipeline-passed"
+        "missing_label:ci-pipeline-passed",
+        "blocking_label:stat/needs-squash"
       ],
       "diff_stats": {
         "files": 3,
-        "added_lines": 48,
-        "removed_lines": 26,
+        "added_lines": 49,
+        "removed_lines": 29,
         "surface_files": 0,
         "substantive_files": 3,
         "test_files": 1,
@@ -250,16 +251,18 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "移除 record 在用户 cwd 建/搬 log、run_log，避免误删用户数据",
-        "issue_alignment": "针对修复 #29 静默删除用户目录的缺陷",
-        "committer_action": "需先定位并修复 CI 流水线失败，重跑通过后再合入",
+        "summary": "移除 record 运行时目录搬运逻辑，防止静默删除用户 log 数据",
+        "issue_alignment": "针对性修复 #29 静默删用户数据缺陷",
+        "committer_action": "需要作者先压缩提交并等待 CI 通过，之后才能复核合入",
         "detail_points": [
-          "runtime.py 从 CAMODEL_ASSETS 摘除 log/run_log 并删除 RUNTIME_DIRS，消除归档后删除用户同名目录的路径",
-          "新增 test_prepare_runtime_dirs_leaves_user_cwd_untouched 回归用例覆盖 #29，建议补充失败路径清理断言"
+          "CAMODEL_ASSETS 剔除 log/run_log 并删除 RUNTIME_DIRS，归档白名单仅保留 stars_log*.dump",
+          "prepare_runtime_dirs 改为只在 output/record/log_ca 建目录，不再触碰 launch.cwd",
+          "新增 tests/test_core/test_record/test_runtime.py 回归用例，覆盖 #29 用户工作目录不被污染",
+          "当前缺 ci-pipeline-passed，且存在 stat/needs-squash 阻塞标签"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-10T12:37:44.240Z"
+        "reviewed_at": "2026-11-11T11:37:46.095Z"
       }
     },
     "39": {
