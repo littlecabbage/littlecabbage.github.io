@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-12T08:37:22.866Z",
-  "runAtCst": "2026-11-12 16:37",
+  "runAt": "2026-11-12T09:37:28.153Z",
+  "runAtCst": "2026-11-12 17:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -261,21 +261,21 @@
     "pr_nudge": 1
   },
   "closeLoop": {
-    "issuesTotal": 47,
-    "openTotal": 2,
+    "issuesTotal": 49,
+    "openTotal": 4,
     "month": {
-      "total": 28,
+      "total": 30,
       "closed": 27,
-      "rate": 96.4,
+      "rate": 90,
       "rateColor": "blue",
       "avgCloseHours": 37.2,
       "avgCloseDays": 1.5,
       "durSamples": 27
     },
     "year": {
-      "total": 47,
+      "total": 49,
       "closed": 45,
-      "rate": 95.7,
+      "rate": 91.8,
       "rateColor": "blue",
       "avgCloseHours": 99.4,
       "avgCloseDays": 4.1,
@@ -284,29 +284,44 @@
   },
   "response": {
     "openNoResponse": {
-      "total": 0,
+      "total": 2,
       "overdue": 0
     },
     "month": {
-      "total": 23,
-      "qualified": 13,
+      "total": 25,
+      "qualified": 15,
       "unqualified": 10,
-      "rate": 56.5,
+      "rate": 60,
       "rateColor": "orange",
       "avgFirstRespHours": 5.5,
       "respSamples": 14
     },
     "year": {
-      "total": 28,
-      "qualified": 14,
+      "total": 30,
+      "qualified": 16,
       "unqualified": 14,
-      "rate": 50,
+      "rate": 53.3,
       "rateColor": "orange",
       "avgFirstRespHours": 16.1,
       "respSamples": 17
     }
   },
-  "oncallList": [],
+  "oncallList": [
+    {
+      "number": "49",
+      "title": "\"[Question|问题咨询]我的报告目录是 0000_vector_add_reports，文档里见过 kernel_0000_vector_add_reports",
+      "waitHours": 0.1,
+      "overdue": false,
+      "url": "https://gitcode.com/cann/npu-simulator/issues/49"
+    },
+    {
+      "number": "48",
+      "title": "\"[Question|问题咨询]report 不指定输出目录时报告生成在哪里，会不会污染其他文件",
+      "waitHours": 0.1,
+      "overdue": false,
+      "url": "https://gitcode.com/cann/npu-simulator/issues/48"
+    }
+  ],
   "committerList": [
     {
       "number": "36",
@@ -316,7 +331,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合",
-      "waitHours": 45.4,
+      "waitHours": 46.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/36",
       "agentReview": {
         "verdict": "NEEDS_WORK",
