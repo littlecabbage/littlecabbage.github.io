@@ -3,7 +3,7 @@
 | 维度 | 详情 |
 |---|---|
 | **目标仓库** | [cann/npu-simulator](https://gitcode.com/cann/npu-simulator)（GitCode） |
-| **巡检时间** | 2026-11-12 09:37 (UTC+8) |
+| **巡检时间** | 2026-11-12 10:37 (UTC+8) |
 | **分析引擎** | `gitcode-issue-triage` 确定性守卫 + Pi Agent (`cannbot/deepseek-v4.1-flash`) |
 | **判定原则** | 宁漏勿错：强灌水信号 + 无安全否决 → 低价值候选；有任何实质代码/测试/关联 Issue → 保留并给出合路建议 |
 
@@ -12,40 +12,38 @@
 ## 一、执行摘要（供 on-call & committer 速览）
 
 - **Issue 巡检**：共扫描 **39** 条 Issue，判定 KEEP **39** / CLOSE 候选 **0** / 待人工复核 **0**。
-- **Open PR 总览（共 11 个）**：
-  - ✅ **可立即合入（8 个）**：#47、#46、#45、#44、#41、#36、#23、#22
-  - ⚠️ **实质贡献但门禁阻塞（3 个）**：#49、#37、#21
+- **Open PR 总览（共 8 个）**：
+  - ✅ **可立即合入（8 个）**：#49、#47、#46、#45、#44、#36、#23、#22
+  - ⚠️ **实质贡献但门禁阻塞（0 个）**：无
   - 🧹 **低价值/表面改动候选（0 个）**：无
 
 ## 二、Open PR 逐条深度评审与行动清单
 
 | PR | AI 结论 | 合路门禁 | 关联 Issue | 改动规模 (实质文件) | AI 改动摘要与关联对齐 | committer 建议动作 |
 |---|---|---|---|---|---|---|
-| [#49](https://gitcode.com/cann/npu-simulator/pulls/49) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | [#30](https://gitcode.com/cann/npu-simulator/issues/30) | +95/-20 (2/2 实质) | 修复跨核访存按归属核解析，避免竞争漏检（针对性修复 #30 跨核漏检缺陷） | 需补 ci-pipeline-passed 门禁并重跑 CI 后再合入 |
+| [#49](https://gitcode.com/cann/npu-simulator/pulls/49) | **🤖 值得合入** | ✅ 可合入 | [#30](https://gitcode.com/cann/npu-simulator/issues/30) | +95/-20 (2/2 实质) | 改为按指令归属核关联访存，修复跨核竞争漏检（已针对性修复 #30 跨核漏检缺陷） | CLA 与 CI 均通过且无冲突，建议直接合入 |
 | [#47](https://gitcode.com/cann/npu-simulator/pulls/47) | **🤖 值得合入** | ✅ 可合入 | [#28](https://gitcode.com/cann/npu-simulator/issues/28) | +337/-58 (5/5 实质) | 按 kernel/core 隔离同步与竞争检测，修复跨核与 buffer 误报（针对性修复 #28 多核多 kernel 误报漏报） | CLA 通过且 CI 全绿、无冲突，建议直接合入 |
 | [#46](https://gitcode.com/cann/npu-simulator/pulls/46) | **🤖 值得合入** | ✅ 可合入 | [#25](https://gitcode.com/cann/npu-simulator/issues/25) | +905/-368 (13/13 实质) | 重构 Action CI 流水线，新增 ARM smoke 支持（已针对性支持 #25 的 aarch64 smoke） | CLA 与 CI 全绿且无冲突，建议直接合入 |
 | [#45](https://gitcode.com/cann/npu-simulator/pulls/45) | **🤖 值得合入** | ✅ 可合入 | [#24](https://gitcode.com/cann/npu-simulator/issues/24) | +64/-1 (3/3 实质) | 分析前检查空 kernel DB 并跳过，避免除零导致报告生成失败（针对性修复 #24 空 DB 报告失败） | CLA 与 CI 均通过且无冲突，建议直接合入 |
 | [#44](https://gitcode.com/cann/npu-simulator/pulls/44) | **🤖 值得合入** | ✅ 可合入 | [#36](https://gitcode.com/cann/npu-simulator/issues/36) | +5/-1 (1/1 实质) | 修正数据竞争检测文档，明确 report 缺 record DB 时直接失败退出（针对性修复 #36 文档错误描述） | CLA 与 CI 均通过、无冲突，建议直接合入 |
-| [#41](https://gitcode.com/cann/npu-simulator/pulls/41) | **🤖 值得合入** | ✅ 可合入 | [#32](https://gitcode.com/cann/npu-simulator/issues/32) | +112/-6 (8/8 实质) | ktest 模式接入 -n 核心选择，-c 下 --chip/-u 改为显式告警（已针对性修复 #32 参数静默忽略缺陷） | 已获 approved 且门禁全绿，建议直接合入 |
-| [#37](https://gitcode.com/cann/npu-simulator/pulls/37) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | [#29](https://gitcode.com/cann/npu-simulator/issues/29) | +49/-29 (3/3 实质) | 移除 cwd 下 log/run_log 的创建、归档与删除逻辑，避免误删用户数据（针对性修复 #29 静默删除用户数据缺陷） | 功能与测试均认可，需作者 squash 为单提交后合入 |
 | [#36](https://gitcode.com/cann/npu-simulator/pulls/36) | **🤖 值得合入** | ✅ 可合入 | [#18](https://gitcode.com/cann/npu-simulator/issues/18) | +70/-0 (2/2 实质) | 修复归档同名产物被低优先级来源覆盖的问题（已针对性修复 #18 归档覆盖缺陷） | CLA 与 CI 均通过且无冲突，建议直接合入 |
 | [#23](https://gitcode.com/cann/npu-simulator/pulls/23) | **🤖 值得合入** | ✅ 可合入 | [#18](https://gitcode.com/cann/npu-simulator/issues/18) | +34/-3 (2/2 实质) | 修复多来源同名产物归档时被后来源覆盖的问题（针对性修复 #18 同名产物覆盖缺陷） | CLA 已签、CI 通过且无阻塞，建议直接合入 |
 | [#22](https://gitcode.com/cann/npu-simulator/pulls/22) | **🤖 值得合入** | ✅ 可合入 | [#17](https://gitcode.com/cann/npu-simulator/issues/17) | +3/-3 (1/1 实质) | 修正安全说明两处附录锚点链接，恢复文档跳转定位（已针对性修复 #17 锚点不匹配） | 已获 approved 且门禁全绿，建议直接合入 |
-| [#21](https://gitcode.com/cann/npu-simulator/pulls/21) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | [#16](https://gitcode.com/cann/npu-simulator/issues/16) | +75/-6 (5/5 实质) | 修复同秒运行复用输出目录，改用独占 mkdir 分配（已针对性修复 #16 同秒目录复用缺陷） | 需作者 squash 压缩提交历史后重跑门禁再合入 |
 
 ### PR #49：fix(detection): MemoryRWAccesses 按指令归属核解析，修复跨核漏检
 
-- **作者**：`@ZhouBX` · **停留自然时长**：0h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@ZhouBX` · **停留自然时长**：1h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +64 行）
-- **关联 Issue 对齐**：针对性修复 #30 跨核漏检缺陷
-- **核心改动摘要**：修复跨核访存按归属核解析，避免竞争漏检
-  - join key 去掉恒为 0 的 MemoryRWAccesses.CoreId，仅按 low32(ExecInstrId) 关联指令
-  - 用 ExecInstrCoreId/CoreTypeId 还原归属核，新增 core1 归属与跨核 GM WAW 用例
-- **committer 建议动作**：**需补 ci-pipeline-passed 门禁并重跑 CI 后再合入**
+- **关联 Issue 对齐**：已针对性修复 #30 跨核漏检缺陷
+- **核心改动摘要**：改为按指令归属核关联访存，修复跨核竞争漏检
+  - join key 去掉恒为 0 的 MemoryRWAccesses.CoreId，仅按 low32(ExecInstrId) 关联
+  - 用 ExecInstrCoreId 回填 core/sub/core_type，GM 跨核 WAW 不再合并到 core0
+  - 新增 core1 归属与 GM_CROSS_CORE_WAW 回归用例，285 passed
+- **committer 建议动作**：**CLA 与 CI 均通过且无冲突，建议直接合入**
 
 ### PR #47：fix(detection): 按 kernel/core 隔离同步检测并修复跨核与 buffer 误报
 
-- **作者**：`@ZhouBX` · **停留自然时长**：16h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@ZhouBX` · **停留自然时长**：17h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：5 个文件（实质改动文件 5 个，表面改动文件 0 个，新增测试 +179 行）
 - **关联 Issue 对齐**：针对性修复 #28 多核多 kernel 误报漏报
 - **核心改动摘要**：按 kernel/core 隔离同步与竞争检测，修复跨核与 buffer 误报
@@ -56,7 +54,7 @@
 
 ### PR #46：ci: 重构 Action CI 流水线并支持 ARM smoke
 
-- **作者**：`@ZhouBX` · **停留自然时长**：16h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@ZhouBX` · **停留自然时长**：17h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：13 个文件（实质改动文件 13 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性支持 #25 的 aarch64 smoke
 - **核心改动摘要**：重构 Action CI 流水线，新增 ARM smoke 支持
@@ -66,7 +64,7 @@
 
 ### PR #45：fix(report): 跳过无执行指令的空 kernel DB
 
-- **作者**：`@ZhouBX` · **停留自然时长**：16h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@ZhouBX` · **停留自然时长**：17h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：3 个文件（实质改动文件 3 个，表面改动文件 0 个，新增测试 +53 行）
 - **关联 Issue 对齐**：针对性修复 #24 空 DB 报告失败
 - **核心改动摘要**：分析前检查空 kernel DB 并跳过，避免除零导致报告生成失败
@@ -76,7 +74,7 @@
 
 ### PR #44：docs: 修正无 record DB 时 report 的行为说明
 
-- **作者**：`@ZhouBX` · **停留自然时长**：16h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@ZhouBX` · **停留自然时长**：17h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性修复 #36 文档错误描述
 - **核心改动摘要**：修正数据竞争检测文档，明确 report 缺 record DB 时直接失败退出
@@ -84,30 +82,9 @@
   - 补充重新采集命令并声明 instr.bin / log_ca 不再支持，消除用户误解
 - **committer 建议动作**：**CLA 与 CI 均通过、无冲突，建议直接合入**
 
-### PR #41：feat(record): -c 模式支持 -n 并明确 --chip/-u 不生效
-
-- **作者**：`@zhengronggui` · **停留自然时长**：18.7h · **AI 判定**：**🤖 值得合入**
-- **代码规模**：8 个文件（实质改动文件 8 个，表面改动文件 0 个，新增测试 +72 行）
-- **关联 Issue 对齐**：已针对性修复 #32 参数静默忽略缺陷
-- **核心改动摘要**：ktest 模式接入 -n 核心选择，-c 下 --chip/-u 改为显式告警
-  - 新增 KtestConfig.core_id，经 parse_core_id 校验并注入 CORE_ENABLE_MASK，默认行为不变向后兼容
-  - 补齐 CLI 告警单测、runtime 注入测试与 Stage1 解析测试，共 72 行新增，覆盖较完整
-  - 文档同步说明 -c 下 --chip/-u 不生效，-u 透传未实现已在描述中如实声明
-- **committer 建议动作**：**已获 approved 且门禁全绿，建议直接合入**
-
-### PR #37：fix(record): 不再在用户工作目录创建/搬运 log、run_log，避免静默删除用户数据
-
-- **作者**：`@zengzihui` · **停留自然时长**：37.6h · **AI 判定**：**🤖 阻塞待解**
-- **代码规模**：3 个文件（实质改动文件 3 个，表面改动文件 0 个，新增测试 +32 行）
-- **关联 Issue 对齐**：针对性修复 #29 静默删除用户数据缺陷
-- **核心改动摘要**：移除 cwd 下 log/run_log 的创建、归档与删除逻辑，避免误删用户数据
-  - runtime.py 收紧 CAMODEL_ASSETS 并删除 RUNTIME_DIRS，仅保留 stars_log*_task.dump，方向正确
-  - 新增回归测试验证 prepare_runtime_dirs 不再污染用户 cwd；仅剩 stat/needs-squash 门禁待解
-- **committer 建议动作**：**功能与测试均认可，需作者 squash 为单提交后合入**
-
 ### PR #36：fix(record): 同名产物按来源优先级归档，低优先级不再覆盖（#18）
 
-- **作者**：`@yampolskiy` · **停留自然时长**：38.4h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@yampolskiy` · **停留自然时长**：39.4h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +54 行）
 - **关联 Issue 对齐**：已针对性修复 #18 归档覆盖缺陷
 - **核心改动摘要**：修复归档同名产物被低优先级来源覆盖的问题
@@ -117,7 +94,7 @@
 
 ### PR #23：fix: preserve first-root artifact when names collide
 
-- **作者**：`@gxhgxh2475698` · **停留自然时长**：383.3h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@gxhgxh2475698` · **停留自然时长**：384.3h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +25 行）
 - **关联 Issue 对齐**：针对性修复 #18 同名产物覆盖缺陷
 - **核心改动摘要**：修复多来源同名产物归档时被后来源覆盖的问题
@@ -127,21 +104,11 @@
 
 ### PR #22：docs: match in-page links to rendered heading IDs
 
-- **作者**：`@gxhgxh2475698` · **停留自然时长**：383.5h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@gxhgxh2475698` · **停留自然时长**：384.5h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #17 锚点不匹配
 - **核心改动摘要**：修正安全说明两处附录锚点链接，恢复文档跳转定位
   - 仅改 docs/zh/security_statement.md 两处 fragment 为 a-文件夹各场景…，与渲染 heading id 一致
   - 按检视意见撤回 README 与用户指南改动，未破坏原有可用链接，纯文档无兼容性风险
 - **committer 建议动作**：**已获 approved 且门禁全绿，建议直接合入**
-
-### PR #21：fix: reserve separate output directories for same-second runs
-
-- **作者**：`@gxhgxh2475698` · **停留自然时长**：383.7h · **AI 判定**：**🤖 阻塞待解**
-- **代码规模**：5 个文件（实质改动文件 5 个，表面改动文件 0 个，新增测试 +46 行）
-- **关联 Issue 对齐**：已针对性修复 #16 同秒目录复用缺陷
-- **核心改动摘要**：修复同秒运行复用输出目录，改用独占 mkdir 分配
-  - 新增 create_unique_target_dir，独占 mkdir 并以 _1/_2 后缀避让，record 与 ktest 共用
-  - 附带修复 Python 3.7 不兼容的备份清理，两模式各补同秒回归测试
-- **committer 建议动作**：**需作者 squash 压缩提交历史后重跑门禁再合入**
 
