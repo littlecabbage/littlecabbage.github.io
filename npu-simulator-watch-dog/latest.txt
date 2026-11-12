@@ -1,4 +1,4 @@
-总览指标 · cann/npu-simulator · 2026-11-12 22:37 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-12 23:37 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 1 · ✅ 合规 1 · ➖ 仅展示 6
 
@@ -22,10 +22,11 @@
   （无）
 
 【committer 待 Review / 合并】open PR (1，可合入 0 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
-  PR #50 ❌草稿、缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 0.3H  [WIP] Enable Source/Assembly and Roofline features for npusim-prof
-      └─ 🤖 阻塞待解：新增 Roofline 分析器、JSON 导出与 SQL 表，统一函数地址字段 ｜ 建议：要求作者 squash 提交、补测试并等 CI 转绿后再评审合入
+  PR #50 ❌草稿、需squash(stat/needs-squash) · 停留 1.3H  [WIP] Enable Source/Assembly and Roofline features for npusim-prof
+      └─ 🤖 阻塞待解：新增 Roofline 分析与 JSON 导出，修正函数地址字段 ｜ 建议：需作者 squash 提交并解除 needs-squash 阻塞后再合入
 
-【自动化 Bot 行为记录】22 条（Issue 已收到 17 / 其他评论 5）
+【自动化 Bot 行为记录】23 条（PR 首响催办 1 / Issue 已收到 17 / 其他评论 5）
+  2026-11-12 23:18  PR 首响催办 · PR #50  [WIP] Enable Source/Assembly and Roo
   2026-11-12 18:18  Issue 已收到 · Issue #48  "[Question|问题咨询]report 不指定输出目录时报告生成在
   2026-11-12 18:18  Issue 已收到 · Issue #49  "[Question|问题咨询]我的报告目录是 0000_vector_
   2026-11-12 16:18  Issue 已收到 · Issue #40  "[Question|问题咨询]只想验证功能正确性，有没有更快的仿真方式
@@ -35,7 +36,6 @@
   2026-11-12 10:57  其他评论 · Issue #36  [Documentation|文档反馈]: 数据竞争检测文档称无 rec
   2026-11-12 10:57  其他评论 · Issue #30  [Bug-Report|缺陷反馈]: 数据竞争检测按 (low32(in
   2026-11-12 10:57  其他评论 · Issue #28  [Bug-Report|缺陷反馈]: 同步/数据竞争检测把多 kerne
-  2026-11-12 10:57  其他评论 · Issue #24  "[Bug-Report|缺陷反馈][Bug-Report|缺陷反馈]:
-  … 其余 12 条见网页
+  … 其余 13 条见网页
 
 闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
