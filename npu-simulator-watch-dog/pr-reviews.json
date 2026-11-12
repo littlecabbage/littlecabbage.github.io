@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-12T00:37:37.271Z",
-  "generatedAtCst": "2026-11-12 08:37",
+  "generatedAt": "2026-11-12T01:37:48.521Z",
+  "generatedAtCst": "2026-11-12 09:37",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 39,
     "issues_keep": 39,
     "issues_close": 0,
-    "prs_open": 10,
-    "prs_merge_ready": 7,
+    "prs_open": 11,
+    "prs_merge_ready": 8,
     "prs_low_value": 0,
-    "cache_hits": 10,
-    "agent_calls": 0
+    "cache_hits": 9,
+    "agent_calls": 2
   },
   "reviews": {
     "21": {
@@ -261,11 +261,10 @@
       "number": 41,
       "title": "feat(record): -c 模式支持 -n 并明确 --chip/-u 不生效",
       "author": "zhengronggui",
-      "fingerprint": "22fe9faad66c4d2f",
+      "fingerprint": "7764a38cfc78369f",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
-        "approved_label",
         "substantive_diff: 8 file(s)",
         "adds_tests",
         "linked_issue_legit: #32",
@@ -276,10 +275,8 @@
         "pr_has_tests",
         "linked_issues:32"
       ],
-      "merge_ready": false,
-      "blockers": [
-        "merge_conflicts"
-      ],
+      "merge_ready": true,
+      "blockers": [],
       "diff_stats": {
         "files": 8,
         "added_lines": 112,
@@ -295,19 +292,19 @@
         32
       ],
       "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "修复 record -c 下 -n 不生效、--chip/-u 静默忽略的问题",
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "ktest 模式接入 -n 核心选择，-c 下 --chip/-u 改为显式告警",
         "issue_alignment": "已针对性修复 #32 参数静默忽略缺陷",
-        "committer_action": "需作者先解决 merge 冲突并重跑 CI，全绿后再合入",
+        "committer_action": "已获 approved 且门禁全绿，建议直接合入",
         "detail_points": [
-          "新增 KtestConfig.core_id，Stage1 用 parse_core_id 校验核数，Stage3 注入 CORE_ENABLE_MASK，逻辑闭环",
-          "未指定 -n 时不注入 mask，保持仅 core 0 的原有行为，兼容性说明充分；已补 3 个测试文件覆盖告警与 mask 注入",
-          "已有 liangbinglong 的 approve 与 cann-cla/yes、ci-pipeline-passed，但存在 merge_conflicts 门禁阻塞"
+          "新增 KtestConfig.core_id，经 parse_core_id 校验并注入 CORE_ENABLE_MASK，默认行为不变向后兼容",
+          "补齐 CLI 告警单测、runtime 注入测试与 Stage1 解析测试，共 72 行新增，覆盖较完整",
+          "文档同步说明 -c 下 --chip/-u 不生效，-u 透传未实现已在描述中如实声明"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-11T12:37:42.520Z"
+        "reviewed_at": "2026-11-12T01:37:48.509Z"
       }
     },
     "44": {
@@ -497,6 +494,56 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-11T10:37:45.229Z"
+      }
+    },
+    "49": {
+      "number": 49,
+      "title": "fix(detection): MemoryRWAccesses 按指令归属核解析，修复跨核漏检",
+      "author": "ZhouBX",
+      "fingerprint": "d34e5970069ab362",
+      "triage_verdict": "KEEP",
+      "guard_allowed": false,
+      "verdict_reasons": [
+        "substantive_diff: 2 file(s)",
+        "adds_tests",
+        "linked_issue_legit: #30"
+      ],
+      "signals": [
+        "pr_substantive_diff",
+        "pr_has_tests",
+        "linked_issues:30"
+      ],
+      "merge_ready": false,
+      "blockers": [
+        "missing_label:ci-pipeline-passed"
+      ],
+      "diff_stats": {
+        "files": 2,
+        "added_lines": 95,
+        "removed_lines": 20,
+        "surface_files": 0,
+        "substantive_files": 2,
+        "test_files": 1,
+        "test_added_lines": 64,
+        "docs_only": false,
+        "files_without_patch": 0
+      },
+      "linked_issues": [
+        30
+      ],
+      "agent_review": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "修复跨核访存按归属核解析，避免竞争漏检",
+        "issue_alignment": "针对性修复 #30 跨核漏检缺陷",
+        "committer_action": "需补 ci-pipeline-passed 门禁并重跑 CI 后再合入",
+        "detail_points": [
+          "join key 去掉恒为 0 的 MemoryRWAccesses.CoreId，仅按 low32(ExecInstrId) 关联指令",
+          "用 ExecInstrCoreId/CoreTypeId 还原归属核，新增 core1 归属与跨核 GM WAW 用例"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-12T01:37:44.318Z"
       }
     }
   }

@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-12T00:37:37.404Z",
-  "runAtCst": "2026-11-12 08:37",
+  "runAt": "2026-11-12T01:37:48.667Z",
+  "runAtCst": "2026-11-12 09:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -309,21 +309,21 @@
     {
       "number": "36",
       "title": "[Documentation|文档反馈]: 数据竞争检测文档称无 record DB 时 report 不会失败，实际直接失败退出",
-      "waitHours": 57.7,
+      "waitHours": 58.7,
       "overdue": true,
       "url": "https://gitcode.com/cann/npu-simulator/issues/36"
     },
     {
       "number": "32",
       "title": "[Bug-Report|缺陷反馈]: record -c（ktest 模式）下 --chip/-n/-u 被接受但静默忽略，不报错也不生效",
-      "waitHours": 57.7,
+      "waitHours": 58.7,
       "overdue": true,
       "url": "https://gitcode.com/cann/npu-simulator/issues/32"
     },
     {
       "number": "28",
       "title": "[Bug-Report|缺陷反馈]: 同步/数据竞争检测把多 kernel、多 core 的事件并入同一 scope，误报与漏报并存",
-      "waitHours": 57.7,
+      "waitHours": 58.7,
       "overdue": true,
       "url": "https://gitcode.com/cann/npu-simulator/issues/28"
     }
@@ -337,7 +337,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 286.5,
+      "waitHours": 287.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -363,7 +363,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 286.3,
+      "waitHours": 287.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -389,7 +389,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 37.4,
+      "waitHours": 38.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/36",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -408,6 +408,33 @@
       "triageVerdict": "KEEP"
     },
     {
+      "number": "41",
+      "title": "feat(record): -c 模式支持 -n 并明确 --chip/-u 不生效",
+      "linkedIssues": [
+        "32"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 18.7,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/41",
+      "agentReview": {
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "ktest 模式接入 -n 核心选择，-c 下 --chip/-u 改为显式告警",
+        "issue_alignment": "已针对性修复 #32 参数静默忽略缺陷",
+        "committer_action": "已获 approved 且门禁全绿，建议直接合入",
+        "detail_points": [
+          "新增 KtestConfig.core_id，经 parse_core_id 校验并注入 CORE_ENABLE_MASK，默认行为不变向后兼容",
+          "补齐 CLI 告警单测、runtime 注入测试与 Stage1 解析测试，共 72 行新增，覆盖较完整",
+          "文档同步说明 -c 下 --chip/-u 不生效，-u 透传未实现已在描述中如实声明"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-12T01:37:48.509Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
       "number": "47",
       "title": "fix(detection): 按 kernel/core 隔离同步检测并修复跨核与 buffer 误报",
       "linkedIssues": [
@@ -415,7 +442,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 15,
+      "waitHours": 16,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/47",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -442,7 +469,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 15,
+      "waitHours": 16,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/46",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -468,7 +495,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 15,
+      "waitHours": 16,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/45",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -494,7 +521,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 15,
+      "waitHours": 16,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/44",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -520,7 +547,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 286.7,
+      "waitHours": 287.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -546,7 +573,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 36.6,
+      "waitHours": 37.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/37",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -565,29 +592,28 @@
       "triageVerdict": "KEEP"
     },
     {
-      "number": "41",
-      "title": "feat(record): -c 模式支持 -n 并明确 --chip/-u 不生效",
+      "number": "49",
+      "title": "fix(detection): MemoryRWAccesses 按指令归属核解析，修复跨核漏检",
       "linkedIssues": [
-        "32"
+        "30"
       ],
       "mergeable": false,
-      "reason": "存在冲突/不可合",
-      "waitHours": 17.7,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/41",
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 0,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/49",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "修复 record -c 下 -n 不生效、--chip/-u 静默忽略的问题",
-        "issue_alignment": "已针对性修复 #32 参数静默忽略缺陷",
-        "committer_action": "需作者先解决 merge 冲突并重跑 CI，全绿后再合入",
+        "summary": "修复跨核访存按归属核解析，避免竞争漏检",
+        "issue_alignment": "针对性修复 #30 跨核漏检缺陷",
+        "committer_action": "需补 ci-pipeline-passed 门禁并重跑 CI 后再合入",
         "detail_points": [
-          "新增 KtestConfig.core_id，Stage1 用 parse_core_id 校验核数，Stage3 注入 CORE_ENABLE_MASK，逻辑闭环",
-          "未指定 -n 时不注入 mask，保持仅 core 0 的原有行为，兼容性说明充分；已补 3 个测试文件覆盖告警与 mask 注入",
-          "已有 liangbinglong 的 approve 与 cann-cla/yes、ci-pipeline-passed，但存在 merge_conflicts 门禁阻塞"
+          "join key 去掉恒为 0 的 MemoryRWAccesses.CoreId，仅按 low32(ExecInstrId) 关联指令",
+          "用 ExecInstrCoreId/CoreTypeId 还原归属核，新增 core1 归属与跨核 GM WAW 用例"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-11T12:37:42.520Z"
+        "reviewed_at": "2026-11-12T01:37:44.318Z"
       },
       "triageVerdict": "KEEP"
     }
