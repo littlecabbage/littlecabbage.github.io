@@ -1,0 +1,308 @@
+{
+  "repo": "cann/npu-simulator",
+  "runAt": "2026-11-12T03:37:31.810Z",
+  "runAtCst": "2026-11-12 11:37",
+  "tz": "UTC+8",
+  "cursor": {
+    "year": 2026,
+    "month": 11
+  },
+  "timeRule": "working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)",
+  "holidayTableYears": [
+    2024,
+    2025,
+    2026
+  ],
+  "prReviewModel": "cannbot/deepseek-v4.1-flash",
+  "selfHandledIssues": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "7",
+    "10",
+    "11",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "26",
+    "29",
+    "31",
+    "39"
+  ],
+  "botLogins": [
+    "CANN-robot",
+    "cann-robot",
+    "simulator-bot"
+  ],
+  "botActionLogins": [
+    "simulator-bot"
+  ],
+  "botActions": [
+    {
+      "kind": "issue",
+      "number": "18",
+      "title": "[Bug-Report|缺陷反馈]: 多来源目录同名产物归档时被后来源覆盖",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/18",
+      "action": "comment",
+      "at": "2026-11-12T11:04:21+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "36",
+      "title": "[Documentation|文档反馈]: 数据竞争检测文档称无 record DB 时 report 不会失败，实际直接失败退出",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/36",
+      "action": "comment",
+      "at": "2026-11-12T10:57:43+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "30",
+      "title": "[Bug-Report|缺陷反馈]: 数据竞争检测按 (low32(instr_id), CoreId) 关联访存与指令，MemoryRWAccesses.CoreId 恒为 0 导致跨核访存归属错误并漏检竞争",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/30",
+      "action": "comment",
+      "at": "2026-11-12T10:57:40+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "28",
+      "title": "[Bug-Report|缺陷反馈]: 同步/数据竞争检测把多 kernel、多 core 的事件并入同一 scope，误报与漏报并存",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/28",
+      "action": "comment",
+      "at": "2026-11-12T10:57:37+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "24",
+      "title": "\"[Bug-Report|缺陷反馈][Bug-Report|缺陷反馈]: 空 kernel DB 导致 npusim record -g 报告生成失败",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/24",
+      "action": "comment",
+      "at": "2026-11-12T10:57:34+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "39",
+      "title": "CANN开发者共建计划--[Documentation|文档反馈] 更正ops安装包文件名中的芯片代号",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/39",
+      "action": "issue_ack",
+      "at": "2026-11-10T21:18:18+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "pr",
+      "number": "36",
+      "title": "fix(record): 同名产物按来源优先级归档，低优先级不再覆盖（#18）",
+      "url": "https://gitcode.com/cann/npu-simulator/pulls/36",
+      "action": "pr_nudge",
+      "at": "2026-11-10T20:18:39+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "27",
+      "title": "[Bug-Report|缺陷反馈]: LOAD_2D 的 k_start_pos_bytes 取成 MStartPosition 列，2D 搬运起始位置错误",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/27",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:32+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "28",
+      "title": "[Bug-Report|缺陷反馈]: 同步/数据竞争检测把多 kernel、多 core 的事件并入同一 scope，误报与漏报并存",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/28",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:31+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "29",
+      "title": "[Bug-Report|缺陷反馈]: record 会把用户工作目录下已有的 log/、run_log/ 整体搬走并删除，造成静默数据丢失",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/29",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:29+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "30",
+      "title": "[Bug-Report|缺陷反馈]: 数据竞争检测按 (low32(instr_id), CoreId) 关联访存与指令，MemoryRWAccesses.CoreId 恒为 0 导致跨核访存归属错误并漏检竞争",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/30",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:27+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "31",
+      "title": "[Bug-Report|缺陷反馈]: 本地脚本模式用 bash -c <绝对路径> 执行，未加执行位或无 shebang 的脚本直接失败",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/31",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:26+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "32",
+      "title": "[Bug-Report|缺陷反馈]: record -c（ktest 模式）下 --chip/-n/-u 被接受但静默忽略，不报错也不生效",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/32",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:24+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "33",
+      "title": "[Bug-Report|缺陷反馈]: -m 合并对 kernel_<launch>_<name>_reports 解析出的 kernel 索引恒为 0，合并文件互相覆盖并丢 kernel",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/33",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:22+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "34",
+      "title": "[Documentation|文档反馈]: 报告目录示例写作 kernel_*_reports，主后端实际命名为 {launch_id}_{kernel_name}_reports",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/34",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:20+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "35",
+      "title": "[Documentation|文档反馈]: report -o 未指定时的默认输出目录描述错误（实为 <export>/report）",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/35",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:19+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "36",
+      "title": "[Documentation|文档反馈]: 数据竞争检测文档称无 record DB 时 report 不会失败，实际直接失败退出",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/36",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:17+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "37",
+      "title": "[Documentation|文档反馈]: mc2 多卡文档称 record -n 默认仅 core 0，实际默认不注入 CORE_ENABLE_MASK（全开）",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/37",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:16+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    }
+  ],
+  "botActionsByType": {
+    "comment": 5,
+    "issue_ack": 12,
+    "pr_nudge": 1
+  },
+  "closeLoop": {
+    "issuesTotal": 39,
+    "openTotal": 3,
+    "month": {
+      "total": 20,
+      "closed": 18,
+      "rate": 90,
+      "rateColor": "blue",
+      "avgCloseHours": 50,
+      "avgCloseDays": 2.1,
+      "durSamples": 18
+    },
+    "year": {
+      "total": 39,
+      "closed": 36,
+      "rate": 92.3,
+      "rateColor": "blue",
+      "avgCloseHours": 121.4,
+      "avgCloseDays": 5.1,
+      "durSamples": 36
+    }
+  },
+  "response": {
+    "openNoResponse": {
+      "total": 0,
+      "overdue": 0
+    },
+    "month": {
+      "total": 15,
+      "qualified": 5,
+      "unqualified": 10,
+      "rate": 33.3,
+      "rateColor": "red",
+      "avgFirstRespHours": 12.5,
+      "respSamples": 6
+    },
+    "year": {
+      "total": 20,
+      "qualified": 6,
+      "unqualified": 14,
+      "rate": 30,
+      "rateColor": "red",
+      "avgFirstRespHours": 30.3,
+      "respSamples": 9
+    }
+  },
+  "oncallList": [],
+  "committerList": [
+    {
+      "number": "36",
+      "title": "fix(record): 同名产物按来源优先级归档，低优先级不再覆盖（#18）",
+      "linkedIssues": [
+        "18"
+      ],
+      "mergeable": false,
+      "reason": "存在冲突/不可合",
+      "waitHours": 40.4,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/36",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "修复 record 多入口同名产物被低优先级来源覆盖",
+        "issue_alignment": "针对性修复 #18 归档覆盖缺陷",
+        "committer_action": "需先解决合并冲突，并确认与已合入 !23 是否重复",
+        "detail_points": [
+          "按目标文件名去重，保留高优先级来源，符合 #18 预期语义",
+          "社区指出 !23 已合入相同修复，需核对重复与回归用例覆盖"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-12T03:37:31.654Z"
+      },
+      "triageVerdict": "KEEP"
+    }
+  ]
+}
