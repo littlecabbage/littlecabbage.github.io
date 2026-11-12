@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-12T11:37:26.819Z",
-  "runAtCst": "2026-11-12 19:37",
+  "runAt": "2026-11-12T12:37:27.126Z",
+  "runAtCst": "2026-11-12 20:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -271,29 +271,29 @@
   },
   "closeLoop": {
     "issuesTotal": 49,
-    "openTotal": 4,
+    "openTotal": 2,
     "month": {
       "total": 30,
-      "closed": 27,
-      "rate": 90,
+      "closed": 29,
+      "rate": 96.7,
       "rateColor": "blue",
-      "avgCloseHours": 37.2,
-      "avgCloseDays": 1.5,
-      "durSamples": 27
+      "avgCloseHours": 34.8,
+      "avgCloseDays": 1.4,
+      "durSamples": 29
     },
     "year": {
       "total": 49,
-      "closed": 45,
-      "rate": 91.8,
+      "closed": 47,
+      "rate": 95.9,
       "rateColor": "blue",
-      "avgCloseHours": 99.4,
-      "avgCloseDays": 4.1,
-      "durSamples": 45
+      "avgCloseHours": 95.3,
+      "avgCloseDays": 4,
+      "durSamples": 47
     }
   },
   "response": {
     "openNoResponse": {
-      "total": 2,
+      "total": 0,
       "overdue": 0
     },
     "month": {
@@ -302,8 +302,8 @@
       "unqualified": 10,
       "rate": 60,
       "rateColor": "orange",
-      "avgFirstRespHours": 5.5,
-      "respSamples": 14
+      "avgFirstRespHours": 5.1,
+      "respSamples": 16
     },
     "year": {
       "total": 30,
@@ -311,25 +311,10 @@
       "unqualified": 14,
       "rate": 53.3,
       "rateColor": "orange",
-      "avgFirstRespHours": 16.1,
-      "respSamples": 17
+      "avgFirstRespHours": 14.7,
+      "respSamples": 19
     }
   },
-  "oncallList": [
-    {
-      "number": "49",
-      "title": "\"[Question|问题咨询]我的报告目录是 0000_vector_add_reports，文档里见过 kernel_0000_vector_add_reports",
-      "waitHours": 2.1,
-      "overdue": false,
-      "url": "https://gitcode.com/cann/npu-simulator/issues/49"
-    },
-    {
-      "number": "48",
-      "title": "\"[Question|问题咨询]report 不指定输出目录时报告生成在哪里，会不会污染其他文件",
-      "waitHours": 2.1,
-      "overdue": false,
-      "url": "https://gitcode.com/cann/npu-simulator/issues/48"
-    }
-  ],
+  "oncallList": [],
   "committerList": []
 }
