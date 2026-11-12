@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-12T21:37:26.332Z",
-  "runAtCst": "2026-11-13 05:37",
+  "runAt": "2026-11-12T22:37:27.836Z",
+  "runAtCst": "2026-11-13 06:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -334,7 +334,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、需squash(stat/needs-squash)",
-      "waitHours": 7.3,
+      "waitHours": 8.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/50",
       "agentReview": {
         "verdict": "NEEDS_WORK",

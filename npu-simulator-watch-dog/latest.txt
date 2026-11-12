@@ -1,4 +1,4 @@
-总览指标 · cann/npu-simulator · 2026-11-13 05:37 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-13 06:37 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 1 · ✅ 合规 1 · ➖ 仅展示 6
 
@@ -22,7 +22,7 @@
   （无）
 
 【committer 待 Review / 合并】open PR (1，可合入 0 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
-  PR #50 ❌草稿、需squash(stat/needs-squash) · 停留 7.3H  [WIP] Enable Source/Assembly and Roofline features for npusim-prof
+  PR #50 ❌草稿、需squash(stat/needs-squash) · 停留 8.3H  [WIP] Enable Source/Assembly and Roofline features for npusim-prof
       └─ 🤖 阻塞待解：新增 Roofline 分析与 JSON 导出，修正函数地址字段 ｜ 建议：需作者 squash 提交并解除 needs-squash 阻塞后再合入
 
 【自动化 Bot 行为记录】23 条（PR 首响催办 1 / Issue 已收到 17 / 其他评论 5）
