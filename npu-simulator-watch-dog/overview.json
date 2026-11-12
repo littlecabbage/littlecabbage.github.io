@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-12T07:37:25.235Z",
-  "runAtCst": "2026-11-12 15:37",
+  "runAt": "2026-11-12T08:37:22.866Z",
+  "runAtCst": "2026-11-12 16:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -44,6 +44,36 @@
     "simulator-bot"
   ],
   "botActions": [
+    {
+      "kind": "issue",
+      "number": "40",
+      "title": "\"[Question|问题咨询]只想验证功能正确性，有没有更快的仿真方式",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/40",
+      "action": "issue_ack",
+      "at": "2026-11-12T16:18:43+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "41",
+      "title": "\"[Question|问题咨询]加了 -g 之后是不是只仿真了核 0，多核结果去哪了",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/41",
+      "action": "issue_ack",
+      "at": "2026-11-12T16:18:41+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "42",
+      "title": "[Question|问题咨询]: --chip 报 no camodel template supports chip count N，能仿真更多卡吗",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/42",
+      "action": "issue_ack",
+      "at": "2026-11-12T16:18:39+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
     {
       "kind": "issue",
       "number": "18",
@@ -226,30 +256,30 @@
     }
   ],
   "botActionsByType": {
+    "issue_ack": 15,
     "comment": 5,
-    "issue_ack": 12,
     "pr_nudge": 1
   },
   "closeLoop": {
-    "issuesTotal": 39,
-    "openTotal": 3,
+    "issuesTotal": 47,
+    "openTotal": 2,
     "month": {
-      "total": 20,
-      "closed": 18,
-      "rate": 90,
+      "total": 28,
+      "closed": 27,
+      "rate": 96.4,
       "rateColor": "blue",
-      "avgCloseHours": 50,
-      "avgCloseDays": 2.1,
-      "durSamples": 18
+      "avgCloseHours": 37.2,
+      "avgCloseDays": 1.5,
+      "durSamples": 27
     },
     "year": {
-      "total": 39,
-      "closed": 36,
-      "rate": 92.3,
+      "total": 47,
+      "closed": 45,
+      "rate": 95.7,
       "rateColor": "blue",
-      "avgCloseHours": 121.4,
-      "avgCloseDays": 5.1,
-      "durSamples": 36
+      "avgCloseHours": 99.4,
+      "avgCloseDays": 4.1,
+      "durSamples": 45
     }
   },
   "response": {
@@ -258,22 +288,22 @@
       "overdue": 0
     },
     "month": {
-      "total": 15,
-      "qualified": 5,
+      "total": 23,
+      "qualified": 13,
       "unqualified": 10,
-      "rate": 33.3,
-      "rateColor": "red",
-      "avgFirstRespHours": 12.5,
-      "respSamples": 6
+      "rate": 56.5,
+      "rateColor": "orange",
+      "avgFirstRespHours": 5.5,
+      "respSamples": 14
     },
     "year": {
-      "total": 20,
-      "qualified": 6,
+      "total": 28,
+      "qualified": 14,
       "unqualified": 14,
-      "rate": 30,
-      "rateColor": "red",
-      "avgFirstRespHours": 30.3,
-      "respSamples": 9
+      "rate": 50,
+      "rateColor": "orange",
+      "avgFirstRespHours": 16.1,
+      "respSamples": 17
     }
   },
   "oncallList": [],
@@ -286,7 +316,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合",
-      "waitHours": 44.4,
+      "waitHours": 45.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/36",
       "agentReview": {
         "verdict": "NEEDS_WORK",
