@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-12T09:37:28.153Z",
-  "runAtCst": "2026-11-12 17:37",
+  "runAt": "2026-11-12T11:37:26.819Z",
+  "runAtCst": "2026-11-12 19:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -44,6 +44,26 @@
     "simulator-bot"
   ],
   "botActions": [
+    {
+      "kind": "issue",
+      "number": "48",
+      "title": "\"[Question|问题咨询]report 不指定输出目录时报告生成在哪里，会不会污染其他文件",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/48",
+      "action": "issue_ack",
+      "at": "2026-11-12T18:18:13+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "49",
+      "title": "\"[Question|问题咨询]我的报告目录是 0000_vector_add_reports，文档里见过 kernel_0000_vector_add_reports",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/49",
+      "action": "issue_ack",
+      "at": "2026-11-12T18:18:11+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
     {
       "kind": "issue",
       "number": "40",
@@ -131,16 +151,6 @@
       "url": "https://gitcode.com/cann/npu-simulator/issues/39",
       "action": "issue_ack",
       "at": "2026-11-10T21:18:18+08:00",
-      "author": "simulator-bot",
-      "from": "simulator-bot"
-    },
-    {
-      "kind": "pr",
-      "number": "36",
-      "title": "fix(record): 同名产物按来源优先级归档，低优先级不再覆盖（#18）",
-      "url": "https://gitcode.com/cann/npu-simulator/pulls/36",
-      "action": "pr_nudge",
-      "at": "2026-11-10T20:18:39+08:00",
       "author": "simulator-bot",
       "from": "simulator-bot"
     },
@@ -256,9 +266,8 @@
     }
   ],
   "botActionsByType": {
-    "issue_ack": 15,
-    "comment": 5,
-    "pr_nudge": 1
+    "issue_ack": 17,
+    "comment": 5
   },
   "closeLoop": {
     "issuesTotal": 49,
@@ -310,44 +319,17 @@
     {
       "number": "49",
       "title": "\"[Question|问题咨询]我的报告目录是 0000_vector_add_reports，文档里见过 kernel_0000_vector_add_reports",
-      "waitHours": 0.1,
+      "waitHours": 2.1,
       "overdue": false,
       "url": "https://gitcode.com/cann/npu-simulator/issues/49"
     },
     {
       "number": "48",
       "title": "\"[Question|问题咨询]report 不指定输出目录时报告生成在哪里，会不会污染其他文件",
-      "waitHours": 0.1,
+      "waitHours": 2.1,
       "overdue": false,
       "url": "https://gitcode.com/cann/npu-simulator/issues/48"
     }
   ],
-  "committerList": [
-    {
-      "number": "36",
-      "title": "fix(record): 同名产物按来源优先级归档，低优先级不再覆盖（#18）",
-      "linkedIssues": [
-        "18"
-      ],
-      "mergeable": false,
-      "reason": "存在冲突/不可合",
-      "waitHours": 46.4,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/36",
-      "agentReview": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "修复 record 多入口同名产物被低优先级来源覆盖",
-        "issue_alignment": "针对性修复 #18 归档覆盖缺陷",
-        "committer_action": "需先解决合并冲突，并确认与已合入 !23 是否重复",
-        "detail_points": [
-          "按目标文件名去重，保留高优先级来源，符合 #18 预期语义",
-          "社区指出 !23 已合入相同修复，需核对重复与回归用例覆盖"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-12T03:37:31.654Z"
-      },
-      "triageVerdict": "KEEP"
-    }
-  ]
+  "committerList": []
 }

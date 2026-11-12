@@ -1,69 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-12T09:37:28.002Z",
-  "generatedAtCst": "2026-11-12 17:37",
+  "generatedAt": "2026-11-12T11:37:26.666Z",
+  "generatedAtCst": "2026-11-12 19:37",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 49,
     "issues_keep": 49,
     "issues_close": 0,
-    "prs_open": 1,
+    "prs_open": 0,
     "prs_merge_ready": 0,
     "prs_low_value": 0,
-    "cache_hits": 1,
+    "cache_hits": 0,
     "agent_calls": 0
   },
-  "reviews": {
-    "36": {
-      "number": 36,
-      "title": "fix(record): 同名产物按来源优先级归档，低优先级不再覆盖（#18）",
-      "author": "yampolskiy",
-      "fingerprint": "52c84a5b42ea7592",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "substantive_diff: 2 file(s)",
-        "adds_tests",
-        "linked_issue_legit: #18",
-        "external_participant: zengzihui"
-      ],
-      "signals": [
-        "pr_substantive_diff",
-        "pr_has_tests",
-        "linked_issues:18"
-      ],
-      "merge_ready": false,
-      "blockers": [
-        "merge_conflicts"
-      ],
-      "diff_stats": {
-        "files": 2,
-        "added_lines": 70,
-        "removed_lines": 0,
-        "surface_files": 0,
-        "substantive_files": 2,
-        "test_files": 1,
-        "test_added_lines": 54,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [
-        18
-      ],
-      "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "修复 record 多入口同名产物被低优先级来源覆盖",
-        "issue_alignment": "针对性修复 #18 归档覆盖缺陷",
-        "committer_action": "需先解决合并冲突，并确认与已合入 !23 是否重复",
-        "detail_points": [
-          "按目标文件名去重，保留高优先级来源，符合 #18 预期语义",
-          "社区指出 !23 已合入相同修复，需核对重复与回归用例覆盖"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-12T03:37:31.654Z"
-      }
-    }
-  }
+  "reviews": {}
 }
