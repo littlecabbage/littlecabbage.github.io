@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-12T13:37:26.853Z",
-  "runAtCst": "2026-11-12 21:37",
+  "runAt": "2026-11-12T14:37:32.649Z",
+  "runAtCst": "2026-11-12 22:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -316,5 +316,31 @@
     }
   },
   "oncallList": [],
-  "committerList": []
+  "committerList": [
+    {
+      "number": "50",
+      "title": "[WIP] Enable Source/Assembly and Roofline features for npusim-prof",
+      "linkedIssues": [],
+      "mergeable": false,
+      "reason": "草稿、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
+      "waitHours": 0.3,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/50",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "新增 Roofline 分析器、JSON 导出与 SQL 表，统一函数地址字段",
+        "issue_alignment": "无关联 Issue，新特性缺方案讨论",
+        "committer_action": "要求作者 squash 提交、补测试并等 CI 转绿后再评审合入",
+        "detail_points": [
+          "Functions 表 SourceInstrAddr 改为 FunctionAddr，需同步迁移旧库与调用方",
+          "新增 930 行无任何测试覆盖，Roofline 计算与 SQL schema 缺乏验证证据",
+          "标题仍为 [WIP] 且需 squash，作者自述未补测试与文档"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-12T14:37:32.471Z"
+      },
+      "triageVerdict": "KEEP"
+    }
+  ]
 }
