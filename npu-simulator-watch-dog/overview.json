@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-11T23:37:37.589Z",
-  "runAtCst": "2026-11-12 07:37",
+  "runAt": "2026-11-12T00:37:37.404Z",
+  "runAtCst": "2026-11-12 08:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -309,21 +309,21 @@
     {
       "number": "36",
       "title": "[Documentation|文档反馈]: 数据竞争检测文档称无 record DB 时 report 不会失败，实际直接失败退出",
-      "waitHours": 56.7,
+      "waitHours": 57.7,
       "overdue": true,
       "url": "https://gitcode.com/cann/npu-simulator/issues/36"
     },
     {
       "number": "32",
       "title": "[Bug-Report|缺陷反馈]: record -c（ktest 模式）下 --chip/-n/-u 被接受但静默忽略，不报错也不生效",
-      "waitHours": 56.7,
+      "waitHours": 57.7,
       "overdue": true,
       "url": "https://gitcode.com/cann/npu-simulator/issues/32"
     },
     {
       "number": "28",
       "title": "[Bug-Report|缺陷反馈]: 同步/数据竞争检测把多 kernel、多 core 的事件并入同一 scope，误报与漏报并存",
-      "waitHours": 56.7,
+      "waitHours": 57.7,
       "overdue": true,
       "url": "https://gitcode.com/cann/npu-simulator/issues/28"
     }
@@ -337,7 +337,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 285.5,
+      "waitHours": 286.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/22",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -363,7 +363,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 285.3,
+      "waitHours": 286.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/23",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -389,7 +389,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 36.4,
+      "waitHours": 37.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/36",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -415,7 +415,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 14,
+      "waitHours": 15,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/47",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -442,7 +442,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 14,
+      "waitHours": 15,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/46",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -468,7 +468,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 14,
+      "waitHours": 15,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/45",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -494,7 +494,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 14,
+      "waitHours": 15,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/44",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -520,7 +520,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 285.7,
+      "waitHours": 286.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/21",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -546,7 +546,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 35.6,
+      "waitHours": 36.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/37",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -572,7 +572,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合",
-      "waitHours": 16.7,
+      "waitHours": 17.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/41",
       "agentReview": {
         "verdict": "NEEDS_WORK",
