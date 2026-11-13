@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-13T06:37:32.099Z",
-  "runAtCst": "2026-11-13 14:37",
+  "runAt": "2026-11-13T07:37:33.012Z",
+  "runAtCst": "2026-11-13 15:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -45,6 +45,16 @@
     "simulator-bot"
   ],
   "botActions": [
+    {
+      "kind": "issue",
+      "number": "51",
+      "title": "[Question|问题咨询]: report 产物里的 {db_stem}.npu-rep 是什么，为什么里面的 trace JSON 文件名和目录里的不一样",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/51",
+      "action": "comment",
+      "at": "2026-11-13T14:43:29+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
     {
       "kind": "issue",
       "number": "50",
@@ -287,30 +297,30 @@
     }
   ],
   "botActionsByType": {
+    "comment": 6,
     "issue_ack": 18,
-    "pr_nudge": 1,
-    "comment": 5
+    "pr_nudge": 1
   },
   "closeLoop": {
-    "issuesTotal": 50,
-    "openTotal": 3,
+    "issuesTotal": 52,
+    "openTotal": 4,
     "month": {
-      "total": 31,
-      "closed": 29,
-      "rate": 93.5,
+      "total": 33,
+      "closed": 30,
+      "rate": 90.9,
       "rateColor": "blue",
-      "avgCloseHours": 34.8,
+      "avgCloseHours": 33.6,
       "avgCloseDays": 1.4,
-      "durSamples": 29
+      "durSamples": 30
     },
     "year": {
-      "total": 50,
-      "closed": 47,
-      "rate": 94,
+      "total": 52,
+      "closed": 48,
+      "rate": 92.3,
       "rateColor": "blue",
-      "avgCloseHours": 95.3,
-      "avgCloseDays": 4,
-      "durSamples": 47
+      "avgCloseHours": 93.3,
+      "avgCloseDays": 3.9,
+      "durSamples": 48
     }
   },
   "response": {
@@ -319,22 +329,22 @@
       "overdue": 0
     },
     "month": {
-      "total": 25,
-      "qualified": 15,
-      "unqualified": 10,
-      "rate": 60,
+      "total": 27,
+      "qualified": 16,
+      "unqualified": 11,
+      "rate": 59.3,
       "rateColor": "orange",
-      "avgFirstRespHours": 5.1,
-      "respSamples": 16
+      "avgFirstRespHours": 4.8,
+      "respSamples": 17
     },
     "year": {
-      "total": 30,
-      "qualified": 16,
-      "unqualified": 14,
-      "rate": 53.3,
+      "total": 32,
+      "qualified": 17,
+      "unqualified": 15,
+      "rate": 53.1,
       "rateColor": "orange",
-      "avgFirstRespHours": 14.7,
-      "respSamples": 19
+      "avgFirstRespHours": 14,
+      "respSamples": 20
     }
   },
   "oncallList": [],
@@ -345,7 +355,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 196.8,
+      "waitHours": 197.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/27",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -369,7 +379,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、需squash(stat/needs-squash)",
-      "waitHours": 16.3,
+      "waitHours": 17.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/50",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -396,7 +406,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 5.4,
+      "waitHours": 6.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/51",
       "agentReview": {
         "verdict": "NEEDS_WORK",
