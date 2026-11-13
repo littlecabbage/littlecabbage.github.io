@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>总览指标 · cann/npu-simulator · 2026-11-13 07:37</title>
+<title>总览指标 · cann/npu-simulator · 2026-11-13 08:37</title>
 <style>
   body { font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif; background:#f6f8fc; color:#172b4d; margin:0; padding:32px; }
   h1 { font-size:24px; margin:0 0 4px; }
@@ -25,35 +25,39 @@
   a { color:#245fc9; text-decoration:none; }
 </style></head>
 <body>
-  <h1>总览指标 · cann/npu-simulator · 2026-11-13 07:37 (UTC+8)</h1>
+  <h1>总览指标 · cann/npu-simulator · 2026-11-13 08:37 (UTC+8)</h1>
   <div class="meta">归组基准 UTC+8 2026-11 · working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)</div>
   <h2>闭环情况</h2>
   <div class="grid">
-    <div class="card"><div class="lbl">Issue 总数</div><div class="val" style="color:#56677e">49</div><div class="sub">全仓 Issue</div></div>
-<div class="card"><div class="lbl">开启总数</div><div class="val" style="color:#56677e">2</div><div class="sub">当前 open</div></div>
-<div class="card"><div class="lbl">月度闭环率</div><div class="val" style="color:#245fc9">96.7%</div><div class="sub">29/30</div></div>
-<div class="card"><div class="lbl">年度闭环率</div><div class="val" style="color:#245fc9">95.9%</div><div class="sub">47/49</div></div>
+    <div class="card"><div class="lbl">Issue 总数</div><div class="val" style="color:#56677e">50</div><div class="sub">全仓 Issue</div></div>
+<div class="card"><div class="lbl">开启总数</div><div class="val" style="color:#56677e">3</div><div class="sub">当前 open</div></div>
+<div class="card"><div class="lbl">月度闭环率</div><div class="val" style="color:#245fc9">93.5%</div><div class="sub">29/31</div></div>
+<div class="card"><div class="lbl">年度闭环率</div><div class="val" style="color:#245fc9">94%</div><div class="sub">47/50</div></div>
 <div class="card"><div class="lbl">月度平均闭环时长</div><div class="val" style="color:#56677e">1.4天</div><div class="sub">样本 29</div></div>
 <div class="card"><div class="lbl">年度平均闭环时长</div><div class="val" style="color:#56677e">4天</div><div class="sub">样本 47</div></div>
   </div>
   <h2>响应情况（非自处理 Issue）</h2>
   <div class="grid">
-    <div class="card"><div class="lbl">开启未响应 超时/总数</div><div class="val" style="color:#56677e">0/0</div><div class="sub">当前 open·非自处理·未响应</div></div>
-<div class="card"><div class="lbl">月度首响未达标数</div><div class="val" style="color:#56677e">10</div><div class="sub">统计 25</div></div>
-<div class="card"><div class="lbl">年度首响未达标数</div><div class="val" style="color:#56677e">14</div><div class="sub">统计 30</div></div>
-<div class="card"><div class="lbl">月度首响达标率</div><div class="val" style="color:#c47f1d">60%</div><div class="sub">15/25</div></div>
-<div class="card"><div class="lbl">年度首响达标率</div><div class="val" style="color:#c47f1d">53.3%</div><div class="sub">16/30</div></div>
+    <div class="card"><div class="lbl">开启未响应 超时/总数</div><div class="val" style="color:#56677e">0/1</div><div class="sub">当前 open·非自处理·未响应</div></div>
+<div class="card"><div class="lbl">月度首响未达标数</div><div class="val" style="color:#56677e">10</div><div class="sub">统计 26</div></div>
+<div class="card"><div class="lbl">年度首响未达标数</div><div class="val" style="color:#56677e">14</div><div class="sub">统计 31</div></div>
+<div class="card"><div class="lbl">月度首响达标率</div><div class="val" style="color:#c47f1d">61.5%</div><div class="sub">16/26</div></div>
+<div class="card"><div class="lbl">年度首响达标率</div><div class="val" style="color:#c47f1d">54.8%</div><div class="sub">17/31</div></div>
 <div class="card"><div class="lbl">月度平均首响</div><div class="val" style="color:#56677e">5.1H</div><div class="sub">样本 16</div></div>
 <div class="card"><div class="lbl">年度平均首响</div><div class="val" style="color:#56677e">14.7H</div><div class="sub">样本 19</div></div>
   </div>
 
-  <h2>oncall 待处理 · 待首次响应的用户问题 (0)</h2>
-  <div class="empty">无待首次响应的用户问题 🎉</div>
+  <h2>oncall 待处理 · 待首次响应的用户问题 (1)</h2>
+  <table>
+    <tr><th>Issue</th><th>停留时长</th><th>标题</th></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/issues/50" target="_blank">#50</a></td><td class="">0.5H</td><td>[Requirement|需求/特性]: record 自动归档 AI Core objects，report/prof 按 kernel 自动发现</td></tr>
+  </table>
 
-  <h2>自动化 Bot 行为记录 (23)</h2>
+  <h2>自动化 Bot 行为记录 (24)</h2>
   <div class="meta" style="margin:-6px 0 12px">账号：simulator-bot · 数据源为 GitCode 实际评论（PR 侧仅统计 open PR；CANN-robot 的流水线回声不计入）</div>
   <table>
     <tr><th>时间 (UTC+8)</th><th>行为</th><th>对象</th><th>账号</th><th>评论摘要</th></tr>
+    <tr><td class="muted2">2026-11-13 08:19</td><td>Issue 已收到</td><td><a href="https://gitcode.com/cann/npu-simulator/issues/50" target="_blank">Issue #50</a><div class="muted2" style="font-size:12px">[Requirement|需求/特性]: record 自动归档 AI Core</div></td><td>simulator-bot</td><td class="muted2">回应「你的 issue 已收到」</td></tr>
     <tr><td class="muted2">2026-11-12 23:18</td><td>PR 首响催办</td><td><a href="https://gitcode.com/cann/npu-simulator/pulls/50" target="_blank">PR #50</a><div class="muted2" style="font-size:12px">[WIP] Enable Source/Assembly and Rooflin</div></td><td>simulator-bot</td><td class="muted2">提醒作者联系 committer 进行代码 review</td></tr>
     <tr><td class="muted2">2026-11-12 18:18</td><td>Issue 已收到</td><td><a href="https://gitcode.com/cann/npu-simulator/issues/48" target="_blank">Issue #48</a><div class="muted2" style="font-size:12px">&quot;[Question|问题咨询]report 不指定输出目录时报告生成在哪里，会</div></td><td>simulator-bot</td><td class="muted2">回应「你的 issue 已收到」</td></tr>
     <tr><td class="muted2">2026-11-12 18:18</td><td>Issue 已收到</td><td><a href="https://gitcode.com/cann/npu-simulator/issues/49" target="_blank">Issue #49</a><div class="muted2" style="font-size:12px">&quot;[Question|问题咨询]我的报告目录是 0000_vector_add_</div></td><td>simulator-bot</td><td class="muted2">回应「你的 issue 已收到」</td></tr>
@@ -82,7 +86,7 @@
   <h2>committer 待 Review / 合并 · open PR (1，可合入 0 · AI 模型 cannbot/deepseek-v4.1-flash)</h2>
   <table>
     <tr><th>PR</th><th>可否合入</th><th>AI 价值判定</th><th>关联 Issue</th><th>停留时长</th><th>标题与 AI 评审建议</th></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/50" target="_blank">#50</a></td><td class="tag-bad">❌ 草稿、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">—</td><td>9.3H</td><td><div>[WIP] Enable Source/Assembly and Roofline features for npusim-prof</div><div style="margin-top:4px;font-size:13px;color:#56677e;">新增 Roofline 分析与 JSON 导出，修正函数地址字段 · <b>建议：需作者 squash 提交并解除 needs-squash 阻塞后再合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/50" target="_blank">#50</a></td><td class="tag-bad">❌ 草稿、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">—</td><td>10.3H</td><td><div>[WIP] Enable Source/Assembly and Roofline features for npusim-prof</div><div style="margin-top:4px;font-size:13px;color:#56677e;">新增 Roofline 分析与 JSON 导出，修正函数地址字段 · <b>建议：需作者 squash 提交并解除 needs-squash 阻塞后再合入</b></div></td></tr>
   </table>
 
   <div class="note">
