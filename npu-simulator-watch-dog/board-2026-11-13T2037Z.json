@@ -1,0 +1,492 @@
+{
+  "repo": "cann/npu-simulator",
+  "runAt": "2026-11-13T20:37:35.913Z",
+  "runAtCst": "2026-11-14 04:37",
+  "tz": "UTC+8",
+  "cursor": {
+    "year": 2026,
+    "month": 11
+  },
+  "timeRule": "working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)",
+  "holidayTableYears": [
+    2024,
+    2025,
+    2026
+  ],
+  "prReviewModel": "cannbot/deepseek-v4.1-flash",
+  "selfHandledIssues": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "7",
+    "10",
+    "11",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "26",
+    "29",
+    "31",
+    "39",
+    "50",
+    "53"
+  ],
+  "botLogins": [
+    "CANN-robot",
+    "cann-robot",
+    "simulator-bot"
+  ],
+  "botActionLogins": [
+    "simulator-bot"
+  ],
+  "botActions": [
+    {
+      "kind": "issue",
+      "number": "53",
+      "title": "[Bug-Report|缺陷反馈]: 架构图带宽统计的区间并集按终点排序扫描，重叠时多算占用时间导致带宽被低估",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/53",
+      "action": "issue_ack",
+      "at": "2026-11-13T21:18:42+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "51",
+      "title": "[Question|问题咨询]: report 产物里的 {db_stem}.npu-rep 是什么，为什么里面的 trace JSON 文件名和目录里的不一样",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/51",
+      "action": "comment",
+      "at": "2026-11-13T14:43:29+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "50",
+      "title": "[Requirement|需求/特性]: record 自动归档 AI Core objects，report/prof 按 kernel 自动发现",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/50",
+      "action": "issue_ack",
+      "at": "2026-11-13T08:19:12+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "pr",
+      "number": "50",
+      "title": "[WIP] Enable Source/Assembly and Roofline features for npusim-prof",
+      "url": "https://gitcode.com/cann/npu-simulator/pulls/50",
+      "action": "pr_nudge",
+      "at": "2026-11-12T23:18:52+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "48",
+      "title": "\"[Question|问题咨询]report 不指定输出目录时报告生成在哪里，会不会污染其他文件",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/48",
+      "action": "issue_ack",
+      "at": "2026-11-12T18:18:13+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "49",
+      "title": "\"[Question|问题咨询]我的报告目录是 0000_vector_add_reports，文档里见过 kernel_0000_vector_add_reports",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/49",
+      "action": "issue_ack",
+      "at": "2026-11-12T18:18:11+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "40",
+      "title": "\"[Question|问题咨询]只想验证功能正确性，有没有更快的仿真方式",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/40",
+      "action": "issue_ack",
+      "at": "2026-11-12T16:18:43+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "41",
+      "title": "\"[Question|问题咨询]加了 -g 之后是不是只仿真了核 0，多核结果去哪了",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/41",
+      "action": "issue_ack",
+      "at": "2026-11-12T16:18:41+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "42",
+      "title": "[Question|问题咨询]: --chip 报 no camodel template supports chip count N，能仿真更多卡吗",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/42",
+      "action": "issue_ack",
+      "at": "2026-11-12T16:18:39+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "18",
+      "title": "[Bug-Report|缺陷反馈]: 多来源目录同名产物归档时被后来源覆盖",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/18",
+      "action": "comment",
+      "at": "2026-11-12T11:04:21+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "36",
+      "title": "[Documentation|文档反馈]: 数据竞争检测文档称无 record DB 时 report 不会失败，实际直接失败退出",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/36",
+      "action": "comment",
+      "at": "2026-11-12T10:57:43+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "30",
+      "title": "[Bug-Report|缺陷反馈]: 数据竞争检测按 (low32(instr_id), CoreId) 关联访存与指令，MemoryRWAccesses.CoreId 恒为 0 导致跨核访存归属错误并漏检竞争",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/30",
+      "action": "comment",
+      "at": "2026-11-12T10:57:40+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "28",
+      "title": "[Bug-Report|缺陷反馈]: 同步/数据竞争检测把多 kernel、多 core 的事件并入同一 scope，误报与漏报并存",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/28",
+      "action": "comment",
+      "at": "2026-11-12T10:57:37+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "24",
+      "title": "\"[Bug-Report|缺陷反馈][Bug-Report|缺陷反馈]: 空 kernel DB 导致 npusim record -g 报告生成失败",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/24",
+      "action": "comment",
+      "at": "2026-11-12T10:57:34+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "39",
+      "title": "CANN开发者共建计划--[Documentation|文档反馈] 更正ops安装包文件名中的芯片代号",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/39",
+      "action": "issue_ack",
+      "at": "2026-11-10T21:18:18+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "27",
+      "title": "[Bug-Report|缺陷反馈]: LOAD_2D 的 k_start_pos_bytes 取成 MStartPosition 列，2D 搬运起始位置错误",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/27",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:32+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "28",
+      "title": "[Bug-Report|缺陷反馈]: 同步/数据竞争检测把多 kernel、多 core 的事件并入同一 scope，误报与漏报并存",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/28",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:31+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "29",
+      "title": "[Bug-Report|缺陷反馈]: record 会把用户工作目录下已有的 log/、run_log/ 整体搬走并删除，造成静默数据丢失",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/29",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:29+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "30",
+      "title": "[Bug-Report|缺陷反馈]: 数据竞争检测按 (low32(instr_id), CoreId) 关联访存与指令，MemoryRWAccesses.CoreId 恒为 0 导致跨核访存归属错误并漏检竞争",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/30",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:27+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "31",
+      "title": "[Bug-Report|缺陷反馈]: 本地脚本模式用 bash -c <绝对路径> 执行，未加执行位或无 shebang 的脚本直接失败",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/31",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:26+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "32",
+      "title": "[Bug-Report|缺陷反馈]: record -c（ktest 模式）下 --chip/-n/-u 被接受但静默忽略，不报错也不生效",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/32",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:24+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "33",
+      "title": "[Bug-Report|缺陷反馈]: -m 合并对 kernel_<launch>_<name>_reports 解析出的 kernel 索引恒为 0，合并文件互相覆盖并丢 kernel",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/33",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:22+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "34",
+      "title": "[Documentation|文档反馈]: 报告目录示例写作 kernel_*_reports，主后端实际命名为 {launch_id}_{kernel_name}_reports",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/34",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:20+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "35",
+      "title": "[Documentation|文档反馈]: report -o 未指定时的默认输出目录描述错误（实为 <export>/report）",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/35",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:19+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "36",
+      "title": "[Documentation|文档反馈]: 数据竞争检测文档称无 record DB 时 report 不会失败，实际直接失败退出",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/36",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:17+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "37",
+      "title": "[Documentation|文档反馈]: mc2 多卡文档称 record -n 默认仅 core 0，实际默认不注入 CORE_ENABLE_MASK（全开）",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/37",
+      "action": "issue_ack",
+      "at": "2026-11-09T23:17:16+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    }
+  ],
+  "botActionsByType": {
+    "issue_ack": 19,
+    "comment": 6,
+    "pr_nudge": 1
+  },
+  "closeLoop": {
+    "issuesTotal": 53,
+    "openTotal": 5,
+    "month": {
+      "total": 34,
+      "closed": 30,
+      "rate": 88.2,
+      "rateColor": "orange",
+      "avgCloseHours": 33.6,
+      "avgCloseDays": 1.4,
+      "durSamples": 30
+    },
+    "year": {
+      "total": 53,
+      "closed": 48,
+      "rate": 90.6,
+      "rateColor": "blue",
+      "avgCloseHours": 93.3,
+      "avgCloseDays": 3.9,
+      "durSamples": 48
+    }
+  },
+  "response": {
+    "openNoResponse": {
+      "total": 0,
+      "overdue": 0
+    },
+    "month": {
+      "total": 27,
+      "qualified": 16,
+      "unqualified": 11,
+      "rate": 59.3,
+      "rateColor": "orange",
+      "avgFirstRespHours": 4.8,
+      "respSamples": 17
+    },
+    "year": {
+      "total": 32,
+      "qualified": 17,
+      "unqualified": 15,
+      "rate": 53.1,
+      "rateColor": "orange",
+      "avgFirstRespHours": 14,
+      "respSamples": 20
+    }
+  },
+  "oncallList": [],
+  "committerList": [
+    {
+      "number": "27",
+      "title": "update: 更新文件 .gitattributes",
+      "linkedIssues": [],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 206.2,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/27",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "在 .gitattributes 中重复添加同一 png binary 规则，未产生实际配置变化",
+        "issue_alignment": "无关联 Issue，评审要求先规范建 Issue",
+        "committer_action": "需先补建关联 Issue、删除重复行并重跑 CI 至通过",
+        "detail_points": [
+          "新增行与首行完全一致，属重复配置，建议删除或改真实规则",
+          "ci-pipeline-failed，缺 ci-pipeline-passed，且缺关联 Issue 与测试说明"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-13T04:37:34.193Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "50",
+      "title": "[WIP] Enable Source/Assembly and Roofline features for npusim-prof",
+      "linkedIssues": [],
+      "mergeable": false,
+      "reason": "草稿、需squash(stat/needs-squash)",
+      "waitHours": 25.7,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/50",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "新增 roofline 分析及 JSON 导出，并修正函数地址区间匹配",
+        "issue_alignment": "无关联 Issue，属新增 roofline 特性",
+        "committer_action": "需压缩提交解除 needs-squash 后重跑 CI 再评审合入",
+        "detail_points": [
+          "新增 roofline 分析器、报表器与 SQL 表，共 16 文件 1224 行，属实质特性改动，须按 WIP 转正流程补齐测试",
+          "Functions 表 SourceInstrAddr 改 FunctionAddr 涉及 schema 与查询兼容性，需确认旧库升级路径并补充 UT"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-13T13:37:39.849Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "51",
+      "title": "feat: 自动归档 AI Core 设备 ELF 并接入逐 kernel report/prof 分析",
+      "linkedIssues": [
+        "50"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 14.8,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/51",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "record 阶段自动提取设备 ELF，并接入 report/prof 逐 kernel 分析",
+        "issue_alignment": "已针对性实现 #50 的自动归档与逐 kernel 发现需求",
+        "committer_action": "需作者补充 ci-pipeline-passed 标签并重跑 CI，门禁全绿后再合入",
+        "detail_points": [
+          "新增 DeviceObjectResolver 按 kernel 符号精确匹配，缺失或歧义时关闭 object 依赖分析，避免误选",
+          "归档失败仅告警不阻断录制，并校验 Ascend ELF 边界、拒绝 host ELF/截断/symlink；含 5 个测试文件 414 行",
+          "report/prof 上下文 object_file、kernel_name 保存与恢复逻辑需确认线程安全与异常路径",
+          "hidumper 缓存 key 改为 (obj_path, kernel_name, force_disassembly)，可能影响既有缓存命中与磁盘占用"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-13T01:37:35.317Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "52",
+      "title": "feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止",
+      "linkedIssues": [],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
+      "waitHours": 7.7,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/52",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "为 record 新增 --timeout，超时终止进程组并归档部分产物",
+        "issue_alignment": "无关联 Issue，属独立功能增强",
+        "committer_action": "需作者 squash 提交并补齐 CI 通过后再评审合入",
+        "detail_points": [
+          "实现 SIGTERM→5s 宽限→SIGKILL 终止整个进程组，覆盖孙进程",
+          "新增 5 个测试文件覆盖解析、超时终止与状态回填，需 CI 验证"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-13T08:37:38.672Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "53",
+      "title": "fix(report): order the busy-time sweep by interval start",
+      "linkedIssues": [
+        "53"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 3.4,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估",
+        "issue_alignment": "已针对性修复 #53 带宽低估缺陷",
+        "committer_action": "需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入",
+        "detail_points": [
+          "在 calc_throughput_stats 与被调内联副本两处扫描前各加一次按起点排序，代价 O(n log n)、可接受",
+          "选择在调用方固化有序前提、保留原 ORDER BY TickEnd，避免改动 8 处 SQL，兼容性更好",
+          "逻辑正确但未新增单测；建议补充交错区间用例（长传输与短传输重叠）以防回归",
+          "仅缺 ci-pipeline-passed 标签，CLA 已通过、无冲突与 squash 问题，补跑 CI 即可"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-13T12:37:40.293Z"
+      },
+      "triageVerdict": "KEEP"
+    }
+  ]
+}
