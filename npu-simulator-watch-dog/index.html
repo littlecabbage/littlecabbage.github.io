@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>总览指标 · cann/npu-simulator · 2026-11-13 23:37</title>
+<title>总览指标 · cann/npu-simulator · 2026-11-14 01:37</title>
 <style>
   body { font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif; background:#f6f8fc; color:#172b4d; margin:0; padding:32px; }
   h1 { font-size:24px; margin:0 0 4px; }
@@ -25,7 +25,7 @@
   a { color:#245fc9; text-decoration:none; }
 </style></head>
 <body>
-  <h1>总览指标 · cann/npu-simulator · 2026-11-13 23:37 (UTC+8)</h1>
+  <h1>总览指标 · cann/npu-simulator · 2026-11-14 01:37 (UTC+8)</h1>
   <div class="meta">归组基准 UTC+8 2026-11 · working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)</div>
   <h2>闭环情况</h2>
   <div class="grid">
@@ -85,11 +85,11 @@
   <h2>committer 待 Review / 合并 · open PR (5，可合入 0 · AI 模型 cannbot/deepseek-v4.1-flash)</h2>
   <table>
     <tr><th>PR</th><th>可否合入</th><th>AI 价值判定</th><th>关联 Issue</th><th>停留时长</th><th>标题与 AI 评审建议</th></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/27" target="_blank">#27</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">—</td><td>205.8H</td><td><div>update: 更新文件 .gitattributes</div><div style="margin-top:4px;font-size:13px;color:#56677e;">在 .gitattributes 中重复添加同一 png binary 规则，未产生实际配置变化 · <b>建议：需先补建关联 Issue、删除重复行并重跑 CI 至通过</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/50" target="_blank">#50</a></td><td class="tag-bad">❌ 草稿、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">—</td><td>25.3H</td><td><div>[WIP] Enable Source/Assembly and Roofline features for npusim-prof</div><div style="margin-top:4px;font-size:13px;color:#56677e;">新增 roofline 分析及 JSON 导出，并修正函数地址区间匹配 · <b>建议：需压缩提交解除 needs-squash 后重跑 CI 再评审合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/51" target="_blank">#51</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#50</td><td>14.4H</td><td><div>feat: 自动归档 AI Core 设备 ELF 并接入逐 kernel report/prof 分析</div><div style="margin-top:4px;font-size:13px;color:#56677e;">record 阶段自动提取设备 ELF，并接入 report/prof 逐 kernel 分析 · <b>建议：需作者补充 ci-pipeline-passed 标签并重跑 CI，门禁全绿后再合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/52" target="_blank">#52</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">—</td><td>7.4H</td><td><div>feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止</div><div style="margin-top:4px;font-size:13px;color:#56677e;">为 record 新增 --timeout，超时终止进程组并归档部分产物 · <b>建议：需作者 squash 提交并补齐 CI 通过后再评审合入</b></div></td></tr>
-    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/53" target="_blank">#53</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#53</td><td>3H</td><td><div>fix(report): order the busy-time sweep by interval start</div><div style="margin-top:4px;font-size:13px;color:#56677e;">两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估 · <b>建议：需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/27" target="_blank">#27</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">—</td><td>206.2H</td><td><div>update: 更新文件 .gitattributes</div><div style="margin-top:4px;font-size:13px;color:#56677e;">在 .gitattributes 中重复添加同一 png binary 规则，未产生实际配置变化 · <b>建议：需先补建关联 Issue、删除重复行并重跑 CI 至通过</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/50" target="_blank">#50</a></td><td class="tag-bad">❌ 草稿、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">—</td><td>25.7H</td><td><div>[WIP] Enable Source/Assembly and Roofline features for npusim-prof</div><div style="margin-top:4px;font-size:13px;color:#56677e;">新增 roofline 分析及 JSON 导出，并修正函数地址区间匹配 · <b>建议：需压缩提交解除 needs-squash 后重跑 CI 再评审合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/51" target="_blank">#51</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#50</td><td>14.8H</td><td><div>feat: 自动归档 AI Core 设备 ELF 并接入逐 kernel report/prof 分析</div><div style="margin-top:4px;font-size:13px;color:#56677e;">record 阶段自动提取设备 ELF，并接入 report/prof 逐 kernel 分析 · <b>建议：需作者补充 ci-pipeline-passed 标签并重跑 CI，门禁全绿后再合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/52" target="_blank">#52</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed、需squash(stat/needs-squash)</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">—</td><td>7.7H</td><td><div>feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止</div><div style="margin-top:4px;font-size:13px;color:#56677e;">为 record 新增 --timeout，超时终止进程组并归档部分产物 · <b>建议：需作者 squash 提交并补齐 CI 通过后再评审合入</b></div></td></tr>
+    <tr><td><a href="https://gitcode.com/cann/npu-simulator/merge_requests/53" target="_blank">#53</a></td><td class="tag-bad">❌ 缺 ci-pipeline-passed</td><td><span class="tag-warn">🤖 阻塞待解</span></td><td class="muted2">#53</td><td>3.4H</td><td><div>fix(report): order the busy-time sweep by interval start</div><div style="margin-top:4px;font-size:13px;color:#56677e;">两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估 · <b>建议：需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入</b></div></td></tr>
   </table>
 
   <div class="note">
