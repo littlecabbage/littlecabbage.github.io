@@ -1,0 +1,45 @@
+总览指标 · cann/npu-simulator · 2026-11-13 09:37 (UTC+8)
+归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
+概览：❌ 不合规 1 · ✅ 合规 1 · ➖ 仅展示 6
+
+❌ 不合规 (1 项)
+  首响达标率：月 60% / 年 53.3%  (月 15/25 · 年 16/30（阈值 ≥80%）)
+      原因：月 60% 落在橙区（50%~80%）；年 53.3% 落在橙区（50%~80%）
+
+✅ 合规 (1 项)
+  闭环率：月 93.5% / 年 94%  (月 29/31 · 年 47/50（阈值 ≥90%）)
+      原因：月 93.5% 达蓝线；年 94% 达蓝线
+
+➖ 仅展示 (6 项)
+  Issue 总数：50  (全仓 Issue)
+  开启总数：3  (当前 open)
+  平均闭环时长：月 1.4天 / 年 4天  (月样本 29 · 年样本 47)
+  开启未响应 超时/总数：0/0  (当前 open·非自处理·未响应)
+  首响未达标数：月 10 / 年 14  (月统计 25 · 年统计 30)
+  平均首响：月 5.1H / 年 14.7H  (月样本 16 · 年样本 19)
+
+【oncall 待处理】待首次响应的用户问题 (0)
+  （无）
+
+【committer 待 Review / 合并】open PR (3，可合入 0 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
+  PR #27 ❌缺 ci-pipeline-passed · 停留 191.8H  update: 更新文件 .gitattributes
+      └─ 🤖 阻塞待解：在 .gitattributes 重复追加一行 png 二进制标记，无实际配置收益 ｜ 建议：要求作者先创建 Issue、删除重复行并重跑 CI 转绿后再评审
+  PR #50 ❌草稿、需squash(stat/needs-squash) · 停留 11.3H  [WIP] Enable Source/Assembly and Roofline features for npusim-prof
+      └─ 🤖 阻塞待解：新增 Roofline 分析与 JSON 导出，修正函数地址字段 ｜ 建议：需作者 squash 提交并解除 needs-squash 阻塞后再合入
+  PR #51 ❌缺 ci-pipeline-passed · 停留 0.4H → Issue #50  feat: 自动归档 AI Core 设备 ELF 并接入逐 kernel report/prof 分析
+      └─ 🤖 阻塞待解：record 阶段自动提取设备 ELF，并接入 report/prof 逐 kernel 分析 ｜ 建议：需作者补充 ci-pipeline-passed 标签并重跑 CI，门禁全绿后再合入
+
+【自动化 Bot 行为记录】24 条（Issue 已收到 18 / PR 首响催办 1 / 其他评论 5）
+  2026-11-13 08:19  Issue 已收到 · Issue #50  [Requirement|需求/特性]: record 自动归档 AI 
+  2026-11-12 23:18  PR 首响催办 · PR #50  [WIP] Enable Source/Assembly and Roo
+  2026-11-12 18:18  Issue 已收到 · Issue #48  "[Question|问题咨询]report 不指定输出目录时报告生成在
+  2026-11-12 18:18  Issue 已收到 · Issue #49  "[Question|问题咨询]我的报告目录是 0000_vector_
+  2026-11-12 16:18  Issue 已收到 · Issue #40  "[Question|问题咨询]只想验证功能正确性，有没有更快的仿真方式
+  2026-11-12 16:18  Issue 已收到 · Issue #41  "[Question|问题咨询]加了 -g 之后是不是只仿真了核 0，多
+  2026-11-12 16:18  Issue 已收到 · Issue #42  [Question|问题咨询]: --chip 报 no camodel
+  2026-11-12 11:04  其他评论 · Issue #18  [Bug-Report|缺陷反馈]: 多来源目录同名产物归档时被后来源覆
+  2026-11-12 10:57  其他评论 · Issue #36  [Documentation|文档反馈]: 数据竞争检测文档称无 rec
+  2026-11-12 10:57  其他评论 · Issue #30  [Bug-Report|缺陷反馈]: 数据竞争检测按 (low32(in
+  … 其余 14 条见网页
+
+闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。

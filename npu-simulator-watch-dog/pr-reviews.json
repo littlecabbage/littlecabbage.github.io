@@ -1,19 +1,66 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-13T00:37:28.531Z",
-  "generatedAtCst": "2026-11-13 08:37",
+  "generatedAt": "2026-11-13T01:37:39.596Z",
+  "generatedAtCst": "2026-11-13 09:37",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 50,
     "issues_keep": 50,
     "issues_close": 0,
-    "prs_open": 1,
+    "prs_open": 3,
     "prs_merge_ready": 0,
     "prs_low_value": 0,
     "cache_hits": 1,
-    "agent_calls": 0
+    "agent_calls": 2
   },
   "reviews": {
+    "27": {
+      "number": 27,
+      "title": "update: 更新文件 .gitattributes",
+      "author": "ZhouBX",
+      "fingerprint": "530faf203bf192dc",
+      "triage_verdict": "KEEP",
+      "guard_allowed": false,
+      "verdict_reasons": [
+        "substantive_diff: 1 file(s)",
+        "external_participant: zengzihui"
+      ],
+      "signals": [
+        "pr_substantive_diff"
+      ],
+      "merge_ready": false,
+      "blockers": [
+        "missing_label:ci-pipeline-passed"
+      ],
+      "diff_stats": {
+        "files": 1,
+        "added_lines": 1,
+        "removed_lines": 0,
+        "surface_files": 0,
+        "substantive_files": 1,
+        "test_files": 0,
+        "test_added_lines": 0,
+        "docs_only": false,
+        "files_without_patch": 0
+      },
+      "linked_issues": [],
+      "agent_review": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "在 .gitattributes 重复追加一行 png 二进制标记，无实际配置收益",
+        "issue_alignment": "无关联 Issue，评审要求先规范建单",
+        "committer_action": "要求作者先创建 Issue、删除重复行并重跑 CI 转绿后再评审",
+        "detail_points": [
+          "diff 仅新增一行与首行完全重复的 *.png binary -filter，属冗余配置，应删除或说明必要性",
+          "CI 为 ci-pipeline-failed 且缺 ci-pipeline-passed，门禁未通过，不具备合入条件",
+          "zengzihui 已明确要求规范创建关联 ISSUE，作者需先补关联单再提交 PR",
+          "PR 模板背景/方案/测试/兼容性均未填写，需补充验证证据与影响说明"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-13T01:37:39.592Z"
+      }
+    },
     "50": {
       "number": 50,
       "title": "[WIP] Enable Source/Assembly and Roofline features for npusim-prof",
@@ -57,6 +104,58 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-12T15:37:28.397Z"
+      }
+    },
+    "51": {
+      "number": 51,
+      "title": "feat: 自动归档 AI Core 设备 ELF 并接入逐 kernel report/prof 分析",
+      "author": "zengzihui",
+      "fingerprint": "92dc5a7d4c2f08b7",
+      "triage_verdict": "KEEP",
+      "guard_allowed": false,
+      "verdict_reasons": [
+        "substantive_diff: 12 file(s)",
+        "adds_tests",
+        "linked_issue_legit: #50"
+      ],
+      "signals": [
+        "pr_substantive_diff",
+        "pr_has_tests",
+        "linked_issues:50"
+      ],
+      "merge_ready": false,
+      "blockers": [
+        "missing_label:ci-pipeline-passed"
+      ],
+      "diff_stats": {
+        "files": 12,
+        "added_lines": 797,
+        "removed_lines": 36,
+        "surface_files": 0,
+        "substantive_files": 12,
+        "test_files": 5,
+        "test_added_lines": 414,
+        "docs_only": false,
+        "files_without_patch": 0
+      },
+      "linked_issues": [
+        50
+      ],
+      "agent_review": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "record 阶段自动提取设备 ELF，并接入 report/prof 逐 kernel 分析",
+        "issue_alignment": "已针对性实现 #50 的自动归档与逐 kernel 发现需求",
+        "committer_action": "需作者补充 ci-pipeline-passed 标签并重跑 CI，门禁全绿后再合入",
+        "detail_points": [
+          "新增 DeviceObjectResolver 按 kernel 符号精确匹配，缺失或歧义时关闭 object 依赖分析，避免误选",
+          "归档失败仅告警不阻断录制，并校验 Ascend ELF 边界、拒绝 host ELF/截断/symlink；含 5 个测试文件 414 行",
+          "report/prof 上下文 object_file、kernel_name 保存与恢复逻辑需确认线程安全与异常路径",
+          "hidumper 缓存 key 改为 (obj_path, kernel_name, force_disassembly)，可能影响既有缓存命中与磁盘占用"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-13T01:37:35.317Z"
       }
     }
   }
