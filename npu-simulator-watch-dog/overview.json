@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-13T01:37:39.742Z",
-  "runAtCst": "2026-11-13 09:37",
+  "runAt": "2026-11-13T02:37:26.329Z",
+  "runAtCst": "2026-11-13 10:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -345,7 +345,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 191.8,
+      "waitHours": 192.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/27",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -371,7 +371,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、需squash(stat/needs-squash)",
-      "waitHours": 11.3,
+      "waitHours": 12.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/50",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -398,7 +398,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 0.4,
+      "waitHours": 1.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/51",
       "agentReview": {
         "verdict": "NEEDS_WORK",
