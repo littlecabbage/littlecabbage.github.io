@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-13T03:37:32.031Z",
-  "runAtCst": "2026-11-13 11:37",
+  "runAt": "2026-11-13T05:37:30.146Z",
+  "runAtCst": "2026-11-13 13:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -345,23 +345,21 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 193.8,
+      "waitHours": 195.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/27",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "在 .gitattributes 重复追加一行 png 二进制标记，无实际配置收益",
-        "issue_alignment": "无关联 Issue，评审要求先规范建单",
-        "committer_action": "要求作者先创建 Issue、删除重复行并重跑 CI 转绿后再评审",
+        "summary": "在 .gitattributes 中重复添加同一 png binary 规则，未产生实际配置变化",
+        "issue_alignment": "无关联 Issue，评审要求先规范建 Issue",
+        "committer_action": "需先补建关联 Issue、删除重复行并重跑 CI 至通过",
         "detail_points": [
-          "diff 仅新增一行与首行完全重复的 *.png binary -filter，属冗余配置，应删除或说明必要性",
-          "CI 为 ci-pipeline-failed 且缺 ci-pipeline-passed，门禁未通过，不具备合入条件",
-          "zengzihui 已明确要求规范创建关联 ISSUE，作者需先补关联单再提交 PR",
-          "PR 模板背景/方案/测试/兼容性均未填写，需补充验证证据与影响说明"
+          "新增行与首行完全一致，属重复配置，建议删除或改真实规则",
+          "ci-pipeline-failed，缺 ci-pipeline-passed，且缺关联 Issue 与测试说明"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-13T01:37:39.592Z"
+        "reviewed_at": "2026-11-13T04:37:34.193Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -371,7 +369,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、需squash(stat/needs-squash)",
-      "waitHours": 13.3,
+      "waitHours": 15.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/50",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -398,7 +396,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 2.4,
+      "waitHours": 4.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/51",
       "agentReview": {
         "verdict": "NEEDS_WORK",
