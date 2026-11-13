@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-13T12:37:45.252Z",
-  "runAtCst": "2026-11-13 20:37",
+  "runAt": "2026-11-13T13:37:40.035Z",
+  "runAtCst": "2026-11-13 21:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -46,6 +46,16 @@
     "simulator-bot"
   ],
   "botActions": [
+    {
+      "kind": "issue",
+      "number": "53",
+      "title": "[Bug-Report|缺陷反馈]: 架构图带宽统计的区间并集按终点排序扫描，重叠时多算占用时间导致带宽被低估",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/53",
+      "action": "issue_ack",
+      "at": "2026-11-13T21:18:42+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
     {
       "kind": "issue",
       "number": "51",
@@ -298,8 +308,8 @@
     }
   ],
   "botActionsByType": {
+    "issue_ack": 19,
     "comment": 6,
-    "issue_ack": 18,
     "pr_nudge": 1
   },
   "closeLoop": {
@@ -356,7 +366,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 202.8,
+      "waitHours": 203.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/27",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -380,21 +390,21 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、需squash(stat/needs-squash)",
-      "waitHours": 22.3,
+      "waitHours": 23.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/50",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 Roofline 分析器与报告器，并修正函数地址区间字段",
-        "issue_alignment": "无关联 Issue，属 WIP 特性增强提交",
-        "committer_action": "需先移出 WIP、squash 提交解除 needs-squash 阻塞并补测试后重跑 CI",
+        "summary": "新增 roofline 分析及 JSON 导出，并修正函数地址区间匹配",
+        "issue_alignment": "无关联 Issue，属新增 roofline 特性",
+        "committer_action": "需压缩提交解除 needs-squash 后重跑 CI 再评审合入",
         "detail_points": [
-          "新增 roofline_analyzer/reporter 及 analysis.sql 四张表，链路完整但缺 UT 与 fixture 验证证据",
-          "Functions 表 SourceInstrAddr 改为 FunctionAddr，涉及 SQL、DB 写入与查询多处需确认兼容迁移"
+          "新增 roofline 分析器、报表器与 SQL 表，共 16 文件 1224 行，属实质特性改动，须按 WIP 转正流程补齐测试",
+          "Functions 表 SourceInstrAddr 改 FunctionAddr 涉及 schema 与查询兼容性，需确认旧库升级路径并补充 UT"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-13T12:37:45.093Z"
+        "reviewed_at": "2026-11-13T13:37:39.849Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -406,7 +416,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 11.4,
+      "waitHours": 12.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/51",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -432,7 +442,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 4.4,
+      "waitHours": 5.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/52",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -458,7 +468,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 0,
+      "waitHours": 1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
       "agentReview": {
         "verdict": "NEEDS_WORK",

@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-13T12:37:45.099Z",
-  "generatedAtCst": "2026-11-13 20:37",
+  "generatedAt": "2026-11-13T13:37:39.858Z",
+  "generatedAtCst": "2026-11-13 21:37",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 53,
@@ -10,8 +10,8 @@
     "prs_open": 5,
     "prs_merge_ready": 0,
     "prs_low_value": 0,
-    "cache_hits": 3,
-    "agent_calls": 2
+    "cache_hits": 4,
+    "agent_calls": 1
   },
   "reviews": {
     "27": {
@@ -63,7 +63,7 @@
       "number": 50,
       "title": "[WIP] Enable Source/Assembly and Roofline features for npusim-prof",
       "author": "churkinaleksandr",
-      "fingerprint": "7d9fd11543f8d77b",
+      "fingerprint": "fd18094e71876990",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -91,16 +91,16 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 Roofline 分析器与报告器，并修正函数地址区间字段",
-        "issue_alignment": "无关联 Issue，属 WIP 特性增强提交",
-        "committer_action": "需先移出 WIP、squash 提交解除 needs-squash 阻塞并补测试后重跑 CI",
+        "summary": "新增 roofline 分析及 JSON 导出，并修正函数地址区间匹配",
+        "issue_alignment": "无关联 Issue，属新增 roofline 特性",
+        "committer_action": "需压缩提交解除 needs-squash 后重跑 CI 再评审合入",
         "detail_points": [
-          "新增 roofline_analyzer/reporter 及 analysis.sql 四张表，链路完整但缺 UT 与 fixture 验证证据",
-          "Functions 表 SourceInstrAddr 改为 FunctionAddr，涉及 SQL、DB 写入与查询多处需确认兼容迁移"
+          "新增 roofline 分析器、报表器与 SQL 表，共 16 文件 1224 行，属实质特性改动，须按 WIP 转正流程补齐测试",
+          "Functions 表 SourceInstrAddr 改 FunctionAddr 涉及 schema 与查询兼容性，需确认旧库升级路径并补充 UT"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-13T12:37:45.093Z"
+        "reviewed_at": "2026-11-13T13:37:39.849Z"
       }
     },
     "51": {
