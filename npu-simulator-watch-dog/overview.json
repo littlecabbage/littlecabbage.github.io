@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-13T09:37:33.609Z",
-  "runAtCst": "2026-11-13 17:37",
+  "runAt": "2026-11-13T12:37:45.252Z",
+  "runAtCst": "2026-11-13 20:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -34,7 +34,8 @@
     "29",
     "31",
     "39",
-    "50"
+    "50",
+    "53"
   ],
   "botLogins": [
     "CANN-robot",
@@ -302,21 +303,21 @@
     "pr_nudge": 1
   },
   "closeLoop": {
-    "issuesTotal": 52,
-    "openTotal": 4,
+    "issuesTotal": 53,
+    "openTotal": 5,
     "month": {
-      "total": 33,
+      "total": 34,
       "closed": 30,
-      "rate": 90.9,
-      "rateColor": "blue",
+      "rate": 88.2,
+      "rateColor": "orange",
       "avgCloseHours": 33.6,
       "avgCloseDays": 1.4,
       "durSamples": 30
     },
     "year": {
-      "total": 52,
+      "total": 53,
       "closed": 48,
-      "rate": 92.3,
+      "rate": 90.6,
       "rateColor": "blue",
       "avgCloseHours": 93.3,
       "avgCloseDays": 3.9,
@@ -355,7 +356,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 199.8,
+      "waitHours": 202.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/27",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -379,22 +380,21 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、需squash(stat/needs-squash)",
-      "waitHours": 19.3,
+      "waitHours": 22.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/50",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 Roofline 分析与 JSON 导出，修正函数地址字段",
-        "issue_alignment": "无关联 Issue，属新特性增强提交",
-        "committer_action": "需作者 squash 提交并解除 needs-squash 阻塞后再合入",
+        "summary": "新增 Roofline 分析器与报告器，并修正函数地址区间字段",
+        "issue_alignment": "无关联 Issue，属 WIP 特性增强提交",
+        "committer_action": "需先移出 WIP、squash 提交解除 needs-squash 阻塞并补测试后重跑 CI",
         "detail_points": [
-          "新增 RooflineAnalyzer/Reporter 及 4 张表，为实质新功能，但无任何新增测试佐证",
-          "Functions 表 SourceInstrAddr 改为 FunctionAddr，属 schema 变更，需说明兼容性影响",
-          "PR 标记 WIP 且正文方案/测试章节为空，缺少合入所需的验证证据"
+          "新增 roofline_analyzer/reporter 及 analysis.sql 四张表，链路完整但缺 UT 与 fixture 验证证据",
+          "Functions 表 SourceInstrAddr 改为 FunctionAddr，涉及 SQL、DB 写入与查询多处需确认兼容迁移"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-12T15:37:28.397Z"
+        "reviewed_at": "2026-11-13T12:37:45.093Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -406,7 +406,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 8.4,
+      "waitHours": 11.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/51",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -432,7 +432,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 1.4,
+      "waitHours": 4.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/52",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -447,6 +447,34 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-13T08:37:38.672Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "53",
+      "title": "fix(report): order the busy-time sweep by interval start",
+      "linkedIssues": [
+        "53"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 0,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估",
+        "issue_alignment": "已针对性修复 #53 带宽低估缺陷",
+        "committer_action": "需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入",
+        "detail_points": [
+          "在 calc_throughput_stats 与被调内联副本两处扫描前各加一次按起点排序，代价 O(n log n)、可接受",
+          "选择在调用方固化有序前提、保留原 ORDER BY TickEnd，避免改动 8 处 SQL，兼容性更好",
+          "逻辑正确但未新增单测；建议补充交错区间用例（长传输与短传输重叠）以防回归",
+          "仅缺 ci-pipeline-passed 标签，CLA 已通过、无冲突与 squash 问题，补跑 CI 即可"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-13T12:37:40.293Z"
       },
       "triageVerdict": "KEEP"
     }

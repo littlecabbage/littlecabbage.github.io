@@ -3,7 +3,7 @@
 | 维度 | 详情 |
 |---|---|
 | **目标仓库** | [cann/npu-simulator](https://gitcode.com/cann/npu-simulator)（GitCode） |
-| **巡检时间** | 2026-11-13 17:37 (UTC+8) |
+| **巡检时间** | 2026-11-13 20:37 (UTC+8) |
 | **分析引擎** | `gitcode-issue-triage` 确定性守卫 + Pi Agent (`cannbot/deepseek-v4.1-flash`) |
 | **判定原则** | 宁漏勿错：强灌水信号 + 无安全否决 → 低价值候选；有任何实质代码/测试/关联 Issue → 保留并给出合路建议 |
 
@@ -11,24 +11,37 @@
 
 ## 一、执行摘要（供 on-call & committer 速览）
 
-- **Issue 巡检**：共扫描 **52** 条 Issue，判定 KEEP **52** / CLOSE 候选 **0** / 待人工复核 **0**。
-- **Open PR 总览（共 4 个）**：
+- **Issue 巡检**：共扫描 **53** 条 Issue，判定 KEEP **53** / CLOSE 候选 **0** / 待人工复核 **0**。
+- **Open PR 总览（共 5 个）**：
   - ✅ **可立即合入（0 个）**：无
-  - ⚠️ **实质贡献但门禁阻塞（4 个）**：#52、#51、#50、#27
+  - ⚠️ **实质贡献但门禁阻塞（5 个）**：#53、#52、#51、#50、#27
   - 🧹 **低价值/表面改动候选（0 个）**：无
 
 ## 二、Open PR 逐条深度评审与行动清单
 
 | PR | AI 结论 | 合路门禁 | 关联 Issue | 改动规模 (实质文件) | AI 改动摘要与关联对齐 | committer 建议动作 |
 |---|---|---|---|---|---|---|
+| [#53](https://gitcode.com/cann/npu-simulator/pulls/53) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | [#53](https://gitcode.com/cann/npu-simulator/issues/53) | +9/-0 (1/1 实质) | 两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估（已针对性修复 #53 带宽低估缺陷） | 需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入 |
 | [#52](https://gitcode.com/cann/npu-simulator/pulls/52) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed；阻塞标签 stat/needs-squash | — | +1236/-16 (17/17 实质) | 为 record 新增 --timeout，超时终止进程组并归档部分产物（无关联 Issue，属独立功能增强） | 需作者 squash 提交并补齐 CI 通过后再评审合入 |
 | [#51](https://gitcode.com/cann/npu-simulator/pulls/51) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | [#50](https://gitcode.com/cann/npu-simulator/issues/50) | +797/-36 (12/12 实质) | record 阶段自动提取设备 ELF，并接入 report/prof 逐 kernel 分析（已针对性实现 #50 的自动归档与逐 kernel 发现需求） | 需作者补充 ci-pipeline-passed 标签并重跑 CI，门禁全绿后再合入 |
-| [#50](https://gitcode.com/cann/npu-simulator/pulls/50) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | — | +930/-34 (14/14 实质) | 新增 Roofline 分析与 JSON 导出，修正函数地址字段（无关联 Issue，属新特性增强提交） | 需作者 squash 提交并解除 needs-squash 阻塞后再合入 |
+| [#50](https://gitcode.com/cann/npu-simulator/pulls/50) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | — | +1224/-35 (16/16 实质) | 新增 Roofline 分析器与报告器，并修正函数地址区间字段（无关联 Issue，属 WIP 特性增强提交） | 需先移出 WIP、squash 提交解除 needs-squash 阻塞并补测试后重跑 CI |
 | [#27](https://gitcode.com/cann/npu-simulator/pulls/27) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | — | +1/-0 (1/1 实质) | 在 .gitattributes 中重复添加同一 png binary 规则，未产生实际配置变化（无关联 Issue，评审要求先规范建 Issue） | 需先补建关联 Issue、删除重复行并重跑 CI 至通过 |
+
+### PR #53：fix(report): order the busy-time sweep by interval start
+
+- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：0h · **AI 判定**：**🤖 阻塞待解**
+- **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
+- **关联 Issue 对齐**：已针对性修复 #53 带宽低估缺陷
+- **核心改动摘要**：两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估
+  - 在 calc_throughput_stats 与被调内联副本两处扫描前各加一次按起点排序，代价 O(n log n)、可接受
+  - 选择在调用方固化有序前提、保留原 ORDER BY TickEnd，避免改动 8 处 SQL，兼容性更好
+  - 逻辑正确但未新增单测；建议补充交错区间用例（长传输与短传输重叠）以防回归
+  - 仅缺 ci-pipeline-passed 标签，CLA 已通过、无冲突与 squash 问题，补跑 CI 即可
+- **committer 建议动作**：**需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入**
 
 ### PR #52：feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止
 
-- **作者**：`@Li_cube` · **停留自然时长**：1.4h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@Li_cube` · **停留自然时长**：4.4h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：17 个文件（实质改动文件 17 个，表面改动文件 0 个，新增测试 +455 行）
 - **关联 Issue 对齐**：无关联 Issue，属独立功能增强
 - **核心改动摘要**：为 record 新增 --timeout，超时终止进程组并归档部分产物
@@ -38,7 +51,7 @@
 
 ### PR #51：feat: 自动归档 AI Core 设备 ELF 并接入逐 kernel report/prof 分析
 
-- **作者**：`@zengzihui` · **停留自然时长**：8.4h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@zengzihui` · **停留自然时长**：11.4h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：12 个文件（实质改动文件 12 个，表面改动文件 0 个，新增测试 +414 行）
 - **关联 Issue 对齐**：已针对性实现 #50 的自动归档与逐 kernel 发现需求
 - **核心改动摘要**：record 阶段自动提取设备 ELF，并接入 report/prof 逐 kernel 分析
@@ -50,18 +63,17 @@
 
 ### PR #50：[WIP] Enable Source/Assembly and Roofline features for npusim-prof
 
-- **作者**：`@churkinaleksandr` · **停留自然时长**：19.3h · **AI 判定**：**🤖 阻塞待解**
-- **代码规模**：14 个文件（实质改动文件 14 个，表面改动文件 0 个，新增测试 +0 行）
-- **关联 Issue 对齐**：无关联 Issue，属新特性增强提交
-- **核心改动摘要**：新增 Roofline 分析与 JSON 导出，修正函数地址字段
-  - 新增 RooflineAnalyzer/Reporter 及 4 张表，为实质新功能，但无任何新增测试佐证
-  - Functions 表 SourceInstrAddr 改为 FunctionAddr，属 schema 变更，需说明兼容性影响
-  - PR 标记 WIP 且正文方案/测试章节为空，缺少合入所需的验证证据
-- **committer 建议动作**：**需作者 squash 提交并解除 needs-squash 阻塞后再合入**
+- **作者**：`@churkinaleksandr` · **停留自然时长**：22.3h · **AI 判定**：**🤖 阻塞待解**
+- **代码规模**：16 个文件（实质改动文件 16 个，表面改动文件 0 个，新增测试 +0 行）
+- **关联 Issue 对齐**：无关联 Issue，属 WIP 特性增强提交
+- **核心改动摘要**：新增 Roofline 分析器与报告器，并修正函数地址区间字段
+  - 新增 roofline_analyzer/reporter 及 analysis.sql 四张表，链路完整但缺 UT 与 fixture 验证证据
+  - Functions 表 SourceInstrAddr 改为 FunctionAddr，涉及 SQL、DB 写入与查询多处需确认兼容迁移
+- **committer 建议动作**：**需先移出 WIP、squash 提交解除 needs-squash 阻塞并补测试后重跑 CI**
 
 ### PR #27：update: 更新文件 .gitattributes
 
-- **作者**：`@ZhouBX` · **停留自然时长**：247.8h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@ZhouBX` · **停留自然时长**：250.8h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，评审要求先规范建 Issue
 - **核心改动摘要**：在 .gitattributes 中重复添加同一 png binary 规则，未产生实际配置变化

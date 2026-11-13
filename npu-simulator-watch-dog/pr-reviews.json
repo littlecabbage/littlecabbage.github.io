@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-13T09:37:33.391Z",
-  "generatedAtCst": "2026-11-13 17:37",
+  "generatedAt": "2026-11-13T12:37:45.099Z",
+  "generatedAtCst": "2026-11-13 20:37",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
-    "issues_total": 52,
-    "issues_keep": 52,
+    "issues_total": 53,
+    "issues_keep": 53,
     "issues_close": 0,
-    "prs_open": 4,
+    "prs_open": 5,
     "prs_merge_ready": 0,
     "prs_low_value": 0,
-    "cache_hits": 4,
-    "agent_calls": 0
+    "cache_hits": 3,
+    "agent_calls": 2
   },
   "reviews": {
     "27": {
@@ -63,11 +63,11 @@
       "number": 50,
       "title": "[WIP] Enable Source/Assembly and Roofline features for npusim-prof",
       "author": "churkinaleksandr",
-      "fingerprint": "33c22124f3202adf",
+      "fingerprint": "7d9fd11543f8d77b",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
-        "substantive_diff: 14 file(s)"
+        "substantive_diff: 16 file(s)"
       ],
       "signals": [
         "pr_substantive_diff"
@@ -77,11 +77,11 @@
         "blocking_label:stat/needs-squash"
       ],
       "diff_stats": {
-        "files": 14,
-        "added_lines": 930,
-        "removed_lines": 34,
+        "files": 16,
+        "added_lines": 1224,
+        "removed_lines": 35,
         "surface_files": 0,
-        "substantive_files": 14,
+        "substantive_files": 16,
         "test_files": 0,
         "test_added_lines": 0,
         "docs_only": false,
@@ -91,17 +91,16 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 Roofline 分析与 JSON 导出，修正函数地址字段",
-        "issue_alignment": "无关联 Issue，属新特性增强提交",
-        "committer_action": "需作者 squash 提交并解除 needs-squash 阻塞后再合入",
+        "summary": "新增 Roofline 分析器与报告器，并修正函数地址区间字段",
+        "issue_alignment": "无关联 Issue，属 WIP 特性增强提交",
+        "committer_action": "需先移出 WIP、squash 提交解除 needs-squash 阻塞并补测试后重跑 CI",
         "detail_points": [
-          "新增 RooflineAnalyzer/Reporter 及 4 张表，为实质新功能，但无任何新增测试佐证",
-          "Functions 表 SourceInstrAddr 改为 FunctionAddr，属 schema 变更，需说明兼容性影响",
-          "PR 标记 WIP 且正文方案/测试章节为空，缺少合入所需的验证证据"
+          "新增 roofline_analyzer/reporter 及 analysis.sql 四张表，链路完整但缺 UT 与 fixture 验证证据",
+          "Functions 表 SourceInstrAddr 改为 FunctionAddr，涉及 SQL、DB 写入与查询多处需确认兼容迁移"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-12T15:37:28.397Z"
+        "reviewed_at": "2026-11-13T12:37:45.093Z"
       }
     },
     "51": {
@@ -201,6 +200,56 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-13T08:37:38.672Z"
+      }
+    },
+    "53": {
+      "number": 53,
+      "title": "fix(report): order the busy-time sweep by interval start",
+      "author": "gcw_EkTYFH3T",
+      "fingerprint": "d8c5368b987b9db9",
+      "triage_verdict": "KEEP",
+      "guard_allowed": false,
+      "verdict_reasons": [
+        "substantive_diff: 1 file(s)",
+        "linked_issue_legit: #53"
+      ],
+      "signals": [
+        "pr_substantive_diff",
+        "linked_issues:53"
+      ],
+      "merge_ready": false,
+      "blockers": [
+        "missing_label:ci-pipeline-passed"
+      ],
+      "diff_stats": {
+        "files": 1,
+        "added_lines": 9,
+        "removed_lines": 0,
+        "surface_files": 0,
+        "substantive_files": 1,
+        "test_files": 0,
+        "test_added_lines": 0,
+        "docs_only": false,
+        "files_without_patch": 0
+      },
+      "linked_issues": [
+        53
+      ],
+      "agent_review": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估",
+        "issue_alignment": "已针对性修复 #53 带宽低估缺陷",
+        "committer_action": "需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入",
+        "detail_points": [
+          "在 calc_throughput_stats 与被调内联副本两处扫描前各加一次按起点排序，代价 O(n log n)、可接受",
+          "选择在调用方固化有序前提、保留原 ORDER BY TickEnd，避免改动 8 处 SQL，兼容性更好",
+          "逻辑正确但未新增单测；建议补充交错区间用例（长传输与短传输重叠）以防回归",
+          "仅缺 ci-pipeline-passed 标签，CLA 已通过、无冲突与 squash 问题，补跑 CI 即可"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-13T12:37:40.293Z"
       }
     }
   }
