@@ -3,7 +3,7 @@
 | 维度 | 详情 |
 |---|---|
 | **目标仓库** | [cann/npu-simulator](https://gitcode.com/cann/npu-simulator)（GitCode） |
-| **巡检时间** | 2026-11-13 15:37 (UTC+8) |
+| **巡检时间** | 2026-11-13 16:37 (UTC+8) |
 | **分析引擎** | `gitcode-issue-triage` 确定性守卫 + Pi Agent (`cannbot/deepseek-v4.1-flash`) |
 | **判定原则** | 宁漏勿错：强灌水信号 + 无安全否决 → 低价值候选；有任何实质代码/测试/关联 Issue → 保留并给出合路建议 |
 
@@ -12,22 +12,33 @@
 ## 一、执行摘要（供 on-call & committer 速览）
 
 - **Issue 巡检**：共扫描 **52** 条 Issue，判定 KEEP **52** / CLOSE 候选 **0** / 待人工复核 **0**。
-- **Open PR 总览（共 3 个）**：
+- **Open PR 总览（共 4 个）**：
   - ✅ **可立即合入（0 个）**：无
-  - ⚠️ **实质贡献但门禁阻塞（3 个）**：#51、#50、#27
+  - ⚠️ **实质贡献但门禁阻塞（4 个）**：#52、#51、#50、#27
   - 🧹 **低价值/表面改动候选（0 个）**：无
 
 ## 二、Open PR 逐条深度评审与行动清单
 
 | PR | AI 结论 | 合路门禁 | 关联 Issue | 改动规模 (实质文件) | AI 改动摘要与关联对齐 | committer 建议动作 |
 |---|---|---|---|---|---|---|
+| [#52](https://gitcode.com/cann/npu-simulator/pulls/52) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed；阻塞标签 stat/needs-squash | — | +1236/-16 (17/17 实质) | 为 record 新增 --timeout，超时终止进程组并归档部分产物（无关联 Issue，属独立功能增强） | 需作者 squash 提交并补齐 CI 通过后再评审合入 |
 | [#51](https://gitcode.com/cann/npu-simulator/pulls/51) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | [#50](https://gitcode.com/cann/npu-simulator/issues/50) | +797/-36 (12/12 实质) | record 阶段自动提取设备 ELF，并接入 report/prof 逐 kernel 分析（已针对性实现 #50 的自动归档与逐 kernel 发现需求） | 需作者补充 ci-pipeline-passed 标签并重跑 CI，门禁全绿后再合入 |
 | [#50](https://gitcode.com/cann/npu-simulator/pulls/50) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | — | +930/-34 (14/14 实质) | 新增 Roofline 分析与 JSON 导出，修正函数地址字段（无关联 Issue，属新特性增强提交） | 需作者 squash 提交并解除 needs-squash 阻塞后再合入 |
 | [#27](https://gitcode.com/cann/npu-simulator/pulls/27) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | — | +1/-0 (1/1 实质) | 在 .gitattributes 中重复添加同一 png binary 规则，未产生实际配置变化（无关联 Issue，评审要求先规范建 Issue） | 需先补建关联 Issue、删除重复行并重跑 CI 至通过 |
 
+### PR #52：feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止
+
+- **作者**：`@Li_cube` · **停留自然时长**：0.4h · **AI 判定**：**🤖 阻塞待解**
+- **代码规模**：17 个文件（实质改动文件 17 个，表面改动文件 0 个，新增测试 +455 行）
+- **关联 Issue 对齐**：无关联 Issue，属独立功能增强
+- **核心改动摘要**：为 record 新增 --timeout，超时终止进程组并归档部分产物
+  - 实现 SIGTERM→5s 宽限→SIGKILL 终止整个进程组，覆盖孙进程
+  - 新增 5 个测试文件覆盖解析、超时终止与状态回填，需 CI 验证
+- **committer 建议动作**：**需作者 squash 提交并补齐 CI 通过后再评审合入**
+
 ### PR #51：feat: 自动归档 AI Core 设备 ELF 并接入逐 kernel report/prof 分析
 
-- **作者**：`@zengzihui` · **停留自然时长**：6.4h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@zengzihui` · **停留自然时长**：7.4h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：12 个文件（实质改动文件 12 个，表面改动文件 0 个，新增测试 +414 行）
 - **关联 Issue 对齐**：已针对性实现 #50 的自动归档与逐 kernel 发现需求
 - **核心改动摘要**：record 阶段自动提取设备 ELF，并接入 report/prof 逐 kernel 分析
@@ -39,7 +50,7 @@
 
 ### PR #50：[WIP] Enable Source/Assembly and Roofline features for npusim-prof
 
-- **作者**：`@churkinaleksandr` · **停留自然时长**：17.3h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@churkinaleksandr` · **停留自然时长**：18.3h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：14 个文件（实质改动文件 14 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，属新特性增强提交
 - **核心改动摘要**：新增 Roofline 分析与 JSON 导出，修正函数地址字段
@@ -50,7 +61,7 @@
 
 ### PR #27：update: 更新文件 .gitattributes
 
-- **作者**：`@ZhouBX` · **停留自然时长**：245.8h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@ZhouBX` · **停留自然时长**：246.8h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，评审要求先规范建 Issue
 - **核心改动摘要**：在 .gitattributes 中重复添加同一 png binary 规则，未产生实际配置变化

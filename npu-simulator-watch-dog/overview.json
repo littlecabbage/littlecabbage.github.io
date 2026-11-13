@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-13T07:37:33.012Z",
-  "runAtCst": "2026-11-13 15:37",
+  "runAt": "2026-11-13T08:37:38.858Z",
+  "runAtCst": "2026-11-13 16:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -355,7 +355,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 197.8,
+      "waitHours": 198.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/27",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -379,7 +379,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、需squash(stat/needs-squash)",
-      "waitHours": 17.3,
+      "waitHours": 18.3,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/50",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -406,7 +406,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 6.4,
+      "waitHours": 7.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/51",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -423,6 +423,30 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-13T01:37:35.317Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "52",
+      "title": "feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止",
+      "linkedIssues": [],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
+      "waitHours": 0.4,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/52",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "为 record 新增 --timeout，超时终止进程组并归档部分产物",
+        "issue_alignment": "无关联 Issue，属独立功能增强",
+        "committer_action": "需作者 squash 提交并补齐 CI 通过后再评审合入",
+        "detail_points": [
+          "实现 SIGTERM→5s 宽限→SIGKILL 终止整个进程组，覆盖孙进程",
+          "新增 5 个测试文件覆盖解析、超时终止与状态回填，需 CI 验证"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-13T08:37:38.672Z"
       },
       "triageVerdict": "KEEP"
     }
