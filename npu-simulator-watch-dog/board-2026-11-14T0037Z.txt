@@ -1,0 +1,50 @@
+总览指标 · cann/npu-simulator · 2026-11-14 08:37 (UTC+8)
+归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
+概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
+
+❌ 不合规 (2 项)
+  闭环率：月 88.2% / 年 90.6%  (月 30/34 · 年 48/53（阈值 ≥90%）)
+      原因：月 88.2% 落在橙区（50%~90%）；年 90.6% 达蓝线
+  首响达标率：月 59.3% / 年 53.1%  (月 16/27 · 年 17/32（阈值 ≥80%）)
+      原因：月 59.3% 落在橙区（50%~80%）；年 53.1% 落在橙区（50%~80%）
+
+✅ 合规 (0 项)
+  （无）
+
+➖ 仅展示 (6 项)
+  Issue 总数：53  (全仓 Issue)
+  开启总数：5  (当前 open)
+  平均闭环时长：月 1.4天 / 年 3.9天  (月样本 30 · 年样本 48)
+  开启未响应 超时/总数：0/0  (当前 open·非自处理·未响应)
+  首响未达标数：月 11 / 年 15  (月统计 27 · 年统计 32)
+  平均首响：月 4.8H / 年 14H  (月样本 17 · 年样本 20)
+
+【oncall 待处理】待首次响应的用户问题 (0)
+  （无）
+
+【committer 待 Review / 合并】open PR (5，可合入 0 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
+  PR #27 ❌缺 ci-pipeline-passed · 停留 206.2H  update: 更新文件 .gitattributes
+      └─ 🤖 阻塞待解：在 .gitattributes 中重复添加同一 png binary 规则，未产生实际配置变化 ｜ 建议：需先补建关联 Issue、删除重复行并重跑 CI 至通过
+  PR #50 ❌草稿、需squash(stat/needs-squash) · 停留 25.7H  [WIP] Enable Source/Assembly and Roofline features for npusim-prof
+      └─ 🤖 阻塞待解：新增 roofline 分析及 JSON 导出，并修正函数地址区间匹配 ｜ 建议：需压缩提交解除 needs-squash 后重跑 CI 再评审合入
+  PR #51 ❌缺 ci-pipeline-passed · 停留 14.8H → Issue #50  feat: 自动归档 AI Core 设备 ELF 并接入逐 kernel report/prof 分析
+      └─ 🤖 阻塞待解：record 阶段自动提取设备 ELF，并接入 report/prof 逐 kernel 分析 ｜ 建议：需作者补充 ci-pipeline-passed 标签并重跑 CI，门禁全绿后再合入
+  PR #52 ❌缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 7.7H  feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止
+      └─ 🤖 阻塞待解：为 record 新增 --timeout，超时终止进程组并归档部分产物 ｜ 建议：需作者 squash 提交并补齐 CI 通过后再评审合入
+  PR #53 ❌缺 ci-pipeline-passed · 停留 3.4H → Issue #53  fix(report): order the busy-time sweep by interval start
+      └─ 🤖 阻塞待解：两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估 ｜ 建议：需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入
+
+【自动化 Bot 行为记录】26 条（Issue 已收到 19 / 其他评论 6 / PR 首响催办 1）
+  2026-11-13 21:18  Issue 已收到 · Issue #53  [Bug-Report|缺陷反馈]: 架构图带宽统计的区间并集按终点排序
+  2026-11-13 14:43  其他评论 · Issue #51  [Question|问题咨询]: report 产物里的 {db_ste
+  2026-11-13 08:19  Issue 已收到 · Issue #50  [Requirement|需求/特性]: record 自动归档 AI 
+  2026-11-12 23:18  PR 首响催办 · PR #50  [WIP] Enable Source/Assembly and Roo
+  2026-11-12 18:18  Issue 已收到 · Issue #48  "[Question|问题咨询]report 不指定输出目录时报告生成在
+  2026-11-12 18:18  Issue 已收到 · Issue #49  "[Question|问题咨询]我的报告目录是 0000_vector_
+  2026-11-12 16:18  Issue 已收到 · Issue #40  "[Question|问题咨询]只想验证功能正确性，有没有更快的仿真方式
+  2026-11-12 16:18  Issue 已收到 · Issue #41  "[Question|问题咨询]加了 -g 之后是不是只仿真了核 0，多
+  2026-11-12 16:18  Issue 已收到 · Issue #42  [Question|问题咨询]: --chip 报 no camodel
+  2026-11-12 11:04  其他评论 · Issue #18  [Bug-Report|缺陷反馈]: 多来源目录同名产物归档时被后来源覆
+  … 其余 16 条见网页
+
+闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
