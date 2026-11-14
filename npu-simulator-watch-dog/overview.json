@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-14T06:37:36.151Z",
-  "runAtCst": "2026-11-14 14:37",
+  "runAt": "2026-11-14T07:37:35.812Z",
+  "runAtCst": "2026-11-14 15:37",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -313,22 +313,22 @@
     "pr_nudge": 1
   },
   "closeLoop": {
-    "issuesTotal": 53,
-    "openTotal": 5,
+    "issuesTotal": 54,
+    "openTotal": 6,
     "month": {
-      "total": 34,
+      "total": 35,
       "closed": 30,
-      "rate": 88.2,
+      "rate": 85.7,
       "rateColor": "orange",
       "avgCloseHours": 33.6,
       "avgCloseDays": 1.4,
       "durSamples": 30
     },
     "year": {
-      "total": 53,
+      "total": 54,
       "closed": 48,
-      "rate": 90.6,
-      "rateColor": "blue",
+      "rate": 88.9,
+      "rateColor": "orange",
       "avgCloseHours": 93.3,
       "avgCloseDays": 3.9,
       "durSamples": 48
@@ -336,29 +336,37 @@
   },
   "response": {
     "openNoResponse": {
-      "total": 0,
+      "total": 1,
       "overdue": 0
     },
     "month": {
-      "total": 27,
-      "qualified": 16,
+      "total": 28,
+      "qualified": 17,
       "unqualified": 11,
-      "rate": 59.3,
+      "rate": 60.7,
       "rateColor": "orange",
       "avgFirstRespHours": 4.8,
       "respSamples": 17
     },
     "year": {
-      "total": 32,
-      "qualified": 17,
+      "total": 33,
+      "qualified": 18,
       "unqualified": 15,
-      "rate": 53.1,
+      "rate": 54.5,
       "rateColor": "orange",
       "avgFirstRespHours": 14,
       "respSamples": 20
     }
   },
-  "oncallList": [],
+  "oncallList": [
+    {
+      "number": "54",
+      "title": "CANN 开发者共建计划 - docs: 修正 npusim report 示例的输出路径",
+      "waitHours": 0,
+      "overdue": false,
+      "url": "https://gitcode.com/cann/npu-simulator/issues/54"
+    }
+  ],
   "committerList": [
     {
       "number": "27",
