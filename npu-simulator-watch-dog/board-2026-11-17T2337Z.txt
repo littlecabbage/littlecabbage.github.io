@@ -1,0 +1,64 @@
+总览指标 · cann/npu-simulator · 2026-11-18 07:38 (UTC+8)
+归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
+概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
+
+❌ 不合规 (2 项)
+  闭环率：月 73.2% / 年 80%  (月 30/41 · 年 48/60（阈值 ≥90%）)
+      原因：月 73.2% 落在橙区（50%~90%）；年 80% 落在橙区（50%~90%）
+  首响达标率：月 60.7% / 年 54.5%  (月 17/28 · 年 18/33（阈值 ≥80%）)
+      原因：月 60.7% 落在橙区（50%~80%）；年 54.5% 落在橙区（50%~80%）
+
+✅ 合规 (0 项)
+  （无）
+
+➖ 仅展示 (6 项)
+  Issue 总数：60  (全仓 Issue)
+  开启总数：12  (当前 open)
+  平均闭环时长：月 1.4天 / 年 3.9天  (月样本 30 · 年样本 48)
+  开启未响应 超时/总数：0/0  (当前 open·非自处理·未响应)
+  首响未达标数：月 11 / 年 15  (月统计 28 · 年统计 33)
+  平均首响：月 4.6H / 年 13.3H  (月样本 18 · 年样本 21)
+
+【oncall 待处理】待首次响应的用户问题 (0)
+  （无）
+
+【committer 待 Review / 合并】open PR (12，可合入 4 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
+  PR #57 ✅可合入 · 停留 55.6H → Issue #27  fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)
+      └─ 🤖 值得合入：修正 LOAD_2D 查询把 K 起始位置错取为 MStartPosition 的缺陷 ｜ 建议：CLA 与 CI 全绿、无冲突，建议检视通过后直接合入
+  PR #56 ✅可合入 · 停留 55.6H → Issue #55  fix(report): 保留 npu-rep 打包数据库路径中的特殊字符 (#55)
+      └─ 🤖 值得合入：用 as_uri 修复 SQLite 路径特殊字符，报告打包不再遗漏 JSON ｜ 建议：CLA 与 CI 已全绿，检视通过后可直接合入
+  PR #54 ✅可合入 · 停留 55.6H → Issue #54  docs: fix the npusim report output example
+      └─ 🤖 值得合入：修正 npusim report 示例输出路径为目录，并说明按核生成 tracing JSON ｜ 建议：CLA 与 CI 均已通过、无冲突，建议直接合入
+  PR #61 ✅可合入 · 停留 46.4H → Issue #56  oidc切换
+      └─ 🤖 值得合入：CI 流水线 OBS 访问由静态 AK/SK 改为 OIDC 临时凭证认证 ｜ 建议：门禁全绿且 CLA 已签，确认与 #56 无关后建议直接合入
+  PR #52 ❌缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 63.4H  feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止
+      └─ 🤖 阻塞待解：为 record 新增 --timeout，超时自动终止仿真进程组 ｜ 建议：需 squash 压缩提交并重跑 CI 通过后再合入
+  PR #53 ❌缺 ci-pipeline-passed · 停留 59H → Issue #53  fix(report): order the busy-time sweep by interval start
+      └─ 🤖 阻塞待解：两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估 ｜ 建议：需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入
+  PR #60 ❌缺 ci-pipeline-passed · 停留 55.6H → Issue #56  fix(report): collapse the fixpipe twin rows by identity, not by adjacency
+      └─ 🤖 阻塞待解：将孪生行折叠由相邻匹配改为按 twin_key 字典匹配,修复 UB 写重复计数 ｜ 建议：需作者触发 CI 并获 ci-pipeline-passed 标签后,再复核合入
+  PR #59 ❌存在冲突/不可合、缺 ci-pipeline-passed · 停留 55.6H → Issue #60  fix(record): recognize versioned Python executables
+      └─ 🤖 阻塞待解：用正则识别带版本号 Python 解释器，修复记录分类错误 ｜ 建议：需作者先解决合并冲突，并补齐 ci-pipeline-passed 标签后重跑 CI
+  PR #58 ❌缺 ci-pipeline-passed · 停留 55.6H → Issue #59  fix(report): handle detector output write failures
+      └─ 🤖 阻塞待解：修复检测报告写入失败时重复抛错并中断后续检测 ｜ 建议：CI 流水线失败，需作者修复后重跑并通过再合入
+  PR #55 ❌缺 ci-pipeline-passed · 停留 55.6H → Issue #58  fix(record): preserve shell command strings before launch
+      └─ 🤖 阻塞待解：将记录入口的 user_app 保持原始字符串，避免 Path 归一化破坏 shell 命令 ｜ 建议：需排查 UT checkout 凭证故障并重跑 CI，通过后再合入
+  PR #63 ❌草稿、需squash(stat/needs-squash) · 停留 11.1H  [WIP] fix(report): Embed operator source files into .npu-rep archives (fix to complete Source/Assembly feature support)
+      └─ 🤖 阻塞待解：导出报告时嵌入算子源码文件，并新增 txt 类型 7 支持 ｜ 建议：需作者 squash 提交、重跑门禁，补测试后再评审合入
+  PR #64 ❌需squash(stat/needs-squash) · 停留 8.9H  Add Speed-of-light profiling feature
+      └─ 🤖 阻塞待解：新增 Speed-of-light 分析器与 --sol 选项，输出 Cube/Vector/内存吞吐上限 ｜ 建议：需作者 squash 提交，并补关联 Issue 与用例验证后再合入
+
+【自动化 Bot 行为记录】37 条（Issue 已收到 25 / PR 首响催办 6 / 其他评论 6）
+  2026-11-18 02:18  Issue 已收到 · Issue #58  Quoted record commands are modified 
+  2026-11-18 02:18  Issue 已收到 · Issue #59  A detector report write failure esca
+  2026-11-18 02:18  Issue 已收到 · Issue #60  Versioned Python executables bypass 
+  2026-11-18 02:18  PR 首响催办 · PR #55  fix(record): preserve shell command 
+  2026-11-18 01:18  PR 首响催办 · PR #64  Add Speed-of-light profiling feature
+  2026-11-17 21:17  PR 首响催办 · PR #63  [WIP] fix(report): Embed operator so
+  2026-11-16 10:17  PR 首响催办 · PR #61  oidc切换
+  2026-11-15 23:19  Issue 已收到 · Issue #56  [Bug-Report|缺陷反馈]: 内存热力图的孪生行折叠假设相邻，第
+  2026-11-14 18:18  PR 首响催办 · PR #56  fix(report): 保留 npu-rep 打包数据库路径中的特殊字
+  2026-11-14 18:18  PR 首响催办 · PR #57  fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#
+  … 其余 27 条见网页
+
+闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
