@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-17T18:39:04.549Z",
-  "generatedAtCst": "2026-11-18 02:39",
+  "generatedAt": "2026-11-17T19:38:52.883Z",
+  "generatedAtCst": "2026-11-18 03:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 60,
@@ -10,8 +10,8 @@
     "prs_open": 12,
     "prs_merge_ready": 4,
     "prs_low_value": 0,
-    "cache_hits": 8,
-    "agent_calls": 4
+    "cache_hits": 11,
+    "agent_calls": 1
   },
   "reviews": {
     "52": {
@@ -163,7 +163,7 @@
       "number": 55,
       "title": "fix(record): preserve shell command strings before launch",
       "author": "liangjinxuan-2026",
-      "fingerprint": "c08ae7b9dc278457",
+      "fingerprint": "4623042cad60ae54",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -195,16 +195,18 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "取消 user_app 强制转 Path，保留原始 shell 命令字符串",
-        "issue_alignment": "针对性修复 #58 命令被路径归一化截断",
-        "committer_action": "需作者修复 CI 失败并重跑流水线通过后再合入",
+        "summary": "将记录入口的 user_app 保持原始字符串，避免 Path 归一化破坏 shell 命令",
+        "issue_alignment": "针对性修复 #58 引号命令被改写缺陷",
+        "committer_action": "需排查 UT checkout 凭证故障并重跑 CI，通过后再合入",
         "detail_points": [
-          "两处入口改为直接传 str，依赖 build_launch_spec 内部完成路径解析，改动最小且语义一致",
-          "建议补充引号命令与 URL 用例的回归测试，并对 .py 路径与不存在显式路径做验证"
+          "改动仅两处：移除 handle_record_command 与 build_record_config_from_args 中的 Path() 转换",
+          "build_launch_spec 已支持 str/Path，文件路径解析逻辑不受影响，修复思路正确",
+          "CI 因 UT 取码认证失败（HTTP Basic Access denied）未通过，需基础设施侧修复后重跑",
+          "缺少新增测试覆盖引号命令与 URL 保留场景，建议补充回归用例"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-17T18:39:01.004Z"
+        "reviewed_at": "2026-11-17T19:38:52.877Z"
       }
     },
     "56": {
