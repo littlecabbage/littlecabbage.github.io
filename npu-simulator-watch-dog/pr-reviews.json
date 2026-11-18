@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-18T12:38:52.668Z",
-  "generatedAtCst": "2026-11-18 20:38",
+  "generatedAt": "2026-11-18T13:39:00.503Z",
+  "generatedAtCst": "2026-11-18 21:39",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
-    "issues_total": 60,
-    "issues_keep": 59,
+    "issues_total": 61,
+    "issues_keep": 60,
     "issues_close": 0,
-    "prs_open": 13,
-    "prs_merge_ready": 4,
+    "prs_open": 14,
+    "prs_merge_ready": 5,
     "prs_low_value": 0,
     "cache_hits": 12,
-    "agent_calls": 1
+    "agent_calls": 2
   },
   "reviews": {
     "52": {
@@ -588,11 +588,11 @@
       "number": 65,
       "title": "[WIP] Enhance command line for npusim-prof",
       "author": "churkinaleksandr",
-      "fingerprint": "a037464fa3df413b",
+      "fingerprint": "3250717840be20f2",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
-        "substantive_diff: 23 file(s)",
+        "substantive_diff: 20 file(s)",
         "adds_tests"
       ],
       "signals": [
@@ -604,11 +604,11 @@
         "missing_label:ci-pipeline-passed"
       ],
       "diff_stats": {
-        "files": 23,
-        "added_lines": 550,
-        "removed_lines": 67,
+        "files": 20,
+        "added_lines": 530,
+        "removed_lines": 69,
         "surface_files": 0,
-        "substantive_files": 23,
+        "substantive_files": 20,
         "test_files": 1,
         "test_added_lines": 5,
         "docs_only": false,
@@ -618,18 +618,61 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 --feature-list 统一控制采集与分析功能开关",
-        "issue_alignment": "无关联 Issue，属特性增强",
-        "committer_action": "需作者修复 CI 失败并去掉 WIP 后重跑流水线",
+        "summary": "新增--feature-list特性选择，按分析项推导采集变量并生成报告",
+        "issue_alignment": "无关联 Issue，增强特性缺方案讨论",
+        "committer_action": "需先修复 CI 失败、补齐流水线通过后再评审合入",
         "detail_points": [
-          "新增 features.py 实现功能名到 CANNSIM_COLLECT 依赖映射，替代默认 all 采集",
-          "report_path 不再硬编码 scalar/vec-ipc，改由功能列表驱动后端参数",
-          "分析器按 biprof_ctx 开关条件注册，文档与单测同步更新",
-          "标签为 ci-pipeline-failed 且标题 [WIP]，缺 ci-pipeline-passed 门禁未过"
+          "新增 features.py 统一特性依赖映射，打通 record/report 传参链路",
+          "CI 为 failed 且缺 ci-pipeline-passed，WIP 标记下测试覆盖不足"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-18T12:38:52.660Z"
+        "reviewed_at": "2026-11-18T13:39:00.490Z"
+      }
+    },
+    "66": {
+      "number": 66,
+      "title": "fix(ci): correct REPOSITORY_NAME in compile.sh",
+      "author": "chenge1",
+      "fingerprint": "f69fe4ded67098ed",
+      "triage_verdict": "KEEP",
+      "guard_allowed": false,
+      "verdict_reasons": [
+        "substantive_diff: 1 file(s)",
+        "linked_issue_legit: #61"
+      ],
+      "signals": [
+        "pr_substantive_diff",
+        "linked_issues:61"
+      ],
+      "merge_ready": true,
+      "blockers": [],
+      "diff_stats": {
+        "files": 1,
+        "added_lines": 1,
+        "removed_lines": 1,
+        "surface_files": 0,
+        "substantive_files": 1,
+        "test_files": 0,
+        "test_added_lines": 0,
+        "docs_only": false,
+        "files_without_patch": 0
+      },
+      "linked_issues": [
+        61
+      ],
+      "agent_review": {
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "实质代码改动（1 文件 +1/-1），门禁全绿",
+        "issue_alignment": "已关联 #61",
+        "committer_action": "CLA 与 CI 已通过，建议 committer 完成最终代码检视后合入",
+        "detail_points": [
+          "守卫判定：substantive_diff: 1 file(s); linked_issue_legit: #61"
+        ],
+        "source": "deterministic-fallback",
+        "model": "cannbot/deepseek-v4.1-flash",
+        "reviewed_at": "2026-11-18T13:38:56.105Z"
       }
     }
   }
