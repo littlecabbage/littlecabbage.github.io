@@ -3,7 +3,7 @@
 | 维度 | 详情 |
 |---|---|
 | **目标仓库** | [cann/npu-simulator](https://gitcode.com/cann/npu-simulator)（GitCode） |
-| **巡检时间** | 2026-11-18 19:38 (UTC+8) |
+| **巡检时间** | 2026-11-18 20:38 (UTC+8) |
 | **分析引擎** | `gitcode-issue-triage` 确定性守卫 + Pi Agent (`cannbot/deepseek-v4.1-flash`) |
 | **判定原则** | 宁漏勿错：强灌水信号 + 无安全否决 → 低价值候选；有任何实质代码/测试/关联 Issue → 保留并给出合路建议 |
 
@@ -21,7 +21,7 @@
 
 | PR | AI 结论 | 合路门禁 | 关联 Issue | 改动规模 (实质文件) | AI 改动摘要与关联对齐 | committer 建议动作 |
 |---|---|---|---|---|---|---|
-| [#65](https://gitcode.com/cann/npu-simulator/pulls/65) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | — | +518/-70 (21/21 实质) | 新增 --feature-list 按功能选择分析并推导 CANNSIM_COLLECT 采集项（无关联 Issue，新特性缺方案讨论记录） | 需作者补充关联 Issue、修复 ci-pipeline-failed 并重跑门禁 |
+| [#65](https://gitcode.com/cann/npu-simulator/pulls/65) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | — | +550/-67 (23/23 实质) | 新增 --feature-list 统一控制采集与分析功能开关（无关联 Issue，属特性增强） | 需作者修复 CI 失败并去掉 WIP 后重跑流水线 |
 | [#64](https://gitcode.com/cann/npu-simulator/pulls/64) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | — | +330/-2 (6/6 实质) | 新增 SOL 分析器与 --sol 选项，评估内核吞吐上限（无关联 Issue，新特性未先走方案讨论） | 需作者 squash 提交、补测试并关联 Issue 后再评审 |
 | [#63](https://gitcode.com/cann/npu-simulator/pulls/63) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | — | +88/-15 (3/3 实质) | 导出报告时嵌入算子源码文件，并新增 txt 类型 7 支持（无关联 Issue，属于功能补全） | 需作者 squash 提交、重跑门禁，补测试后再评审合入 |
 | [#61](https://gitcode.com/cann/npu-simulator/pulls/61) | **🤖 值得合入** | ✅ 可合入 | [#56](https://gitcode.com/cann/npu-simulator/issues/56) | +81/-22 (5/5 实质) | CI 流水线 OBS 访问由静态 AK/SK 改为 OIDC 临时凭证认证（与 #56 缺陷无关，属挂错关联） | 门禁全绿且 CLA 已签，确认与 #56 无关后建议直接合入 |
@@ -37,17 +37,19 @@
 
 ### PR #65：[WIP] Enhance command line for npusim-prof
 
-- **作者**：`@churkinaleksandr` · **停留自然时长**：0.8h · **AI 判定**：**🤖 阻塞待解**
-- **代码规模**：21 个文件（实质改动文件 21 个，表面改动文件 0 个，新增测试 +5 行）
-- **关联 Issue 对齐**：无关联 Issue，新特性缺方案讨论记录
-- **核心改动摘要**：新增 --feature-list 按功能选择分析并推导 CANNSIM_COLLECT 采集项
-  - Dwell 0.8 小时且带 [WIP]，新增 features.py 统一功能映射，方向合理但需确认默认值语义是否破坏旧行为。
-  - CI 失败缺 ci-pipeline-passed；body 背景/方案/测试段全空，仅 5 行测试改动，验证证据不足。
-- **committer 建议动作**：**需作者补充关联 Issue、修复 ci-pipeline-failed 并重跑门禁**
+- **作者**：`@churkinaleksandr` · **停留自然时长**：1.8h · **AI 判定**：**🤖 阻塞待解**
+- **代码规模**：23 个文件（实质改动文件 23 个，表面改动文件 0 个，新增测试 +5 行）
+- **关联 Issue 对齐**：无关联 Issue，属特性增强
+- **核心改动摘要**：新增 --feature-list 统一控制采集与分析功能开关
+  - 新增 features.py 实现功能名到 CANNSIM_COLLECT 依赖映射，替代默认 all 采集
+  - report_path 不再硬编码 scalar/vec-ipc，改由功能列表驱动后端参数
+  - 分析器按 biprof_ctx 开关条件注册，文档与单测同步更新
+  - 标签为 ci-pipeline-failed 且标题 [WIP]，缺 ci-pipeline-passed 门禁未过
+- **committer 建议动作**：**需作者修复 CI 失败并去掉 WIP 后重跑流水线**
 
 ### PR #64：Add Speed-of-light profiling feature
 
-- **作者**：`@fomichevoleg5` · **停留自然时长**：20.9h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@fomichevoleg5` · **停留自然时长**：21.9h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：6 个文件（实质改动文件 6 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，新特性未先走方案讨论
 - **核心改动摘要**：新增 SOL 分析器与 --sol 选项，评估内核吞吐上限
@@ -58,7 +60,7 @@
 
 ### PR #63：[WIP] fix(report): Embed operator source files into .npu-rep archives (fix to complete Source/Assembly feature support)
 
-- **作者**：`@churkinaleksandr` · **停留自然时长**：23.1h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@churkinaleksandr` · **停留自然时长**：24.1h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：3 个文件（实质改动文件 3 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，属于功能补全
 - **核心改动摘要**：导出报告时嵌入算子源码文件，并新增 txt 类型 7 支持
@@ -68,7 +70,7 @@
 
 ### PR #61：oidc切换
 
-- **作者**：`@cui_jiahao` · **停留自然时长**：58.4h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@cui_jiahao` · **停留自然时长**：59.4h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：5 个文件（实质改动文件 5 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：与 #56 缺陷无关，属挂错关联
 - **核心改动摘要**：CI 流水线 OBS 访问由静态 AK/SK 改为 OIDC 临时凭证认证
@@ -79,7 +81,7 @@
 
 ### PR #60：fix(report): collapse the fixpipe twin rows by identity, not by adjacency
 
-- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：68.3h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：69.3h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #56 孪生行不相邻导致的重复计入
 - **核心改动摘要**：将孪生行折叠由相邻匹配改为按 twin_key 字典匹配,修复 UB 写重复计数
@@ -89,7 +91,7 @@
 
 ### PR #59：fix(record): recognize versioned Python executables
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：94.7h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：95.7h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性修复 #60 版本化 python 识别缺陷
 - **核心改动摘要**：用正则识别带版本号 Python 解释器，修复记录分类错误
@@ -99,7 +101,7 @@
 
 ### PR #58：fix(report): handle detector output write failures
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：94.7h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：95.7h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性修复 #59 报告写入异常逃逸
 - **核心改动摘要**：修复检测报告写入失败时重复抛错并中断后续检测
@@ -109,7 +111,7 @@
 
 ### PR #57：fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)
 
-- **作者**：`@lilong555` · **停留自然时长**：97.8h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@lilong555` · **停留自然时长**：98.8h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +63 行）
 - **关联 Issue 对齐**：已针对性修复 #27 的 K 起始位置缺陷
 - **核心改动摘要**：修正 LOAD_2D 查询把 K 起始位置错取为 MStartPosition 的缺陷
@@ -119,7 +121,7 @@
 
 ### PR #56：fix(report): 保留 npu-rep 打包数据库路径中的特殊字符 (#55)
 
-- **作者**：`@lilong555` · **停留自然时长**：98.4h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@lilong555` · **停留自然时长**：99.4h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +48 行）
 - **关联 Issue 对齐**：针对性修复 #55 的 URI 特殊字符路径缺陷
 - **核心改动摘要**：用 as_uri 修复 SQLite 路径特殊字符，报告打包不再遗漏 JSON
@@ -129,7 +131,7 @@
 
 ### PR #55：fix(record): preserve shell command strings before launch
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：98.8h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：99.8h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性修复 #58 引号命令被改写缺陷
 - **核心改动摘要**：将记录入口的 user_app 保持原始字符串，避免 Path 归一化破坏 shell 命令
@@ -141,7 +143,7 @@
 
 ### PR #54：docs: fix the npusim report output example
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：99.9h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：100.9h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #54 报告输出路径示例错误
 - **核心改动摘要**：修正 npusim report 示例输出路径为目录，并说明按核生成 tracing JSON
@@ -151,7 +153,7 @@
 
 ### PR #53：fix(report): order the busy-time sweep by interval start
 
-- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：119h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：120h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #53 带宽低估缺陷
 - **核心改动摘要**：两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估
@@ -163,7 +165,7 @@
 
 ### PR #52：feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止
 
-- **作者**：`@Li_cube` · **停留自然时长**：123.4h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@Li_cube` · **停留自然时长**：124.4h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：13 个文件（实质改动文件 13 个，表面改动文件 0 个，新增测试 +3 行）
 - **关联 Issue 对齐**：无关联 Issue，属独立功能增强
 - **核心改动摘要**：为 record 新增 --timeout 仿真超时终止能力，避免挂起占用机器

@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-18T11:38:55.127Z",
-  "runAtCst": "2026-11-18 19:38",
+  "runAt": "2026-11-18T12:38:52.783Z",
+  "runAtCst": "2026-11-18 20:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -494,7 +494,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 67.6,
+      "waitHours": 68.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/57",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -520,7 +520,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 67.6,
+      "waitHours": 68.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/56",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -546,7 +546,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 67.6,
+      "waitHours": 68.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/54",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -572,7 +572,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 58.4,
+      "waitHours": 59.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/61",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -597,7 +597,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 75.4,
+      "waitHours": 76.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/52",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -623,7 +623,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 71,
+      "waitHours": 72,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -651,7 +651,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 67.6,
+      "waitHours": 68.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -677,7 +677,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合、缺 ci-pipeline-passed",
-      "waitHours": 67.6,
+      "waitHours": 68.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -703,7 +703,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 67.6,
+      "waitHours": 68.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/58",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -729,7 +729,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 67.6,
+      "waitHours": 68.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/55",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -755,7 +755,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、需squash(stat/needs-squash)",
-      "waitHours": 23.1,
+      "waitHours": 24.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/63",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -779,7 +779,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 20.9,
+      "waitHours": 21.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -804,21 +804,23 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、缺 ci-pipeline-passed",
-      "waitHours": 0.8,
+      "waitHours": 1.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/65",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 --feature-list 按功能选择分析并推导 CANNSIM_COLLECT 采集项",
-        "issue_alignment": "无关联 Issue，新特性缺方案讨论记录",
-        "committer_action": "需作者补充关联 Issue、修复 ci-pipeline-failed 并重跑门禁",
+        "summary": "新增 --feature-list 统一控制采集与分析功能开关",
+        "issue_alignment": "无关联 Issue，属特性增强",
+        "committer_action": "需作者修复 CI 失败并去掉 WIP 后重跑流水线",
         "detail_points": [
-          "Dwell 0.8 小时且带 [WIP]，新增 features.py 统一功能映射，方向合理但需确认默认值语义是否破坏旧行为。",
-          "CI 失败缺 ci-pipeline-passed；body 背景/方案/测试段全空，仅 5 行测试改动，验证证据不足。"
+          "新增 features.py 实现功能名到 CANNSIM_COLLECT 依赖映射，替代默认 all 采集",
+          "report_path 不再硬编码 scalar/vec-ipc，改由功能列表驱动后端参数",
+          "分析器按 biprof_ctx 开关条件注册，文档与单测同步更新",
+          "标签为 ci-pipeline-failed 且标题 [WIP]，缺 ci-pipeline-passed 门禁未过"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-18T11:38:54.995Z"
+        "reviewed_at": "2026-11-18T12:38:52.660Z"
       },
       "triageVerdict": "KEEP"
     }
