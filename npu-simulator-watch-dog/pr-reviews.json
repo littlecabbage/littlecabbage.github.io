@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-19T15:39:01.081Z",
-  "generatedAtCst": "2026-11-19 23:39",
+  "generatedAt": "2026-11-19T16:38:56.173Z",
+  "generatedAtCst": "2026-11-20 00:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 63,
@@ -590,7 +590,7 @@
       "number": 67,
       "title": "fix(prof): preserve base reports when optional processing fails",
       "author": "churkinaleksandr",
-      "fingerprint": "b011cfce25b2e188",
+      "fingerprint": "0ce2bed898c9b761",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -605,7 +605,6 @@
       ],
       "merge_ready": false,
       "blockers": [
-        "missing_label:ci-pipeline-passed",
         "blocking_label:stat/needs-squash"
       ],
       "diff_stats": {
@@ -625,18 +624,16 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "删除 roofline.json 导出，可选分析失败时告警并保留基础报告",
-        "issue_alignment": "针对性修复 #63 可选报告失败阻断导出",
-        "committer_action": "需作者先压缩提交（needs-squash）并补齐 ci-pipeline-passed 后合入",
+        "summary": "移除 roofline.json 导出，可选处理失败降级保留基础报告",
+        "issue_alignment": "针对性修复 #63 可选报告失败缺陷",
+        "committer_action": "需作者 squash 提交并重跑门禁后再合入",
         "detail_points": [
-          "关键路径追踪改为临时目录生成、全部核心成功后再发布，避免半成品",
-          "设备 ELF 解码失败降级为告警并继续处理，保留 trace 生成 .npu-rep",
-          "删除 roofline_reporter，Roofline 结果仅保留四张表及 CSV，需确认下游无依赖",
-          "新增测试覆盖失败后基础报告继续生成与上下文恢复，方向正确"
+          "删除独立 roofline.json 导出，Roofline 结果保留在 SQLite 表及 CSV",
+          "设备 ELF 解码与 Critical Path 失败改为告警并继续基础报告，已补测试"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-19T15:39:01.071Z"
+        "reviewed_at": "2026-11-19T16:38:56.152Z"
       }
     }
   }
