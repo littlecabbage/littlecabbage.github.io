@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-19T07:38:54.504Z",
-  "runAtCst": "2026-11-19 15:38",
+  "runAt": "2026-11-19T08:38:57.505Z",
+  "runAtCst": "2026-11-19 16:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -42,7 +42,8 @@
     "58",
     "59",
     "60",
-    "61"
+    "61",
+    "62"
   ],
   "botLogins": [
     "CANN-robot",
@@ -140,16 +141,6 @@
       "url": "https://gitcode.com/cann/npu-simulator/pulls/63",
       "action": "pr_nudge",
       "at": "2026-11-17T21:17:11+08:00",
-      "author": "simulator-bot",
-      "from": "simulator-bot"
-    },
-    {
-      "kind": "pr",
-      "number": "61",
-      "title": "oidc切换",
-      "url": "https://gitcode.com/cann/npu-simulator/pulls/61",
-      "action": "pr_nudge",
-      "at": "2026-11-16T10:17:11+08:00",
       "author": "simulator-bot",
       "from": "simulator-bot"
     },
@@ -455,26 +446,26 @@
     }
   ],
   "botActionsByType": {
-    "pr_nudge": 8,
+    "pr_nudge": 7,
     "issue_ack": 26,
     "comment": 6
   },
   "closeLoop": {
-    "issuesTotal": 61,
-    "openTotal": 13,
+    "issuesTotal": 62,
+    "openTotal": 14,
     "month": {
-      "total": 42,
+      "total": 43,
       "closed": 30,
-      "rate": 71.4,
+      "rate": 69.8,
       "rateColor": "orange",
       "avgCloseHours": 33.6,
       "avgCloseDays": 1.4,
       "durSamples": 30
     },
     "year": {
-      "total": 61,
+      "total": 62,
       "closed": 48,
-      "rate": 78.7,
+      "rate": 77.4,
       "rateColor": "orange",
       "avgCloseHours": 93.3,
       "avgCloseDays": 3.9,
@@ -515,7 +506,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 87.6,
+      "waitHours": 88.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/57",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -541,7 +532,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 87.6,
+      "waitHours": 88.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/56",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -567,7 +558,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 87.6,
+      "waitHours": 88.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/54",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -586,33 +577,6 @@
       "triageVerdict": "KEEP"
     },
     {
-      "number": "61",
-      "title": "oidc切换",
-      "linkedIssues": [
-        "56"
-      ],
-      "mergeable": true,
-      "reason": "",
-      "waitHours": 78.4,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/61",
-      "agentReview": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "CI 流水线 OBS 访问由静态 AK/SK 改为 OIDC 临时凭证认证",
-        "issue_alignment": "与 #56 缺陷无关，属挂错关联",
-        "committer_action": "门禁全绿且 CLA 已签，确认与 #56 无关后建议直接合入",
-        "detail_points": [
-          "5 个 workflow 统一插入 huaweicloud-oidc-auth（cn-north-4/3600s），对齐 ops-math、ops-transformer 范式",
-          "移除 secrets.AK/SK 静态密钥，显著缩小凭证泄漏面；调用侧补齐 id-token: write 权限",
-          "PR 标题与关联 Issue #56（内存热力图孪生行折叠）完全不符，建议作者修正关联或改链正确 Issue"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-16T02:37:54.107Z"
-      },
-      "triageVerdict": "KEEP"
-    },
-    {
       "number": "66",
       "title": "fix(ci): correct REPOSITORY_NAME in compile.sh",
       "linkedIssues": [
@@ -620,7 +584,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 18.5,
+      "waitHours": 19.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/66",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -644,7 +608,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 95.4,
+      "waitHours": 96.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/52",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -670,7 +634,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 91,
+      "waitHours": 92,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -698,7 +662,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 87.6,
+      "waitHours": 88.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -724,7 +688,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合、缺 ci-pipeline-passed",
-      "waitHours": 87.6,
+      "waitHours": 88.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -750,7 +714,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 87.6,
+      "waitHours": 88.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/58",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -776,7 +740,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 87.6,
+      "waitHours": 88.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/55",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -802,7 +766,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、需squash(stat/needs-squash)",
-      "waitHours": 43.1,
+      "waitHours": 44.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/63",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -826,7 +790,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 40.9,
+      "waitHours": 41.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -847,27 +811,29 @@
     },
     {
       "number": "65",
-      "title": "[WIP] Enhance command line for npusim-prof",
-      "linkedIssues": [],
+      "title": "Enhance command line for npusim-prof",
+      "linkedIssues": [
+        "62"
+      ],
       "mergeable": false,
-      "reason": "草稿、缺 ci-pipeline-passed",
-      "waitHours": 20.8,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 21.8,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/65",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 --feature-list 统一录制与报告的分析选项及采集依赖",
-        "issue_alignment": "无关联 Issue，新特性未附方案讨论链接",
-        "committer_action": "CI 流水线失败且仍为 WIP，需作者修复后重跑门禁再评审",
+        "summary": "为 record/report 新增 --feature-list 并按特性自动推导采集项",
+        "issue_alignment": "针对性实现 #62 的 --feature-list 与依赖采集默认值",
+        "committer_action": "需先修复 CI 失败、补齐 ci-pipeline-passed 并重跑门禁，再合入",
         "detail_points": [
-          "改动覆盖 CLI、record、report 及 prof 参数解析共 20 个文件，属实质增强非表面改动",
-          "测试仅调整 report 默认断言新增 5 行，缺少 features 映射与 CANNSIM_COLLECT 派生逻辑的充分用例",
-          "body 的方案、测试、兼容性章节均为空模板，未提供实际验证命令与结果",
-          "默认功能集由 all 改为精确采集列表，需确认旧 CANNSIM_COLLECT 与 BIPROF_OPTS 调用方兼容性"
+          "新增 features.py 集中定义特性与采集依赖映射，替代 all 默认采集，降低开销",
+          "report_path 改为透传 feature_list，删除硬编码 --scalar-ipc/--vec-ipc，行为有变更需确认兼容",
+          "CANNSIM_COLLECT 与 BIPROF_OPTS 显式设置时保持原样覆盖，文档已同步说明",
+          "测试仅微调 1 个用例（5 行），新增特性映射与默认值缺少充分单测覆盖"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-18T14:39:01.082Z"
+        "reviewed_at": "2026-11-19T08:38:57.380Z"
       },
       "triageVerdict": "KEEP"
     }

@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-19T07:38:54.385Z",
-  "generatedAtCst": "2026-11-19 15:38",
+  "generatedAt": "2026-11-19T08:38:57.387Z",
+  "generatedAtCst": "2026-11-19 16:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
-    "issues_total": 61,
-    "issues_keep": 60,
+    "issues_total": 62,
+    "issues_keep": 61,
     "issues_close": 0,
-    "prs_open": 14,
-    "prs_merge_ready": 5,
+    "prs_open": 13,
+    "prs_merge_ready": 4,
     "prs_low_value": 0,
-    "cache_hits": 14,
-    "agent_calls": 0
+    "cache_hits": 12,
+    "agent_calls": 1
   },
   "reviews": {
     "52": {
@@ -448,53 +448,6 @@
         "reviewed_at": "2026-11-15T15:37:45.478Z"
       }
     },
-    "61": {
-      "number": 61,
-      "title": "oidc切换",
-      "author": "cui_jiahao",
-      "fingerprint": "330200c2c3a697d6",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "substantive_diff: 5 file(s)",
-        "linked_issue_legit: #56"
-      ],
-      "signals": [
-        "pr_substantive_diff",
-        "linked_issues:56"
-      ],
-      "merge_ready": true,
-      "blockers": [],
-      "diff_stats": {
-        "files": 5,
-        "added_lines": 81,
-        "removed_lines": 22,
-        "surface_files": 0,
-        "substantive_files": 5,
-        "test_files": 0,
-        "test_added_lines": 0,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [
-        56
-      ],
-      "agent_review": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "CI 流水线 OBS 访问由静态 AK/SK 改为 OIDC 临时凭证认证",
-        "issue_alignment": "与 #56 缺陷无关，属挂错关联",
-        "committer_action": "门禁全绿且 CLA 已签，确认与 #56 无关后建议直接合入",
-        "detail_points": [
-          "5 个 workflow 统一插入 huaweicloud-oidc-auth（cn-north-4/3600s），对齐 ops-math、ops-transformer 范式",
-          "移除 secrets.AK/SK 静态密钥，显著缩小凭证泄漏面；调用侧补齐 id-token: write 权限",
-          "PR 标题与关联 Issue #56（内存热力图孪生行折叠）完全不符，建议作者修正关联或改链正确 Issue"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-16T02:37:54.107Z"
-      }
-    },
     "63": {
       "number": 63,
       "title": "[WIP] fix(report): Embed operator source files into .npu-rep archives (fix to complete Source/Assembly feature support)",
@@ -586,18 +539,20 @@
     },
     "65": {
       "number": 65,
-      "title": "[WIP] Enhance command line for npusim-prof",
+      "title": "Enhance command line for npusim-prof",
       "author": "churkinaleksandr",
-      "fingerprint": "b23866d6bf1059d4",
+      "fingerprint": "7012caa5c84fd5ed",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
         "substantive_diff: 20 file(s)",
-        "adds_tests"
+        "adds_tests",
+        "linked_issue_legit: #62"
       ],
       "signals": [
         "pr_substantive_diff",
-        "pr_has_tests"
+        "pr_has_tests",
+        "linked_issues:62"
       ],
       "merge_ready": false,
       "blockers": [
@@ -614,22 +569,24 @@
         "docs_only": false,
         "files_without_patch": 0
       },
-      "linked_issues": [],
+      "linked_issues": [
+        62
+      ],
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 --feature-list 统一录制与报告的分析选项及采集依赖",
-        "issue_alignment": "无关联 Issue，新特性未附方案讨论链接",
-        "committer_action": "CI 流水线失败且仍为 WIP，需作者修复后重跑门禁再评审",
+        "summary": "为 record/report 新增 --feature-list 并按特性自动推导采集项",
+        "issue_alignment": "针对性实现 #62 的 --feature-list 与依赖采集默认值",
+        "committer_action": "需先修复 CI 失败、补齐 ci-pipeline-passed 并重跑门禁，再合入",
         "detail_points": [
-          "改动覆盖 CLI、record、report 及 prof 参数解析共 20 个文件，属实质增强非表面改动",
-          "测试仅调整 report 默认断言新增 5 行，缺少 features 映射与 CANNSIM_COLLECT 派生逻辑的充分用例",
-          "body 的方案、测试、兼容性章节均为空模板，未提供实际验证命令与结果",
-          "默认功能集由 all 改为精确采集列表，需确认旧 CANNSIM_COLLECT 与 BIPROF_OPTS 调用方兼容性"
+          "新增 features.py 集中定义特性与采集依赖映射，替代 all 默认采集，降低开销",
+          "report_path 改为透传 feature_list，删除硬编码 --scalar-ipc/--vec-ipc，行为有变更需确认兼容",
+          "CANNSIM_COLLECT 与 BIPROF_OPTS 显式设置时保持原样覆盖，文档已同步说明",
+          "测试仅微调 1 个用例（5 行），新增特性映射与默认值缺少充分单测覆盖"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-18T14:39:01.082Z"
+        "reviewed_at": "2026-11-19T08:38:57.380Z"
       }
     },
     "66": {
