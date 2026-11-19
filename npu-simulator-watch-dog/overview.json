@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-19T10:38:52.012Z",
-  "runAtCst": "2026-11-19 18:38",
+  "runAt": "2026-11-19T11:39:00.757Z",
+  "runAtCst": "2026-11-19 19:39",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -61,16 +61,6 @@
       "url": "https://gitcode.com/cann/npu-simulator/issues/62",
       "action": "issue_ack",
       "at": "2026-11-19T17:18:19+08:00",
-      "author": "simulator-bot",
-      "from": "simulator-bot"
-    },
-    {
-      "kind": "pr",
-      "number": "65",
-      "title": "Enhance command line for npusim-prof",
-      "url": "https://gitcode.com/cann/npu-simulator/pulls/65",
-      "action": "pr_nudge",
-      "at": "2026-11-19T17:18:11+08:00",
       "author": "simulator-bot",
       "from": "simulator-bot"
     },
@@ -467,29 +457,29 @@
   ],
   "botActionsByType": {
     "issue_ack": 27,
-    "pr_nudge": 8,
+    "pr_nudge": 7,
     "comment": 6
   },
   "closeLoop": {
     "issuesTotal": 62,
-    "openTotal": 14,
+    "openTotal": 13,
     "month": {
       "total": 43,
-      "closed": 30,
-      "rate": 69.8,
+      "closed": 31,
+      "rate": 72.1,
       "rateColor": "orange",
-      "avgCloseHours": 33.6,
+      "avgCloseHours": 32.6,
       "avgCloseDays": 1.4,
-      "durSamples": 30
+      "durSamples": 31
     },
     "year": {
       "total": 62,
-      "closed": 48,
-      "rate": 77.4,
+      "closed": 49,
+      "rate": 79,
       "rateColor": "orange",
-      "avgCloseHours": 93.3,
-      "avgCloseDays": 3.9,
-      "durSamples": 48
+      "avgCloseHours": 91.5,
+      "avgCloseDays": 3.8,
+      "durSamples": 49
     }
   },
   "response": {
@@ -526,7 +516,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 90.6,
+      "waitHours": 91.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/57",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -552,7 +542,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 90.6,
+      "waitHours": 91.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/56",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -578,7 +568,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 90.6,
+      "waitHours": 91.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/54",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -597,34 +587,6 @@
       "triageVerdict": "KEEP"
     },
     {
-      "number": "65",
-      "title": "Enhance command line for npusim-prof",
-      "linkedIssues": [
-        "62"
-      ],
-      "mergeable": true,
-      "reason": "",
-      "waitHours": 23.8,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/65",
-      "agentReview": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "为 record/report 新增 --feature-list，按特性自动推导采集依赖，替代 all 与 BIPROF_OPTS。",
-        "issue_alignment": "针对 #62 实现 --feature-list 与依赖驱动采集默认值",
-        "committer_action": "cla/yes 与 CI 全绿、无冲突，建议复核后直接合入",
-        "detail_points": [
-          "新增 public/features.py 集中定义特性与采集依赖映射，并统一注入 record/report 参数解析",
-          "runtime 仅在未显式设置 CANNSIM_COLLECT 时按特性推导，保留用户显式值（含空值），兼容性可控",
-          "同步更新用户指南、VF/Roofline/内存热力图等文档，并调整 test_report 默认参数断言",
-          "20 个实质文件、+540/-69，含测试改动，非表面改动，不适用低价值关闭"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-19T09:38:56.307Z"
-      },
-      "triageVerdict": "KEEP"
-    },
-    {
       "number": "66",
       "title": "fix(ci): correct REPOSITORY_NAME in compile.sh",
       "linkedIssues": [
@@ -632,7 +594,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 21.5,
+      "waitHours": 22.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/66",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -655,22 +617,24 @@
       "title": "feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止",
       "linkedIssues": [],
       "mergeable": false,
-      "reason": "需squash(stat/needs-squash)",
-      "waitHours": 98.4,
+      "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
+      "waitHours": 99.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/52",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "为 record 新增 --timeout 仿真超时终止能力，避免挂起占用机器",
-        "issue_alignment": "无关联 Issue，属独立功能增强",
-        "committer_action": "需作者 squash 提交以清除 needs-squash 标签后再合入",
+        "summary": "新增 --timeout 限制仿真时长，超时终止进程组并归档产物",
+        "issue_alignment": "无关联 Issue，属作者自提的超时保护需求",
+        "committer_action": "已获 approve，需作者 squash 提交并等 CI 流水线通过后再合入",
         "detail_points": [
-          "超时按 SIGTERM→5s 宽限→SIGKILL 终止整个进程组，可回收 bash/python 拉起的孙进程",
-          "计时仅覆盖 Popen 执行段，超时置 timed_out 并按 partial 归档产物，退出码 1 语义清晰"
+          "超时后按 SIGTERM→5s→SIGKILL 终止整个进程组，可回收 bash/python 孙进程，设计合理",
+          "计时仅覆盖 Popen 执行段、超时即使退出码 0 也判失败，语义清晰；但测试新增仅 3 行，覆盖偏薄",
+          "涉及 13 个文件、360 增 114 删，含 CLI/配置/runner/dashboard/文档，需关注 dashboard 大段重排风险",
+          "门禁缺 ci-pipeline-passed 且带 stat/needs-squash，需压缩提交历史并重跑流水线"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-18T10:38:54.793Z"
+        "reviewed_at": "2026-11-19T11:39:00.613Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -682,7 +646,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 94,
+      "waitHours": 95,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -710,7 +674,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 90.6,
+      "waitHours": 91.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -736,7 +700,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合、缺 ci-pipeline-passed",
-      "waitHours": 90.6,
+      "waitHours": 91.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -762,7 +726,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 90.6,
+      "waitHours": 91.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/58",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -788,7 +752,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 90.6,
+      "waitHours": 91.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/55",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -813,22 +777,22 @@
       "title": "[WIP] fix(report): Embed operator source files into .npu-rep archives (fix to complete Source/Assembly feature support)",
       "linkedIssues": [],
       "mergeable": false,
-      "reason": "草稿、需squash(stat/needs-squash)",
-      "waitHours": 46.1,
+      "reason": "草稿、存在冲突/不可合、需squash(stat/needs-squash)",
+      "waitHours": 47.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/63",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "导出报告时嵌入算子源码文件，并新增 txt 类型 7 支持",
-        "issue_alignment": "无关联 Issue，属于功能补全",
-        "committer_action": "需作者 squash 提交、重跑门禁，补测试后再评审合入",
+        "summary": "将算子源文件按 txt 类型 7 嵌入 .npu-rep 归档",
+        "issue_alignment": "无关联 Issue，属 Source/Assembly 功能补全",
+        "committer_action": "需先解决合并冲突、squash 提交并重跑 CI 再合入",
         "detail_points": [
-          "npu_rep_export.py 将源码以 {SourceFileId}.txt 嵌入 .npu-rep 归档，并配套 type=7",
-          "pack_npu_rep.py 扩展 .txt 到 type 7；共 3 文件 88 行的实质改动，但无新增测试，标题仍为 WIP"
+          "新增 FileInfo 类型 7 与 .txt 映射，report 导出链路同步嵌入完整源文件，字符集与路径一致性需确认",
+          "3 个实质文件改动无新增测试，Source 功能需补 fixture 验证打包解包后源文件可正确读取"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-17T13:37:47.916Z"
+        "reviewed_at": "2026-11-19T11:38:56.206Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -838,7 +802,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 43.9,
+      "waitHours": 44.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
