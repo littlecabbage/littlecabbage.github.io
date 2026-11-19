@@ -1,4 +1,4 @@
-总览指标 · cann/npu-simulator · 2026-11-20 05:38 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-20 06:38 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
@@ -23,31 +23,31 @@
   （无）
 
 【committer 待 Review / 合并】open PR (13，可合入 4 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
-  PR #57 ✅可合入 · 停留 101.6H → Issue #27  fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)
+  PR #57 ✅可合入 · 停留 102.6H → Issue #27  fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)
       └─ 🤖 值得合入：修正 LOAD_2D 查询把 K 起始位置错取为 MStartPosition 的缺陷 ｜ 建议：CLA 与 CI 全绿、无冲突，建议检视通过后直接合入
-  PR #56 ✅可合入 · 停留 101.6H → Issue #55  fix(report): 保留 npu-rep 打包数据库路径中的特殊字符 (#55)
+  PR #56 ✅可合入 · 停留 102.6H → Issue #55  fix(report): 保留 npu-rep 打包数据库路径中的特殊字符 (#55)
       └─ 🤖 值得合入：用 as_uri 修复 SQLite 路径特殊字符，报告打包不再遗漏 JSON ｜ 建议：CLA 与 CI 已全绿，检视通过后可直接合入
-  PR #54 ✅可合入 · 停留 101.6H → Issue #54  docs: fix the npusim report output example
+  PR #54 ✅可合入 · 停留 102.6H → Issue #54  docs: fix the npusim report output example
       └─ 🤖 值得合入：修正 npusim report 示例输出路径为目录，并说明按核生成 tracing JSON ｜ 建议：CLA 与 CI 均已通过、无冲突，建议直接合入
-  PR #66 ✅可合入 · 停留 32.5H → Issue #61  fix(ci): correct REPOSITORY_NAME in compile.sh
+  PR #66 ✅可合入 · 停留 33.5H → Issue #61  fix(ci): correct REPOSITORY_NAME in compile.sh
       └─ 🤖 值得合入：修正 compile.sh 中误写的仓库名 ops-math 为 npu-simulator ｜ 建议：CLA 与 CI 门禁全绿、无冲突，建议直接合入
-  PR #52 ❌需squash(stat/needs-squash) · 停留 109.4H  feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止
+  PR #52 ❌需squash(stat/needs-squash) · 停留 110.4H  feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止
       └─ 🤖 阻塞待解：为 record 新增 --timeout 超时限制，超时后终止进程组并归档部分产物 ｜ 建议：需作者 squash 提交以清除 stat/needs-squash 阻塞，再重跑 CI 后合入
-  PR #53 ❌缺 ci-pipeline-passed · 停留 105H → Issue #53  fix(report): order the busy-time sweep by interval start
+  PR #53 ❌缺 ci-pipeline-passed · 停留 106H → Issue #53  fix(report): order the busy-time sweep by interval start
       └─ 🤖 阻塞待解：两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估 ｜ 建议：需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入
-  PR #60 ❌缺 ci-pipeline-passed · 停留 101.6H → Issue #56  fix(report): collapse the fixpipe twin rows by identity, not by adjacency
+  PR #60 ❌缺 ci-pipeline-passed · 停留 102.6H → Issue #56  fix(report): collapse the fixpipe twin rows by identity, not by adjacency
       └─ 🤖 阻塞待解：将孪生行折叠由相邻匹配改为按 twin_key 字典匹配,修复 UB 写重复计数 ｜ 建议：需作者触发 CI 并获 ci-pipeline-passed 标签后,再复核合入
-  PR #59 ❌缺 ci-pipeline-passed · 停留 101.6H → Issue #60  fix(record): recognize versioned Python executables
+  PR #59 ❌缺 ci-pipeline-passed · 停留 102.6H → Issue #60  fix(record): recognize versioned Python executables
       └─ 🤖 阻塞待解：用正则匹配 python3.11 等带版本号的 Python 解释器，修复记录分类 ｜ 建议：需先修复 CI 失败并重跑流水线通过后再合入
-  PR #58 ❌缺 ci-pipeline-passed · 停留 101.6H → Issue #59  fix(report): handle detector output write failures
+  PR #58 ❌缺 ci-pipeline-passed · 停留 102.6H → Issue #59  fix(report): handle detector output write failures
       └─ 🤖 阻塞待解：修复检测报告写入失败时重复抛错并中断后续检测 ｜ 建议：CI 流水线失败，需作者修复后重跑并通过再合入
-  PR #55 ❌缺 ci-pipeline-passed · 停留 101.6H → Issue #58  fix(record): preserve shell command strings before launch
+  PR #55 ❌缺 ci-pipeline-passed · 停留 102.6H → Issue #58  fix(record): preserve shell command strings before launch
       └─ 🤖 阻塞待解：将记录入口的 user_app 保持原始字符串，避免 Path 归一化破坏 shell 命令 ｜ 建议：需排查 UT checkout 凭证故障并重跑 CI，通过后再合入
-  PR #63 ❌草稿、缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 57.1H  [WIP] fix(report): Embed operator source files into .npu-rep archives (fix to complete Source/Assembly feature support)
+  PR #63 ❌草稿、缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 58.1H  [WIP] fix(report): Embed operator source files into .npu-rep archives (fix to complete Source/Assembly feature support)
       └─ 🤖 阻塞待解：将算子源文件以 txt 类型嵌入 .npu-rep 归档，补全源码查看功能 ｜ 建议：需作者 squash 提交、补充测试并重跑 CI 取得通过标签后再合入
-  PR #64 ❌需squash(stat/needs-squash) · 停留 54.9H  Add Speed-of-light profiling feature
+  PR #64 ❌需squash(stat/needs-squash) · 停留 55.9H  Add Speed-of-light profiling feature
       └─ 🤖 阻塞待解：新增 SOL 分析器与 --sol 选项，评估内核吞吐上限 ｜ 建议：需作者 squash 提交、补测试并关联 Issue 后再评审
-  PR #67 ❌需squash(stat/needs-squash) · 停留 7.2H → Issue #63  fix(prof): preserve base reports when optional processing fails
+  PR #67 ❌需squash(stat/needs-squash) · 停留 8.2H → Issue #63  fix(prof): preserve base reports when optional processing fails
       └─ 🤖 阻塞待解：移除 roofline.json 导出，可选处理失败降级保留基础报告 ｜ 建议：需作者 squash 提交并重跑门禁后再合入
 
 【自动化 Bot 行为记录】42 条（PR 首响催办 8 / Issue 已收到 28 / 其他评论 6）
