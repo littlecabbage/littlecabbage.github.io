@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-20T02:38:54.197Z",
-  "generatedAtCst": "2026-11-20 10:38",
+  "generatedAt": "2026-11-20T03:39:02.536Z",
+  "generatedAtCst": "2026-11-20 11:39",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 63,
@@ -10,8 +10,8 @@
     "prs_open": 13,
     "prs_merge_ready": 4,
     "prs_low_value": 0,
-    "cache_hits": 13,
-    "agent_calls": 0
+    "cache_hits": 11,
+    "agent_calls": 2
   },
   "reviews": {
     "52": {
@@ -308,12 +308,13 @@
       "number": 58,
       "title": "fix(report): handle detector output write failures",
       "author": "liangjinxuan-2026",
-      "fingerprint": "1c3ae063a3722af4",
+      "fingerprint": "5633c0f15217b124",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
         "substantive_diff: 1 file(s)",
-        "linked_issue_legit: #59"
+        "linked_issue_legit: #59",
+        "external_participant: ZhouBX"
       ],
       "signals": [
         "pr_substantive_diff",
@@ -340,16 +341,16 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "修复检测报告写入失败时重复抛错并中断后续检测",
+        "summary": "修复检测报告写入失败时二次抛错逃逸、阻断后续检测的问题",
         "issue_alignment": "针对性修复 #59 报告写入异常逃逸",
-        "committer_action": "CI 流水线失败，需作者修复后重跑并通过再合入",
+        "committer_action": "需补充 UT 与失败兜底写入，CI 通过后再评审合入",
         "detail_points": [
-          "将报告写入抽为 _write_detection_report，捕获 OSError 并返回布尔失败，避免二次异常逃逸",
-          "单文件实质改动，无新增测试；CI 失败需排查，建议补充目录路径写入失败用例"
+          "抽出 _write_detection_report 统一捕获 OSError 并以布尔值返回失败，避免异常二次逃逸",
+          "缺少回归测试与失败时兜底写 detection failed，且 ci-pipeline 未通过，需作者补齐"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-17T18:38:58.429Z"
+        "reviewed_at": "2026-11-20T03:39:02.515Z"
       }
     },
     "59": {
@@ -544,12 +545,13 @@
       "number": 66,
       "title": "fix(ci): correct REPOSITORY_NAME in compile.sh",
       "author": "chenge1",
-      "fingerprint": "a874bdf5d1bf915e",
+      "fingerprint": "34072016ec3b9461",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
         "substantive_diff: 1 file(s)",
-        "linked_issue_legit: #61"
+        "linked_issue_legit: #61",
+        "external_participant: ZhouBX"
       ],
       "signals": [
         "pr_substantive_diff",
@@ -574,16 +576,16 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修正 compile.sh 中误写的仓库名 ops-math 为 npu-simulator",
-        "issue_alignment": "已针对性修复 #61 仓库名复制残留",
-        "committer_action": "CLA 与 CI 门禁全绿、无冲突，建议直接合入",
+        "summary": "将 compile.sh 中 REPOSITORY_NAME 由 ops-math 改回 npu-simulator",
+        "issue_alignment": "精准修复 #61 的仓库名复制残留",
+        "committer_action": "门禁全绿无冲突，建议合入；编译脚本冗余清理另开 PR 统一处理",
         "detail_points": [
-          "单行修正 REPOSITORY_NAME，使日志与断言信息指向正确仓库 npu-simulator",
-          "关联 Issue #61 描述的具体缺陷被精准覆盖，改动风险低、无副作用"
+          "单文件单行修正，让构建日志与断言消息中的仓库标识恢复正确，可避免排障定界被误导",
+          "已关联真实缺陷 Issue #61，并且 cann-cla/yes 与 ci-pipeline-passed 均已就绪；维护者提出的 compile.sh 冗余清理应另行统一跟进"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-18T14:38:57.100Z"
+        "reviewed_at": "2026-11-20T03:38:58.017Z"
       }
     },
     "67": {

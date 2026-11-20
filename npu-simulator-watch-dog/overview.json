@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-20T02:38:54.353Z",
-  "runAtCst": "2026-11-20 10:38",
+  "runAt": "2026-11-20T03:39:02.729Z",
+  "runAtCst": "2026-11-20 11:39",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -537,7 +537,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 106.6,
+      "waitHours": 107.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/57",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -563,7 +563,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 106.6,
+      "waitHours": 107.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/56",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -589,7 +589,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 106.6,
+      "waitHours": 107.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/54",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -615,21 +615,21 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 37.5,
+      "waitHours": 38.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/66",
       "agentReview": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修正 compile.sh 中误写的仓库名 ops-math 为 npu-simulator",
-        "issue_alignment": "已针对性修复 #61 仓库名复制残留",
-        "committer_action": "CLA 与 CI 门禁全绿、无冲突，建议直接合入",
+        "summary": "将 compile.sh 中 REPOSITORY_NAME 由 ops-math 改回 npu-simulator",
+        "issue_alignment": "精准修复 #61 的仓库名复制残留",
+        "committer_action": "门禁全绿无冲突，建议合入；编译脚本冗余清理另开 PR 统一处理",
         "detail_points": [
-          "单行修正 REPOSITORY_NAME，使日志与断言信息指向正确仓库 npu-simulator",
-          "关联 Issue #61 描述的具体缺陷被精准覆盖，改动风险低、无副作用"
+          "单文件单行修正，让构建日志与断言消息中的仓库标识恢复正确，可避免排障定界被误导",
+          "已关联真实缺陷 Issue #61，并且 cann-cla/yes 与 ci-pipeline-passed 均已就绪；维护者提出的 compile.sh 冗余清理应另行统一跟进"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-18T14:38:57.100Z"
+        "reviewed_at": "2026-11-20T03:38:58.017Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -639,7 +639,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 114.4,
+      "waitHours": 115.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/52",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -667,7 +667,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 110,
+      "waitHours": 111,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -695,7 +695,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 106.6,
+      "waitHours": 107.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -721,7 +721,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 106.6,
+      "waitHours": 107.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -747,21 +747,21 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 106.6,
+      "waitHours": 107.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/58",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "修复检测报告写入失败时重复抛错并中断后续检测",
+        "summary": "修复检测报告写入失败时二次抛错逃逸、阻断后续检测的问题",
         "issue_alignment": "针对性修复 #59 报告写入异常逃逸",
-        "committer_action": "CI 流水线失败，需作者修复后重跑并通过再合入",
+        "committer_action": "需补充 UT 与失败兜底写入，CI 通过后再评审合入",
         "detail_points": [
-          "将报告写入抽为 _write_detection_report，捕获 OSError 并返回布尔失败，避免二次异常逃逸",
-          "单文件实质改动，无新增测试；CI 失败需排查，建议补充目录路径写入失败用例"
+          "抽出 _write_detection_report 统一捕获 OSError 并以布尔值返回失败，避免异常二次逃逸",
+          "缺少回归测试与失败时兜底写 detection failed，且 ci-pipeline 未通过，需作者补齐"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-17T18:38:58.429Z"
+        "reviewed_at": "2026-11-20T03:39:02.515Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -773,7 +773,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 106.6,
+      "waitHours": 107.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/55",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -799,7 +799,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 62.1,
+      "waitHours": 63.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/63",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -825,7 +825,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 59.9,
+      "waitHours": 60.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -852,7 +852,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 12.2,
+      "waitHours": 13.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/67",
       "agentReview": {
         "verdict": "NEEDS_WORK",
