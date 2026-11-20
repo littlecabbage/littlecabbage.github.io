@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-20T12:39:00.335Z",
-  "runAtCst": "2026-11-20 20:39",
+  "runAt": "2026-11-20T13:38:59.980Z",
+  "runAtCst": "2026-11-20 21:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -45,6 +45,7 @@
     "61",
     "62",
     "63",
+    "64",
     "65"
   ],
   "botLogins": [
@@ -56,6 +57,26 @@
     "simulator-bot"
   ],
   "botActions": [
+    {
+      "kind": "issue",
+      "number": "65",
+      "title": "[Requirement|需求/特性]: Remove misleading per-instruction dynamic IPC from NPUSim reports",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/65",
+      "action": "issue_ack",
+      "at": "2026-11-20T21:17:19+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "pr",
+      "number": "68",
+      "title": "Remove misleading per-instruction IPC metrics",
+      "url": "https://gitcode.com/cann/npu-simulator/pulls/68",
+      "action": "pr_nudge",
+      "at": "2026-11-20T21:17:11+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
     {
       "kind": "issue",
       "number": "64",
@@ -159,7 +180,7 @@
     {
       "kind": "pr",
       "number": "63",
-      "title": "[WIP] fix(report): Embed operator source files into .npu-rep archives (fix to complete Source/Assembly feature support)",
+      "title": "fix(report): Store operator source text in SourceFiles",
       "url": "https://gitcode.com/cann/npu-simulator/pulls/63",
       "action": "pr_nudge",
       "at": "2026-11-17T21:17:11+08:00",
@@ -468,8 +489,8 @@
     }
   ],
   "botActionsByType": {
-    "issue_ack": 29,
-    "pr_nudge": 6,
+    "issue_ack": 30,
+    "pr_nudge": 7,
     "comment": 6
   },
   "closeLoop": {
@@ -496,37 +517,29 @@
   },
   "response": {
     "openNoResponse": {
-      "total": 1,
+      "total": 0,
       "overdue": 0
     },
     "month": {
-      "total": 29,
-      "qualified": 18,
+      "total": 28,
+      "qualified": 17,
       "unqualified": 11,
-      "rate": 62.1,
+      "rate": 60.7,
       "rateColor": "orange",
       "avgFirstRespHours": 4.6,
       "respSamples": 18
     },
     "year": {
-      "total": 34,
-      "qualified": 19,
+      "total": 33,
+      "qualified": 18,
       "unqualified": 15,
-      "rate": 55.9,
+      "rate": 54.5,
       "rateColor": "orange",
       "avgFirstRespHours": 13.3,
       "respSamples": 21
     }
   },
-  "oncallList": [
-    {
-      "number": "64",
-      "title": "[Bug-Report|缺陷反馈]: Full source files are missing from Source/Assembly .npu-rep reports",
-      "waitHours": 2.6,
-      "overdue": false,
-      "url": "https://gitcode.com/cann/npu-simulator/issues/64"
-    }
-  ],
+  "oncallList": [],
   "committerList": [
     {
       "number": "57",
@@ -536,7 +549,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 116.7,
+      "waitHours": 117.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/57",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -564,7 +577,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 116.7,
+      "waitHours": 117.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/56",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -583,6 +596,60 @@
       "triageVerdict": "KEEP"
     },
     {
+      "number": "63",
+      "title": "fix(report): Store operator source text in SourceFiles",
+      "linkedIssues": [
+        "64"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 73.1,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/63",
+      "agentReview": {
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "为 SourceFiles 增加源码全文列并在报告阶段回填，修复报告缺源码",
+        "issue_alignment": "针对性修复 #64 报告缺失完整源文件",
+        "committer_action": "CLA 已签、CI 通过且无冲突，建议 committer 直接合入",
+        "detail_points": [
+          "bridge.sql 新增可空 SourceFileText 列，SourceFileId 与归档格式保持向后兼容",
+          "save_source_file_texts 在分析器登记路径后快照全文，并在 tracing 重连前 commit",
+          "仅对可读取文件落库，读取失败置空，避免报告生成因路径缺失中断",
+          "文档同步说明 SourceFiles 新增全文语义，测试覆盖见作者 654 项 pytest 通过记录"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-20T13:38:59.849Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "68",
+      "title": "Remove misleading per-instruction IPC metrics",
+      "linkedIssues": [
+        "65"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 1.1,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/68",
+      "agentReview": {
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "删除逐指令动态 IPC 计算、trace 字段与相关表，保留聚合 IPC 指标",
+        "issue_alignment": "已针对性实现 #65 需求，移除逐指令 IPC",
+        "committer_action": "CLA 与 CI 全绿、无冲突阻塞，建议直接合入",
+        "detail_points": [
+          "净删约 900 行，移除 ScalarIpcDynamic/VfIPCDynamic 表、视图及 prof_demo 回退实现，降低维护成本",
+          "同步更新文档与参数说明，并新增测试校验旧库重分析后不再生成动态 IPC 表"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-20T13:38:55.978Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
       "number": "53",
       "title": "fix(report): order the busy-time sweep by interval start",
       "linkedIssues": [
@@ -590,7 +657,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 120,
+      "waitHours": 121,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -617,7 +684,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 116.7,
+      "waitHours": 117.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -644,7 +711,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 116.7,
+      "waitHours": 117.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -670,7 +737,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合、缺 ci-pipeline-passed",
-      "waitHours": 116.7,
+      "waitHours": 117.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/58",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -696,7 +763,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 116.7,
+      "waitHours": 117.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/55",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -724,7 +791,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合",
-      "waitHours": 116.7,
+      "waitHours": 117.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/54",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -744,38 +811,12 @@
       "triageVerdict": "KEEP"
     },
     {
-      "number": "63",
-      "title": "[WIP] fix(report): Embed operator source files into .npu-rep archives (fix to complete Source/Assembly feature support)",
-      "linkedIssues": [],
-      "mergeable": false,
-      "reason": "草稿、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 72.1,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/63",
-      "agentReview": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "在 .npu-rep 归档中嵌入源文件，完善 Source/Assembly 功能",
-        "issue_alignment": "无关联 Issue，属功能补全型缺陷修复",
-        "committer_action": "需作者压缩提交、补齐 CI 流水线通过后重新评审合入",
-        "detail_points": [
-          "3 个实质文件共 +92/-15：导出逻辑新增源文件嵌入，打包库新增 .txt 类型 7",
-          "文档同步补充 <SourceFileId>.txt 完整源文档条目，变更方向一致",
-          "标题标 WIP 且缺 ci-pipeline-passed、带 needs-squash，门禁未就绪",
-          "无新增测试，需补充导出归档的 UT 与端到端验证证据"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-20T10:39:00.426Z"
-      },
-      "triageVerdict": "KEEP"
-    },
-    {
       "number": "64",
       "title": "Add Speed-of-light profiling feature",
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 69.9,
+      "waitHours": 70.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -802,7 +843,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 22.2,
+      "waitHours": 23.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/67",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -819,32 +860,6 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-20T11:38:48.085Z"
-      },
-      "triageVerdict": "KEEP"
-    },
-    {
-      "number": "68",
-      "title": "Remove misleading per-instruction IPC metrics",
-      "linkedIssues": [
-        "65"
-      ],
-      "mergeable": false,
-      "reason": "缺 ci-pipeline-passed",
-      "waitHours": 0.1,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/68",
-      "agentReview": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "移除指令级动态IPC计算与trace字段，仅保留聚合IPC",
-        "issue_alignment": "针对性实现 #65 需求，删除逐指令IPC",
-        "committer_action": "缺少 CI 通过标签，需作者触发 CI 并补齐门禁后再合入",
-        "detail_points": [
-          "删除 ScalarIpcDynamic、VfIPCDynamic 表及视图，重新分析时清理遗留表，避免旧报告残留",
-          "保留标量整体 IPC 与 VF/VF_SIMT 聚合 IPC，改动语法规范并有测试与文档同步，未见安全风险"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-20T12:38:56.446Z"
       },
       "triageVerdict": "KEEP"
     }

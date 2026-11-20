@@ -1,14 +1,14 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-20T12:39:00.185Z",
-  "generatedAtCst": "2026-11-20 20:39",
+  "generatedAt": "2026-11-20T13:38:59.856Z",
+  "generatedAtCst": "2026-11-20 21:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 65,
     "issues_keep": 64,
     "issues_close": 0,
     "prs_open": 12,
-    "prs_merge_ready": 2,
+    "prs_merge_ready": 4,
     "prs_low_value": 0,
     "cache_hits": 10,
     "agent_calls": 2
@@ -416,49 +416,50 @@
     },
     "63": {
       "number": 63,
-      "title": "[WIP] fix(report): Embed operator source files into .npu-rep archives (fix to complete Source/Assembly feature support)",
+      "title": "fix(report): Store operator source text in SourceFiles",
       "author": "churkinaleksandr",
-      "fingerprint": "34a83938c4298251",
+      "fingerprint": "84e4828ba965c5b6",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
-        "substantive_diff: 3 file(s)"
+        "substantive_diff: 4 file(s)",
+        "linked_issue_legit: #64"
       ],
       "signals": [
-        "pr_substantive_diff"
+        "pr_substantive_diff",
+        "linked_issues:64"
       ],
-      "merge_ready": false,
-      "blockers": [
-        "missing_label:ci-pipeline-passed",
-        "blocking_label:stat/needs-squash"
-      ],
+      "merge_ready": true,
+      "blockers": [],
       "diff_stats": {
-        "files": 3,
+        "files": 4,
         "added_lines": 92,
-        "removed_lines": 15,
+        "removed_lines": 11,
         "surface_files": 0,
-        "substantive_files": 3,
+        "substantive_files": 4,
         "test_files": 0,
         "test_added_lines": 0,
         "docs_only": false,
         "files_without_patch": 0
       },
-      "linked_issues": [],
+      "linked_issues": [
+        64
+      ],
       "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "在 .npu-rep 归档中嵌入源文件，完善 Source/Assembly 功能",
-        "issue_alignment": "无关联 Issue，属功能补全型缺陷修复",
-        "committer_action": "需作者压缩提交、补齐 CI 流水线通过后重新评审合入",
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "为 SourceFiles 增加源码全文列并在报告阶段回填，修复报告缺源码",
+        "issue_alignment": "针对性修复 #64 报告缺失完整源文件",
+        "committer_action": "CLA 已签、CI 通过且无冲突，建议 committer 直接合入",
         "detail_points": [
-          "3 个实质文件共 +92/-15：导出逻辑新增源文件嵌入，打包库新增 .txt 类型 7",
-          "文档同步补充 <SourceFileId>.txt 完整源文档条目，变更方向一致",
-          "标题标 WIP 且缺 ci-pipeline-passed、带 needs-squash，门禁未就绪",
-          "无新增测试，需补充导出归档的 UT 与端到端验证证据"
+          "bridge.sql 新增可空 SourceFileText 列，SourceFileId 与归档格式保持向后兼容",
+          "save_source_file_texts 在分析器登记路径后快照全文，并在 tracing 重连前 commit",
+          "仅对可读取文件落库，读取失败置空，避免报告生成因路径缺失中断",
+          "文档同步说明 SourceFiles 新增全文语义，测试覆盖见作者 654 项 pytest 通过记录"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-20T10:39:00.426Z"
+        "reviewed_at": "2026-11-20T13:38:59.849Z"
       }
     },
     "64": {
@@ -562,7 +563,7 @@
       "number": 68,
       "title": "Remove misleading per-instruction IPC metrics",
       "author": "churkinaleksandr",
-      "fingerprint": "c86c75706847a2f6",
+      "fingerprint": "9ce89aa311aa3709",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -575,10 +576,8 @@
         "pr_has_tests",
         "linked_issues:65"
       ],
-      "merge_ready": false,
-      "blockers": [
-        "missing_label:ci-pipeline-passed"
-      ],
+      "merge_ready": true,
+      "blockers": [],
       "diff_stats": {
         "files": 19,
         "added_lines": 41,
@@ -594,18 +593,18 @@
         65
       ],
       "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "移除指令级动态IPC计算与trace字段，仅保留聚合IPC",
-        "issue_alignment": "针对性实现 #65 需求，删除逐指令IPC",
-        "committer_action": "缺少 CI 通过标签，需作者触发 CI 并补齐门禁后再合入",
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "删除逐指令动态 IPC 计算、trace 字段与相关表，保留聚合 IPC 指标",
+        "issue_alignment": "已针对性实现 #65 需求，移除逐指令 IPC",
+        "committer_action": "CLA 与 CI 全绿、无冲突阻塞，建议直接合入",
         "detail_points": [
-          "删除 ScalarIpcDynamic、VfIPCDynamic 表及视图，重新分析时清理遗留表，避免旧报告残留",
-          "保留标量整体 IPC 与 VF/VF_SIMT 聚合 IPC，改动语法规范并有测试与文档同步，未见安全风险"
+          "净删约 900 行，移除 ScalarIpcDynamic/VfIPCDynamic 表、视图及 prof_demo 回退实现，降低维护成本",
+          "同步更新文档与参数说明，并新增测试校验旧库重分析后不再生成动态 IPC 表"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-20T12:38:56.446Z"
+        "reviewed_at": "2026-11-20T13:38:55.978Z"
       }
     }
   }
