@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-20T05:38:52.604Z",
-  "generatedAtCst": "2026-11-20 13:38",
+  "generatedAt": "2026-11-20T07:38:54.613Z",
+  "generatedAtCst": "2026-11-20 15:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 63,
@@ -10,18 +10,19 @@
     "prs_open": 13,
     "prs_merge_ready": 4,
     "prs_low_value": 0,
-    "cache_hits": 13,
-    "agent_calls": 0
+    "cache_hits": 11,
+    "agent_calls": 2
   },
   "reviews": {
     "52": {
       "number": 52,
       "title": "feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止",
       "author": "Li_cube",
-      "fingerprint": "e60a8a4a6f257a25",
+      "fingerprint": "3152c0dcf80f3088",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
+        "approved_label",
         "substantive_diff: 13 file(s)",
         "external_participant: ZhouBX"
       ],
@@ -47,18 +48,17 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "为 record 新增 --timeout 超时限制，超时后终止进程组并归档部分产物",
-        "issue_alignment": "无关联 Issue，属新功能提案",
-        "committer_action": "需作者 squash 提交以清除 stat/needs-squash 阻塞，再重跑 CI 后合入",
+        "summary": "新增 --timeout 限制仿真时长，超时后终止进程组并归档",
+        "issue_alignment": "无关联 Issue，属自主增强超时保护能力",
+        "committer_action": "已 approved，需作者 squash 提交重跑 CI 后再合入",
         "detail_points": [
-          "核心改动合理：计时仅覆盖仿真段，超时后 SIGTERM→5s→SIGKILL 终止整个进程组，兼容孙进程",
-          "配置解析与回填链路完整：parse_duration/resolve_timeout 支持环境变量回退，RunResult.timed_out 贯通 record 与 ktest",
-          "测试覆盖偏弱：13 个文件改动但仅新增 3 行测试，主要为 mock 补字段，缺少超时终止路径的用例",
-          "已有 committer /approve 与 ci-pipeline-passed，仅剩 stat/needs-squash 门禁待清理"
+          "超时覆盖经典 record 与 ktest 模式，SIGTERM→5s 宽限→SIGKILL 终止整个进程组，兼容孙进程",
+          "CLI 显式值优先于 NPUSIM_TIMEOUT，非法单位报错退出码 2，超时按失败退出码 1 并保留 partial 产物",
+          "改动 13 文件含文档与测试，但仅 3 行测试新增，建议补充超时终止与时长的用例覆盖"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-19T12:39:03.310Z"
+        "reviewed_at": "2026-11-20T07:38:54.609Z"
       }
     },
     "53": {
@@ -545,7 +545,7 @@
       "number": 66,
       "title": "fix(ci): correct REPOSITORY_NAME in compile.sh",
       "author": "chenge1",
-      "fingerprint": "34072016ec3b9461",
+      "fingerprint": "32986234a3de405b",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -576,16 +576,16 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "将 compile.sh 中 REPOSITORY_NAME 由 ops-math 改回 npu-simulator",
-        "issue_alignment": "精准修复 #61 的仓库名复制残留",
-        "committer_action": "门禁全绿无冲突，建议合入；编译脚本冗余清理另开 PR 统一处理",
+        "summary": "修正compile.sh中仓库名残留，改为npu-simulator",
+        "issue_alignment": "已针对性修复 #61 仓库名残留缺陷",
+        "committer_action": "CLA与CI已通过、无冲突，建议合入并纳入统一清理",
         "detail_points": [
-          "单文件单行修正，让构建日志与断言消息中的仓库标识恢复正确，可避免排障定界被误导",
-          "已关联真实缺陷 Issue #61，并且 cann-cla/yes 与 ci-pipeline-passed 均已就绪；维护者提出的 compile.sh 冗余清理应另行统一跟进"
+          "仅改1行环境变量，修正构建日志与断言中的错误仓库标识",
+          "维护者称compile.sh有冗余将统一清理，合入前需协调避免重复改动"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-20T03:38:58.017Z"
+        "reviewed_at": "2026-11-20T07:38:50.124Z"
       }
     },
     "67": {

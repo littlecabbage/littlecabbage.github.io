@@ -3,7 +3,7 @@
 | 维度 | 详情 |
 |---|---|
 | **目标仓库** | [cann/npu-simulator](https://gitcode.com/cann/npu-simulator)（GitCode） |
-| **巡检时间** | 2026-11-20 13:38 (UTC+8) |
+| **巡检时间** | 2026-11-20 15:38 (UTC+8) |
 | **分析引擎** | `gitcode-issue-triage` 确定性守卫 + Pi Agent (`cannbot/deepseek-v4.1-flash`) |
 | **判定原则** | 宁漏勿错：强灌水信号 + 无安全否决 → 低价值候选；有任何实质代码/测试/关联 Issue → 保留并给出合路建议 |
 
@@ -22,7 +22,7 @@
 | PR | AI 结论 | 合路门禁 | 关联 Issue | 改动规模 (实质文件) | AI 改动摘要与关联对齐 | committer 建议动作 |
 |---|---|---|---|---|---|---|
 | [#67](https://gitcode.com/cann/npu-simulator/pulls/67) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | [#63](https://gitcode.com/cann/npu-simulator/issues/63) | +67/-145 (11/11 实质) | 移除 roofline.json 导出，可选处理失败降级保留基础报告（针对性修复 #63 可选报告失败缺陷） | 需作者 squash 提交并重跑门禁后再合入 |
-| [#66](https://gitcode.com/cann/npu-simulator/pulls/66) | **🤖 值得合入** | ✅ 可合入 | [#61](https://gitcode.com/cann/npu-simulator/issues/61) | +1/-1 (1/1 实质) | 将 compile.sh 中 REPOSITORY_NAME 由 ops-math 改回 npu-simulator（精准修复 #61 的仓库名复制残留） | 门禁全绿无冲突，建议合入；编译脚本冗余清理另开 PR 统一处理 |
+| [#66](https://gitcode.com/cann/npu-simulator/pulls/66) | **🤖 值得合入** | ✅ 可合入 | [#61](https://gitcode.com/cann/npu-simulator/issues/61) | +1/-1 (1/1 实质) | 修正compile.sh中仓库名残留，改为npu-simulator（已针对性修复 #61 仓库名残留缺陷） | CLA与CI已通过、无冲突，建议合入并纳入统一清理 |
 | [#64](https://gitcode.com/cann/npu-simulator/pulls/64) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | — | +330/-2 (6/6 实质) | 新增 SOL 分析器与 --sol 选项，评估内核吞吐上限（无关联 Issue，新特性未先走方案讨论） | 需作者 squash 提交、补测试并关联 Issue 后再评审 |
 | [#63](https://gitcode.com/cann/npu-simulator/pulls/63) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed；阻塞标签 stat/needs-squash | — | +92/-15 (3/3 实质) | 将算子源文件以 txt 类型嵌入 .npu-rep 归档，补全源码查看功能（无关联 Issue，属功能补全） | 需作者 squash 提交、补充测试并重跑 CI 取得通过标签后再合入 |
 | [#60](https://gitcode.com/cann/npu-simulator/pulls/60) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | [#56](https://gitcode.com/cann/npu-simulator/issues/56) | +11/-5 (1/1 实质) | 将孪生行折叠由相邻匹配改为按 twin_key 字典匹配,修复 UB 写重复计数（已针对性修复 #56 孪生行不相邻导致的重复计入） | 需作者触发 CI 并获 ci-pipeline-passed 标签后,再复核合入 |
@@ -33,11 +33,11 @@
 | [#55](https://gitcode.com/cann/npu-simulator/pulls/55) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | [#58](https://gitcode.com/cann/npu-simulator/issues/58) | +2/-2 (2/2 实质) | 将记录入口的 user_app 保持原始字符串，避免 Path 归一化破坏 shell 命令（针对性修复 #58 引号命令被改写缺陷） | 需排查 UT checkout 凭证故障并重跑 CI，通过后再合入 |
 | [#54](https://gitcode.com/cann/npu-simulator/pulls/54) | **🤖 值得合入** | ✅ 可合入 | [#54](https://gitcode.com/cann/npu-simulator/issues/54) | +2/-3 (1/1 实质) | 修正 npusim report 示例输出路径为目录，并说明按核生成 tracing JSON（已针对性修复 #54 报告输出路径示例错误） | CLA 与 CI 均已通过、无冲突，建议直接合入 |
 | [#53](https://gitcode.com/cann/npu-simulator/pulls/53) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | [#53](https://gitcode.com/cann/npu-simulator/issues/53) | +9/-0 (1/1 实质) | 两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估（已针对性修复 #53 带宽低估缺陷） | 需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入 |
-| [#52](https://gitcode.com/cann/npu-simulator/pulls/52) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | — | +360/-114 (13/13 实质) | 为 record 新增 --timeout 超时限制，超时后终止进程组并归档部分产物（无关联 Issue，属新功能提案） | 需作者 squash 提交以清除 stat/needs-squash 阻塞，再重跑 CI 后合入 |
+| [#52](https://gitcode.com/cann/npu-simulator/pulls/52) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | — | +360/-114 (13/13 实质) | 新增 --timeout 限制仿真时长，超时后终止进程组并归档（无关联 Issue，属自主增强超时保护能力） | 已 approved，需作者 squash 提交重跑 CI 后再合入 |
 
 ### PR #67：fix(prof): preserve base reports when optional processing fails
 
-- **作者**：`@churkinaleksandr` · **停留自然时长**：15.2h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@churkinaleksandr` · **停留自然时长**：17.2h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：11 个文件（实质改动文件 11 个，表面改动文件 0 个，新增测试 +15 行）
 - **关联 Issue 对齐**：针对性修复 #63 可选报告失败缺陷
 - **核心改动摘要**：移除 roofline.json 导出，可选处理失败降级保留基础报告
@@ -47,17 +47,17 @@
 
 ### PR #66：fix(ci): correct REPOSITORY_NAME in compile.sh
 
-- **作者**：`@chenge1` · **停留自然时长**：40.5h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@chenge1` · **停留自然时长**：42.5h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
-- **关联 Issue 对齐**：精准修复 #61 的仓库名复制残留
-- **核心改动摘要**：将 compile.sh 中 REPOSITORY_NAME 由 ops-math 改回 npu-simulator
-  - 单文件单行修正，让构建日志与断言消息中的仓库标识恢复正确，可避免排障定界被误导
-  - 已关联真实缺陷 Issue #61，并且 cann-cla/yes 与 ci-pipeline-passed 均已就绪；维护者提出的 compile.sh 冗余清理应另行统一跟进
-- **committer 建议动作**：**门禁全绿无冲突，建议合入；编译脚本冗余清理另开 PR 统一处理**
+- **关联 Issue 对齐**：已针对性修复 #61 仓库名残留缺陷
+- **核心改动摘要**：修正compile.sh中仓库名残留，改为npu-simulator
+  - 仅改1行环境变量，修正构建日志与断言中的错误仓库标识
+  - 维护者称compile.sh有冗余将统一清理，合入前需协调避免重复改动
+- **committer 建议动作**：**CLA与CI已通过、无冲突，建议合入并纳入统一清理**
 
 ### PR #64：Add Speed-of-light profiling feature
 
-- **作者**：`@fomichevoleg5` · **停留自然时长**：62.9h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@fomichevoleg5` · **停留自然时长**：64.9h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：6 个文件（实质改动文件 6 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，新特性未先走方案讨论
 - **核心改动摘要**：新增 SOL 分析器与 --sol 选项，评估内核吞吐上限
@@ -68,7 +68,7 @@
 
 ### PR #63：[WIP] fix(report): Embed operator source files into .npu-rep archives (fix to complete Source/Assembly feature support)
 
-- **作者**：`@churkinaleksandr` · **停留自然时长**：65.1h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@churkinaleksandr` · **停留自然时长**：67.1h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：3 个文件（实质改动文件 3 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，属功能补全
 - **核心改动摘要**：将算子源文件以 txt 类型嵌入 .npu-rep 归档，补全源码查看功能
@@ -80,7 +80,7 @@
 
 ### PR #60：fix(report): collapse the fixpipe twin rows by identity, not by adjacency
 
-- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：110.3h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：112.3h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #56 孪生行不相邻导致的重复计入
 - **核心改动摘要**：将孪生行折叠由相邻匹配改为按 twin_key 字典匹配,修复 UB 写重复计数
@@ -90,7 +90,7 @@
 
 ### PR #59：fix(record): recognize versioned Python executables
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：136.7h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：138.7h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性修复 #60 版本化解释器识别缺陷
 - **核心改动摘要**：用正则匹配 python3.11 等带版本号的 Python 解释器，修复记录分类
@@ -100,7 +100,7 @@
 
 ### PR #58：fix(report): handle detector output write failures
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：136.7h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：138.7h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性修复 #59 报告写入异常逃逸
 - **核心改动摘要**：修复检测报告写入失败时二次抛错逃逸、阻断后续检测的问题
@@ -110,7 +110,7 @@
 
 ### PR #57：fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)
 
-- **作者**：`@lilong555` · **停留自然时长**：139.8h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@lilong555` · **停留自然时长**：141.8h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +63 行）
 - **关联 Issue 对齐**：已针对性修复 #27 的 K 起始位置缺陷
 - **核心改动摘要**：修正 LOAD_2D 查询把 K 起始位置错取为 MStartPosition 的缺陷
@@ -120,7 +120,7 @@
 
 ### PR #56：fix(report): 保留 npu-rep 打包数据库路径中的特殊字符 (#55)
 
-- **作者**：`@lilong555` · **停留自然时长**：140.4h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@lilong555` · **停留自然时长**：142.4h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +48 行）
 - **关联 Issue 对齐**：针对性修复 #55 的 URI 特殊字符路径缺陷
 - **核心改动摘要**：用 as_uri 修复 SQLite 路径特殊字符，报告打包不再遗漏 JSON
@@ -130,7 +130,7 @@
 
 ### PR #55：fix(record): preserve shell command strings before launch
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：140.8h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：142.8h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性修复 #58 引号命令被改写缺陷
 - **核心改动摘要**：将记录入口的 user_app 保持原始字符串，避免 Path 归一化破坏 shell 命令
@@ -142,7 +142,7 @@
 
 ### PR #54：docs: fix the npusim report output example
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：141.9h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：143.9h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #54 报告输出路径示例错误
 - **核心改动摘要**：修正 npusim report 示例输出路径为目录，并说明按核生成 tracing JSON
@@ -152,7 +152,7 @@
 
 ### PR #53：fix(report): order the busy-time sweep by interval start
 
-- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：161h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：163h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #53 带宽低估缺陷
 - **核心改动摘要**：两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估
@@ -164,13 +164,12 @@
 
 ### PR #52：feat(record): 支持 --timeout 限制仿真时长并在超时后自动终止
 
-- **作者**：`@Li_cube` · **停留自然时长**：165.4h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@Li_cube` · **停留自然时长**：167.4h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：13 个文件（实质改动文件 13 个，表面改动文件 0 个，新增测试 +3 行）
-- **关联 Issue 对齐**：无关联 Issue，属新功能提案
-- **核心改动摘要**：为 record 新增 --timeout 超时限制，超时后终止进程组并归档部分产物
-  - 核心改动合理：计时仅覆盖仿真段，超时后 SIGTERM→5s→SIGKILL 终止整个进程组，兼容孙进程
-  - 配置解析与回填链路完整：parse_duration/resolve_timeout 支持环境变量回退，RunResult.timed_out 贯通 record 与 ktest
-  - 测试覆盖偏弱：13 个文件改动但仅新增 3 行测试，主要为 mock 补字段，缺少超时终止路径的用例
-  - 已有 committer /approve 与 ci-pipeline-passed，仅剩 stat/needs-squash 门禁待清理
-- **committer 建议动作**：**需作者 squash 提交以清除 stat/needs-squash 阻塞，再重跑 CI 后合入**
+- **关联 Issue 对齐**：无关联 Issue，属自主增强超时保护能力
+- **核心改动摘要**：新增 --timeout 限制仿真时长，超时后终止进程组并归档
+  - 超时覆盖经典 record 与 ktest 模式，SIGTERM→5s 宽限→SIGKILL 终止整个进程组，兼容孙进程
+  - CLI 显式值优先于 NPUSIM_TIMEOUT，非法单位报错退出码 2，超时按失败退出码 1 并保留 partial 产物
+  - 改动 13 文件含文档与测试，但仅 3 行测试新增，建议补充超时终止与时长的用例覆盖
+- **committer 建议动作**：**已 approved，需作者 squash 提交重跑 CI 后再合入**
 
