@@ -1,16 +1,16 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-20T10:39:04.207Z",
-  "generatedAtCst": "2026-11-20 18:39",
+  "generatedAt": "2026-11-20T11:38:57.309Z",
+  "generatedAtCst": "2026-11-20 19:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 64,
     "issues_keep": 63,
     "issues_close": 0,
-    "prs_open": 12,
-    "prs_merge_ready": 3,
+    "prs_open": 11,
+    "prs_merge_ready": 2,
     "prs_low_value": 0,
-    "cache_hits": 9,
+    "cache_hits": 8,
     "agent_calls": 3
   },
   "reviews": {
@@ -18,12 +18,13 @@
       "number": 53,
       "title": "fix(report): order the busy-time sweep by interval start",
       "author": "gcw_EkTYFH3T",
-      "fingerprint": "d8c5368b987b9db9",
+      "fingerprint": "82577b46ce08a84d",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
         "substantive_diff: 1 file(s)",
-        "linked_issue_legit: #53"
+        "linked_issue_legit: #53",
+        "external_participant: churkinaleksandr"
       ],
       "signals": [
         "pr_substantive_diff",
@@ -50,18 +51,17 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估",
+        "summary": "修正吞吐统计区间并集算法，扫描前按起点排序，避免占用时间多算",
         "issue_alignment": "已针对性修复 #53 带宽低估缺陷",
-        "committer_action": "需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入",
+        "committer_action": "已获 lgtm，但缺 ci-pipeline-passed，需重跑 CI 全绿后合入",
         "detail_points": [
-          "在 calc_throughput_stats 与被调内联副本两处扫描前各加一次按起点排序，代价 O(n log n)、可接受",
-          "选择在调用方固化有序前提、保留原 ORDER BY TickEnd，避免改动 8 处 SQL，兼容性更好",
-          "逻辑正确但未新增单测；建议补充交错区间用例（长传输与短传输重叠）以防回归",
-          "仅缺 ci-pipeline-passed 标签，CLA 已通过、无冲突与 squash 问题，补跑 CI 即可"
+          "在 calc_throughput_stats 入参处补按 TickStart 排序，固化区间并集前提，避免重复结算已关闭窗口",
+          "作者称同文件 get_fixp_throughput_ub 内联副本亦同步修正，需确认第二处排序已落到 diff 中",
+          "评审者用 [0,10)[10,20)[2,50) 复现：占用时间 58→50，其余 37 项吞吐指标无回归"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-13T12:37:40.293Z"
+        "reviewed_at": "2026-11-20T11:38:57.299Z"
       }
     },
     "54": {
@@ -365,12 +365,13 @@
       "number": 60,
       "title": "fix(report): collapse the fixpipe twin rows by identity, not by adjacency",
       "author": "gcw_EkTYFH3T",
-      "fingerprint": "4321c739a9158e9e",
+      "fingerprint": "2a3e27a27d9f1444",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
         "substantive_diff: 1 file(s)",
-        "linked_issue_legit: #56"
+        "linked_issue_legit: #56",
+        "external_participant: churkinaleksandr"
       ],
       "signals": [
         "pr_substantive_diff",
@@ -397,16 +398,17 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "将孪生行折叠由相邻匹配改为按 twin_key 字典匹配,修复 UB 写重复计数",
-        "issue_alignment": "已针对性修复 #56 孪生行不相邻导致的重复计入",
-        "committer_action": "需作者触发 CI 并获 ci-pipeline-passed 标签后,再复核合入",
+        "summary": "把 pending 单槽改为按 twin_key 索引的字典，折叠 fixpipe 孪生行，修复 UB 写重复计数",
+        "issue_alignment": "已针对性修复 #56 孪生行重复计数缺陷",
+        "committer_action": "暂缓合入：需补齐 ci-pipeline-passed，并回应评审的 key 收紧建议",
         "detail_points": [
-          "孪生行 CoreId 不同且查询按 CoreId 排序,原相邻假设确实不成立,改用 twin_key 字典正确",
-          "改动仅 11 增 5 删、单文件,风险可控,但缺少回归测试验证双视图计数不再翻倍"
+          "SQL 按 CoreId 排序使孪生行不相邻，改用 twin_key 字典匹配，逻辑正确且注释到位",
+          "评审建议将指令 ID 纳入 twin_key，避免地址/时刻/大小相同的两次写被误合并",
+          "缺少 ci-pipeline-passed 门禁标签，也未新增覆盖该折叠路径的单元测试"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-15T15:37:45.478Z"
+        "reviewed_at": "2026-11-20T11:38:53.206Z"
       }
     },
     "63": {
@@ -501,58 +503,11 @@
         "reviewed_at": "2026-11-18T08:38:57.850Z"
       }
     },
-    "66": {
-      "number": 66,
-      "title": "fix(ci): correct REPOSITORY_NAME in compile.sh",
-      "author": "chenge1",
-      "fingerprint": "32986234a3de405b",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "substantive_diff: 1 file(s)",
-        "linked_issue_legit: #61",
-        "external_participant: ZhouBX"
-      ],
-      "signals": [
-        "pr_substantive_diff",
-        "linked_issues:61"
-      ],
-      "merge_ready": true,
-      "blockers": [],
-      "diff_stats": {
-        "files": 1,
-        "added_lines": 1,
-        "removed_lines": 1,
-        "surface_files": 0,
-        "substantive_files": 1,
-        "test_files": 0,
-        "test_added_lines": 0,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [
-        61
-      ],
-      "agent_review": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "修正compile.sh中仓库名残留，改为npu-simulator",
-        "issue_alignment": "已针对性修复 #61 仓库名残留缺陷",
-        "committer_action": "CLA与CI已通过、无冲突，建议合入并纳入统一清理",
-        "detail_points": [
-          "仅改1行环境变量，修正构建日志与断言中的错误仓库标识",
-          "维护者称compile.sh有冗余将统一清理，合入前需协调避免重复改动"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-20T07:38:50.124Z"
-      }
-    },
     "67": {
       "number": 67,
       "title": "fix(prof): preserve base reports when optional processing fails",
       "author": "churkinaleksandr",
-      "fingerprint": "e8130c20ef2ef82c",
+      "fingerprint": "9ce7c36fb570f35b",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -567,7 +522,6 @@
       ],
       "merge_ready": false,
       "blockers": [
-        "missing_label:ci-pipeline-passed",
         "blocking_label:stat/needs-squash"
       ],
       "diff_stats": {
@@ -587,16 +541,18 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "可选分析失败时保留基础报告，并移除roofline JSON导出",
-        "issue_alignment": "已针对性修复 #63 可选报告阻断导出缺陷",
-        "committer_action": "需要作者 squash 合并提交并重跑 CI，待门禁全绿后再合入",
+        "summary": "可选处理失败时保留基础报告，移除非必要 Roofline JSON 导出",
+        "issue_alignment": "针对性修复 #63 可选报告失败阻塞导出",
+        "committer_action": "需作者 squash 提交并重跑门禁，通过后再合入",
         "detail_points": [
-          "改动涉及 11 个文件，并新增回归测试：对象解码、关键路径失败时降级保留基础报告",
-          "阻塞点：CI 尚未通过，且带有 needs-squash 标签；需要先压缩提交再合并"
+          "删除独立 roofline.json 导出，Roofline 数据仍保留在 SQLite 表与 CSV 中，避免可选失败阻断打包",
+          "Critical Path 改为临时目录生成、成功后再发布，ELF 解码失败仅告警并继续基础报告",
+          "新增单测覆盖对象处理失败时基础报告继续且上下文恢复，符合真实缺陷修复",
+          "仅剩 stat/needs-squash 阻塞，CLA 与 CI 已通过，squash 后即可合入"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-20T10:38:55.671Z"
+        "reviewed_at": "2026-11-20T11:38:48.085Z"
       }
     }
   }
