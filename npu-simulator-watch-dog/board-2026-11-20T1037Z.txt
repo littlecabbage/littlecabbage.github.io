@@ -1,0 +1,64 @@
+总览指标 · cann/npu-simulator · 2026-11-20 18:39 (UTC+8)
+归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
+概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
+
+❌ 不合规 (2 项)
+  闭环率：月 73.3% / 年 81.3%  (月 33/45 · 年 52/64（阈值 ≥90%）)
+      原因：月 73.3% 落在橙区（50%~90%）；年 81.3% 落在橙区（50%~90%）
+  首响达标率：月 62.1% / 年 55.9%  (月 18/29 · 年 19/34（阈值 ≥80%）)
+      原因：月 62.1% 落在橙区（50%~80%）；年 55.9% 落在橙区（50%~80%）
+
+✅ 合规 (0 项)
+  （无）
+
+➖ 仅展示 (6 项)
+  Issue 总数：64  (全仓 Issue)
+  开启总数：12  (当前 open)
+  平均闭环时长：月 1.6天 / 年 4.2天  (月样本 33 · 年样本 52)
+  开启未响应 超时/总数：0/1  (当前 open·非自处理·未响应)
+  首响未达标数：月 11 / 年 15  (月统计 29 · 年统计 34)
+  平均首响：月 4.6H / 年 13.3H  (月样本 18 · 年样本 21)
+
+【oncall 待处理】待首次响应的用户问题 (1)
+  #64 停留 0.6H  [Bug-Report|缺陷反馈]: Full source files are missing from Source/Assembly .npu-rep reports
+
+【committer 待 Review / 合并】open PR (12，可合入 3 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
+  PR #57 ✅可合入 · 停留 114.7H → Issue #27  fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)
+      └─ 🤖 值得合入：修正 LOAD_2D 查询误将 MStartPosition 当作 K 起始位置 ｜ 建议：门禁全绿，建议作者清理重复导入后合入
+  PR #56 ✅可合入 · 停留 114.7H → Issue #55  fix(report): 保留 npu-rep 打包数据库路径中的特殊字符 (#55)
+      └─ 🤖 值得合入：修复 npu-rep 打包时特殊字符路径下 SQLite URI 解析错误，避免报告 JSON 遗漏 ｜ 建议：门禁全绿且经社区独立复现验证，建议直接合入
+  PR #66 ✅可合入 · 停留 45.5H → Issue #61  fix(ci): correct REPOSITORY_NAME in compile.sh
+      └─ 🤖 值得合入：修正compile.sh中仓库名残留，改为npu-simulator ｜ 建议：CLA与CI已通过、无冲突，建议合入并纳入统一清理
+  PR #53 ❌缺 ci-pipeline-passed · 停留 118H → Issue #53  fix(report): order the busy-time sweep by interval start
+      └─ 🤖 阻塞待解：两处区间并集扫描前按 TickStart 预排序，修正带宽统计被低估 ｜ 建议：需作者补齐 ci-pipeline-passed 门禁并重跑流水线，全绿后可合入
+  PR #60 ❌缺 ci-pipeline-passed · 停留 114.7H → Issue #56  fix(report): collapse the fixpipe twin rows by identity, not by adjacency
+      └─ 🤖 阻塞待解：将孪生行折叠由相邻匹配改为按 twin_key 字典匹配,修复 UB 写重复计数 ｜ 建议：需作者触发 CI 并获 ci-pipeline-passed 标签后,再复核合入
+  PR #59 ❌缺 ci-pipeline-passed · 停留 114.7H → Issue #60  fix(record): recognize versioned Python executables
+      └─ 🤖 阻塞待解：用正则匹配 python3.11 等带版本号的 Python 解释器，修复记录分类 ｜ 建议：需先修复 CI 失败并重跑流水线通过后再合入
+  PR #58 ❌缺 ci-pipeline-passed · 停留 114.7H → Issue #59  fix(report): handle detector output write failures
+      └─ 🤖 阻塞待解：修复检测报告写入失败时二次抛错逃逸、阻断后续检测的问题 ｜ 建议：需补充 UT 与失败兜底写入，CI 通过后再评审合入
+  PR #55 ❌缺 ci-pipeline-passed · 停留 114.7H → Issue #58  fix(record): preserve shell command strings before launch
+      └─ 🤖 阻塞待解：将记录入口的 user_app 保持原始字符串，避免 Path 归一化破坏 shell 命令 ｜ 建议：需排查 UT checkout 凭证故障并重跑 CI，通过后再合入
+  PR #54 ❌存在冲突/不可合 · 停留 114.7H → Issue #54  docs: fix the npusim report output example
+      └─ 🤖 阻塞待解：修正 npusim report 示例，将 -o 改为输出目录并更新产物说明 ｜ 建议：需作者先解决合并冲突并重跑 CI，门禁全绿后再评审合入
+  PR #63 ❌草稿、缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 70.1H  [WIP] fix(report): Embed operator source files into .npu-rep archives (fix to complete Source/Assembly feature support)
+      └─ 🤖 阻塞待解：在 .npu-rep 归档中嵌入源文件，完善 Source/Assembly 功能 ｜ 建议：需作者压缩提交、补齐 CI 流水线通过后重新评审合入
+  PR #64 ❌需squash(stat/needs-squash) · 停留 67.9H  Add Speed-of-light profiling feature
+      └─ 🤖 阻塞待解：新增 SOL 分析器与 --sol 选项，评估内核吞吐上限 ｜ 建议：需作者 squash 提交、补测试并关联 Issue 后再评审
+  PR #67 ❌缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 20.2H → Issue #63  fix(prof): preserve base reports when optional processing fails
+      └─ 🤖 阻塞待解：可选分析失败时保留基础报告，并移除roofline JSON导出 ｜ 建议：需要作者 squash 合并提交并重跑 CI，待门禁全绿后再合入
+
+【自动化 Bot 行为记录】42 条（Issue 已收到 29 / PR 首响催办 7 / 其他评论 6）
+  2026-11-20 18:18  Issue 已收到 · Issue #64  [Bug-Report|缺陷反馈]: Full source files
+  2026-11-20 00:18  PR 首响催办 · PR #67  fix(prof): preserve base reports whe
+  2026-11-19 23:18  Issue 已收到 · Issue #63  [Bug-Report|缺陷反馈]: Optional report f
+  2026-11-19 17:18  Issue 已收到 · Issue #62  [Requirement|需求/特性]: Add --feature-l
+  2026-11-18 22:17  PR 首响催办 · PR #66  fix(ci): correct REPOSITORY_NAME in 
+  2026-11-18 21:19  Issue 已收到 · Issue #61  [Bug-Report|缺陷反馈]: .gitcode/scripts/
+  2026-11-18 02:18  Issue 已收到 · Issue #58  Quoted record commands are modified 
+  2026-11-18 02:18  Issue 已收到 · Issue #59  A detector report write failure esca
+  2026-11-18 02:18  Issue 已收到 · Issue #60  Versioned Python executables bypass 
+  2026-11-18 02:18  PR 首响催办 · PR #55  fix(record): preserve shell command 
+  … 其余 32 条见网页
+
+闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
