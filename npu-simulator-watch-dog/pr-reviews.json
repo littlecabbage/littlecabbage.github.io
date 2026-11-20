@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-20T11:38:57.309Z",
-  "generatedAtCst": "2026-11-20 19:38",
+  "generatedAt": "2026-11-20T12:39:00.185Z",
+  "generatedAtCst": "2026-11-20 20:39",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
-    "issues_total": 64,
-    "issues_keep": 63,
+    "issues_total": 65,
+    "issues_keep": 64,
     "issues_close": 0,
-    "prs_open": 11,
+    "prs_open": 12,
     "prs_merge_ready": 2,
     "prs_low_value": 0,
-    "cache_hits": 8,
-    "agent_calls": 3
+    "cache_hits": 10,
+    "agent_calls": 2
   },
   "reviews": {
     "53": {
@@ -268,30 +268,33 @@
       "number": 58,
       "title": "fix(report): handle detector output write failures",
       "author": "liangjinxuan-2026",
-      "fingerprint": "5633c0f15217b124",
+      "fingerprint": "eab83768b7770727",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
-        "substantive_diff: 1 file(s)",
+        "substantive_diff: 2 file(s)",
+        "adds_tests",
         "linked_issue_legit: #59",
         "external_participant: ZhouBX"
       ],
       "signals": [
         "pr_substantive_diff",
+        "pr_has_tests",
         "linked_issues:59"
       ],
       "merge_ready": false,
       "blockers": [
-        "missing_label:ci-pipeline-passed"
+        "missing_label:ci-pipeline-passed",
+        "merge_conflicts"
       ],
       "diff_stats": {
-        "files": 1,
-        "added_lines": 23,
+        "files": 2,
+        "added_lines": 66,
         "removed_lines": 27,
         "surface_files": 0,
-        "substantive_files": 1,
-        "test_files": 0,
-        "test_added_lines": 0,
+        "substantive_files": 2,
+        "test_files": 1,
+        "test_added_lines": 41,
         "docs_only": false,
         "files_without_patch": 0
       },
@@ -301,16 +304,16 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "修复检测报告写入失败时二次抛错逃逸、阻断后续检测的问题",
-        "issue_alignment": "针对性修复 #59 报告写入异常逃逸",
-        "committer_action": "需补充 UT 与失败兜底写入，CI 通过后再评审合入",
+        "summary": "修复检测报告写入失败再次抛错，改为记录日志并返回失败",
+        "issue_alignment": "针对性修复 #59 报告写失败逃逸缺陷",
+        "committer_action": "需作者解决合并冲突、修复 CI 失败并重跑门禁",
         "detail_points": [
-          "抽出 _write_detection_report 统一捕获 OSError 并以布尔值返回失败，避免异常二次逃逸",
-          "缺少回归测试与失败时兜底写 detection failed，且 ci-pipeline 未通过，需作者补齐"
+          "抽出 _write_detection_report 统一处理 OSError，避免错误处理二次写同路径导致异常逃逸",
+          "新增 41 行 UT 覆盖写失败后可写与持续失败两种场景，测试覆盖充分"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-20T03:39:02.515Z"
+        "reviewed_at": "2026-11-20T12:39:00.169Z"
       }
     },
     "59": {
@@ -553,6 +556,56 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-20T11:38:48.085Z"
+      }
+    },
+    "68": {
+      "number": 68,
+      "title": "Remove misleading per-instruction IPC metrics",
+      "author": "churkinaleksandr",
+      "fingerprint": "c86c75706847a2f6",
+      "triage_verdict": "KEEP",
+      "guard_allowed": false,
+      "verdict_reasons": [
+        "substantive_diff: 19 file(s)",
+        "adds_tests",
+        "linked_issue_legit: #65"
+      ],
+      "signals": [
+        "pr_substantive_diff",
+        "pr_has_tests",
+        "linked_issues:65"
+      ],
+      "merge_ready": false,
+      "blockers": [
+        "missing_label:ci-pipeline-passed"
+      ],
+      "diff_stats": {
+        "files": 19,
+        "added_lines": 41,
+        "removed_lines": 949,
+        "surface_files": 0,
+        "substantive_files": 19,
+        "test_files": 1,
+        "test_added_lines": 10,
+        "docs_only": false,
+        "files_without_patch": 0
+      },
+      "linked_issues": [
+        65
+      ],
+      "agent_review": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "移除指令级动态IPC计算与trace字段，仅保留聚合IPC",
+        "issue_alignment": "针对性实现 #65 需求，删除逐指令IPC",
+        "committer_action": "缺少 CI 通过标签，需作者触发 CI 并补齐门禁后再合入",
+        "detail_points": [
+          "删除 ScalarIpcDynamic、VfIPCDynamic 表及视图，重新分析时清理遗留表，避免旧报告残留",
+          "保留标量整体 IPC 与 VF/VF_SIMT 聚合 IPC，改动语法规范并有测试与文档同步，未见安全风险"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-20T12:38:56.446Z"
       }
     }
   }

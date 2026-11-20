@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-20T11:38:57.457Z",
-  "runAtCst": "2026-11-20 19:38",
+  "runAt": "2026-11-20T12:39:00.335Z",
+  "runAtCst": "2026-11-20 20:39",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -44,7 +44,8 @@
     "60",
     "61",
     "62",
-    "63"
+    "63",
+    "65"
   ],
   "botLogins": [
     "CANN-robot",
@@ -472,21 +473,21 @@
     "comment": 6
   },
   "closeLoop": {
-    "issuesTotal": 64,
-    "openTotal": 12,
+    "issuesTotal": 65,
+    "openTotal": 13,
     "month": {
-      "total": 45,
+      "total": 46,
       "closed": 33,
-      "rate": 73.3,
+      "rate": 71.7,
       "rateColor": "orange",
       "avgCloseHours": 38.3,
       "avgCloseDays": 1.6,
       "durSamples": 33
     },
     "year": {
-      "total": 64,
+      "total": 65,
       "closed": 52,
-      "rate": 81.3,
+      "rate": 80,
       "rateColor": "orange",
       "avgCloseHours": 101,
       "avgCloseDays": 4.2,
@@ -521,7 +522,7 @@
     {
       "number": "64",
       "title": "[Bug-Report|缺陷反馈]: Full source files are missing from Source/Assembly .npu-rep reports",
-      "waitHours": 1.6,
+      "waitHours": 2.6,
       "overdue": false,
       "url": "https://gitcode.com/cann/npu-simulator/issues/64"
     }
@@ -535,7 +536,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 115.6,
+      "waitHours": 116.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/57",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -563,7 +564,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 115.6,
+      "waitHours": 116.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/56",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -589,7 +590,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 119,
+      "waitHours": 120,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -616,7 +617,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 115.6,
+      "waitHours": 116.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -643,7 +644,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 115.6,
+      "waitHours": 116.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -669,21 +670,21 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合、缺 ci-pipeline-passed",
-      "waitHours": 115.6,
+      "waitHours": 116.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/58",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "修复检测报告写入失败时二次抛错逃逸、阻断后续检测的问题",
-        "issue_alignment": "针对性修复 #59 报告写入异常逃逸",
-        "committer_action": "需补充 UT 与失败兜底写入，CI 通过后再评审合入",
+        "summary": "修复检测报告写入失败再次抛错，改为记录日志并返回失败",
+        "issue_alignment": "针对性修复 #59 报告写失败逃逸缺陷",
+        "committer_action": "需作者解决合并冲突、修复 CI 失败并重跑门禁",
         "detail_points": [
-          "抽出 _write_detection_report 统一捕获 OSError 并以布尔值返回失败，避免异常二次逃逸",
-          "缺少回归测试与失败时兜底写 detection failed，且 ci-pipeline 未通过，需作者补齐"
+          "抽出 _write_detection_report 统一处理 OSError，避免错误处理二次写同路径导致异常逃逸",
+          "新增 41 行 UT 覆盖写失败后可写与持续失败两种场景，测试覆盖充分"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-20T03:39:02.515Z"
+        "reviewed_at": "2026-11-20T12:39:00.169Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -695,7 +696,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 115.6,
+      "waitHours": 116.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/55",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -723,7 +724,7 @@
       ],
       "mergeable": false,
       "reason": "存在冲突/不可合",
-      "waitHours": 115.6,
+      "waitHours": 116.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/54",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -748,7 +749,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 71.1,
+      "waitHours": 72.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/63",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -774,7 +775,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 68.9,
+      "waitHours": 69.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -801,7 +802,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 21.2,
+      "waitHours": 22.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/67",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -818,6 +819,32 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-20T11:38:48.085Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "68",
+      "title": "Remove misleading per-instruction IPC metrics",
+      "linkedIssues": [
+        "65"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 0.1,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/68",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "移除指令级动态IPC计算与trace字段，仅保留聚合IPC",
+        "issue_alignment": "针对性实现 #65 需求，删除逐指令IPC",
+        "committer_action": "缺少 CI 通过标签，需作者触发 CI 并补齐门禁后再合入",
+        "detail_points": [
+          "删除 ScalarIpcDynamic、VfIPCDynamic 表及视图，重新分析时清理遗留表，避免旧报告残留",
+          "保留标量整体 IPC 与 VF/VF_SIMT 聚合 IPC，改动语法规范并有测试与文档同步，未见安全风险"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-20T12:38:56.446Z"
       },
       "triageVerdict": "KEEP"
     }
