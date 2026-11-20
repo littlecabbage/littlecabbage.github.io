@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-20T07:38:54.757Z",
-  "runAtCst": "2026-11-20 15:38",
+  "runAt": "2026-11-20T08:38:57.588Z",
+  "runAtCst": "2026-11-20 16:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -537,21 +537,23 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 111.6,
+      "waitHours": 112.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/57",
       "agentReview": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修正 LOAD_2D 查询把 K 起始位置错取为 MStartPosition 的缺陷",
+        "summary": "修正 LOAD_2D 查询误将 MStartPosition 当作 K 起始位置",
         "issue_alignment": "已针对性修复 #27 的 K 起始位置缺陷",
-        "committer_action": "CLA 与 CI 全绿、无冲突，建议检视通过后直接合入",
+        "committer_action": "门禁全绿，建议作者清理重复导入后合入",
         "detail_points": [
-          "SQL 字段映射由 MStartPosition 改为 KStartPosition，与 DB 真实列一致，改动最小且精准",
-          "新增 63 行回归测试，覆盖 LOAD_2Dv2/LOAD_MX_2Dv2、独立 M/K 起点及三种报告链路"
+          "SQL 字段改为 DmaMovLoad2dParams.KStartPosition，与消费处 k_start_pos_bytes 对齐",
+          "新增 18 项回归覆盖 LOAD_2Dv2/LOAD_MX_2Dv2 及默认、Smart Pipe、Critical Path 报告",
+          "外部评审确认回归全通过，仅剩 tests 中 biprof_ctx 重复导入引发 Ruff F811，需顺手清掉",
+          "DB schema、报告字段名与 CLI 均无变化，向后兼容风险低"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-14T10:37:46.060Z"
+        "reviewed_at": "2026-11-20T08:38:53.751Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -563,21 +565,21 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 111.6,
+      "waitHours": 112.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/56",
       "agentReview": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "用 as_uri 修复 SQLite 路径特殊字符，报告打包不再遗漏 JSON",
-        "issue_alignment": "针对性修复 #55 的 URI 特殊字符路径缺陷",
-        "committer_action": "CLA 与 CI 已全绿，检视通过后可直接合入",
+        "summary": "修复 npu-rep 打包时特殊字符路径下 SQLite URI 解析错误，避免报告 JSON 遗漏",
+        "issue_alignment": "已针对性修复 #55 URI 路径缺陷",
+        "committer_action": "门禁全绿且经社区独立复现验证，建议直接合入",
         "detail_points": [
-          "单行改动将 db_path 转为 as_uri() 只读 URI，避免 #、?、%23 被 URI 解析截断",
-          "新增 13 项参数化回归，覆盖相对/绝对路径、特殊字符、中文空格及归档内容"
+          "改用 db_path.resolve().as_uri() 构造只读 URI，正确保留 #、?、%23 等特殊字符，kernel 元数据不再回退默认值",
+          "新增 13 项参数化回归，覆盖相对与绝对路径、特殊字符、空格及中文目录，并校验归档内容完整性"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-14T10:37:49.985Z"
+        "reviewed_at": "2026-11-20T08:38:57.456Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -589,7 +591,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 111.6,
+      "waitHours": 112.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/54",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -615,7 +617,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 42.5,
+      "waitHours": 43.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/66",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -639,7 +641,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 119.4,
+      "waitHours": 120.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/52",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -666,7 +668,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 115,
+      "waitHours": 116,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -694,7 +696,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 111.6,
+      "waitHours": 112.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -720,7 +722,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 111.6,
+      "waitHours": 112.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -746,7 +748,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 111.6,
+      "waitHours": 112.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/58",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -772,7 +774,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 111.6,
+      "waitHours": 112.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/55",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -798,7 +800,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "草稿、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 67.1,
+      "waitHours": 68.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/63",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -824,7 +826,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 64.9,
+      "waitHours": 65.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -850,22 +852,22 @@
         "63"
       ],
       "mergeable": false,
-      "reason": "需squash(stat/needs-squash)",
-      "waitHours": 17.2,
+      "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
+      "waitHours": 18.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/67",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "移除 roofline.json 导出，可选处理失败降级保留基础报告",
-        "issue_alignment": "针对性修复 #63 可选报告失败缺陷",
-        "committer_action": "需作者 squash 提交并重跑门禁后再合入",
+        "summary": "可选 Roofline/CriticalPath 失败降级，保留基础报告与 .npu-rep 导出",
+        "issue_alignment": "针对性修复 #63 可选报告阻断导出缺陷",
+        "committer_action": "需作者压缩提交并补 CI 通过后，再安排合入",
         "detail_points": [
-          "删除独立 roofline.json 导出，Roofline 结果保留在 SQLite 表及 CSV",
-          "设备 ELF 解码与 Critical Path 失败改为告警并继续基础报告，已补测试"
+          "删除独立 roofline.json 导出，改保留四张 Roofline 表及 CSV，缩小失败面",
+          "ELF 解码与 Critical Path 失败改为告警降级，单测覆盖上下文恢复与基础报告继续"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-19T16:38:56.152Z"
+        "reviewed_at": "2026-11-20T08:38:49.585Z"
       },
       "triageVerdict": "KEEP"
     }

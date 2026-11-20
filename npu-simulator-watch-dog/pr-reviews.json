@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-20T07:38:54.613Z",
-  "generatedAtCst": "2026-11-20 15:38",
+  "generatedAt": "2026-11-20T08:38:57.460Z",
+  "generatedAtCst": "2026-11-20 16:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 63,
@@ -10,8 +10,8 @@
     "prs_open": 13,
     "prs_merge_ready": 4,
     "prs_low_value": 0,
-    "cache_hits": 11,
-    "agent_calls": 2
+    "cache_hits": 10,
+    "agent_calls": 3
   },
   "reviews": {
     "52": {
@@ -212,13 +212,14 @@
       "number": 56,
       "title": "fix(report): 保留 npu-rep 打包数据库路径中的特殊字符 (#55)",
       "author": "lilong555",
-      "fingerprint": "d2d2b33f2e6ed5ca",
+      "fingerprint": "8f2975bb100cfccb",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
         "substantive_diff: 2 file(s)",
         "adds_tests",
-        "linked_issue_legit: #55"
+        "linked_issue_legit: #55",
+        "external_participant: churkinaleksandr"
       ],
       "signals": [
         "pr_substantive_diff",
@@ -244,29 +245,30 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "用 as_uri 修复 SQLite 路径特殊字符，报告打包不再遗漏 JSON",
-        "issue_alignment": "针对性修复 #55 的 URI 特殊字符路径缺陷",
-        "committer_action": "CLA 与 CI 已全绿，检视通过后可直接合入",
+        "summary": "修复 npu-rep 打包时特殊字符路径下 SQLite URI 解析错误，避免报告 JSON 遗漏",
+        "issue_alignment": "已针对性修复 #55 URI 路径缺陷",
+        "committer_action": "门禁全绿且经社区独立复现验证，建议直接合入",
         "detail_points": [
-          "单行改动将 db_path 转为 as_uri() 只读 URI，避免 #、?、%23 被 URI 解析截断",
-          "新增 13 项参数化回归，覆盖相对/绝对路径、特殊字符、中文空格及归档内容"
+          "改用 db_path.resolve().as_uri() 构造只读 URI，正确保留 #、?、%23 等特殊字符，kernel 元数据不再回退默认值",
+          "新增 13 项参数化回归，覆盖相对与绝对路径、特殊字符、空格及中文目录，并校验归档内容完整性"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-14T10:37:49.985Z"
+        "reviewed_at": "2026-11-20T08:38:57.456Z"
       }
     },
     "57": {
       "number": 57,
       "title": "fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)",
       "author": "lilong555",
-      "fingerprint": "0b35038376fa5c40",
+      "fingerprint": "dd23ea23bf563ad4",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
         "substantive_diff: 2 file(s)",
         "adds_tests",
-        "linked_issue_legit: #27"
+        "linked_issue_legit: #27",
+        "external_participant: churkinaleksandr"
       ],
       "signals": [
         "pr_substantive_diff",
@@ -292,16 +294,18 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修正 LOAD_2D 查询把 K 起始位置错取为 MStartPosition 的缺陷",
+        "summary": "修正 LOAD_2D 查询误将 MStartPosition 当作 K 起始位置",
         "issue_alignment": "已针对性修复 #27 的 K 起始位置缺陷",
-        "committer_action": "CLA 与 CI 全绿、无冲突，建议检视通过后直接合入",
+        "committer_action": "门禁全绿，建议作者清理重复导入后合入",
         "detail_points": [
-          "SQL 字段映射由 MStartPosition 改为 KStartPosition，与 DB 真实列一致，改动最小且精准",
-          "新增 63 行回归测试，覆盖 LOAD_2Dv2/LOAD_MX_2Dv2、独立 M/K 起点及三种报告链路"
+          "SQL 字段改为 DmaMovLoad2dParams.KStartPosition，与消费处 k_start_pos_bytes 对齐",
+          "新增 18 项回归覆盖 LOAD_2Dv2/LOAD_MX_2Dv2 及默认、Smart Pipe、Critical Path 报告",
+          "外部评审确认回归全通过，仅剩 tests 中 biprof_ctx 重复导入引发 Ruff F811，需顺手清掉",
+          "DB schema、报告字段名与 CLI 均无变化，向后兼容风险低"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-14T10:37:46.060Z"
+        "reviewed_at": "2026-11-20T08:38:53.751Z"
       }
     },
     "58": {
@@ -592,7 +596,7 @@
       "number": 67,
       "title": "fix(prof): preserve base reports when optional processing fails",
       "author": "churkinaleksandr",
-      "fingerprint": "0ce2bed898c9b761",
+      "fingerprint": "4ee2ed1a34befe1d",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -607,6 +611,7 @@
       ],
       "merge_ready": false,
       "blockers": [
+        "missing_label:ci-pipeline-passed",
         "blocking_label:stat/needs-squash"
       ],
       "diff_stats": {
@@ -626,16 +631,16 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "移除 roofline.json 导出，可选处理失败降级保留基础报告",
-        "issue_alignment": "针对性修复 #63 可选报告失败缺陷",
-        "committer_action": "需作者 squash 提交并重跑门禁后再合入",
+        "summary": "可选 Roofline/CriticalPath 失败降级，保留基础报告与 .npu-rep 导出",
+        "issue_alignment": "针对性修复 #63 可选报告阻断导出缺陷",
+        "committer_action": "需作者压缩提交并补 CI 通过后，再安排合入",
         "detail_points": [
-          "删除独立 roofline.json 导出，Roofline 结果保留在 SQLite 表及 CSV",
-          "设备 ELF 解码与 Critical Path 失败改为告警并继续基础报告，已补测试"
+          "删除独立 roofline.json 导出，改保留四张 Roofline 表及 CSV，缩小失败面",
+          "ELF 解码与 Critical Path 失败改为告警降级，单测覆盖上下文恢复与基础报告继续"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-19T16:38:56.152Z"
+        "reviewed_at": "2026-11-20T08:38:49.585Z"
       }
     }
   }
