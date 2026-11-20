@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-20T16:38:52.054Z",
-  "generatedAtCst": "2026-11-21 00:38",
+  "generatedAt": "2026-11-20T17:39:05.560Z",
+  "generatedAtCst": "2026-11-21 01:39",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 65,
     "issues_keep": 64,
     "issues_close": 0,
     "prs_open": 12,
-    "prs_merge_ready": 4,
+    "prs_merge_ready": 8,
     "prs_low_value": 0,
-    "cache_hits": 12,
-    "agent_calls": 0
+    "cache_hits": 8,
+    "agent_calls": 4
   },
   "reviews": {
     "53": {
@@ -68,7 +68,7 @@
       "number": 54,
       "title": "docs: fix the npusim report output example",
       "author": "liangjinxuan-2026",
-      "fingerprint": "a8f9e37636e7a25b",
+      "fingerprint": "f2155e288b4808d2",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -80,10 +80,8 @@
         "pr_substantive_diff",
         "linked_issues:54"
       ],
-      "merge_ready": false,
-      "blockers": [
-        "merge_conflicts"
-      ],
+      "merge_ready": true,
+      "blockers": [],
       "diff_stats": {
         "files": 1,
         "added_lines": 2,
@@ -99,26 +97,25 @@
         54
       ],
       "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "修正 npusim report 示例，将 -o 改为输出目录并更新产物说明",
-        "issue_alignment": "已针对性修复 #54 报告输出路径描述缺陷",
-        "committer_action": "需作者先解决合并冲突并重跑 CI，门禁全绿后再评审合入",
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "修正 report 示例，将 -o 误写为 JSON 文件路径改为输出目录",
+        "issue_alignment": "已按 #54 修正 report 示例与产物说明",
+        "committer_action": "CLA 已签、CI 通过且冲突已解，建议直接合入",
         "detail_points": [
-          "仅改 main.py docstring 示例文字，不改变 CLI 行为，与 report 参数定义一致",
-          "示例 -e 改为运行记录目录、-o 改为 ./output/reports，并说明生成按核拆分 JSON，语义正确",
-          "当前存在 merge_conflicts 阻塞，需 rebase 解决后再触发编译验证"
+          "仅改 main.py docstring 说明文字，不改变 CLI 行为，风险极低",
+          "示例与 report -o 接收目录、按核生成 Chrome Tracing JSON 的实现一致"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-20T10:39:04.202Z"
+        "reviewed_at": "2026-11-20T17:39:05.551Z"
       }
     },
     "55": {
       "number": 55,
       "title": "fix(record): preserve shell command strings before launch",
       "author": "liangjinxuan-2026",
-      "fingerprint": "4623042cad60ae54",
+      "fingerprint": "8f4645cad659a2be",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -129,10 +126,8 @@
         "pr_substantive_diff",
         "linked_issues:58"
       ],
-      "merge_ready": false,
-      "blockers": [
-        "missing_label:ci-pipeline-passed"
-      ],
+      "merge_ready": true,
+      "blockers": [],
       "diff_stats": {
         "files": 2,
         "added_lines": 2,
@@ -148,20 +143,18 @@
         58
       ],
       "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "将记录入口的 user_app 保持原始字符串，避免 Path 归一化破坏 shell 命令",
-        "issue_alignment": "针对性修复 #58 引号命令被改写缺陷",
-        "committer_action": "需排查 UT checkout 凭证故障并重跑 CI，通过后再合入",
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "record 入口保留 user_app 原始字符串，避免 Path 归一化篡改命令",
+        "issue_alignment": "针对性修复 #58 引号命令与 URL 被改写缺陷",
+        "committer_action": "CLA 与 CI 门禁全绿，无冲突，建议尽快合入",
         "detail_points": [
-          "改动仅两处：移除 handle_record_command 与 build_record_config_from_args 中的 Path() 转换",
-          "build_launch_spec 已支持 str/Path，文件路径解析逻辑不受影响，修复思路正确",
-          "CI 因 UT 取码认证失败（HTTP Basic Access denied）未通过，需基础设施侧修复后重跑",
-          "缺少新增测试覆盖引号命令与 URL 保留场景，建议补充回归用例"
+          "两处入口改为传原始 str，build_launch_spec 仍支持 Path，文件目标路径解析行为不变",
+          "修复 // 与 https:// 被折叠为单斜杠的问题，作者已本地 CPU 复现并验证 16 项 record 配置测试"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-17T19:38:52.877Z"
+        "reviewed_at": "2026-11-20T17:39:02.015Z"
       }
     },
     "56": {
@@ -268,7 +261,7 @@
       "number": 58,
       "title": "fix(report): handle detector output write failures",
       "author": "liangjinxuan-2026",
-      "fingerprint": "eab83768b7770727",
+      "fingerprint": "c4d91be24f7a6bd4",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -282,19 +275,16 @@
         "pr_has_tests",
         "linked_issues:59"
       ],
-      "merge_ready": false,
-      "blockers": [
-        "missing_label:ci-pipeline-passed",
-        "merge_conflicts"
-      ],
+      "merge_ready": true,
+      "blockers": [],
       "diff_stats": {
         "files": 2,
-        "added_lines": 66,
-        "removed_lines": 27,
+        "added_lines": 63,
+        "removed_lines": 28,
         "surface_files": 0,
         "substantive_files": 2,
         "test_files": 1,
-        "test_added_lines": 41,
+        "test_added_lines": 39,
         "docs_only": false,
         "files_without_patch": 0
       },
@@ -302,25 +292,24 @@
         59
       ],
       "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "修复检测报告写入失败再次抛错，改为记录日志并返回失败",
-        "issue_alignment": "针对性修复 #59 报告写失败逃逸缺陷",
-        "committer_action": "需作者解决合并冲突、修复 CI 失败并重跑门禁",
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "实质代码改动（2 文件 +63/-28），门禁全绿",
+        "issue_alignment": "已关联 #59",
+        "committer_action": "CLA 与 CI 已通过，建议 committer 完成最终代码检视后合入",
         "detail_points": [
-          "抽出 _write_detection_report 统一处理 OSError，避免错误处理二次写同路径导致异常逃逸",
-          "新增 41 行 UT 覆盖写失败后可写与持续失败两种场景，测试覆盖充分"
+          "守卫判定：substantive_diff: 2 file(s); adds_tests; linked_issue_legit: #59; external_participant: ZhouBX"
         ],
+        "source": "deterministic-fallback",
         "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-20T12:39:00.169Z"
+        "reviewed_at": "2026-11-20T17:38:58.994Z"
       }
     },
     "59": {
       "number": 59,
       "title": "fix(record): recognize versioned Python executables",
       "author": "liangjinxuan-2026",
-      "fingerprint": "c7f990b713f36eb2",
+      "fingerprint": "fed20620a46ba880",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -331,14 +320,12 @@
         "pr_substantive_diff",
         "linked_issues:60"
       ],
-      "merge_ready": false,
-      "blockers": [
-        "missing_label:ci-pipeline-passed"
-      ],
+      "merge_ready": true,
+      "blockers": [],
       "diff_stats": {
         "files": 1,
-        "added_lines": 26,
-        "removed_lines": 20,
+        "added_lines": 14,
+        "removed_lines": 16,
         "surface_files": 0,
         "substantive_files": 1,
         "test_files": 0,
@@ -350,18 +337,19 @@
         60
       ],
       "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "用正则匹配 python3.11 等带版本号的 Python 解释器，修复记录分类",
-        "issue_alignment": "针对性修复 #60 版本化解释器识别缺陷",
-        "committer_action": "需先修复 CI 失败并重跑流水线通过后再合入",
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "用正则统一识别 python3.11 等版本化解释器并修正 Python 路径判定",
+        "issue_alignment": "针对性修复 #60 版本化解释器漏判",
+        "committer_action": "CLA 与 CI 均通过且无冲突，建议直接合入",
         "detail_points": [
-          "将 _PYTHON_TOKENS 集合替换为 _PYTHON_COMMAND 正则，覆盖 python3.x/pytest 前缀匹配",
-          "需确认 _INTERPRETER_TOKENS 移除 python 后，archive 标签回退到脚本名的逻辑无回归"
+          "将 _PYTHON_COMMAND 改为正则，覆盖 python、python2/3、python3.11、pytest 等命名",
+          "同步收敛解释器与 Python 前缀集合，避免两处判定逻辑漂移",
+          "作者已同步 master、解决冲突并完成 CPU 验证（11 项测试通过）；建议后续补单测固化"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-19T12:38:59.854Z"
+        "reviewed_at": "2026-11-20T17:38:56.256Z"
       }
     },
     "60": {
