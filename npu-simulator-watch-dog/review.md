@@ -3,7 +3,7 @@
 | 维度 | 详情 |
 |---|---|
 | **目标仓库** | [cann/npu-simulator](https://gitcode.com/cann/npu-simulator)（GitCode） |
-| **巡检时间** | 2026-11-22 04:38 (UTC+8) |
+| **巡检时间** | 2026-11-22 05:38 (UTC+8) |
 | **分析引擎** | `gitcode-issue-triage` 确定性守卫 + Pi Agent (`cannbot/deepseek-v4.1-flash`) |
 | **判定原则** | 宁漏勿错：强灌水信号 + 无安全否决 → 低价值候选；有任何实质代码/测试/关联 Issue → 保留并给出合路建议 |
 
@@ -12,15 +12,16 @@
 ## 一、执行摘要（供 on-call & committer 速览）
 
 - **Issue 巡检**：共扫描 **66** 条 Issue，判定 KEEP **65** / CLOSE 候选 **0** / 待人工复核 **1**。
-- **Open PR 总览（共 12 个）**：
+- **Open PR 总览（共 13 个）**：
   - ✅ **可立即合入（7 个）**：#68、#63、#59、#58、#56、#55、#54
-  - ⚠️ **实质贡献但门禁阻塞（5 个）**：#67、#64、#60、#57、#53
+  - ⚠️ **实质贡献但门禁阻塞（6 个）**：#70、#67、#64、#60、#57、#53
   - 🧹 **低价值/表面改动候选（0 个）**：无
 
 ## 二、Open PR 逐条深度评审与行动清单
 
 | PR | AI 结论 | 合路门禁 | 关联 Issue | 改动规模 (实质文件) | AI 改动摘要与关联对齐 | committer 建议动作 |
 |---|---|---|---|---|---|---|
+| [#70](https://gitcode.com/cann/npu-simulator/pulls/70) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | [#66](https://gitcode.com/cann/npu-simulator/issues/66) | +5/-5 (0/2 实质) | 修正两份最佳实践文档中英文间距，提升中文可读性（已针对性修复 #66 列明的 5 处间距问题） | 文档改动无害，需等待 ci-pipeline-passed 打标后合入 |
 | [#68](https://gitcode.com/cann/npu-simulator/pulls/68) | **🤖 值得合入** | ✅ 可合入 | [#65](https://gitcode.com/cann/npu-simulator/issues/65) | +41/-949 (19/19 实质) | 删除逐指令动态 IPC 计算、trace 字段与相关表，保留聚合 IPC 指标（已针对性实现 #65 需求，移除逐指令 IPC） | CLA 与 CI 全绿、无冲突阻塞，建议直接合入 |
 | [#67](https://gitcode.com/cann/npu-simulator/pulls/67) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | [#63](https://gitcode.com/cann/npu-simulator/issues/63) | +67/-145 (11/11 实质) | 可选处理失败时保留基础报告，移除非必要 Roofline JSON 导出（针对性修复 #63 可选报告失败阻塞导出） | 需作者 squash 提交并重跑门禁，通过后再合入 |
 | [#64](https://gitcode.com/cann/npu-simulator/pulls/64) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | — | +330/-2 (6/6 实质) | 新增 SOL 分析器与 --sol 选项，评估内核吞吐上限（无关联 Issue，新特性未先走方案讨论） | 需作者 squash 提交、补测试并关联 Issue 后再评审 |
@@ -34,9 +35,19 @@
 | [#54](https://gitcode.com/cann/npu-simulator/pulls/54) | **🤖 值得合入** | ✅ 可合入 | [#54](https://gitcode.com/cann/npu-simulator/issues/54) | +2/-3 (1/1 实质) | 修正 report 示例，将 -o 误写为 JSON 文件路径改为输出目录（已按 #54 修正 report 示例与产物说明） | CLA 已签、CI 通过且冲突已解，建议直接合入 |
 | [#53](https://gitcode.com/cann/npu-simulator/pulls/53) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | [#53](https://gitcode.com/cann/npu-simulator/issues/53) | +9/-0 (1/1 实质) | 修正吞吐统计区间并集算法，扫描前按起点排序，避免占用时间多算（已针对性修复 #53 带宽低估缺陷） | 已获 lgtm，但缺 ci-pipeline-passed，需重跑 CI 全绿后合入 |
 
+### PR #70：docs(npu-simulator): fix spacing in examples
+
+- **作者**：`@gcw_WJCkAUuk` · **停留自然时长**：0.4h · **AI 判定**：**🤖 阻塞待解**
+- **代码规模**：2 个文件（实质改动文件 0 个，表面改动文件 0 个，新增测试 +0 行）
+- **关联 Issue 对齐**：已针对性修复 #66 列明的 5 处间距问题
+- **核心改动摘要**：修正两份最佳实践文档中英文间距，提升中文可读性
+  - 纯文档改动，仅调中英文空格，未改示例命令、参数或技术语义，无回归风险
+  - Issue 标题称 26 项但正文仅列 5 项，本 MR 已覆盖全部可核验条目，剩余项需后续 Issue 补充
+- **committer 建议动作**：**文档改动无害，需等待 ci-pipeline-passed 打标后合入**
+
 ### PR #68：Remove misleading per-instruction IPC metrics
 
-- **作者**：`@churkinaleksandr` · **停留自然时长**：32.1h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@churkinaleksandr` · **停留自然时长**：33.1h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：19 个文件（实质改动文件 19 个，表面改动文件 0 个，新增测试 +10 行）
 - **关联 Issue 对齐**：已针对性实现 #65 需求，移除逐指令 IPC
 - **核心改动摘要**：删除逐指令动态 IPC 计算、trace 字段与相关表，保留聚合 IPC 指标
@@ -46,7 +57,7 @@
 
 ### PR #67：fix(prof): preserve base reports when optional processing fails
 
-- **作者**：`@churkinaleksandr` · **停留自然时长**：54.2h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@churkinaleksandr` · **停留自然时长**：55.2h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：11 个文件（实质改动文件 11 个，表面改动文件 0 个，新增测试 +15 行）
 - **关联 Issue 对齐**：针对性修复 #63 可选报告失败阻塞导出
 - **核心改动摘要**：可选处理失败时保留基础报告，移除非必要 Roofline JSON 导出
@@ -58,7 +69,7 @@
 
 ### PR #64：Add Speed-of-light profiling feature
 
-- **作者**：`@fomichevoleg5` · **停留自然时长**：101.9h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@fomichevoleg5` · **停留自然时长**：102.9h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：6 个文件（实质改动文件 6 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，新特性未先走方案讨论
 - **核心改动摘要**：新增 SOL 分析器与 --sol 选项，评估内核吞吐上限
@@ -69,7 +80,7 @@
 
 ### PR #63：fix(report): Store operator source text in SourceFiles
 
-- **作者**：`@churkinaleksandr` · **停留自然时长**：104.1h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@churkinaleksandr` · **停留自然时长**：105.1h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：4 个文件（实质改动文件 4 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性修复 #64 报告缺失完整源文件
 - **核心改动摘要**：为 SourceFiles 增加源码全文列并在报告阶段回填，修复报告缺源码
@@ -81,7 +92,7 @@
 
 ### PR #60：fix(report): collapse the fixpipe twin rows by identity, not by adjacency
 
-- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：149.3h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：150.3h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #56 孪生行重复计数缺陷
 - **核心改动摘要**：把 pending 单槽改为按 twin_key 索引的字典，折叠 fixpipe 孪生行，修复 UB 写重复计数
@@ -92,7 +103,7 @@
 
 ### PR #59：fix(record): recognize versioned Python executables
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：175.7h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：176.7h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性修复 #60 版本化解释器漏判
 - **核心改动摘要**：用正则统一识别 python3.11 等版本化解释器并修正 Python 路径判定
@@ -103,7 +114,7 @@
 
 ### PR #58：fix(report): handle detector output write failures
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：175.7h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：176.7h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +39 行）
 - **关联 Issue 对齐**：已关联 #59
 - **核心改动摘要**：实质代码改动（2 文件 +63/-28），门禁全绿
@@ -112,7 +123,7 @@
 
 ### PR #57：fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)
 
-- **作者**：`@lilong555` · **停留自然时长**：178.8h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@lilong555` · **停留自然时长**：179.8h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +62 行）
 - **关联 Issue 对齐**：已针对性修复 #27 的 K 起始位置映射错误
 - **核心改动摘要**：修正 LOAD_2D 查询中 K 起始位置误取 MStartPosition 的缺陷，并补充回归测试
@@ -124,7 +135,7 @@
 
 ### PR #56：fix(report): 保留 npu-rep 打包数据库路径中的特殊字符 (#55)
 
-- **作者**：`@lilong555` · **停留自然时长**：179.4h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@lilong555` · **停留自然时长**：180.4h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +48 行）
 - **关联 Issue 对齐**：已针对性修复 #55 特殊字符路径打包缺陷
 - **核心改动摘要**：改用 as_uri 构造 SQLite 只读连接，修复特殊字符路径下报告归档遗漏
@@ -135,7 +146,7 @@
 
 ### PR #55：fix(record): preserve shell command strings before launch
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：179.8h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：180.8h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性修复 #58 引号命令与 URL 被改写缺陷
 - **核心改动摘要**：record 入口保留 user_app 原始字符串，避免 Path 归一化篡改命令
@@ -145,7 +156,7 @@
 
 ### PR #54：docs: fix the npusim report output example
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：180.9h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：181.9h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已按 #54 修正 report 示例与产物说明
 - **核心改动摘要**：修正 report 示例，将 -o 误写为 JSON 文件路径改为输出目录
@@ -155,7 +166,7 @@
 
 ### PR #53：fix(report): order the busy-time sweep by interval start
 
-- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：200h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：201h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #53 带宽低估缺陷
 - **核心改动摘要**：修正吞吐统计区间并集算法，扫描前按起点排序，避免占用时间多算

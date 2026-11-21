@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-21T20:38:53.195Z",
-  "runAtCst": "2026-11-22 04:38",
+  "runAt": "2026-11-21T21:38:57.442Z",
+  "runAtCst": "2026-11-22 05:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -46,7 +46,8 @@
     "62",
     "63",
     "64",
-    "65"
+    "65",
+    "66"
   ],
   "botLogins": [
     "CANN-robot",
@@ -537,37 +538,29 @@
   },
   "response": {
     "openNoResponse": {
-      "total": 1,
+      "total": 0,
       "overdue": 0
     },
     "month": {
-      "total": 29,
-      "qualified": 18,
+      "total": 28,
+      "qualified": 17,
       "unqualified": 11,
-      "rate": 62.1,
+      "rate": 60.7,
       "rateColor": "orange",
       "avgFirstRespHours": 4.6,
       "respSamples": 18
     },
     "year": {
-      "total": 34,
-      "qualified": 19,
+      "total": 33,
+      "qualified": 18,
       "unqualified": 15,
-      "rate": 55.9,
+      "rate": 54.5,
       "rateColor": "orange",
       "avgFirstRespHours": 13.3,
       "respSamples": 21
     }
   },
-  "oncallList": [
-    {
-      "number": "66",
-      "title": "[docs] 文档质量问题 (26项)",
-      "waitHours": 0,
-      "overdue": false,
-      "url": "https://gitcode.com/cann/npu-simulator/issues/66"
-    }
-  ],
+  "oncallList": [],
   "committerList": [
     {
       "number": "59",
@@ -886,6 +879,32 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-20T11:38:48.085Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "70",
+      "title": "docs(npu-simulator): fix spacing in examples",
+      "linkedIssues": [
+        "66"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 0,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/70",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "修正两份最佳实践文档中英文间距，提升中文可读性",
+        "issue_alignment": "已针对性修复 #66 列明的 5 处间距问题",
+        "committer_action": "文档改动无害，需等待 ci-pipeline-passed 打标后合入",
+        "detail_points": [
+          "纯文档改动，仅调中英文空格，未改示例命令、参数或技术语义，无回归风险",
+          "Issue 标题称 26 项但正文仅列 5 项，本 MR 已覆盖全部可核验条目，剩余项需后续 Issue 补充"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-21T21:38:57.320Z"
       },
       "triageVerdict": "KEEP"
     }
