@@ -1,26 +1,26 @@
-总览指标 · cann/npu-simulator · 2026-11-22 01:38 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-22 02:38 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
 ❌ 不合规 (2 项)
-  闭环率：月 71.7% / 年 80%  (月 33/46 · 年 52/65（阈值 ≥90%）)
-      原因：月 71.7% 落在橙区（50%~90%）；年 80% 落在橙区（50%~90%）
-  首响达标率：月 60.7% / 年 54.5%  (月 17/28 · 年 18/33（阈值 ≥80%）)
-      原因：月 60.7% 落在橙区（50%~80%）；年 54.5% 落在橙区（50%~80%）
+  闭环率：月 70.2% / 年 78.8%  (月 33/47 · 年 52/66（阈值 ≥90%）)
+      原因：月 70.2% 落在橙区（50%~90%）；年 78.8% 落在橙区（50%~90%）
+  首响达标率：月 62.1% / 年 55.9%  (月 18/29 · 年 19/34（阈值 ≥80%）)
+      原因：月 62.1% 落在橙区（50%~80%）；年 55.9% 落在橙区（50%~80%）
 
 ✅ 合规 (0 项)
   （无）
 
 ➖ 仅展示 (6 项)
-  Issue 总数：65  (全仓 Issue)
-  开启总数：13  (当前 open)
+  Issue 总数：66  (全仓 Issue)
+  开启总数：14  (当前 open)
   平均闭环时长：月 1.6天 / 年 4.2天  (月样本 33 · 年样本 52)
-  开启未响应 超时/总数：0/0  (当前 open·非自处理·未响应)
-  首响未达标数：月 11 / 年 15  (月统计 28 · 年统计 33)
+  开启未响应 超时/总数：0/1  (当前 open·非自处理·未响应)
+  首响未达标数：月 11 / 年 15  (月统计 29 · 年统计 34)
   平均首响：月 4.6H / 年 13.3H  (月样本 18 · 年样本 21)
 
-【oncall 待处理】待首次响应的用户问题 (0)
-  （无）
+【oncall 待处理】待首次响应的用户问题 (1)
+  #66 停留 0H  [docs] 文档质量问题 (26项)
 
 【committer 待 Review / 合并】open PR (12，可合入 7 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
   PR #59 ✅可合入 · 停留 120H → Issue #60  fix(record): recognize versioned Python executables
@@ -48,7 +48,8 @@
   PR #67 ❌需squash(stat/needs-squash) · 停留 25.6H → Issue #63  fix(prof): preserve base reports when optional processing fails
       └─ 🤖 阻塞待解：可选处理失败时保留基础报告，移除非必要 Roofline JSON 导出 ｜ 建议：需作者 squash 提交并重跑门禁，通过后再合入
 
-【自动化 Bot 行为记录】44 条（PR 首响催办 8 / Issue 已收到 30 / 其他评论 6）
+【自动化 Bot 行为记录】45 条（Issue 已收到 31 / PR 首响催办 8 / 其他评论 6）
+  2026-11-22 02:18  Issue 已收到 · Issue #66  [docs] 文档质量问题 (26项)
   2026-11-21 01:18  PR 首响催办 · PR #59  fix(record): recognize versioned Pyt
   2026-11-20 21:17  Issue 已收到 · Issue #65  [Requirement|需求/特性]: Remove misleadi
   2026-11-20 21:17  PR 首响催办 · PR #68  Remove misleading per-instruction IP
@@ -58,7 +59,6 @@
   2026-11-19 17:18  Issue 已收到 · Issue #62  [Requirement|需求/特性]: Add --feature-l
   2026-11-18 21:19  Issue 已收到 · Issue #61  [Bug-Report|缺陷反馈]: .gitcode/scripts/
   2026-11-18 02:18  Issue 已收到 · Issue #58  Quoted record commands are modified 
-  2026-11-18 02:18  Issue 已收到 · Issue #59  A detector report write failure esca
-  … 其余 34 条见网页
+  … 其余 35 条见网页
 
 闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
