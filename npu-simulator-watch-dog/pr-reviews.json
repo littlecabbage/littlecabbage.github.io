@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-21T06:38:57.540Z",
-  "generatedAtCst": "2026-11-21 14:38",
+  "generatedAt": "2026-11-21T07:39:01.143Z",
+  "generatedAtCst": "2026-11-21 15:39",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 65,
@@ -10,8 +10,8 @@
     "prs_open": 12,
     "prs_merge_ready": 7,
     "prs_low_value": 0,
-    "cache_hits": 11,
-    "agent_calls": 1
+    "cache_hits": 10,
+    "agent_calls": 2
   },
   "reviews": {
     "53": {
@@ -161,7 +161,7 @@
       "number": 56,
       "title": "fix(report): 保留 npu-rep 打包数据库路径中的特殊字符 (#55)",
       "author": "lilong555",
-      "fingerprint": "8f2975bb100cfccb",
+      "fingerprint": "37d4e5d1c9554505",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -194,23 +194,24 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修复 npu-rep 打包时特殊字符路径下 SQLite URI 解析错误，避免报告 JSON 遗漏",
-        "issue_alignment": "已针对性修复 #55 URI 路径缺陷",
-        "committer_action": "门禁全绿且经社区独立复现验证，建议直接合入",
+        "summary": "改用 as_uri 构造 SQLite 只读连接，修复特殊字符路径下报告归档遗漏",
+        "issue_alignment": "已针对性修复 #55 特殊字符路径打包缺陷",
+        "committer_action": "CLA 与 CI 均已通过，外部参与者已复现验证，建议直接合入",
         "detail_points": [
-          "改用 db_path.resolve().as_uri() 构造只读 URI，正确保留 #、?、%23 等特殊字符，kernel 元数据不再回退默认值",
-          "新增 13 项参数化回归，覆盖相对与绝对路径、特殊字符、空格及中文目录，并校验归档内容完整性"
+          "db_path.resolve().as_uri() 保留 #、?、%23 等字符，避免 URI 截断导致元数据回退默认值",
+          "新增 13 项参数化回归覆盖相对/绝对路径、空格与中文目录及缺失元数据场景，补测充分",
+          "仅改一行源码，CLI、DB schema 与报告格式兼容，风险可控"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-20T08:38:57.456Z"
+        "reviewed_at": "2026-11-21T07:39:01.139Z"
       }
     },
     "57": {
       "number": 57,
       "title": "fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)",
       "author": "lilong555",
-      "fingerprint": "e412a1845ba250b9",
+      "fingerprint": "057cafee692b1b39",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -245,16 +246,18 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "修正 LOAD_2D 查询误用 MStartPosition，改为正确读取 K 起始位置",
-        "issue_alignment": "已针对性修复 #27 K 起始位置缺陷",
-        "committer_action": "需作者压缩提交（needs-squash）并清理重复导入后重跑 CI",
+        "summary": "修正 LOAD_2D 查询中 K 起始位置误取 MStartPosition 的缺陷，并补充回归测试",
+        "issue_alignment": "已针对性修复 #27 的 K 起始位置映射错误",
+        "committer_action": "需作者去除重复 import、squash 提交并重跑 CI，门禁满足后再合入",
         "detail_points": [
-          "SQL 仅将 KStartPosition 映射修正，M 起点与步长字段保留，改动最小",
-          "新增 18 项回归覆盖默认、Smart Pipe、Critical Path，但需移除重复 biprof_ctx 导入"
+          "仅为一行 SQL 字段映射修正，把 KStartPosition 改用真实列，改动精准、风险低",
+          "新增 62 行回归测试覆盖 LOAD_2Dv2、LOAD_MX_2Dv2 及三种报告，但测试文件存在重复 import 触发 F811",
+          "CLA 已签、CI 通过，唯一阻塞为 stat/needs-squash 待清理提交历史",
+          "外部参与者已验证修复，建议解决 Ruff 告警后尽快合入"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-21T06:38:57.528Z"
+        "reviewed_at": "2026-11-21T07:38:57.453Z"
       }
     },
     "58": {

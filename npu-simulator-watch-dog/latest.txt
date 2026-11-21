@@ -1,4 +1,4 @@
-总览指标 · cann/npu-simulator · 2026-11-21 14:38 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-21 15:39 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
@@ -28,7 +28,7 @@
   PR #58 ✅可合入 · 停留 120H → Issue #59  fix(report): handle detector output write failures
       └─ 🤖 值得合入：实质代码改动（2 文件 +63/-28），门禁全绿 ｜ 建议：CLA 与 CI 已通过，建议 committer 完成最终代码检视后合入
   PR #56 ✅可合入 · 停留 120H → Issue #55  fix(report): 保留 npu-rep 打包数据库路径中的特殊字符 (#55)
-      └─ 🤖 值得合入：修复 npu-rep 打包时特殊字符路径下 SQLite URI 解析错误，避免报告 JSON 遗漏 ｜ 建议：门禁全绿且经社区独立复现验证，建议直接合入
+      └─ 🤖 值得合入：改用 as_uri 构造 SQLite 只读连接，修复特殊字符路径下报告归档遗漏 ｜ 建议：CLA 与 CI 均已通过，外部参与者已复现验证，建议直接合入
   PR #55 ✅可合入 · 停留 120H → Issue #58  fix(record): preserve shell command strings before launch
       └─ 🤖 值得合入：record 入口保留 user_app 原始字符串，避免 Path 归一化篡改命令 ｜ 建议：CLA 与 CI 门禁全绿，无冲突，建议尽快合入
   PR #54 ✅可合入 · 停留 120H → Issue #54  docs: fix the npusim report output example
@@ -42,7 +42,7 @@
   PR #60 ❌缺 ci-pipeline-passed · 停留 120H → Issue #56  fix(report): collapse the fixpipe twin rows by identity, not by adjacency
       └─ 🤖 阻塞待解：把 pending 单槽改为按 twin_key 索引的字典，折叠 fixpipe 孪生行，修复 UB 写重复计数 ｜ 建议：暂缓合入：需补齐 ci-pipeline-passed，并回应评审的 key 收紧建议
   PR #57 ❌需squash(stat/needs-squash) · 停留 120H → Issue #27  fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)
-      └─ 🤖 阻塞待解：修正 LOAD_2D 查询误用 MStartPosition，改为正确读取 K 起始位置 ｜ 建议：需作者压缩提交（needs-squash）并清理重复导入后重跑 CI
+      └─ 🤖 阻塞待解：修正 LOAD_2D 查询中 K 起始位置误取 MStartPosition 的缺陷，并补充回归测试 ｜ 建议：需作者去除重复 import、squash 提交并重跑 CI，门禁满足后再合入
   PR #64 ❌需squash(stat/needs-squash) · 停留 73.3H  Add Speed-of-light profiling feature
       └─ 🤖 阻塞待解：新增 SOL 分析器与 --sol 选项，评估内核吞吐上限 ｜ 建议：需作者 squash 提交、补测试并关联 Issue 后再评审
   PR #67 ❌需squash(stat/needs-squash) · 停留 25.6H → Issue #63  fix(prof): preserve base reports when optional processing fails
