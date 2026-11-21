@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-21T05:38:50.314Z",
-  "generatedAtCst": "2026-11-21 13:38",
+  "generatedAt": "2026-11-21T06:38:57.540Z",
+  "generatedAtCst": "2026-11-21 14:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 65,
     "issues_keep": 64,
     "issues_close": 0,
-    "prs_open": 13,
-    "prs_merge_ready": 8,
+    "prs_open": 12,
+    "prs_merge_ready": 7,
     "prs_low_value": 0,
-    "cache_hits": 13,
-    "agent_calls": 0
+    "cache_hits": 11,
+    "agent_calls": 1
   },
   "reviews": {
     "53": {
@@ -210,7 +210,7 @@
       "number": 57,
       "title": "fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)",
       "author": "lilong555",
-      "fingerprint": "dd23ea23bf563ad4",
+      "fingerprint": "e412a1845ba250b9",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -224,16 +224,18 @@
         "pr_has_tests",
         "linked_issues:27"
       ],
-      "merge_ready": true,
-      "blockers": [],
+      "merge_ready": false,
+      "blockers": [
+        "blocking_label:stat/needs-squash"
+      ],
       "diff_stats": {
         "files": 2,
-        "added_lines": 64,
+        "added_lines": 63,
         "removed_lines": 2,
         "surface_files": 0,
         "substantive_files": 2,
         "test_files": 1,
-        "test_added_lines": 63,
+        "test_added_lines": 62,
         "docs_only": false,
         "files_without_patch": 0
       },
@@ -241,20 +243,18 @@
         27
       ],
       "agent_review": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "修正 LOAD_2D 查询误将 MStartPosition 当作 K 起始位置",
-        "issue_alignment": "已针对性修复 #27 的 K 起始位置缺陷",
-        "committer_action": "门禁全绿，建议作者清理重复导入后合入",
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "修正 LOAD_2D 查询误用 MStartPosition，改为正确读取 K 起始位置",
+        "issue_alignment": "已针对性修复 #27 K 起始位置缺陷",
+        "committer_action": "需作者压缩提交（needs-squash）并清理重复导入后重跑 CI",
         "detail_points": [
-          "SQL 字段改为 DmaMovLoad2dParams.KStartPosition，与消费处 k_start_pos_bytes 对齐",
-          "新增 18 项回归覆盖 LOAD_2Dv2/LOAD_MX_2Dv2 及默认、Smart Pipe、Critical Path 报告",
-          "外部评审确认回归全通过，仅剩 tests 中 biprof_ctx 重复导入引发 Ruff F811，需顺手清掉",
-          "DB schema、报告字段名与 CLI 均无变化，向后兼容风险低"
+          "SQL 仅将 KStartPosition 映射修正，M 起点与步长字段保留，改动最小",
+          "新增 18 项回归覆盖默认、Smart Pipe、Critical Path，但需移除重复 biprof_ctx 导入"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-20T08:38:53.751Z"
+        "reviewed_at": "2026-11-21T06:38:57.528Z"
       }
     },
     "58": {
@@ -593,50 +593,6 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-20T13:38:55.978Z"
-      }
-    },
-    "69": {
-      "number": 69,
-      "title": "ci: 入口 job 补齐 permissions(id-token: write) + obs 步骤 OIDC 化",
-      "author": "cui_jiahao",
-      "fingerprint": "7d0ea681bb79455d",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "substantive_diff: 3 file(s)"
-      ],
-      "signals": [
-        "pr_substantive_diff"
-      ],
-      "merge_ready": false,
-      "blockers": [
-        "missing_label:ci-pipeline-passed"
-      ],
-      "diff_stats": {
-        "files": 3,
-        "added_lines": 9,
-        "removed_lines": 0,
-        "surface_files": 0,
-        "substantive_files": 3,
-        "test_files": 0,
-        "test_added_lines": 0,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [],
-      "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "为三个 CI 入口 job 补齐 OIDC 权限并改用临时凭证",
-        "issue_alignment": "无关联 Issue，属配套 CI 安全改造",
-        "committer_action": "需要等 ci-pipeline-passed 标签达成后再评审合入",
-        "detail_points": [
-          "三个 workflow 入口 job 增加 repository: read 与 id-token: write，保证 OIDC 认证可正常获取临时凭证",
-          "静态 AK/SK 残留删除，改用 OIDC 临时凭证，安全收益明确，但缺少 ci-pipeline-passed 门禁"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-21T04:38:56.500Z"
       }
     }
   }

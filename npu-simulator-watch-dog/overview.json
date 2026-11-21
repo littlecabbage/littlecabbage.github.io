@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-21T05:38:50.460Z",
-  "runAtCst": "2026-11-21 13:38",
+  "runAt": "2026-11-21T06:38:57.712Z",
+  "runAtCst": "2026-11-21 14:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -604,34 +604,6 @@
       "triageVerdict": "KEEP"
     },
     {
-      "number": "57",
-      "title": "fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)",
-      "linkedIssues": [
-        "27"
-      ],
-      "mergeable": true,
-      "reason": "",
-      "waitHours": 120,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/57",
-      "agentReview": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "修正 LOAD_2D 查询误将 MStartPosition 当作 K 起始位置",
-        "issue_alignment": "已针对性修复 #27 的 K 起始位置缺陷",
-        "committer_action": "门禁全绿，建议作者清理重复导入后合入",
-        "detail_points": [
-          "SQL 字段改为 DmaMovLoad2dParams.KStartPosition，与消费处 k_start_pos_bytes 对齐",
-          "新增 18 项回归覆盖 LOAD_2Dv2/LOAD_MX_2Dv2 及默认、Smart Pipe、Critical Path 报告",
-          "外部评审确认回归全通过，仅剩 tests 中 biprof_ctx 重复导入引发 Ruff F811，需顺手清掉",
-          "DB schema、报告字段名与 CLI 均无变化，向后兼容风险低"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-20T08:38:53.751Z"
-      },
-      "triageVerdict": "KEEP"
-    },
-    {
       "number": "56",
       "title": "fix(report): 保留 npu-rep 打包数据库路径中的特殊字符 (#55)",
       "linkedIssues": [
@@ -818,6 +790,32 @@
       "triageVerdict": "KEEP"
     },
     {
+      "number": "57",
+      "title": "fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)",
+      "linkedIssues": [
+        "27"
+      ],
+      "mergeable": false,
+      "reason": "需squash(stat/needs-squash)",
+      "waitHours": 120,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/57",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "修正 LOAD_2D 查询误用 MStartPosition，改为正确读取 K 起始位置",
+        "issue_alignment": "已针对性修复 #27 K 起始位置缺陷",
+        "committer_action": "需作者压缩提交（needs-squash）并清理重复导入后重跑 CI",
+        "detail_points": [
+          "SQL 仅将 KStartPosition 映射修正，M 起点与步长字段保留，改动最小",
+          "新增 18 项回归覆盖默认、Smart Pipe、Critical Path，但需移除重复 biprof_ctx 导入"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-21T06:38:57.528Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
       "number": "64",
       "title": "Add Speed-of-light profiling feature",
       "linkedIssues": [],
@@ -867,30 +865,6 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-20T11:38:48.085Z"
-      },
-      "triageVerdict": "KEEP"
-    },
-    {
-      "number": "69",
-      "title": "ci: 入口 job 补齐 permissions(id-token: write) + obs 步骤 OIDC 化",
-      "linkedIssues": [],
-      "mergeable": false,
-      "reason": "缺 ci-pipeline-passed",
-      "waitHours": 0,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/69",
-      "agentReview": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "为三个 CI 入口 job 补齐 OIDC 权限并改用临时凭证",
-        "issue_alignment": "无关联 Issue，属配套 CI 安全改造",
-        "committer_action": "需要等 ci-pipeline-passed 标签达成后再评审合入",
-        "detail_points": [
-          "三个 workflow 入口 job 增加 repository: read 与 id-token: write，保证 OIDC 认证可正常获取临时凭证",
-          "静态 AK/SK 残留删除，改用 OIDC 临时凭证，安全收益明确，但缺少 ci-pipeline-passed 门禁"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-21T04:38:56.500Z"
       },
       "triageVerdict": "KEEP"
     }
