@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-21T03:38:52.928Z",
-  "runAtCst": "2026-11-21 11:38",
+  "runAt": "2026-11-21T04:38:56.625Z",
+  "runAtCst": "2026-11-21 12:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -867,6 +867,30 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-20T11:38:48.085Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "69",
+      "title": "ci: 入口 job 补齐 permissions(id-token: write) + obs 步骤 OIDC 化",
+      "linkedIssues": [],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 0,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/69",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "为三个 CI 入口 job 补齐 OIDC 权限并改用临时凭证",
+        "issue_alignment": "无关联 Issue，属配套 CI 安全改造",
+        "committer_action": "需要等 ci-pipeline-passed 标签达成后再评审合入",
+        "detail_points": [
+          "三个 workflow 入口 job 增加 repository: read 与 id-token: write，保证 OIDC 认证可正常获取临时凭证",
+          "静态 AK/SK 残留删除，改用 OIDC 临时凭证，安全收益明确，但缺少 ci-pipeline-passed 门禁"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-21T04:38:56.500Z"
       },
       "triageVerdict": "KEEP"
     }
