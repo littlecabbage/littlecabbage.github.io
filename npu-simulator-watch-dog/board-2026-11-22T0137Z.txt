@@ -1,0 +1,66 @@
+总览指标 · cann/npu-simulator · 2026-11-22 09:38 (UTC+8)
+归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
+概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
+
+❌ 不合规 (2 项)
+  闭环率：月 70.2% / 年 78.8%  (月 33/47 · 年 52/66（阈值 ≥90%）)
+      原因：月 70.2% 落在橙区（50%~90%）；年 78.8% 落在橙区（50%~90%）
+  首响达标率：月 60.7% / 年 54.5%  (月 17/28 · 年 18/33（阈值 ≥80%）)
+      原因：月 60.7% 落在橙区（50%~80%）；年 54.5% 落在橙区（50%~80%）
+
+✅ 合规 (0 项)
+  （无）
+
+➖ 仅展示 (6 项)
+  Issue 总数：66  (全仓 Issue)
+  开启总数：14  (当前 open)
+  平均闭环时长：月 1.6天 / 年 4.2天  (月样本 33 · 年样本 52)
+  开启未响应 超时/总数：0/0  (当前 open·非自处理·未响应)
+  首响未达标数：月 11 / 年 15  (月统计 28 · 年统计 33)
+  平均首响：月 4.6H / 年 13.3H  (月样本 18 · 年样本 21)
+
+【oncall 待处理】待首次响应的用户问题 (0)
+  （无）
+
+【committer 待 Review / 合并】open PR (13，可合入 7 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
+  PR #59 ✅可合入 · 停留 120H → Issue #60  fix(record): recognize versioned Python executables
+      └─ 🤖 值得合入：用正则统一识别 python3.11 等版本化解释器并修正 Python 路径判定 ｜ 建议：CLA 与 CI 均通过且无冲突，建议直接合入
+  PR #58 ✅可合入 · 停留 120H → Issue #59  fix(report): handle detector output write failures
+      └─ 🤖 值得合入：实质代码改动（2 文件 +63/-28），门禁全绿 ｜ 建议：CLA 与 CI 已通过，建议 committer 完成最终代码检视后合入
+  PR #56 ✅可合入 · 停留 120H → Issue #55  fix(report): 保留 npu-rep 打包数据库路径中的特殊字符 (#55)
+      └─ 🤖 值得合入：改用 as_uri 构造 SQLite 只读连接，修复特殊字符路径下报告归档遗漏 ｜ 建议：CLA 与 CI 均已通过，外部参与者已复现验证，建议直接合入
+  PR #55 ✅可合入 · 停留 120H → Issue #58  fix(record): preserve shell command strings before launch
+      └─ 🤖 值得合入：record 入口保留 user_app 原始字符串，避免 Path 归一化篡改命令 ｜ 建议：CLA 与 CI 门禁全绿，无冲突，建议尽快合入
+  PR #54 ✅可合入 · 停留 120H → Issue #54  docs: fix the npusim report output example
+      └─ 🤖 值得合入：修正 report 示例，将 -o 误写为 JSON 文件路径改为输出目录 ｜ 建议：CLA 已签、CI 通过且冲突已解，建议直接合入
+  PR #63 ✅可合入 · 停留 75.5H → Issue #64  fix(report): Store operator source text in SourceFiles
+      └─ 🤖 值得合入：为 SourceFiles 增加源码全文列并在报告阶段回填，修复报告缺源码 ｜ 建议：CLA 已签、CI 通过且无冲突，建议 committer 直接合入
+  PR #68 ✅可合入 · 停留 3.5H → Issue #65  Remove misleading per-instruction IPC metrics
+      └─ 🤖 值得合入：删除逐指令动态 IPC 计算、trace 字段与相关表，保留聚合 IPC 指标 ｜ 建议：CLA 与 CI 全绿、无冲突阻塞，建议直接合入
+  PR #53 ❌缺 ci-pipeline-passed · 停留 123.4H → Issue #53  fix(report): order the busy-time sweep by interval start
+      └─ 🤖 阻塞待解：修正吞吐统计区间并集算法，扫描前按起点排序，避免占用时间多算 ｜ 建议：已获 lgtm，但缺 ci-pipeline-passed，需重跑 CI 全绿后合入
+  PR #60 ❌缺 ci-pipeline-passed · 停留 120H → Issue #56  fix(report): collapse the fixpipe twin rows by identity, not by adjacency
+      └─ 🤖 阻塞待解：把 pending 单槽改为按 twin_key 索引的字典，折叠 fixpipe 孪生行，修复 UB 写重复计数 ｜ 建议：暂缓合入：需补齐 ci-pipeline-passed，并回应评审的 key 收紧建议
+  PR #57 ❌需squash(stat/needs-squash) · 停留 120H → Issue #27  fix(trace): 正确读取 LOAD_2D 的 K 起始位置 (#27)
+      └─ 🤖 阻塞待解：修正 LOAD_2D 查询中 K 起始位置误取 MStartPosition 的缺陷，并补充回归测试 ｜ 建议：需作者去除重复 import、squash 提交并重跑 CI，门禁满足后再合入
+  PR #64 ❌需squash(stat/needs-squash) · 停留 73.3H  Add Speed-of-light profiling feature
+      └─ 🤖 阻塞待解：新增 SOL 分析器与 --sol 选项，评估内核吞吐上限 ｜ 建议：需作者 squash 提交、补测试并关联 Issue 后再评审
+  PR #67 ❌需squash(stat/needs-squash) · 停留 25.6H → Issue #63  fix(prof): preserve base reports when optional processing fails
+      └─ 🤖 阻塞待解：可选处理失败时保留基础报告，移除非必要 Roofline JSON 导出 ｜ 建议：需作者 squash 提交并重跑门禁，通过后再合入
+  PR #70 ❌缺 ci-pipeline-passed · 停留 0H → Issue #66  docs(npu-simulator): fix spacing in examples
+      └─ 🤖 阻塞待解：修正两份最佳实践文档中英文间距，提升中文可读性 ｜ 建议：文档改动无害，需等待 ci-pipeline-passed 打标后合入
+
+【自动化 Bot 行为记录】45 条（Issue 已收到 31 / PR 首响催办 8 / 其他评论 6）
+  2026-11-22 02:18  Issue 已收到 · Issue #66  [docs] 文档质量问题 (26项)
+  2026-11-21 01:18  PR 首响催办 · PR #59  fix(record): recognize versioned Pyt
+  2026-11-20 21:17  Issue 已收到 · Issue #65  [Requirement|需求/特性]: Remove misleadi
+  2026-11-20 21:17  PR 首响催办 · PR #68  Remove misleading per-instruction IP
+  2026-11-20 18:18  Issue 已收到 · Issue #64  [Bug-Report|缺陷反馈]: Full source files
+  2026-11-20 00:18  PR 首响催办 · PR #67  fix(prof): preserve base reports whe
+  2026-11-19 23:18  Issue 已收到 · Issue #63  [Bug-Report|缺陷反馈]: Optional report f
+  2026-11-19 17:18  Issue 已收到 · Issue #62  [Requirement|需求/特性]: Add --feature-l
+  2026-11-18 21:19  Issue 已收到 · Issue #61  [Bug-Report|缺陷反馈]: .gitcode/scripts/
+  2026-11-18 02:18  Issue 已收到 · Issue #58  Quoted record commands are modified 
+  … 其余 35 条见网页
+
+闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
