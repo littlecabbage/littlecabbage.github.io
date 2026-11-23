@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-23T08:39:08.644Z",
-  "generatedAtCst": "2026-11-23 16:39",
+  "generatedAt": "2026-11-23T09:39:06.372Z",
+  "generatedAtCst": "2026-11-23 17:39",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 66,
     "issues_keep": 65,
     "issues_close": 0,
-    "prs_open": 14,
+    "prs_open": 15,
     "prs_merge_ready": 7,
     "prs_low_value": 0,
-    "cache_hits": 11,
-    "agent_calls": 3
+    "cache_hits": 13,
+    "agent_calls": 2
   },
   "reviews": {
     "53": {
@@ -650,7 +650,7 @@
       "number": 71,
       "title": "docs: 重构贡献指南，补齐环境搭建、特性贡献全流程、CI 门禁与合入流程",
       "author": "Li_cube",
-      "fingerprint": "079277a3501a4f45",
+      "fingerprint": "4019144777618d70",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -669,7 +669,7 @@
       ],
       "diff_stats": {
         "files": 2,
-        "added_lines": 259,
+        "added_lines": 283,
         "removed_lines": 53,
         "surface_files": 0,
         "substantive_files": 2,
@@ -685,16 +685,64 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "重构 CONTRIBUTING.md，补齐环境搭建、特性贡献全流程与 CI 门禁说明",
-        "issue_alignment": "针对性回应 #57 贡献指南不完整的问题",
-        "committer_action": "需作者 squash 提交并触发 compile 通过 CI 门禁，再检视合入",
+        "summary": "重构 CONTRIBUTING.md 与中文贡献指南，补齐环境搭建、特性贡献全流程与 CI 门禁说明",
+        "issue_alignment": "已针对性修复 #57 贡献指南不完整问题，并联动 #2 文档纠错",
+        "committer_action": "需作者完成 squash 提交并重跑 CI 待 ci-pipeline-passed 通过后再合入",
         "detail_points": [
-          "纯文档改动共 2 个文件新增 259 行，内容有待合并与根贡献指南的章节结构",
-          "缺 ci-pipeline-passed 且带 needs-squash，门禁未绿暂不可合入"
+          "文档改动属实质内容（+283/-53），对齐 .gitcode/workflows 门禁项描述，无安全或合规风险",
+          "门禁未通过：缺少 ci-pipeline-passed 标签且存在 stat/needs-squash，需压缩为单一提交",
+          "内容覆盖 UT/ST/PreSmoke 分层与 lgtm/approve 合入流程，作者多次 /compile 仍在跑"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-23T08:39:02.302Z"
+        "reviewed_at": "2026-11-23T09:39:06.364Z"
+      }
+    },
+    "72": {
+      "number": 72,
+      "title": "CI 添加StaticCheck_md_check检查项",
+      "author": "zhouchongshun",
+      "fingerprint": "87be20db831dd01b",
+      "triage_verdict": "KEEP",
+      "guard_allowed": false,
+      "verdict_reasons": [
+        "substantive_diff: 2 file(s)"
+      ],
+      "signals": [
+        "pr_substantive_diff"
+      ],
+      "merge_ready": false,
+      "blockers": [
+        "cla_not_signed(cann-cla/no)",
+        "missing_label:cann-cla/yes",
+        "missing_label:ci-pipeline-passed",
+        "blocking_label:stat/needs-squash"
+      ],
+      "diff_stats": {
+        "files": 2,
+        "added_lines": 80,
+        "removed_lines": 0,
+        "surface_files": 0,
+        "substantive_files": 2,
+        "test_files": 0,
+        "test_added_lines": 0,
+        "docs_only": false,
+        "files_without_patch": 0
+      },
+      "linked_issues": [],
+      "agent_review": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "CI 新增 md_check 静态检查复用 workflow 及流水线任务",
+        "issue_alignment": "无关联 Issue，属 CI 门禁能力增强",
+        "committer_action": "需先签署 CLA、压缩提交并跑通 CI 后再评审合入",
+        "detail_points": [
+          "新增 workflow_call 复用模板并接入 CodeCheck 阶段，结构合理，但需确认 md_check 镜像版本来源",
+          "workflow 名称拼写为 staticheck_action，且启用 allow-unsafe-pr-checkout，需复核安全性"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-23T09:39:02.686Z"
       }
     }
   }

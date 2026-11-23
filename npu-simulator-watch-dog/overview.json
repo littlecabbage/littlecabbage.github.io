@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-23T08:39:08.768Z",
-  "runAtCst": "2026-11-23 16:39",
+  "runAt": "2026-11-23T09:39:06.493Z",
+  "runAtCst": "2026-11-23 17:39",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -58,6 +58,16 @@
     "simulator-bot"
   ],
   "botActions": [
+    {
+      "kind": "pr",
+      "number": "71",
+      "title": "docs: 重构贡献指南，补齐环境搭建、特性贡献全流程、CI 门禁与合入流程",
+      "url": "https://gitcode.com/cann/npu-simulator/pulls/71",
+      "action": "pr_nudge",
+      "at": "2026-11-23T17:18:07+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
     {
       "kind": "issue",
       "number": "66",
@@ -510,8 +520,8 @@
     }
   ],
   "botActionsByType": {
+    "pr_nudge": 9,
     "issue_ack": 31,
-    "pr_nudge": 8,
     "comment": 6
   },
   "closeLoop": {
@@ -570,7 +580,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 136.7,
+      "waitHours": 137.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -597,7 +607,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 136.7,
+      "waitHours": 137.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/58",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -622,7 +632,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 136.7,
+      "waitHours": 137.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/56",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -649,7 +659,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 136.7,
+      "waitHours": 137.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/55",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -675,7 +685,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 136.7,
+      "waitHours": 137.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/54",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -701,7 +711,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 92.1,
+      "waitHours": 93.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/63",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -729,7 +739,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 20.1,
+      "waitHours": 21.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/68",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -755,7 +765,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 140,
+      "waitHours": 141,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -782,7 +792,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 136.7,
+      "waitHours": 137.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -809,7 +819,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 136.7,
+      "waitHours": 137.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/57",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -834,7 +844,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 89.9,
+      "waitHours": 90.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -861,7 +871,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 42.2,
+      "waitHours": 43.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/67",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -889,7 +899,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 16.7,
+      "waitHours": 17.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/70",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -916,21 +926,46 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 0.6,
+      "waitHours": 1.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/71",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "重构 CONTRIBUTING.md，补齐环境搭建、特性贡献全流程与 CI 门禁说明",
-        "issue_alignment": "针对性回应 #57 贡献指南不完整的问题",
-        "committer_action": "需作者 squash 提交并触发 compile 通过 CI 门禁，再检视合入",
+        "summary": "重构 CONTRIBUTING.md 与中文贡献指南，补齐环境搭建、特性贡献全流程与 CI 门禁说明",
+        "issue_alignment": "已针对性修复 #57 贡献指南不完整问题，并联动 #2 文档纠错",
+        "committer_action": "需作者完成 squash 提交并重跑 CI 待 ci-pipeline-passed 通过后再合入",
         "detail_points": [
-          "纯文档改动共 2 个文件新增 259 行，内容有待合并与根贡献指南的章节结构",
-          "缺 ci-pipeline-passed 且带 needs-squash，门禁未绿暂不可合入"
+          "文档改动属实质内容（+283/-53），对齐 .gitcode/workflows 门禁项描述，无安全或合规风险",
+          "门禁未通过：缺少 ci-pipeline-passed 标签且存在 stat/needs-squash，需压缩为单一提交",
+          "内容覆盖 UT/ST/PreSmoke 分层与 lgtm/approve 合入流程，作者多次 /compile 仍在跑"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-23T08:39:02.302Z"
+        "reviewed_at": "2026-11-23T09:39:06.364Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "72",
+      "title": "CI 添加StaticCheck_md_check检查项",
+      "linkedIssues": [],
+      "mergeable": false,
+      "reason": "CLA未签(cann-cla/no)、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
+      "waitHours": 0.9,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/72",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "CI 新增 md_check 静态检查复用 workflow 及流水线任务",
+        "issue_alignment": "无关联 Issue，属 CI 门禁能力增强",
+        "committer_action": "需先签署 CLA、压缩提交并跑通 CI 后再评审合入",
+        "detail_points": [
+          "新增 workflow_call 复用模板并接入 CodeCheck 阶段，结构合理，但需确认 md_check 镜像版本来源",
+          "workflow 名称拼写为 staticheck_action，且启用 allow-unsafe-pr-checkout，需复核安全性"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-23T09:39:02.686Z"
       },
       "triageVerdict": "KEEP"
     }
