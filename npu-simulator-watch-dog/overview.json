@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-23T17:38:55.380Z",
-  "runAtCst": "2026-11-24 01:38",
+  "runAt": "2026-11-23T18:38:55.740Z",
+  "runAtCst": "2026-11-24 02:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -570,7 +570,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 145.6,
+      "waitHours": 146.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -597,7 +597,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 145.6,
+      "waitHours": 146.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/58",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -622,7 +622,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 145.6,
+      "waitHours": 146.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/56",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -649,7 +649,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 145.6,
+      "waitHours": 146.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/55",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -675,7 +675,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 145.6,
+      "waitHours": 146.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/54",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -701,7 +701,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 101.1,
+      "waitHours": 102.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/63",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -729,7 +729,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 29.1,
+      "waitHours": 30.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/68",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -755,7 +755,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 149,
+      "waitHours": 150,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -782,7 +782,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 145.6,
+      "waitHours": 146.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -809,7 +809,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 145.6,
+      "waitHours": 146.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/57",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -834,7 +834,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 98.9,
+      "waitHours": 99.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -861,7 +861,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 51.2,
+      "waitHours": 52.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/67",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -889,7 +889,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 25.6,
+      "waitHours": 26.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/70",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -913,7 +913,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "CLA未签(cann-cla/no)、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 8.9,
+      "waitHours": 9.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/72",
       "agentReview": {
         "verdict": "NEEDS_WORK",
