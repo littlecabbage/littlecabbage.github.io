@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-23T07:38:55.996Z",
-  "runAtCst": "2026-11-23 15:38",
+  "runAt": "2026-11-23T08:39:08.768Z",
+  "runAtCst": "2026-11-23 16:39",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -570,7 +570,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 135.6,
+      "waitHours": 136.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -597,7 +597,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 135.6,
+      "waitHours": 136.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/58",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -622,7 +622,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 135.6,
+      "waitHours": 136.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/56",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -649,7 +649,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 135.6,
+      "waitHours": 136.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/55",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -675,21 +675,21 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 135.6,
+      "waitHours": 136.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/54",
       "agentReview": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修正 report 示例，将 -o 误写为 JSON 文件路径改为输出目录",
-        "issue_alignment": "已按 #54 修正 report 示例与产物说明",
-        "committer_action": "CLA 已签、CI 通过且冲突已解，建议直接合入",
+        "summary": "修正 npusim report 示例输出参数，明确 -o 接收目录而非文件",
+        "issue_alignment": "已针对性修复 #54 报告输出路径误导",
+        "committer_action": "CLA 已签、CI 全绿且有 approved，建议直接合入",
         "detail_points": [
-          "仅改 main.py docstring 说明文字，不改变 CLI 行为，风险极低",
-          "示例与 report -o 接收目录、按核生成 Chrome Tracing JSON 的实现一致"
+          "仅改 main.py docstring 示例与说明，不改 CLI 行为，风险极低",
+          "改后示例 -o 为目录并说明按核生成 Chrome Tracing JSON，与实现一致"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-20T17:39:05.551Z"
+        "reviewed_at": "2026-11-23T08:39:08.641Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -701,7 +701,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 91.1,
+      "waitHours": 92.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/63",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -729,7 +729,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 19.1,
+      "waitHours": 20.1,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/68",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -755,7 +755,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 139,
+      "waitHours": 140,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/53",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -782,7 +782,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 135.6,
+      "waitHours": 136.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -809,23 +809,22 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 135.6,
+      "waitHours": 136.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/57",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "修正 LOAD_2D 查询中 K 起始位置误取 MStartPosition 的缺陷，并补充回归测试",
-        "issue_alignment": "已针对性修复 #27 的 K 起始位置映射错误",
-        "committer_action": "需作者去除重复 import、squash 提交并重跑 CI，门禁满足后再合入",
+        "summary": "修正 LOAD_2D 查询里 K 起始位置误取 MStartPosition 的字段映射",
+        "issue_alignment": "已针对性修复 #27 K 起始位置缺陷",
+        "committer_action": "需作者解决 F811 重复导入并 squash 提交，重跑 CI 后合入",
         "detail_points": [
-          "仅为一行 SQL 字段映射修正，把 KStartPosition 改用真实列，改动精准、风险低",
-          "新增 62 行回归测试覆盖 LOAD_2Dv2、LOAD_MX_2Dv2 及三种报告，但测试文件存在重复 import 触发 F811",
-          "CLA 已签、CI 通过，唯一阻塞为 stat/needs-squash 待清理提交历史",
-          "外部参与者已验证修复，建议解决 Ruff 告警后尽快合入"
+          "SQL 由 MStartPosition 改为 KStartPosition，一行修复直击根因，兼容性无损",
+          "新增 18 项回归覆盖 LOAD_2Dv2/LOAD_MX_2Dv2 及三类报告，需清理 F811 重复导入",
+          "门禁仅缺 stat/needs-squash，CLA 与 CI 已通过且已获 approved，squash 后可合入"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-21T07:38:57.453Z"
+        "reviewed_at": "2026-11-23T08:39:05.778Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -835,7 +834,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 88.9,
+      "waitHours": 89.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -862,7 +861,7 @@
       ],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 41.2,
+      "waitHours": 42.2,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/67",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -890,7 +889,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 15.6,
+      "waitHours": 16.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/70",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -905,6 +904,33 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-21T21:38:57.320Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "71",
+      "title": "docs: 重构贡献指南，补齐环境搭建、特性贡献全流程、CI 门禁与合入流程",
+      "linkedIssues": [
+        "57",
+        "2"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
+      "waitHours": 0.6,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/71",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "重构 CONTRIBUTING.md，补齐环境搭建、特性贡献全流程与 CI 门禁说明",
+        "issue_alignment": "针对性回应 #57 贡献指南不完整的问题",
+        "committer_action": "需作者 squash 提交并触发 compile 通过 CI 门禁，再检视合入",
+        "detail_points": [
+          "纯文档改动共 2 个文件新增 259 行，内容有待合并与根贡献指南的章节结构",
+          "缺 ci-pipeline-passed 且带 needs-squash，门禁未绿暂不可合入"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-23T08:39:02.302Z"
       },
       "triageVerdict": "KEEP"
     }
