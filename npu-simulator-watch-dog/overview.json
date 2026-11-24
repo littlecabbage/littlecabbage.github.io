@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-24T10:38:47.042Z",
-  "runAtCst": "2026-11-24 18:38",
+  "runAt": "2026-11-24T13:38:59.137Z",
+  "runAtCst": "2026-11-24 21:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -47,7 +47,8 @@
     "63",
     "64",
     "65",
-    "66"
+    "66",
+    "67"
   ],
   "botLogins": [
     "CANN-robot",
@@ -58,6 +59,46 @@
     "simulator-bot"
   ],
   "botActions": [
+    {
+      "kind": "issue",
+      "number": "67",
+      "title": "清理 .gitcode/scripts 冗余代码（compile.sh/ut.sh 的 ops-math/ge 拷贝残留）",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/67",
+      "action": "issue_ack",
+      "at": "2026-11-24T21:17:21+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "68",
+      "title": "\"[Documentation|文档反馈]cannsim是什么？",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/68",
+      "action": "issue_ack",
+      "at": "2026-11-24T21:17:19+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "69",
+      "title": "\"[Bug-Report|缺陷反馈]cannsim_helper目录不存在？如果是写错numsim_helper，建议全仓扫描",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/69",
+      "action": "issue_ack",
+      "at": "2026-11-24T21:17:18+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
+    {
+      "kind": "issue",
+      "number": "70",
+      "title": "\"[Documentation|文档反馈]文档描述中有一些中英文符号混用/缺少句号等常见问题，建议使用agent工具，扫描修复一遍",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/70",
+      "action": "issue_ack",
+      "at": "2026-11-24T21:17:16+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
     {
       "kind": "pr",
       "number": "70",
@@ -490,27 +531,27 @@
     }
   ],
   "botActionsByType": {
+    "issue_ack": 35,
     "pr_nudge": 6,
-    "issue_ack": 31,
     "comment": 6
   },
   "closeLoop": {
-    "issuesTotal": 66,
-    "openTotal": 4,
+    "issuesTotal": 70,
+    "openTotal": 8,
     "month": {
-      "total": 47,
+      "total": 51,
       "closed": 43,
-      "rate": 91.5,
-      "rateColor": "blue",
+      "rate": 84.3,
+      "rateColor": "orange",
       "avgCloseHours": 57.3,
       "avgCloseDays": 2.4,
       "durSamples": 43
     },
     "year": {
-      "total": 66,
+      "total": 70,
       "closed": 62,
-      "rate": 93.9,
-      "rateColor": "blue",
+      "rate": 88.6,
+      "rateColor": "orange",
       "avgCloseHours": 104,
       "avgCloseDays": 4.3,
       "durSamples": 62
@@ -518,29 +559,51 @@
   },
   "response": {
     "openNoResponse": {
-      "total": 0,
+      "total": 3,
       "overdue": 0
     },
     "month": {
-      "total": 28,
-      "qualified": 17,
+      "total": 31,
+      "qualified": 20,
       "unqualified": 11,
-      "rate": 60.7,
+      "rate": 64.5,
       "rateColor": "orange",
       "avgFirstRespHours": 4.6,
       "respSamples": 18
     },
     "year": {
-      "total": 33,
-      "qualified": 18,
+      "total": 36,
+      "qualified": 21,
       "unqualified": 15,
-      "rate": 54.5,
+      "rate": 58.3,
       "rateColor": "orange",
       "avgFirstRespHours": 13.3,
       "respSamples": 21
     }
   },
-  "oncallList": [],
+  "oncallList": [
+    {
+      "number": "69",
+      "title": "\"[Bug-Report|缺陷反馈]cannsim_helper目录不存在？如果是写错numsim_helper，建议全仓扫描",
+      "waitHours": 0.9,
+      "overdue": false,
+      "url": "https://gitcode.com/cann/npu-simulator/issues/69"
+    },
+    {
+      "number": "68",
+      "title": "\"[Documentation|文档反馈]cannsim是什么？",
+      "waitHours": 0.9,
+      "overdue": false,
+      "url": "https://gitcode.com/cann/npu-simulator/issues/68"
+    },
+    {
+      "number": "70",
+      "title": "\"[Documentation|文档反馈]文档描述中有一些中英文符号混用/缺少句号等常见问题，建议使用agent工具，扫描修复一遍",
+      "waitHours": 0.7,
+      "overdue": false,
+      "url": "https://gitcode.com/cann/npu-simulator/issues/70"
+    }
+  ],
   "committerList": [
     {
       "number": "59",
@@ -550,7 +613,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 162.6,
+      "waitHours": 165.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -577,7 +640,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 42.6,
+      "waitHours": 45.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/70",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -596,6 +659,30 @@
       "triageVerdict": "KEEP"
     },
     {
+      "number": "74",
+      "title": "fix(prof): fix AIV1 overlap label, SIMT f-string log, and analyzer guards",
+      "linkedIssues": [],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 8.5,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/74",
+      "agentReview": {
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "修复AIV1指标键名写错、日志f-string及除零越界防护",
+        "issue_alignment": "无关联Issue，属自发现缺陷修复",
+        "committer_action": "CLA与CI均通过、无冲突，建议直接合入",
+        "detail_points": [
+          "修正AIV1_SCALAR与AIV1_VEC重叠键被误写为AIV0_VEC的复制粘贴错误，同步两处reporter",
+          "补充除零/空列表越界防护、f-string花括号、枚举整型比较与handler遍历安全"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-24T07:38:53.852Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
       "number": "73",
       "title": "fix(ci): update REPOSITORY_NAME to npu-simulator and remove stale bandit path",
       "linkedIssues": [
@@ -603,7 +690,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 5.5,
+      "waitHours": 8.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/73",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -627,7 +714,7 @@
       "linkedIssues": [],
       "mergeable": true,
       "reason": "",
-      "waitHours": 5.4,
+      "waitHours": 8.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/75",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -646,30 +733,6 @@
       "triageVerdict": "KEEP"
     },
     {
-      "number": "74",
-      "title": "fix(prof): fix AIV1 overlap label, SIMT f-string log, and analyzer guards",
-      "linkedIssues": [],
-      "mergeable": true,
-      "reason": "",
-      "waitHours": 5.4,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/74",
-      "agentReview": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "修复AIV1指标键名写错、日志f-string及除零越界防护",
-        "issue_alignment": "无关联Issue，属自发现缺陷修复",
-        "committer_action": "CLA与CI均通过、无冲突，建议直接合入",
-        "detail_points": [
-          "修正AIV1_SCALAR与AIV1_VEC重叠键被误写为AIV0_VEC的复制粘贴错误，同步两处reporter",
-          "补充除零/空列表越界防护、f-string花括号、枚举整型比较与handler遍历安全"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-24T07:38:53.852Z"
-      },
-      "triageVerdict": "KEEP"
-    },
-    {
       "number": "60",
       "title": "fix(report): collapse the fixpipe twin rows by identity, not by adjacency",
       "linkedIssues": [
@@ -677,7 +740,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 162.6,
+      "waitHours": 165.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -701,24 +764,24 @@
       "title": "Add Speed-of-light profiling feature",
       "linkedIssues": [],
       "mergeable": false,
-      "reason": "需squash(stat/needs-squash)",
-      "waitHours": 115.9,
+      "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
+      "waitHours": 118.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 --sol 选项与 SpeedOfLight 分析器，输出三类硬件极限吞吐",
-        "issue_alignment": "无关联 Issue，新特性未先方案讨论",
-        "committer_action": "待作者 squash 提交并补充关联 Issue 与文档后，再推进合入",
+        "summary": "新增 SOL 性能分析特性，含 --sol 选项、分析器、建表与文档测试",
+        "issue_alignment": "无关联 Issue，新特性缺方案讨论",
+        "committer_action": "需先补关联 Issue 与 CI 通过，并 squash 为单提交",
         "detail_points": [
-          "新增 276 行 speed_of_light_analyzer.py，按 Cube/Vector/Global Memory 三类计算 SOL 吞吐，逻辑完整",
-          "biprof_constants 补充 V100 峰值 MAC/cycle 与 IPC 常量，仅覆盖单架构，后续需扩展",
-          "report.py 将数据契约版本放宽至 7 或 8，属兼容性改动，需确认旧版本工具兼容",
-          "未新增任何测试用例，方案/文档章节空缺，建议补充 SOL 表校验测试"
+          "新增 281 行 SpeedOfLightAnalyzer 与 SpeedOfLightData 表，需确认峰值参数来源与校准依据",
+          "report.py 放开 contract_version 至 7/8，须保证旧库兼容与版本升级路径清晰",
+          "PR 模板 CLA/测试/评审勾选项均未勾选，且缺少 ci-pipeline-passed 标签",
+          "已有 2 个测试文件覆盖 --sol 与 ddr 采集依赖，但需补分析器输出数值校验用例"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T08:39:02.646Z"
+        "reviewed_at": "2026-11-24T13:38:58.981Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -728,7 +791,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "CLA未签(cann-cla/no)、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 25.9,
+      "waitHours": 28.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/72",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -745,6 +808,58 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-24T08:38:54.287Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "76",
+      "title": "删除冗余代码",
+      "linkedIssues": [
+        "67"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 1.9,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/76",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "清理 CI 脚本中 ops-math/ge 拷贝残留的冗余代码与死函数",
+        "issue_alignment": "针对性修复 #67 脚本冗余项清理",
+        "committer_action": "需作者补齐 ci-pipeline-passed 门禁并确认脚本语法通过后再合入",
+        "detail_points": [
+          "已修正 REPOSITORY_NAME 仓名错误，删除未使用的 LOG_HEAD 死函数与 ge_st_rt2 死打印，属实质清理",
+          "仅缺 ci-pipeline-passed 标签；建议补跑流水线确认 compile.sh/ut.sh 语法与 UT 不受影响"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-24T12:38:51.646Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
+      "number": "77",
+      "title": "docs: clarify cannsim package and CLI aliases",
+      "linkedIssues": [
+        "68"
+      ],
+      "mergeable": false,
+      "reason": "缺 ci-pipeline-passed",
+      "waitHours": 0.6,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/77",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "README 补两行说明 cannsim 为分发名、与 npusim 共用 CLI",
+        "issue_alignment": "针对性澄清 #68 中 cannsim 命名疑问",
+        "committer_action": "需先补齐 ci-pipeline-passed 门禁后即可合入",
+        "detail_points": [
+          "仅文档新增两行，说明 wheel 分发名与 CLI 入口别名，不改代码与构建",
+          "已具 cann-cla/yes，但缺 ci-pipeline-passed，需重跑 CI 再评审"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-24T13:38:54.546Z"
       },
       "triageVerdict": "KEEP"
     }

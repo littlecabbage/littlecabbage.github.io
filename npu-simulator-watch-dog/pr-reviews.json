@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-24T10:38:46.885Z",
-  "generatedAtCst": "2026-11-24 18:38",
+  "generatedAt": "2026-11-24T13:38:58.988Z",
+  "generatedAtCst": "2026-11-24 21:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
-    "issues_total": 66,
-    "issues_keep": 65,
+    "issues_total": 70,
+    "issues_keep": 69,
     "issues_close": 0,
-    "prs_open": 8,
+    "prs_open": 10,
     "prs_merge_ready": 5,
     "prs_low_value": 0,
     "cache_hits": 8,
-    "agent_calls": 0
+    "agent_calls": 2
   },
   "reviews": {
     "59": {
@@ -115,28 +115,31 @@
       "number": 64,
       "title": "Add Speed-of-light profiling feature",
       "author": "fomichevoleg5",
-      "fingerprint": "efae86fd1ad73a16",
+      "fingerprint": "d89a57a94b429530",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
-        "substantive_diff: 6 file(s)",
+        "substantive_diff: 13 file(s)",
+        "adds_tests",
         "external_participant: Arerere"
       ],
       "signals": [
-        "pr_substantive_diff"
+        "pr_substantive_diff",
+        "pr_has_tests"
       ],
       "merge_ready": false,
       "blockers": [
+        "missing_label:ci-pipeline-passed",
         "blocking_label:stat/needs-squash"
       ],
       "diff_stats": {
-        "files": 6,
-        "added_lines": 330,
-        "removed_lines": 2,
+        "files": 13,
+        "added_lines": 571,
+        "removed_lines": 10,
         "surface_files": 0,
-        "substantive_files": 6,
-        "test_files": 0,
-        "test_added_lines": 0,
+        "substantive_files": 13,
+        "test_files": 2,
+        "test_added_lines": 20,
         "docs_only": false,
         "files_without_patch": 0
       },
@@ -144,18 +147,18 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 --sol 选项与 SpeedOfLight 分析器，输出三类硬件极限吞吐",
-        "issue_alignment": "无关联 Issue，新特性未先方案讨论",
-        "committer_action": "待作者 squash 提交并补充关联 Issue 与文档后，再推进合入",
+        "summary": "新增 SOL 性能分析特性，含 --sol 选项、分析器、建表与文档测试",
+        "issue_alignment": "无关联 Issue，新特性缺方案讨论",
+        "committer_action": "需先补关联 Issue 与 CI 通过，并 squash 为单提交",
         "detail_points": [
-          "新增 276 行 speed_of_light_analyzer.py，按 Cube/Vector/Global Memory 三类计算 SOL 吞吐，逻辑完整",
-          "biprof_constants 补充 V100 峰值 MAC/cycle 与 IPC 常量，仅覆盖单架构，后续需扩展",
-          "report.py 将数据契约版本放宽至 7 或 8，属兼容性改动，需确认旧版本工具兼容",
-          "未新增任何测试用例，方案/文档章节空缺，建议补充 SOL 表校验测试"
+          "新增 281 行 SpeedOfLightAnalyzer 与 SpeedOfLightData 表，需确认峰值参数来源与校准依据",
+          "report.py 放开 contract_version 至 7/8，须保证旧库兼容与版本升级路径清晰",
+          "PR 模板 CLA/测试/评审勾选项均未勾选，且缺少 ci-pipeline-passed 标签",
+          "已有 2 个测试文件覆盖 --sol 与 ddr 采集依赖，但需补分析器输出数值校验用例"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T08:39:02.646Z"
+        "reviewed_at": "2026-11-24T13:38:58.981Z"
       }
     },
     "70": {
@@ -384,6 +387,102 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-24T08:38:49.931Z"
+      }
+    },
+    "76": {
+      "number": 76,
+      "title": "删除冗余代码",
+      "author": "cui_jiahao",
+      "fingerprint": "61b9e8a28fa1ac72",
+      "triage_verdict": "KEEP",
+      "guard_allowed": false,
+      "verdict_reasons": [
+        "substantive_diff: 2 file(s)",
+        "linked_issue_legit: #67"
+      ],
+      "signals": [
+        "pr_substantive_diff",
+        "linked_issues:67"
+      ],
+      "merge_ready": false,
+      "blockers": [
+        "missing_label:ci-pipeline-passed"
+      ],
+      "diff_stats": {
+        "files": 2,
+        "added_lines": 2,
+        "removed_lines": 22,
+        "surface_files": 0,
+        "substantive_files": 2,
+        "test_files": 0,
+        "test_added_lines": 0,
+        "docs_only": false,
+        "files_without_patch": 0
+      },
+      "linked_issues": [
+        67
+      ],
+      "agent_review": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "清理 CI 脚本中 ops-math/ge 拷贝残留的冗余代码与死函数",
+        "issue_alignment": "针对性修复 #67 脚本冗余项清理",
+        "committer_action": "需作者补齐 ci-pipeline-passed 门禁并确认脚本语法通过后再合入",
+        "detail_points": [
+          "已修正 REPOSITORY_NAME 仓名错误，删除未使用的 LOG_HEAD 死函数与 ge_st_rt2 死打印，属实质清理",
+          "仅缺 ci-pipeline-passed 标签；建议补跑流水线确认 compile.sh/ut.sh 语法与 UT 不受影响"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-24T12:38:51.646Z"
+      }
+    },
+    "77": {
+      "number": 77,
+      "title": "docs: clarify cannsim package and CLI aliases",
+      "author": "lilong555",
+      "fingerprint": "ba6b482878f55095",
+      "triage_verdict": "KEEP",
+      "guard_allowed": false,
+      "verdict_reasons": [
+        "substantive_diff: 1 file(s)",
+        "linked_issue_legit: #68"
+      ],
+      "signals": [
+        "pr_substantive_diff",
+        "linked_issues:68"
+      ],
+      "merge_ready": false,
+      "blockers": [
+        "missing_label:ci-pipeline-passed"
+      ],
+      "diff_stats": {
+        "files": 1,
+        "added_lines": 2,
+        "removed_lines": 0,
+        "surface_files": 0,
+        "substantive_files": 1,
+        "test_files": 0,
+        "test_added_lines": 0,
+        "docs_only": true,
+        "files_without_patch": 0
+      },
+      "linked_issues": [
+        68
+      ],
+      "agent_review": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "README 补两行说明 cannsim 为分发名、与 npusim 共用 CLI",
+        "issue_alignment": "针对性澄清 #68 中 cannsim 命名疑问",
+        "committer_action": "需先补齐 ci-pipeline-passed 门禁后即可合入",
+        "detail_points": [
+          "仅文档新增两行，说明 wheel 分发名与 CLI 入口别名，不改代码与构建",
+          "已具 cann-cla/yes，但缺 ci-pipeline-passed，需重跑 CI 再评审"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-24T13:38:54.546Z"
       }
     }
   }
