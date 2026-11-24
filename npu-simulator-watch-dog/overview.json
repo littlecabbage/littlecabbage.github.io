@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-24T09:38:46.428Z",
-  "runAtCst": "2026-11-24 17:38",
+  "runAt": "2026-11-24T10:38:47.042Z",
+  "runAtCst": "2026-11-24 18:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -550,7 +550,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 161.6,
+      "waitHours": 162.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -577,7 +577,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 41.6,
+      "waitHours": 42.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/70",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -603,7 +603,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 4.5,
+      "waitHours": 5.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/73",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -627,7 +627,7 @@
       "linkedIssues": [],
       "mergeable": true,
       "reason": "",
-      "waitHours": 4.4,
+      "waitHours": 5.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/75",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -651,7 +651,7 @@
       "linkedIssues": [],
       "mergeable": true,
       "reason": "",
-      "waitHours": 4.4,
+      "waitHours": 5.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/74",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -677,7 +677,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 161.6,
+      "waitHours": 162.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -702,7 +702,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 114.9,
+      "waitHours": 115.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -728,7 +728,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "CLA未签(cann-cla/no)、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 24.9,
+      "waitHours": 25.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/72",
       "agentReview": {
         "verdict": "NEEDS_WORK",
