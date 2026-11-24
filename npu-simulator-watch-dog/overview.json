@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-24T15:39:16.673Z",
-  "runAtCst": "2026-11-24 23:39",
+  "runAt": "2026-11-24T17:38:50.742Z",
+  "runAtCst": "2026-11-25 01:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -595,35 +595,35 @@
     {
       "number": "69",
       "title": "\"[Bug-Report|缺陷反馈]cannsim_helper目录不存在？如果是写错numsim_helper，建议全仓扫描",
-      "waitHours": 2.9,
+      "waitHours": 4.9,
       "overdue": false,
       "url": "https://gitcode.com/cann/npu-simulator/issues/69"
     },
     {
       "number": "68",
       "title": "\"[Documentation|文档反馈]cannsim是什么？",
-      "waitHours": 2.9,
+      "waitHours": 4.9,
       "overdue": false,
       "url": "https://gitcode.com/cann/npu-simulator/issues/68"
     },
     {
       "number": "70",
       "title": "\"[Documentation|文档反馈]文档描述中有一些中英文符号混用/缺少句号等常见问题，建议使用agent工具，扫描修复一遍",
-      "waitHours": 2.7,
+      "waitHours": 4.7,
       "overdue": false,
       "url": "https://gitcode.com/cann/npu-simulator/issues/70"
     },
     {
       "number": "71",
       "title": "[Requirement|需求/特性]: Add Speed of Light profiling to NPUSim",
-      "waitHours": 1.7,
+      "waitHours": 3.7,
       "overdue": false,
       "url": "https://gitcode.com/cann/npu-simulator/issues/71"
     },
     {
       "number": "72",
       "title": "[Requirement|需求/特性]: Add Speed of Light profiling to NPUSim",
-      "waitHours": 0.8,
+      "waitHours": 2.8,
       "overdue": false,
       "url": "https://gitcode.com/cann/npu-simulator/issues/72"
     }
@@ -637,7 +637,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 167.7,
+      "waitHours": 169.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -663,7 +663,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 47.7,
+      "waitHours": 49.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/70",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -682,12 +682,38 @@
       "triageVerdict": "KEEP"
     },
     {
+      "number": "73",
+      "title": "fix(ci): update REPOSITORY_NAME to npu-simulator and remove stale bandit path",
+      "linkedIssues": [
+        "61"
+      ],
+      "mergeable": true,
+      "reason": "",
+      "waitHours": 12.5,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/73",
+      "agentReview": {
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "修正 CI 脚本中仓库名的复制残留，并清理 bandit 的无效路径",
+        "issue_alignment": "已针对性修复 #61 配置残留问题",
+        "committer_action": "CLA（贡献者许可协议）与 CI 检查全绿且无冲突，建议直接合入",
+        "detail_points": [
+          "compile.sh 与 ut.sh 两处 REPOSITORY_NAME 由 ops-math 改为 npu-simulator，修复日志与断言的误标",
+          ".pre-commit-config.yaml 移除不存在的根目录 prof_demo/，使 bandit 扫描的路径与实际目录结构一致"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-24T15:39:04.165Z"
+      },
+      "triageVerdict": "KEEP"
+    },
+    {
       "number": "75",
       "title": "refactor: remove unused _bar helper and duplicate _parse definition",
       "linkedIssues": [],
       "mergeable": true,
       "reason": "",
-      "waitHours": 10.5,
+      "waitHours": 12.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/75",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -711,7 +737,7 @@
       "linkedIssues": [],
       "mergeable": true,
       "reason": "",
-      "waitHours": 10.5,
+      "waitHours": 12.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/74",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -730,32 +756,6 @@
       "triageVerdict": "KEEP"
     },
     {
-      "number": "73",
-      "title": "fix(ci): update REPOSITORY_NAME to npu-simulator and remove stale bandit path",
-      "linkedIssues": [
-        "61"
-      ],
-      "mergeable": true,
-      "reason": "",
-      "waitHours": 10.5,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/73",
-      "agentReview": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "修正 CI 脚本中仓库名的复制残留，并清理 bandit 的无效路径",
-        "issue_alignment": "已针对性修复 #61 配置残留问题",
-        "committer_action": "CLA（贡献者许可协议）与 CI 检查全绿且无冲突，建议直接合入",
-        "detail_points": [
-          "compile.sh 与 ut.sh 两处 REPOSITORY_NAME 由 ops-math 改为 npu-simulator，修复日志与断言的误标",
-          ".pre-commit-config.yaml 移除不存在的根目录 prof_demo/，使 bandit 扫描的路径与实际目录结构一致"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-24T15:39:04.165Z"
-      },
-      "triageVerdict": "KEEP"
-    },
-    {
       "number": "60",
       "title": "fix(report): collapse the fixpipe twin rows by identity, not by adjacency",
       "linkedIssues": [
@@ -763,7 +763,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 167.7,
+      "waitHours": 169.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -787,7 +787,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "CLA未签(cann-cla/no)、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 30.9,
+      "waitHours": 32.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/72",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -814,7 +814,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 3.9,
+      "waitHours": 5.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/76",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -840,7 +840,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 2.6,
+      "waitHours": 4.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/77",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -864,7 +864,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 0.7,
+      "waitHours": 2.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/78",
       "agentReview": {
         "verdict": "NEEDS_WORK",
