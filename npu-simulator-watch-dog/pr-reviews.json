@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-24T05:39:03.304Z",
-  "generatedAtCst": "2026-11-24 13:39",
+  "generatedAt": "2026-11-24T06:38:59.629Z",
+  "generatedAtCst": "2026-11-24 14:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 66,
@@ -10,8 +10,8 @@
     "prs_open": 10,
     "prs_merge_ready": 5,
     "prs_low_value": 0,
-    "cache_hits": 6,
-    "agent_calls": 4
+    "cache_hits": 7,
+    "agent_calls": 3
   },
   "reviews": {
     "58": {
@@ -355,7 +355,7 @@
       "number": 73,
       "title": "fix(ci): update REPOSITORY_NAME to npu-simulator and remove stale bandit path",
       "author": "qunzhongjia",
-      "fingerprint": "4db8d4693e33d948",
+      "fingerprint": "150756491fbf3bd6",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -385,23 +385,24 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修正CI脚本中仓库名残留，并清理bandit失效路径配置",
-        "issue_alignment": "精准修复 #61 仓库名复制残留缺陷",
-        "committer_action": "CLA与CI均通过且无冲突，建议直接合入",
+        "summary": "修正编译/UT脚本残留仓库名为npu-simulator，并清理bandit失效路径",
+        "issue_alignment": "已针对性修复 #61 仓库名复制残留缺陷",
+        "committer_action": "CLA 与 CI 已通过且无冲突，建议直接合入",
         "detail_points": [
-          "将 compile.sh 与 ut.sh 中误写的 REPOSITORY_NAME=\"ops-math\" 改为 npu-simulator，修正日志与断言中的仓库标识",
-          "从 .pre-commit-config.yaml 的 bandit 参数中移除不存在的 prof_demo/ 根路径，避免检查报错"
+          "compile.sh、ut.sh 中 REPOSITORY_NAME 由 ops-math 改为 npu-simulator，修复日志与断言误标仓库问题",
+          "移除 bandit 参数中不存在的根目录 prof_demo/，避免预提交检查因路径缺失报错",
+          "仅配置文件小改动、无逻辑风险，关联 Issue #61 描述一致，可安全合入"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T05:38:59.228Z"
+        "reviewed_at": "2026-11-24T06:38:59.622Z"
       }
     },
     "74": {
       "number": 74,
       "title": "fix(prof): fix AIV1 overlap label, SIMT f-string log, and analyzer guards",
       "author": "qunzhongjia",
-      "fingerprint": "9fab36aa00398629",
+      "fingerprint": "4e77d7f4ccc19cea",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -427,23 +428,23 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修正prof指标键名写反、日志f-string错误并加除零越界防护",
-        "issue_alignment": "无关联Issue，属作者自查缺陷修复",
-        "committer_action": "CLA已签、CI全绿且无冲突，建议直接合入",
+        "summary": "修复AIV1指标键名写反、SIMT日志f-string错误及多处除零越界防护",
+        "issue_alignment": "无关联Issue，属缺陷自修复",
+        "committer_action": "CLA通过且CI全绿、无冲突，建议直接合入",
         "detail_points": [
-          "summary_reporter与demo同步修正AIV1_SCALAR_vs_AIV1_VEC键名，修复指标重叠统计错误",
-          "arch_diagram与elf_object_reader增加除零、空列表防护，runner改遍历副本避免移除异常"
+          "summary_reporter与demo中AIV1_SCALAR重叠键由AIV0_VEC纠正为AIV1_VEC，消除复制粘贴错误",
+          "补充total_exec_time除零、ELF函数列表空判、整型枚举改用!=比较及handlers遍历拷贝，风险可控"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T05:38:55.732Z"
+        "reviewed_at": "2026-11-24T06:38:55.988Z"
       }
     },
     "75": {
       "number": 75,
       "title": "refactor: remove unused _bar helper and duplicate _parse definition",
       "author": "qunzhongjia",
-      "fingerprint": "93657a90d3eadeba",
+      "fingerprint": "6fd41b8f8f93d8a9",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -469,16 +470,17 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "删除 dashboard 未引用的 _bar 辅助函数与测试中重复的 _parse 定义",
-        "issue_alignment": "无关联 Issue，属无行为变更的代码清理",
-        "committer_action": "CLA 与 CI 均已通过且无冲突，建议直接合入",
+        "summary": "删除 dashboard.py 未使用的 _bar 和测试中重复的 _parse 定义",
+        "issue_alignment": "无关联 Issue，属代码清理",
+        "committer_action": "CLA 与 CI 均通过且无冲突，建议直接合入",
         "detail_points": [
-          "_bar 为嵌套局部函数且无任何调用点，删除不影响盒线渲染逻辑",
-          "test_config.py 中 _parse 重复定义且实现一致，去重后测试语义不变"
+          "删除的 _bar 在 dashboard.py 中确无引用，属安全死代码清理",
+          "测试文件重复定义 _parse，后者覆盖前者且内容一致，删除无行为影响",
+          "纯删除 14 行、无新增，回归风险极低"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T05:38:51.858Z"
+        "reviewed_at": "2026-11-24T06:38:52.436Z"
       }
     }
   }
