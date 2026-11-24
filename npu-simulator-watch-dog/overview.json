@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-24T07:39:00.375Z",
-  "runAtCst": "2026-11-24 15:39",
+  "runAt": "2026-11-24T08:39:02.815Z",
+  "runAtCst": "2026-11-24 16:39",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -58,6 +58,16 @@
     "simulator-bot"
   ],
   "botActions": [
+    {
+      "kind": "pr",
+      "number": "70",
+      "title": "docs(npu-simulator): fix spacing in examples",
+      "url": "https://gitcode.com/cann/npu-simulator/pulls/70",
+      "action": "pr_nudge",
+      "at": "2026-11-24T16:19:01+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
     {
       "kind": "pr",
       "number": "73",
@@ -480,7 +490,7 @@
     }
   ],
   "botActionsByType": {
-    "pr_nudge": 5,
+    "pr_nudge": 6,
     "issue_ack": 31,
     "comment": 6
   },
@@ -540,7 +550,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 159.7,
+      "waitHours": 160.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -567,21 +577,21 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 39.7,
+      "waitHours": 40.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/70",
       "agentReview": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修正两份中文最佳实践文档中英文空格，改善可读性",
-        "issue_alignment": "针对性修复 #66 列出的 5 处间距问题",
-        "committer_action": "CLA 与 CI 均已通过，属纯文档改动，建议直接合入",
+        "summary": "修复两份中文最佳实践文档中英文间距问题",
+        "issue_alignment": "已针对性修复 #66 列明的间距问题",
+        "committer_action": "CLA 与 CI 均通过、无冲突，建议直接合入",
         "detail_points": [
-          "仅改动 matmul_sync_buffer.md 与 mc2_communication_sim.md 各 2-3 行空白，未触示例命令与参数语义",
-          "Issue #66 称 26 项而正文仅列 5 项，作者已说明并在 Issue 留言，后续条目宜另起 MR 跟进"
+          "仅调整两文件 5 处中英文空格，未改示例命令与技术语义，风险极低",
+          "纯文档改动无需编译与 UT，git diff --check 通过；标题 26 项与正文 5 项差异已在 Issue 留言说明"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T07:39:00.234Z"
+        "reviewed_at": "2026-11-24T08:38:58.048Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -591,7 +601,7 @@
       "linkedIssues": [],
       "mergeable": true,
       "reason": "",
-      "waitHours": 2.5,
+      "waitHours": 3.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/74",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -617,7 +627,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 2.5,
+      "waitHours": 3.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/73",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -641,22 +651,21 @@
       "linkedIssues": [],
       "mergeable": true,
       "reason": "",
-      "waitHours": 2.4,
+      "waitHours": 3.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/75",
       "agentReview": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "删除 dashboard.py 未引用的 _bar 函数与测试中重复的 _parse 定义",
-        "issue_alignment": "无关联 Issue，属纯代码清理",
-        "committer_action": "CLA 与 CI 均通过、无冲突，建议直接合入",
+        "summary": "删除 dashboard 未引用的 _bar 辅助函数及测试中重复的 _parse 定义",
+        "issue_alignment": "无关联 Issue，纯代码清理重构",
+        "committer_action": "CLA 与 CI 均已通过且无冲突，建议直接合入",
         "detail_points": [
-          "_bar 在 dashboard.py 内确无调用点，删除消除死代码，风险可控",
-          "test_config.py 中 _parse 重复定义，仅保留首版，测试语义不变",
-          "纯删除 14 行且保留全部用例，建议合入后关注覆盖率波动"
+          "_bar 定义后无任何调用点，删除后不影响分隔行渲染逻辑，属安全清理",
+          "test_config.py 中 _parse 重复定义且实现完全一致，去重可避免维护歧义"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T07:38:49.662Z"
+        "reviewed_at": "2026-11-24T08:38:49.931Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -668,7 +677,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 159.7,
+      "waitHours": 160.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -693,22 +702,23 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 112.9,
+      "waitHours": 113.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 SOL 分析器与 --sol 选项，评估内核吞吐上限",
-        "issue_alignment": "无关联 Issue，新特性未先走方案讨论",
-        "committer_action": "需作者 squash 提交、补测试并关联 Issue 后再评审",
+        "summary": "新增 --sol 选项与 SpeedOfLight 分析器，输出三类硬件极限吞吐",
+        "issue_alignment": "无关联 Issue，新特性未先方案讨论",
+        "committer_action": "待作者 squash 提交并补充关联 Issue 与文档后，再推进合入",
         "detail_points": [
-          "新增 276 行 SOL 分析器和峰值常量表，需确认 V100 以外架构取值来源",
-          "report 契约版本放宽到 7 或 8，需评估向后兼容与迁移说明",
-          "本次无新增测试文件覆盖，建议补 SpeedOfLightData 生成用例"
+          "新增 276 行 speed_of_light_analyzer.py，按 Cube/Vector/Global Memory 三类计算 SOL 吞吐，逻辑完整",
+          "biprof_constants 补充 V100 峰值 MAC/cycle 与 IPC 常量，仅覆盖单架构，后续需扩展",
+          "report.py 将数据契约版本放宽至 7 或 8，属兼容性改动，需确认旧版本工具兼容",
+          "未新增任何测试用例，方案/文档章节空缺，建议补充 SOL 表校验测试"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-18T08:38:57.850Z"
+        "reviewed_at": "2026-11-24T08:39:02.646Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -718,21 +728,23 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "CLA未签(cann-cla/no)、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 22.9,
+      "waitHours": 23.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/72",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "CI 新增 md_check 静态检查复用 workflow 及流水线任务",
-        "issue_alignment": "无关联 Issue，属 CI 门禁能力增强",
-        "committer_action": "需先签署 CLA、压缩提交并跑通 CI 后再评审合入",
+        "summary": "CI 新增 StaticCheck md_check 复用 workflow 并接入 CodeCheck 阶段",
+        "issue_alignment": "无关联 Issue，按 PR 描述新增 CI 检查",
+        "committer_action": "请作者修正拼写、签 CLA 并 squash 后重跑 CI",
         "detail_points": [
-          "新增 workflow_call 复用模板并接入 CodeCheck 阶段，结构合理，但需确认 md_check 镜像版本来源",
-          "workflow 名称拼写为 staticheck_action，且启用 allow-unsafe-pr-checkout，需复核安全性"
+          "新增 staticcheck_action.yml 复用工作流并在主流水线注册 md_check 作业，方向合理",
+          "workflow 名称拼写 staticheck_action 需按评审意见改为 staticcheck",
+          "JOB_staticcheck_md_check 依赖 jobs.JOB_image.outputs.staticcheck，需确认该镜像变量已定义",
+          "存在 cann-cla/no 与 stat/needs-squash，需签 CLA、压缩提交并通过 CI"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-23T09:39:02.686Z"
+        "reviewed_at": "2026-11-24T08:38:54.287Z"
       },
       "triageVerdict": "KEEP"
     }
