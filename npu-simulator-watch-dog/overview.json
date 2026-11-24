@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-24T13:38:59.137Z",
-  "runAtCst": "2026-11-24 21:38",
+  "runAt": "2026-11-24T14:38:56.685Z",
+  "runAtCst": "2026-11-24 22:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -59,6 +59,16 @@
     "simulator-bot"
   ],
   "botActions": [
+    {
+      "kind": "issue",
+      "number": "71",
+      "title": "[Requirement|需求/特性]: Add Speed of Light profiling to NPUSim",
+      "url": "https://gitcode.com/cann/npu-simulator/issues/71",
+      "action": "issue_ack",
+      "at": "2026-11-24T22:18:44+08:00",
+      "author": "simulator-bot",
+      "from": "simulator-bot"
+    },
     {
       "kind": "issue",
       "number": "67",
@@ -531,26 +541,26 @@
     }
   ],
   "botActionsByType": {
-    "issue_ack": 35,
+    "issue_ack": 36,
     "pr_nudge": 6,
     "comment": 6
   },
   "closeLoop": {
-    "issuesTotal": 70,
-    "openTotal": 8,
+    "issuesTotal": 71,
+    "openTotal": 9,
     "month": {
-      "total": 51,
+      "total": 52,
       "closed": 43,
-      "rate": 84.3,
+      "rate": 82.7,
       "rateColor": "orange",
       "avgCloseHours": 57.3,
       "avgCloseDays": 2.4,
       "durSamples": 43
     },
     "year": {
-      "total": 70,
+      "total": 71,
       "closed": 62,
-      "rate": 88.6,
+      "rate": 87.3,
       "rateColor": "orange",
       "avgCloseHours": 104,
       "avgCloseDays": 4.3,
@@ -559,23 +569,23 @@
   },
   "response": {
     "openNoResponse": {
-      "total": 3,
+      "total": 4,
       "overdue": 0
     },
     "month": {
-      "total": 31,
-      "qualified": 20,
+      "total": 32,
+      "qualified": 21,
       "unqualified": 11,
-      "rate": 64.5,
+      "rate": 65.6,
       "rateColor": "orange",
       "avgFirstRespHours": 4.6,
       "respSamples": 18
     },
     "year": {
-      "total": 36,
-      "qualified": 21,
+      "total": 37,
+      "qualified": 22,
       "unqualified": 15,
-      "rate": 58.3,
+      "rate": 59.5,
       "rateColor": "orange",
       "avgFirstRespHours": 13.3,
       "respSamples": 21
@@ -585,23 +595,30 @@
     {
       "number": "69",
       "title": "\"[Bug-Report|缺陷反馈]cannsim_helper目录不存在？如果是写错numsim_helper，建议全仓扫描",
-      "waitHours": 0.9,
+      "waitHours": 1.9,
       "overdue": false,
       "url": "https://gitcode.com/cann/npu-simulator/issues/69"
     },
     {
       "number": "68",
       "title": "\"[Documentation|文档反馈]cannsim是什么？",
-      "waitHours": 0.9,
+      "waitHours": 1.9,
       "overdue": false,
       "url": "https://gitcode.com/cann/npu-simulator/issues/68"
     },
     {
       "number": "70",
       "title": "\"[Documentation|文档反馈]文档描述中有一些中英文符号混用/缺少句号等常见问题，建议使用agent工具，扫描修复一遍",
-      "waitHours": 0.7,
+      "waitHours": 1.7,
       "overdue": false,
       "url": "https://gitcode.com/cann/npu-simulator/issues/70"
+    },
+    {
+      "number": "71",
+      "title": "[Requirement|需求/特性]: Add Speed of Light profiling to NPUSim",
+      "waitHours": 0.7,
+      "overdue": false,
+      "url": "https://gitcode.com/cann/npu-simulator/issues/71"
     }
   ],
   "committerList": [
@@ -613,7 +630,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 165.6,
+      "waitHours": 166.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -640,7 +657,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 45.6,
+      "waitHours": 46.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/70",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -664,7 +681,7 @@
       "linkedIssues": [],
       "mergeable": true,
       "reason": "",
-      "waitHours": 8.5,
+      "waitHours": 9.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/74",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -690,7 +707,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 8.5,
+      "waitHours": 9.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/73",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -714,7 +731,7 @@
       "linkedIssues": [],
       "mergeable": true,
       "reason": "",
-      "waitHours": 8.4,
+      "waitHours": 9.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/75",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -740,7 +757,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 165.6,
+      "waitHours": 166.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -765,23 +782,21 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 118.9,
+      "waitHours": 119.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 SOL 性能分析特性，含 --sol 选项、分析器、建表与文档测试",
-        "issue_alignment": "无关联 Issue，新特性缺方案讨论",
-        "committer_action": "需先补关联 Issue 与 CI 通过，并 squash 为单提交",
+        "summary": "新增 SOL 分析：采集 DDR 数据并输出计算与内存吞吐上限",
+        "issue_alignment": "无关联 Issue，新特性未先走方案讨论",
+        "committer_action": "需作者 squash 提交并补跑 CI 通过后，再推进合入",
         "detail_points": [
-          "新增 281 行 SpeedOfLightAnalyzer 与 SpeedOfLightData 表，需确认峰值参数来源与校准依据",
-          "report.py 放开 contract_version 至 7/8，须保证旧库兼容与版本升级路径清晰",
-          "PR 模板 CLA/测试/评审勾选项均未勾选，且缺少 ci-pipeline-passed 标签",
-          "已有 2 个测试文件覆盖 --sol 与 ddr 采集依赖，但需补分析器输出数值校验用例"
+          "新增 SpeedOfLightAnalyzer 及 SpeedOfLightData 表，报告契约版本放宽到 7/8，需确认向后兼容",
+          "默认启用 sol 并新增 ddr 采集依赖，测试覆盖默认特性与显式 --feature-list 替换场景"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T13:38:58.981Z"
+        "reviewed_at": "2026-11-24T14:38:56.535Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -791,7 +806,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "CLA未签(cann-cla/no)、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 28.9,
+      "waitHours": 29.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/72",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -819,7 +834,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 1.9,
+      "waitHours": 2.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/76",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -845,7 +860,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 0.6,
+      "waitHours": 1.6,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/77",
       "agentReview": {
         "verdict": "NEEDS_WORK",

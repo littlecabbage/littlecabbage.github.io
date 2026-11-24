@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-24T13:38:58.988Z",
-  "generatedAtCst": "2026-11-24 21:38",
+  "generatedAt": "2026-11-24T14:38:56.546Z",
+  "generatedAtCst": "2026-11-24 22:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
-    "issues_total": 70,
-    "issues_keep": 69,
+    "issues_total": 71,
+    "issues_keep": 70,
     "issues_close": 0,
     "prs_open": 10,
     "prs_merge_ready": 5,
     "prs_low_value": 0,
-    "cache_hits": 8,
-    "agent_calls": 2
+    "cache_hits": 9,
+    "agent_calls": 1
   },
   "reviews": {
     "59": {
@@ -115,7 +115,7 @@
       "number": 64,
       "title": "Add Speed-of-light profiling feature",
       "author": "fomichevoleg5",
-      "fingerprint": "d89a57a94b429530",
+      "fingerprint": "9c088be1c36cc4ab",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -147,18 +147,16 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 SOL 性能分析特性，含 --sol 选项、分析器、建表与文档测试",
-        "issue_alignment": "无关联 Issue，新特性缺方案讨论",
-        "committer_action": "需先补关联 Issue 与 CI 通过，并 squash 为单提交",
+        "summary": "新增 SOL 分析：采集 DDR 数据并输出计算与内存吞吐上限",
+        "issue_alignment": "无关联 Issue，新特性未先走方案讨论",
+        "committer_action": "需作者 squash 提交并补跑 CI 通过后，再推进合入",
         "detail_points": [
-          "新增 281 行 SpeedOfLightAnalyzer 与 SpeedOfLightData 表，需确认峰值参数来源与校准依据",
-          "report.py 放开 contract_version 至 7/8，须保证旧库兼容与版本升级路径清晰",
-          "PR 模板 CLA/测试/评审勾选项均未勾选，且缺少 ci-pipeline-passed 标签",
-          "已有 2 个测试文件覆盖 --sol 与 ddr 采集依赖，但需补分析器输出数值校验用例"
+          "新增 SpeedOfLightAnalyzer 及 SpeedOfLightData 表，报告契约版本放宽到 7/8，需确认向后兼容",
+          "默认启用 sol 并新增 ddr 采集依赖，测试覆盖默认特性与显式 --feature-list 替换场景"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T13:38:58.981Z"
+        "reviewed_at": "2026-11-24T14:38:56.535Z"
       }
     },
     "70": {
