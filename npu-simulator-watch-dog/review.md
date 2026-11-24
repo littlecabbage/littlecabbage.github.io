@@ -3,7 +3,7 @@
 | 维度 | 详情 |
 |---|---|
 | **目标仓库** | [cann/npu-simulator](https://gitcode.com/cann/npu-simulator)（GitCode） |
-| **巡检时间** | 2026-11-24 14:38 (UTC+8) |
+| **巡检时间** | 2026-11-24 15:39 (UTC+8) |
 | **分析引擎** | `gitcode-issue-triage` 确定性守卫 + Pi Agent (`cannbot/deepseek-v4.1-flash`) |
 | **判定原则** | 宁漏勿错：强灌水信号 + 无安全否决 → 低价值候选；有任何实质代码/测试/关联 Issue → 保留并给出合路建议 |
 
@@ -12,61 +12,58 @@
 ## 一、执行摘要（供 on-call & committer 速览）
 
 - **Issue 巡检**：共扫描 **66** 条 Issue，判定 KEEP **65** / CLOSE 候选 **0** / 待人工复核 **1**。
-- **Open PR 总览（共 10 个）**：
-  - ✅ **可立即合入（5 个）**：#75、#74、#73、#59、#58
-  - ⚠️ **实质贡献但门禁阻塞（5 个）**：#72、#70、#67、#64、#60
+- **Open PR 总览（共 8 个）**：
+  - ✅ **可立即合入（5 个）**：#75、#74、#73、#70、#59
+  - ⚠️ **实质贡献但门禁阻塞（3 个）**：#72、#64、#60
   - 🧹 **低价值/表面改动候选（0 个）**：无
 
 ## 二、Open PR 逐条深度评审与行动清单
 
 | PR | AI 结论 | 合路门禁 | 关联 Issue | 改动规模 (实质文件) | AI 改动摘要与关联对齐 | committer 建议动作 |
 |---|---|---|---|---|---|---|
-| [#75](https://gitcode.com/cann/npu-simulator/pulls/75) | **🤖 值得合入** | ✅ 可合入 | — | +0/-14 (2/2 实质) | 删除 dashboard.py 未使用的 _bar 和测试中重复的 _parse 定义（无关联 Issue，属代码清理） | CLA 与 CI 均通过且无冲突，建议直接合入 |
-| [#74](https://gitcode.com/cann/npu-simulator/pulls/74) | **🤖 值得合入** | ✅ 可合入 | — | +17/-14 (6/7 实质) | 修复AIV1指标键名写反、SIMT日志f-string错误及多处除零越界防护（无关联Issue，属缺陷自修复） | CLA通过且CI全绿、无冲突，建议直接合入 |
-| [#73](https://gitcode.com/cann/npu-simulator/pulls/73) | **🤖 值得合入** | ✅ 可合入 | [#61](https://gitcode.com/cann/npu-simulator/issues/61) | +3/-3 (3/3 实质) | 修正编译/UT脚本残留仓库名为npu-simulator，并清理bandit失效路径（已针对性修复 #61 仓库名复制残留缺陷） | CLA 与 CI 已通过且无冲突，建议直接合入 |
+| [#75](https://gitcode.com/cann/npu-simulator/pulls/75) | **🤖 值得合入** | ✅ 可合入 | — | +0/-14 (2/2 实质) | 删除 dashboard.py 未引用的 _bar 函数与测试中重复的 _parse 定义（无关联 Issue，属纯代码清理） | CLA 与 CI 均通过、无冲突，建议直接合入 |
+| [#74](https://gitcode.com/cann/npu-simulator/pulls/74) | **🤖 值得合入** | ✅ 可合入 | — | +17/-14 (6/7 实质) | 修复AIV1指标键名写错、日志f-string及除零越界防护（无关联Issue，属自发现缺陷修复） | CLA与CI均通过、无冲突，建议直接合入 |
+| [#73](https://gitcode.com/cann/npu-simulator/pulls/73) | **🤖 值得合入** | ✅ 可合入 | [#61](https://gitcode.com/cann/npu-simulator/issues/61) | +3/-3 (3/3 实质) | 修正CI脚本仓库名残留并移除bandit失效路径（已针对性修复#61仓库名误标缺陷） | cann-cla与CI门禁全绿，建议直接合入 |
 | [#72](https://gitcode.com/cann/npu-simulator/pulls/72) | **🤖 阻塞待解** | ❌ CLA 未签 (cann-cla/no)；缺 cann-cla/yes；缺 ci-pipeline-passed；阻塞标签 stat/needs-squash | — | +80/-0 (2/2 实质) | CI 新增 md_check 静态检查复用 workflow 及流水线任务（无关联 Issue，属 CI 门禁能力增强） | 需先签署 CLA、压缩提交并跑通 CI 后再评审合入 |
-| [#70](https://gitcode.com/cann/npu-simulator/pulls/70) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | [#66](https://gitcode.com/cann/npu-simulator/issues/66) | +5/-5 (0/2 实质) | 修正两份最佳实践文档中英文间距，提升中文可读性（已针对性修复 #66 列明的 5 处间距问题） | 文档改动无害，需等待 ci-pipeline-passed 打标后合入 |
-| [#67](https://gitcode.com/cann/npu-simulator/pulls/67) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | [#63](https://gitcode.com/cann/npu-simulator/issues/63) | +67/-145 (11/11 实质) | 移除独立 roofline JSON 导出，可选处理失败时保留基础报告（已针对性修复 #63 报告导出失败缺陷） | 已有 approve，需先 squash 提交解除 needs-squash 阻塞再合入 |
+| [#70](https://gitcode.com/cann/npu-simulator/pulls/70) | **🤖 值得合入** | ✅ 可合入 | [#66](https://gitcode.com/cann/npu-simulator/issues/66) | +5/-5 (0/2 实质) | 修正两份中文最佳实践文档中英文空格，改善可读性（针对性修复 #66 列出的 5 处间距问题） | CLA 与 CI 均已通过，属纯文档改动，建议直接合入 |
 | [#64](https://gitcode.com/cann/npu-simulator/pulls/64) | **🤖 阻塞待解** | ❌ 阻塞标签 stat/needs-squash | — | +330/-2 (6/6 实质) | 新增 SOL 分析器与 --sol 选项，评估内核吞吐上限（无关联 Issue，新特性未先走方案讨论） | 需作者 squash 提交、补测试并关联 Issue 后再评审 |
 | [#60](https://gitcode.com/cann/npu-simulator/pulls/60) | **🤖 阻塞待解** | ❌ 缺 ci-pipeline-passed | [#56](https://gitcode.com/cann/npu-simulator/issues/56) | +11/-5 (1/1 实质) | 把 pending 单槽改为按 twin_key 索引的字典，折叠 fixpipe 孪生行，修复 UB 写重复计数（已针对性修复 #56 孪生行重复计数缺陷） | 暂缓合入：需补齐 ci-pipeline-passed，并回应评审的 key 收紧建议 |
 | [#59](https://gitcode.com/cann/npu-simulator/pulls/59) | **🤖 值得合入** | ✅ 可合入 | [#60](https://gitcode.com/cann/npu-simulator/issues/60) | +14/-16 (1/1 实质) | 用正则统一识别 python3.11 等版本化解释器并修正 Python 路径判定（针对性修复 #60 版本化解释器漏判） | CLA 与 CI 均通过且无冲突，建议直接合入 |
-| [#58](https://gitcode.com/cann/npu-simulator/pulls/58) | **🤖 值得合入** | ✅ 可合入 | [#59](https://gitcode.com/cann/npu-simulator/issues/59) | +63/-28 (2/2 实质) | 实质代码改动（2 文件 +63/-28），门禁全绿（已关联 #59） | CLA 与 CI 已通过，建议 committer 完成最终代码检视后合入 |
 
 ### PR #75：refactor: remove unused _bar helper and duplicate _parse definition
 
-- **作者**：`@qunzhongjia` · **停留自然时长**：1.4h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@qunzhongjia` · **停留自然时长**：2.4h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +0 行）
-- **关联 Issue 对齐**：无关联 Issue，属代码清理
-- **核心改动摘要**：删除 dashboard.py 未使用的 _bar 和测试中重复的 _parse 定义
-  - 删除的 _bar 在 dashboard.py 中确无引用，属安全死代码清理
-  - 测试文件重复定义 _parse，后者覆盖前者且内容一致，删除无行为影响
-  - 纯删除 14 行、无新增，回归风险极低
-- **committer 建议动作**：**CLA 与 CI 均通过且无冲突，建议直接合入**
+- **关联 Issue 对齐**：无关联 Issue，属纯代码清理
+- **核心改动摘要**：删除 dashboard.py 未引用的 _bar 函数与测试中重复的 _parse 定义
+  - _bar 在 dashboard.py 内确无调用点，删除消除死代码，风险可控
+  - test_config.py 中 _parse 重复定义，仅保留首版，测试语义不变
+  - 纯删除 14 行且保留全部用例，建议合入后关注覆盖率波动
+- **committer 建议动作**：**CLA 与 CI 均通过、无冲突，建议直接合入**
 
 ### PR #74：fix(prof): fix AIV1 overlap label, SIMT f-string log, and analyzer guards
 
-- **作者**：`@qunzhongjia` · **停留自然时长**：1.4h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@qunzhongjia` · **停留自然时长**：2.4h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：7 个文件（实质改动文件 6 个，表面改动文件 0 个，新增测试 +0 行）
-- **关联 Issue 对齐**：无关联Issue，属缺陷自修复
-- **核心改动摘要**：修复AIV1指标键名写反、SIMT日志f-string错误及多处除零越界防护
-  - summary_reporter与demo中AIV1_SCALAR重叠键由AIV0_VEC纠正为AIV1_VEC，消除复制粘贴错误
-  - 补充total_exec_time除零、ELF函数列表空判、整型枚举改用!=比较及handlers遍历拷贝，风险可控
-- **committer 建议动作**：**CLA通过且CI全绿、无冲突，建议直接合入**
+- **关联 Issue 对齐**：无关联Issue，属自发现缺陷修复
+- **核心改动摘要**：修复AIV1指标键名写错、日志f-string及除零越界防护
+  - 修正AIV1_SCALAR与AIV1_VEC重叠键被误写为AIV0_VEC的复制粘贴错误，同步两处reporter
+  - 补充除零/空列表越界防护、f-string花括号、枚举整型比较与handler遍历安全
+- **committer 建议动作**：**CLA与CI均通过、无冲突，建议直接合入**
 
 ### PR #73：fix(ci): update REPOSITORY_NAME to npu-simulator and remove stale bandit path
 
-- **作者**：`@qunzhongjia` · **停留自然时长**：1.5h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@qunzhongjia` · **停留自然时长**：2.5h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：3 个文件（实质改动文件 3 个，表面改动文件 0 个，新增测试 +0 行）
-- **关联 Issue 对齐**：已针对性修复 #61 仓库名复制残留缺陷
-- **核心改动摘要**：修正编译/UT脚本残留仓库名为npu-simulator，并清理bandit失效路径
-  - compile.sh、ut.sh 中 REPOSITORY_NAME 由 ops-math 改为 npu-simulator，修复日志与断言误标仓库问题
-  - 移除 bandit 参数中不存在的根目录 prof_demo/，避免预提交检查因路径缺失报错
-  - 仅配置文件小改动、无逻辑风险，关联 Issue #61 描述一致，可安全合入
-- **committer 建议动作**：**CLA 与 CI 已通过且无冲突，建议直接合入**
+- **关联 Issue 对齐**：已针对性修复#61仓库名误标缺陷
+- **核心改动摘要**：修正CI脚本仓库名残留并移除bandit失效路径
+  - compile.sh 与 ut.sh 中 REPOSITORY_NAME 由 ops-math 改为 npu-simulator，修复日志与断言误标
+  - 移除 .pre-commit-config.yaml 中不存在的 prof_demo/ 路径，避免 bandit 因路径失效报错
+- **committer 建议动作**：**cann-cla与CI门禁全绿，建议直接合入**
 
 ### PR #72：CI 添加StaticCheck_md_check检查项
 
-- **作者**：`@zhouchongshun` · **停留自然时长**：21.9h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@zhouchongshun` · **停留自然时长**：22.9h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，属 CI 门禁能力增强
 - **核心改动摘要**：CI 新增 md_check 静态检查复用 workflow 及流水线任务
@@ -76,29 +73,17 @@
 
 ### PR #70：docs(npu-simulator): fix spacing in examples
 
-- **作者**：`@gcw_WJCkAUuk` · **停留自然时长**：57.4h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@gcw_WJCkAUuk` · **停留自然时长**：58.4h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 0 个，表面改动文件 0 个，新增测试 +0 行）
-- **关联 Issue 对齐**：已针对性修复 #66 列明的 5 处间距问题
-- **核心改动摘要**：修正两份最佳实践文档中英文间距，提升中文可读性
-  - 纯文档改动，仅调中英文空格，未改示例命令、参数或技术语义，无回归风险
-  - Issue 标题称 26 项但正文仅列 5 项，本 MR 已覆盖全部可核验条目，剩余项需后续 Issue 补充
-- **committer 建议动作**：**文档改动无害，需等待 ci-pipeline-passed 打标后合入**
-
-### PR #67：fix(prof): preserve base reports when optional processing fails
-
-- **作者**：`@churkinaleksandr` · **停留自然时长**：112.2h · **AI 判定**：**🤖 阻塞待解**
-- **代码规模**：11 个文件（实质改动文件 11 个，表面改动文件 0 个，新增测试 +15 行）
-- **关联 Issue 对齐**：已针对性修复 #63 报告导出失败缺陷
-- **核心改动摘要**：移除独立 roofline JSON 导出，可选处理失败时保留基础报告
-  - hotspots_processor 用临时目录生成 Critical Path，失败仅告警不中断基础报告
-  - device ELF 解码失败改为告警并继续处理该 launch，避免整体流程中断
-  - 删除 roofline_reporter.py 及独立 JSON 导出，改由 SQLite 表与 CSV 承载结果
-  - 同步更新 command_line_features 等文档，并补充基础报告连续性单测
-- **committer 建议动作**：**已有 approve，需先 squash 提交解除 needs-squash 阻塞再合入**
+- **关联 Issue 对齐**：针对性修复 #66 列出的 5 处间距问题
+- **核心改动摘要**：修正两份中文最佳实践文档中英文空格，改善可读性
+  - 仅改动 matmul_sync_buffer.md 与 mc2_communication_sim.md 各 2-3 行空白，未触示例命令与参数语义
+  - Issue #66 称 26 项而正文仅列 5 项，作者已说明并在 Issue 留言，后续条目宜另起 MR 跟进
+- **committer 建议动作**：**CLA 与 CI 均已通过，属纯文档改动，建议直接合入**
 
 ### PR #64：Add Speed-of-light profiling feature
 
-- **作者**：`@fomichevoleg5` · **停留自然时长**：159.9h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@fomichevoleg5` · **停留自然时长**：160.9h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：6 个文件（实质改动文件 6 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，新特性未先走方案讨论
 - **核心改动摘要**：新增 SOL 分析器与 --sol 选项，评估内核吞吐上限
@@ -109,7 +94,7 @@
 
 ### PR #60：fix(report): collapse the fixpipe twin rows by identity, not by adjacency
 
-- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：207.3h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：208.3h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #56 孪生行重复计数缺陷
 - **核心改动摘要**：把 pending 单槽改为按 twin_key 索引的字典，折叠 fixpipe 孪生行，修复 UB 写重复计数
@@ -120,7 +105,7 @@
 
 ### PR #59：fix(record): recognize versioned Python executables
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：233.7h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：234.7h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性修复 #60 版本化解释器漏判
 - **核心改动摘要**：用正则统一识别 python3.11 等版本化解释器并修正 Python 路径判定
@@ -128,13 +113,4 @@
   - 同步收敛解释器与 Python 前缀集合，避免两处判定逻辑漂移
   - 作者已同步 master、解决冲突并完成 CPU 验证（11 项测试通过）；建议后续补单测固化
 - **committer 建议动作**：**CLA 与 CI 均通过且无冲突，建议直接合入**
-
-### PR #58：fix(report): handle detector output write failures
-
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：233.7h · **AI 判定**：**🤖 值得合入**
-- **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +39 行）
-- **关联 Issue 对齐**：已关联 #59
-- **核心改动摘要**：实质代码改动（2 文件 +63/-28），门禁全绿
-  - 守卫判定：substantive_diff: 2 file(s); adds_tests; linked_issue_legit: #59; external_participant: ZhouBX
-- **committer 建议动作**：**CLA 与 CI 已通过，建议 committer 完成最终代码检视后合入**
 

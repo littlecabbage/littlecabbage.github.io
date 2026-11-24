@@ -1,67 +1,19 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-24T06:38:59.629Z",
-  "generatedAtCst": "2026-11-24 14:38",
+  "generatedAt": "2026-11-24T07:39:00.238Z",
+  "generatedAtCst": "2026-11-24 15:39",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 66,
     "issues_keep": 65,
     "issues_close": 0,
-    "prs_open": 10,
+    "prs_open": 8,
     "prs_merge_ready": 5,
     "prs_low_value": 0,
-    "cache_hits": 7,
-    "agent_calls": 3
+    "cache_hits": 4,
+    "agent_calls": 4
   },
   "reviews": {
-    "58": {
-      "number": 58,
-      "title": "fix(report): handle detector output write failures",
-      "author": "liangjinxuan-2026",
-      "fingerprint": "c4d91be24f7a6bd4",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "substantive_diff: 2 file(s)",
-        "adds_tests",
-        "linked_issue_legit: #59",
-        "external_participant: ZhouBX"
-      ],
-      "signals": [
-        "pr_substantive_diff",
-        "pr_has_tests",
-        "linked_issues:59"
-      ],
-      "merge_ready": true,
-      "blockers": [],
-      "diff_stats": {
-        "files": 2,
-        "added_lines": 63,
-        "removed_lines": 28,
-        "surface_files": 0,
-        "substantive_files": 2,
-        "test_files": 1,
-        "test_added_lines": 39,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [
-        59
-      ],
-      "agent_review": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "实质代码改动（2 文件 +63/-28），门禁全绿",
-        "issue_alignment": "已关联 #59",
-        "committer_action": "CLA 与 CI 已通过，建议 committer 完成最终代码检视后合入",
-        "detail_points": [
-          "守卫判定：substantive_diff: 2 file(s); adds_tests; linked_issue_legit: #59; external_participant: ZhouBX"
-        ],
-        "source": "deterministic-fallback",
-        "model": "cannbot/deepseek-v4.1-flash",
-        "reviewed_at": "2026-11-20T17:38:58.994Z"
-      }
-    },
     "59": {
       "number": 59,
       "title": "fix(record): recognize versioned Python executables",
@@ -204,64 +156,11 @@
         "reviewed_at": "2026-11-18T08:38:57.850Z"
       }
     },
-    "67": {
-      "number": 67,
-      "title": "fix(prof): preserve base reports when optional processing fails",
-      "author": "churkinaleksandr",
-      "fingerprint": "556250db527fb343",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "substantive_diff: 11 file(s)",
-        "adds_tests",
-        "linked_issue_legit: #63",
-        "external_participant: liangbinglong"
-      ],
-      "signals": [
-        "pr_substantive_diff",
-        "pr_has_tests",
-        "linked_issues:63"
-      ],
-      "merge_ready": false,
-      "blockers": [
-        "blocking_label:stat/needs-squash"
-      ],
-      "diff_stats": {
-        "files": 11,
-        "added_lines": 67,
-        "removed_lines": 145,
-        "surface_files": 0,
-        "substantive_files": 11,
-        "test_files": 1,
-        "test_added_lines": 15,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [
-        63
-      ],
-      "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "移除独立 roofline JSON 导出，可选处理失败时保留基础报告",
-        "issue_alignment": "已针对性修复 #63 报告导出失败缺陷",
-        "committer_action": "已有 approve，需先 squash 提交解除 needs-squash 阻塞再合入",
-        "detail_points": [
-          "hotspots_processor 用临时目录生成 Critical Path，失败仅告警不中断基础报告",
-          "device ELF 解码失败改为告警并继续处理该 launch，避免整体流程中断",
-          "删除 roofline_reporter.py 及独立 JSON 导出，改由 SQLite 表与 CSV 承载结果",
-          "同步更新 command_line_features 等文档，并补充基础报告连续性单测"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-24T05:39:03.296Z"
-      }
-    },
     "70": {
       "number": 70,
       "title": "docs(npu-simulator): fix spacing in examples",
       "author": "gcw_WJCkAUuk",
-      "fingerprint": "4a256445c000c9a5",
+      "fingerprint": "526ecb75e5a75be9",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -271,10 +170,8 @@
         "no_substantive_change",
         "linked_issues:66"
       ],
-      "merge_ready": false,
-      "blockers": [
-        "missing_label:ci-pipeline-passed"
-      ],
+      "merge_ready": true,
+      "blockers": [],
       "diff_stats": {
         "files": 2,
         "added_lines": 5,
@@ -290,18 +187,18 @@
         66
       ],
       "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "修正两份最佳实践文档中英文间距，提升中文可读性",
-        "issue_alignment": "已针对性修复 #66 列明的 5 处间距问题",
-        "committer_action": "文档改动无害，需等待 ci-pipeline-passed 打标后合入",
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "修正两份中文最佳实践文档中英文空格，改善可读性",
+        "issue_alignment": "针对性修复 #66 列出的 5 处间距问题",
+        "committer_action": "CLA 与 CI 均已通过，属纯文档改动，建议直接合入",
         "detail_points": [
-          "纯文档改动，仅调中英文空格，未改示例命令、参数或技术语义，无回归风险",
-          "Issue 标题称 26 项但正文仅列 5 项，本 MR 已覆盖全部可核验条目，剩余项需后续 Issue 补充"
+          "仅改动 matmul_sync_buffer.md 与 mc2_communication_sim.md 各 2-3 行空白，未触示例命令与参数语义",
+          "Issue #66 称 26 项而正文仅列 5 项，作者已说明并在 Issue 留言，后续条目宜另起 MR 跟进"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-21T21:38:57.320Z"
+        "reviewed_at": "2026-11-24T07:39:00.234Z"
       }
     },
     "72": {
@@ -355,12 +252,13 @@
       "number": 73,
       "title": "fix(ci): update REPOSITORY_NAME to npu-simulator and remove stale bandit path",
       "author": "qunzhongjia",
-      "fingerprint": "150756491fbf3bd6",
+      "fingerprint": "fb4442ac185f12c2",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
         "substantive_diff: 3 file(s)",
-        "linked_issue_legit: #61"
+        "linked_issue_legit: #61",
+        "external_participant: zengzihui"
       ],
       "signals": [
         "pr_substantive_diff",
@@ -385,28 +283,28 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修正编译/UT脚本残留仓库名为npu-simulator，并清理bandit失效路径",
-        "issue_alignment": "已针对性修复 #61 仓库名复制残留缺陷",
-        "committer_action": "CLA 与 CI 已通过且无冲突，建议直接合入",
+        "summary": "修正CI脚本仓库名残留并移除bandit失效路径",
+        "issue_alignment": "已针对性修复#61仓库名误标缺陷",
+        "committer_action": "cann-cla与CI门禁全绿，建议直接合入",
         "detail_points": [
-          "compile.sh、ut.sh 中 REPOSITORY_NAME 由 ops-math 改为 npu-simulator，修复日志与断言误标仓库问题",
-          "移除 bandit 参数中不存在的根目录 prof_demo/，避免预提交检查因路径缺失报错",
-          "仅配置文件小改动、无逻辑风险，关联 Issue #61 描述一致，可安全合入"
+          "compile.sh 与 ut.sh 中 REPOSITORY_NAME 由 ops-math 改为 npu-simulator，修复日志与断言误标",
+          "移除 .pre-commit-config.yaml 中不存在的 prof_demo/ 路径，避免 bandit 因路径失效报错"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T06:38:59.622Z"
+        "reviewed_at": "2026-11-24T07:38:57.278Z"
       }
     },
     "74": {
       "number": 74,
       "title": "fix(prof): fix AIV1 overlap label, SIMT f-string log, and analyzer guards",
       "author": "qunzhongjia",
-      "fingerprint": "4e77d7f4ccc19cea",
+      "fingerprint": "341522201525aef0",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
-        "substantive_diff: 6 file(s)"
+        "substantive_diff: 6 file(s)",
+        "external_participant: zengzihui"
       ],
       "signals": [
         "pr_substantive_diff"
@@ -428,27 +326,28 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修复AIV1指标键名写反、SIMT日志f-string错误及多处除零越界防护",
-        "issue_alignment": "无关联Issue，属缺陷自修复",
-        "committer_action": "CLA通过且CI全绿、无冲突，建议直接合入",
+        "summary": "修复AIV1指标键名写错、日志f-string及除零越界防护",
+        "issue_alignment": "无关联Issue，属自发现缺陷修复",
+        "committer_action": "CLA与CI均通过、无冲突，建议直接合入",
         "detail_points": [
-          "summary_reporter与demo中AIV1_SCALAR重叠键由AIV0_VEC纠正为AIV1_VEC，消除复制粘贴错误",
-          "补充total_exec_time除零、ELF函数列表空判、整型枚举改用!=比较及handlers遍历拷贝，风险可控"
+          "修正AIV1_SCALAR与AIV1_VEC重叠键被误写为AIV0_VEC的复制粘贴错误，同步两处reporter",
+          "补充除零/空列表越界防护、f-string花括号、枚举整型比较与handler遍历安全"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T06:38:55.988Z"
+        "reviewed_at": "2026-11-24T07:38:53.852Z"
       }
     },
     "75": {
       "number": 75,
       "title": "refactor: remove unused _bar helper and duplicate _parse definition",
       "author": "qunzhongjia",
-      "fingerprint": "6fd41b8f8f93d8a9",
+      "fingerprint": "3a403d1418255baf",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
-        "substantive_diff: 2 file(s)"
+        "substantive_diff: 2 file(s)",
+        "external_participant: zengzihui"
       ],
       "signals": [
         "pr_substantive_diff"
@@ -470,17 +369,17 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "删除 dashboard.py 未使用的 _bar 和测试中重复的 _parse 定义",
-        "issue_alignment": "无关联 Issue，属代码清理",
-        "committer_action": "CLA 与 CI 均通过且无冲突，建议直接合入",
+        "summary": "删除 dashboard.py 未引用的 _bar 函数与测试中重复的 _parse 定义",
+        "issue_alignment": "无关联 Issue，属纯代码清理",
+        "committer_action": "CLA 与 CI 均通过、无冲突，建议直接合入",
         "detail_points": [
-          "删除的 _bar 在 dashboard.py 中确无引用，属安全死代码清理",
-          "测试文件重复定义 _parse，后者覆盖前者且内容一致，删除无行为影响",
-          "纯删除 14 行、无新增，回归风险极低"
+          "_bar 在 dashboard.py 内确无调用点，删除消除死代码，风险可控",
+          "test_config.py 中 _parse 重复定义，仅保留首版，测试语义不变",
+          "纯删除 14 行且保留全部用例，建议合入后关注覆盖率波动"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T06:38:52.436Z"
+        "reviewed_at": "2026-11-24T07:38:49.662Z"
       }
     }
   }

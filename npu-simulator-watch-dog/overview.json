@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "runAt": "2026-11-24T06:38:59.745Z",
-  "runAtCst": "2026-11-24 14:38",
+  "runAt": "2026-11-24T07:39:00.375Z",
+  "runAtCst": "2026-11-24 15:39",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -125,16 +125,6 @@
       "url": "https://gitcode.com/cann/npu-simulator/issues/64",
       "action": "issue_ack",
       "at": "2026-11-20T18:18:10+08:00",
-      "author": "simulator-bot",
-      "from": "simulator-bot"
-    },
-    {
-      "kind": "pr",
-      "number": "67",
-      "title": "fix(prof): preserve base reports when optional processing fails",
-      "url": "https://gitcode.com/cann/npu-simulator/pulls/67",
-      "action": "pr_nudge",
-      "at": "2026-11-20T00:18:38+08:00",
       "author": "simulator-bot",
       "from": "simulator-bot"
     },
@@ -490,30 +480,30 @@
     }
   ],
   "botActionsByType": {
-    "pr_nudge": 6,
+    "pr_nudge": 5,
     "issue_ack": 31,
     "comment": 6
   },
   "closeLoop": {
     "issuesTotal": 66,
-    "openTotal": 6,
+    "openTotal": 4,
     "month": {
       "total": 47,
-      "closed": 41,
-      "rate": 87.2,
-      "rateColor": "orange",
-      "avgCloseHours": 55.8,
-      "avgCloseDays": 2.3,
-      "durSamples": 41
+      "closed": 43,
+      "rate": 91.5,
+      "rateColor": "blue",
+      "avgCloseHours": 57.3,
+      "avgCloseDays": 2.4,
+      "durSamples": 43
     },
     "year": {
       "total": 66,
-      "closed": 60,
-      "rate": 90.9,
+      "closed": 62,
+      "rate": 93.9,
       "rateColor": "blue",
-      "avgCloseHours": 104.6,
-      "avgCloseDays": 4.4,
-      "durSamples": 60
+      "avgCloseHours": 104,
+      "avgCloseDays": 4.3,
+      "durSamples": 62
     }
   },
   "response": {
@@ -550,7 +540,7 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 158.6,
+      "waitHours": 159.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/59",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -570,27 +560,28 @@
       "triageVerdict": "KEEP"
     },
     {
-      "number": "58",
-      "title": "fix(report): handle detector output write failures",
+      "number": "70",
+      "title": "docs(npu-simulator): fix spacing in examples",
       "linkedIssues": [
-        "59"
+        "66"
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 158.6,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/58",
+      "waitHours": 39.7,
+      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/70",
       "agentReview": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "实质代码改动（2 文件 +63/-28），门禁全绿",
-        "issue_alignment": "已关联 #59",
-        "committer_action": "CLA 与 CI 已通过，建议 committer 完成最终代码检视后合入",
+        "summary": "修正两份中文最佳实践文档中英文空格，改善可读性",
+        "issue_alignment": "针对性修复 #66 列出的 5 处间距问题",
+        "committer_action": "CLA 与 CI 均已通过，属纯文档改动，建议直接合入",
         "detail_points": [
-          "守卫判定：substantive_diff: 2 file(s); adds_tests; linked_issue_legit: #59; external_participant: ZhouBX"
+          "仅改动 matmul_sync_buffer.md 与 mc2_communication_sim.md 各 2-3 行空白，未触示例命令与参数语义",
+          "Issue #66 称 26 项而正文仅列 5 项，作者已说明并在 Issue 留言，后续条目宜另起 MR 跟进"
         ],
-        "source": "deterministic-fallback",
         "model": "cannbot/deepseek-v4.1-flash",
-        "reviewed_at": "2026-11-20T17:38:58.994Z"
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-24T07:39:00.234Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -600,21 +591,21 @@
       "linkedIssues": [],
       "mergeable": true,
       "reason": "",
-      "waitHours": 1.5,
+      "waitHours": 2.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/74",
       "agentReview": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修复AIV1指标键名写反、SIMT日志f-string错误及多处除零越界防护",
-        "issue_alignment": "无关联Issue，属缺陷自修复",
-        "committer_action": "CLA通过且CI全绿、无冲突，建议直接合入",
+        "summary": "修复AIV1指标键名写错、日志f-string及除零越界防护",
+        "issue_alignment": "无关联Issue，属自发现缺陷修复",
+        "committer_action": "CLA与CI均通过、无冲突，建议直接合入",
         "detail_points": [
-          "summary_reporter与demo中AIV1_SCALAR重叠键由AIV0_VEC纠正为AIV1_VEC，消除复制粘贴错误",
-          "补充total_exec_time除零、ELF函数列表空判、整型枚举改用!=比较及handlers遍历拷贝，风险可控"
+          "修正AIV1_SCALAR与AIV1_VEC重叠键被误写为AIV0_VEC的复制粘贴错误，同步两处reporter",
+          "补充除零/空列表越界防护、f-string花括号、枚举整型比较与handler遍历安全"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T06:38:55.988Z"
+        "reviewed_at": "2026-11-24T07:38:53.852Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -626,22 +617,21 @@
       ],
       "mergeable": true,
       "reason": "",
-      "waitHours": 1.5,
+      "waitHours": 2.5,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/73",
       "agentReview": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修正编译/UT脚本残留仓库名为npu-simulator，并清理bandit失效路径",
-        "issue_alignment": "已针对性修复 #61 仓库名复制残留缺陷",
-        "committer_action": "CLA 与 CI 已通过且无冲突，建议直接合入",
+        "summary": "修正CI脚本仓库名残留并移除bandit失效路径",
+        "issue_alignment": "已针对性修复#61仓库名误标缺陷",
+        "committer_action": "cann-cla与CI门禁全绿，建议直接合入",
         "detail_points": [
-          "compile.sh、ut.sh 中 REPOSITORY_NAME 由 ops-math 改为 npu-simulator，修复日志与断言误标仓库问题",
-          "移除 bandit 参数中不存在的根目录 prof_demo/，避免预提交检查因路径缺失报错",
-          "仅配置文件小改动、无逻辑风险，关联 Issue #61 描述一致，可安全合入"
+          "compile.sh 与 ut.sh 中 REPOSITORY_NAME 由 ops-math 改为 npu-simulator，修复日志与断言误标",
+          "移除 .pre-commit-config.yaml 中不存在的 prof_demo/ 路径，避免 bandit 因路径失效报错"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T06:38:59.622Z"
+        "reviewed_at": "2026-11-24T07:38:57.278Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -651,22 +641,22 @@
       "linkedIssues": [],
       "mergeable": true,
       "reason": "",
-      "waitHours": 1.4,
+      "waitHours": 2.4,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/75",
       "agentReview": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "删除 dashboard.py 未使用的 _bar 和测试中重复的 _parse 定义",
-        "issue_alignment": "无关联 Issue，属代码清理",
-        "committer_action": "CLA 与 CI 均通过且无冲突，建议直接合入",
+        "summary": "删除 dashboard.py 未引用的 _bar 函数与测试中重复的 _parse 定义",
+        "issue_alignment": "无关联 Issue，属纯代码清理",
+        "committer_action": "CLA 与 CI 均通过、无冲突，建议直接合入",
         "detail_points": [
-          "删除的 _bar 在 dashboard.py 中确无引用，属安全死代码清理",
-          "测试文件重复定义 _parse，后者覆盖前者且内容一致，删除无行为影响",
-          "纯删除 14 行、无新增，回归风险极低"
+          "_bar 在 dashboard.py 内确无调用点，删除消除死代码，风险可控",
+          "test_config.py 中 _parse 重复定义，仅保留首版，测试语义不变",
+          "纯删除 14 行且保留全部用例，建议合入后关注覆盖率波动"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T06:38:52.436Z"
+        "reviewed_at": "2026-11-24T07:38:49.662Z"
       },
       "triageVerdict": "KEEP"
     },
@@ -678,7 +668,7 @@
       ],
       "mergeable": false,
       "reason": "缺 ci-pipeline-passed",
-      "waitHours": 158.6,
+      "waitHours": 159.7,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/60",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -703,7 +693,7 @@
       "linkedIssues": [],
       "mergeable": false,
       "reason": "需squash(stat/needs-squash)",
-      "waitHours": 111.9,
+      "waitHours": 112.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/64",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -723,66 +713,12 @@
       "triageVerdict": "KEEP"
     },
     {
-      "number": "67",
-      "title": "fix(prof): preserve base reports when optional processing fails",
-      "linkedIssues": [
-        "63"
-      ],
-      "mergeable": false,
-      "reason": "需squash(stat/needs-squash)",
-      "waitHours": 64.2,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/67",
-      "agentReview": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "移除独立 roofline JSON 导出，可选处理失败时保留基础报告",
-        "issue_alignment": "已针对性修复 #63 报告导出失败缺陷",
-        "committer_action": "已有 approve，需先 squash 提交解除 needs-squash 阻塞再合入",
-        "detail_points": [
-          "hotspots_processor 用临时目录生成 Critical Path，失败仅告警不中断基础报告",
-          "device ELF 解码失败改为告警并继续处理该 launch，避免整体流程中断",
-          "删除 roofline_reporter.py 及独立 JSON 导出，改由 SQLite 表与 CSV 承载结果",
-          "同步更新 command_line_features 等文档，并补充基础报告连续性单测"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-24T05:39:03.296Z"
-      },
-      "triageVerdict": "KEEP"
-    },
-    {
-      "number": "70",
-      "title": "docs(npu-simulator): fix spacing in examples",
-      "linkedIssues": [
-        "66"
-      ],
-      "mergeable": false,
-      "reason": "缺 ci-pipeline-passed",
-      "waitHours": 38.6,
-      "url": "https://gitcode.com/cann/npu-simulator/merge_requests/70",
-      "agentReview": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "修正两份最佳实践文档中英文间距，提升中文可读性",
-        "issue_alignment": "已针对性修复 #66 列明的 5 处间距问题",
-        "committer_action": "文档改动无害，需等待 ci-pipeline-passed 打标后合入",
-        "detail_points": [
-          "纯文档改动，仅调中英文空格，未改示例命令、参数或技术语义，无回归风险",
-          "Issue 标题称 26 项但正文仅列 5 项，本 MR 已覆盖全部可核验条目，剩余项需后续 Issue 补充"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-21T21:38:57.320Z"
-      },
-      "triageVerdict": "KEEP"
-    },
-    {
       "number": "72",
       "title": "CI 添加StaticCheck_md_check检查项",
       "linkedIssues": [],
       "mergeable": false,
       "reason": "CLA未签(cann-cla/no)、缺 ci-pipeline-passed、需squash(stat/needs-squash)",
-      "waitHours": 21.9,
+      "waitHours": 22.9,
       "url": "https://gitcode.com/cann/npu-simulator/merge_requests/72",
       "agentReview": {
         "verdict": "NEEDS_WORK",
