@@ -1,27 +1,28 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-24T01:38:56.793Z",
-  "generatedAtCst": "2026-11-24 09:38",
+  "generatedAt": "2026-11-24T02:38:59.069Z",
+  "generatedAtCst": "2026-11-24 10:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 66,
     "issues_keep": 65,
     "issues_close": 0,
-    "prs_open": 14,
-    "prs_merge_ready": 7,
+    "prs_open": 11,
+    "prs_merge_ready": 4,
     "prs_low_value": 0,
-    "cache_hits": 14,
-    "agent_calls": 0
+    "cache_hits": 9,
+    "agent_calls": 2
   },
   "reviews": {
     "53": {
       "number": 53,
       "title": "fix(report): order the busy-time sweep by interval start",
       "author": "gcw_EkTYFH3T",
-      "fingerprint": "82577b46ce08a84d",
+      "fingerprint": "9b06ce37d2289110",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
+        "approved_label",
         "substantive_diff: 1 file(s)",
         "linked_issue_legit: #53",
         "external_participant: churkinaleksandr"
@@ -51,17 +52,18 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "修正吞吐统计区间并集算法，扫描前按起点排序，避免占用时间多算",
-        "issue_alignment": "已针对性修复 #53 带宽低估缺陷",
-        "committer_action": "已获 lgtm，但缺 ci-pipeline-passed，需重跑 CI 全绿后合入",
+        "summary": "扫描前按 TickStart 排序，修复区间并集重复计算导致带宽偏低",
+        "issue_alignment": "已针对性修复 #53 区间并集多算占用时间缺陷",
+        "committer_action": "已获 approved 与 lgtm，需补齐 ci-pipeline-passed 标签后合入",
         "detail_points": [
-          "在 calc_throughput_stats 入参处补按 TickStart 排序，固化区间并集前提，避免重复结算已关闭窗口",
-          "作者称同文件 get_fixp_throughput_ub 内联副本亦同步修正，需确认第二处排序已落到 diff 中",
-          "评审者用 [0,10)[10,20)[2,50) 复现：占用时间 58→50，其余 37 项吞吐指标无回归"
+          "扫描前提固化在被调用方，避免依赖 SQL 的 ORDER BY TickEnd 排序",
+          "两处重复算法（第83行与第245行）均已修正，改动一致性良好",
+          "人工验证重叠区间由 58 tick 降为 50 tick，37 项带宽指标无回归",
+          "缺少 ci-pipeline-passed 门禁标签，需重跑 CI 后再合入"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-20T11:38:57.299Z"
+        "reviewed_at": "2026-11-24T02:38:59.066Z"
       }
     },
     "54": {
@@ -110,52 +112,6 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-23T08:39:08.641Z"
-      }
-    },
-    "55": {
-      "number": 55,
-      "title": "fix(record): preserve shell command strings before launch",
-      "author": "liangjinxuan-2026",
-      "fingerprint": "8f4645cad659a2be",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "substantive_diff: 2 file(s)",
-        "linked_issue_legit: #58"
-      ],
-      "signals": [
-        "pr_substantive_diff",
-        "linked_issues:58"
-      ],
-      "merge_ready": true,
-      "blockers": [],
-      "diff_stats": {
-        "files": 2,
-        "added_lines": 2,
-        "removed_lines": 2,
-        "surface_files": 0,
-        "substantive_files": 2,
-        "test_files": 0,
-        "test_added_lines": 0,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [
-        58
-      ],
-      "agent_review": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "record 入口保留 user_app 原始字符串，避免 Path 归一化篡改命令",
-        "issue_alignment": "针对性修复 #58 引号命令与 URL 被改写缺陷",
-        "committer_action": "CLA 与 CI 门禁全绿，无冲突，建议尽快合入",
-        "detail_points": [
-          "两处入口改为传原始 str，build_launch_spec 仍支持 Path，文件目标路径解析行为不变",
-          "修复 // 与 https:// 被折叠为单斜杠的问题，作者已本地 CPU 复现并验证 16 项 record 配置测试"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-20T17:39:02.015Z"
       }
     },
     "56": {
@@ -406,54 +362,6 @@
         "reviewed_at": "2026-11-20T11:38:53.206Z"
       }
     },
-    "63": {
-      "number": 63,
-      "title": "fix(report): Store operator source text in SourceFiles",
-      "author": "churkinaleksandr",
-      "fingerprint": "84e4828ba965c5b6",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "substantive_diff: 4 file(s)",
-        "linked_issue_legit: #64"
-      ],
-      "signals": [
-        "pr_substantive_diff",
-        "linked_issues:64"
-      ],
-      "merge_ready": true,
-      "blockers": [],
-      "diff_stats": {
-        "files": 4,
-        "added_lines": 92,
-        "removed_lines": 11,
-        "surface_files": 0,
-        "substantive_files": 4,
-        "test_files": 0,
-        "test_added_lines": 0,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [
-        64
-      ],
-      "agent_review": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "为 SourceFiles 增加源码全文列并在报告阶段回填，修复报告缺源码",
-        "issue_alignment": "针对性修复 #64 报告缺失完整源文件",
-        "committer_action": "CLA 已签、CI 通过且无冲突，建议 committer 直接合入",
-        "detail_points": [
-          "bridge.sql 新增可空 SourceFileText 列，SourceFileId 与归档格式保持向后兼容",
-          "save_source_file_texts 在分析器登记路径后快照全文，并在 tracing 重连前 commit",
-          "仅对可读取文件落库，读取失败置空，避免报告生成因路径缺失中断",
-          "文档同步说明 SourceFiles 新增全文语义，测试覆盖见作者 654 项 pytest 通过记录"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-20T13:38:59.849Z"
-      }
-    },
     "64": {
       "number": 64,
       "title": "Add Speed-of-light profiling feature",
@@ -503,13 +411,15 @@
       "number": 67,
       "title": "fix(prof): preserve base reports when optional processing fails",
       "author": "churkinaleksandr",
-      "fingerprint": "9ce7c36fb570f35b",
+      "fingerprint": "d3545c16a832ccff",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
+        "approved_label",
         "substantive_diff: 11 file(s)",
         "adds_tests",
-        "linked_issue_legit: #63"
+        "linked_issue_legit: #63",
+        "external_participant: liangbinglong"
       ],
       "signals": [
         "pr_substantive_diff",
@@ -518,6 +428,7 @@
       ],
       "merge_ready": false,
       "blockers": [
+        "merge_conflicts",
         "blocking_label:stat/needs-squash"
       ],
       "diff_stats": {
@@ -537,66 +448,16 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "可选处理失败时保留基础报告，移除非必要 Roofline JSON 导出",
-        "issue_alignment": "针对性修复 #63 可选报告失败阻塞导出",
-        "committer_action": "需作者 squash 提交并重跑门禁，通过后再合入",
+        "summary": "修复可选处理失败导致 .npu-rep 无法导出的问题",
+        "issue_alignment": "已针对性修复 #63 的导出缺陷",
+        "committer_action": "需先解决合并冲突、完成 squash 并重跑 CI，然后再合入",
         "detail_points": [
-          "删除独立 roofline.json 导出，Roofline 数据仍保留在 SQLite 表与 CSV 中，避免可选失败阻断打包",
-          "Critical Path 改为临时目录生成、成功后再发布，ELF 解码失败仅告警并继续基础报告",
-          "新增单测覆盖对象处理失败时基础报告继续且上下文恢复，符合真实缺陷修复",
-          "仅剩 stat/needs-squash 阻塞，CLA 与 CI 已通过，squash 后即可合入"
+          "移除独立的 roofline.json 导出，Roofline 结果保留在 SQLite 表和 CSV 中，降低耦合",
+          "设备 ELF 解码与 Critical Path 生成失败时降级为告警，保证基础报告产出，并补充单测"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-20T11:38:48.085Z"
-      }
-    },
-    "68": {
-      "number": 68,
-      "title": "Remove misleading per-instruction IPC metrics",
-      "author": "churkinaleksandr",
-      "fingerprint": "9ce89aa311aa3709",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "substantive_diff: 19 file(s)",
-        "adds_tests",
-        "linked_issue_legit: #65"
-      ],
-      "signals": [
-        "pr_substantive_diff",
-        "pr_has_tests",
-        "linked_issues:65"
-      ],
-      "merge_ready": true,
-      "blockers": [],
-      "diff_stats": {
-        "files": 19,
-        "added_lines": 41,
-        "removed_lines": 949,
-        "surface_files": 0,
-        "substantive_files": 19,
-        "test_files": 1,
-        "test_added_lines": 10,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [
-        65
-      ],
-      "agent_review": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "删除逐指令动态 IPC 计算、trace 字段与相关表，保留聚合 IPC 指标",
-        "issue_alignment": "已针对性实现 #65 需求，移除逐指令 IPC",
-        "committer_action": "CLA 与 CI 全绿、无冲突阻塞，建议直接合入",
-        "detail_points": [
-          "净删约 900 行，移除 ScalarIpcDynamic/VfIPCDynamic 表、视图及 prof_demo 回退实现，降低维护成本",
-          "同步更新文档与参数说明，并新增测试校验旧库重分析后不再生成动态 IPC 表"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-20T13:38:55.978Z"
+        "reviewed_at": "2026-11-24T02:38:55.822Z"
       }
     },
     "70": {
