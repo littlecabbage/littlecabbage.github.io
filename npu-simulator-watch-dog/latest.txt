@@ -1,4 +1,4 @@
-总览指标 · cann/npu-simulator · 2026-11-25 05:38 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-25 06:38 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
@@ -20,32 +20,32 @@
   平均首响：月 4.6H / 年 13.3H  (月样本 18 · 年样本 21)
 
 【oncall 待处理】待首次响应的用户问题 (5)
-  #69 停留 8.9H  "[Bug-Report|缺陷反馈]cannsim_helper目录不存在？如果是写错numsim_helper，建议全仓扫描
-  #68 停留 8.9H  "[Documentation|文档反馈]cannsim是什么？
-  #70 停留 8.7H  "[Documentation|文档反馈]文档描述中有一些中英文符号混用/缺少句号等常见问题，建议使用agent工具，扫描修复一遍
-  #71 停留 7.7H  [Requirement|需求/特性]: Add Speed of Light profiling to NPUSim
-  #72 停留 6.8H  [Requirement|需求/特性]: Add Speed of Light profiling to NPUSim
+  #69 停留 9.9H  "[Bug-Report|缺陷反馈]cannsim_helper目录不存在？如果是写错numsim_helper，建议全仓扫描
+  #68 停留 9.9H  "[Documentation|文档反馈]cannsim是什么？
+  #70 停留 9.7H  "[Documentation|文档反馈]文档描述中有一些中英文符号混用/缺少句号等常见问题，建议使用agent工具，扫描修复一遍
+  #71 停留 8.7H  [Requirement|需求/特性]: Add Speed of Light profiling to NPUSim
+  #72 停留 7.8H  [Requirement|需求/特性]: Add Speed of Light profiling to NPUSim
 
 【committer 待 Review / 合并】open PR (10，可合入 5 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
-  PR #59 ✅可合入 · 停留 173.6H → Issue #60  fix(record): recognize versioned Python executables
+  PR #59 ✅可合入 · 停留 174.6H → Issue #60  fix(record): recognize versioned Python executables
       └─ 🤖 值得合入：用正则识别版本化 Python 解释器，修复记录启动路径分类错误 ｜ 建议：CLA 与 CI 均通过且冲突已解，建议合入并跟进 ABI 后缀建议
-  PR #70 ✅可合入 · 停留 53.6H → Issue #66  docs(npu-simulator): fix spacing in examples
+  PR #70 ✅可合入 · 停留 54.6H → Issue #66  docs(npu-simulator): fix spacing in examples
       └─ 🤖 值得合入：修复两份中文最佳实践文档中英文间距问题 ｜ 建议：CLA 与 CI 均通过、无冲突，建议直接合入
-  PR #73 ✅可合入 · 停留 16.5H → Issue #61  fix(ci): update REPOSITORY_NAME to npu-simulator and remove stale bandit path
+  PR #73 ✅可合入 · 停留 17.5H → Issue #61  fix(ci): update REPOSITORY_NAME to npu-simulator and remove stale bandit path
       └─ 🤖 值得合入：修正 CI 脚本中仓库名的复制残留，并清理 bandit 的无效路径 ｜ 建议：CLA（贡献者许可协议）与 CI 检查全绿且无冲突，建议直接合入
-  PR #75 ✅可合入 · 停留 16.4H  refactor: remove unused _bar helper and duplicate _parse definition
+  PR #75 ✅可合入 · 停留 17.4H  refactor: remove unused _bar helper and duplicate _parse definition
       └─ 🤖 值得合入：删除 dashboard 未引用的 _bar 辅助函数及测试中重复的 _parse 定义 ｜ 建议：CLA 与 CI 均已通过且无冲突，建议直接合入
-  PR #74 ✅可合入 · 停留 16.4H  fix(prof): fix AIV1 overlap label, SIMT f-string log, and analyzer guards
+  PR #74 ✅可合入 · 停留 17.4H  fix(prof): fix AIV1 overlap label, SIMT f-string log, and analyzer guards
       └─ 🤖 值得合入：修复 AIV1 指标键名笔误、SIMT 日志花括号及多处除零越界防护 ｜ 建议：CLA 与 CI 均通过，建议同步采纳检视建议后直接合入
-  PR #60 ❌缺 ci-pipeline-passed · 停留 173.6H → Issue #56  fix(report): collapse the fixpipe twin rows by identity, not by adjacency
+  PR #60 ❌缺 ci-pipeline-passed · 停留 174.6H → Issue #56  fix(report): collapse the fixpipe twin rows by identity, not by adjacency
       └─ 🤖 阻塞待解：按 twin_key 字典折叠 fixpipe 孪生行，修复 UB 写重复计数 ｜ 建议：需补跑 CI 取得 ci-pipeline-passed 标签后再合入
-  PR #72 ❌CLA未签(cann-cla/no)、缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 36.9H  CI 添加StaticCheck_md_check检查项
+  PR #72 ❌CLA未签(cann-cla/no)、缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 37.9H  CI 添加StaticCheck_md_check检查项
       └─ 🤖 阻塞待解：CI 新增 md_check 静态检查复用 workflow 并接入 CodeCheck 阶段 ｜ 建议：需签署 CLA、补 JOB_image staticcheck 输出并 squash 后重跑 CI
-  PR #76 ❌缺 ci-pipeline-passed · 停留 9.9H → Issue #67  删除冗余代码
+  PR #76 ❌缺 ci-pipeline-passed · 停留 10.9H → Issue #67  删除冗余代码
       └─ 🤖 阻塞待解：清理 compile.sh/ut.sh 死代码并修正仓名为 npu-simulator ｜ 建议：需作者补跑流水线取得 ci-pipeline-passed，并补充说明卸载逻辑移除
-  PR #77 ❌缺 ci-pipeline-passed · 停留 8.6H → Issue #68  docs: clarify cannsim package and CLI aliases
+  PR #77 ❌缺 ci-pipeline-passed · 停留 9.6H → Issue #68  docs: clarify cannsim package and CLI aliases
       └─ 🤖 阻塞待解：README 补两行说明 cannsim 为分发名、与 npusim 共用 CLI ｜ 建议：需先补齐 ci-pipeline-passed 门禁后即可合入
-  PR #78 ❌缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 6.7H  Add Speed-of-light profiling feature
+  PR #78 ❌缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 7.7H  Add Speed-of-light profiling feature
       └─ 🤖 阻塞待解：新增 SOL 分析功能，含采集、参数、SQL 表、文档与测试 ｜ 建议：需压缩提交并补齐 ci-pipeline-passed，再重跑门禁
 
 【自动化 Bot 行为记录】48 条（Issue 已收到 37 / PR 首响催办 5 / 其他评论 6）
