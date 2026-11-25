@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-25T05:38:51.902Z",
-  "generatedAtCst": "2026-11-25 13:38",
+  "generatedAt": "2026-11-25T08:38:52.895Z",
+  "generatedAtCst": "2026-11-25 16:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 73,
@@ -10,8 +10,8 @@
     "prs_open": 11,
     "prs_merge_ready": 7,
     "prs_low_value": 0,
-    "cache_hits": 11,
-    "agent_calls": 0
+    "cache_hits": 10,
+    "agent_calls": 1
   },
   "reviews": {
     "59": {
@@ -159,7 +159,7 @@
       "number": 72,
       "title": "CI 添加StaticCheck_md_check检查项",
       "author": "zhouchongshun",
-      "fingerprint": "7d0c9c1626d7ad73",
+      "fingerprint": "02e522abc4be4277",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -171,10 +171,7 @@
       ],
       "merge_ready": false,
       "blockers": [
-        "cla_not_signed(cann-cla/no)",
-        "missing_label:cann-cla/yes",
-        "missing_label:ci-pipeline-passed",
-        "blocking_label:stat/needs-squash"
+        "missing_label:ci-pipeline-passed"
       ],
       "diff_stats": {
         "files": 2,
@@ -191,16 +188,16 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "实质改动（2 文件 +80/-0），当前存在合路阻塞",
-        "issue_alignment": "无关联 Issue",
-        "committer_action": "解决门禁阻塞（cla_not_signed(cann-cla/no)、missing_label:cann-cla/yes、missing_label:ci-pipeline-passed、blocking_label:stat/needs-squash）后再推进合入",
+        "summary": "为 CI 新增 md_check 静态检查 workflow 及流水线任务",
+        "issue_alignment": "无关联 Issue，属 CI 能力增强",
+        "committer_action": "需补齐 staticcheck 镜像输出并重跑 CI 门禁",
         "detail_points": [
-          "守卫判定：substantive_diff: 2 file(s); external_participant: Arerere",
-          "门禁阻塞：cla_not_signed(cann-cla/no)、missing_label:cann-cla/yes、missing_label:ci-pipeline-passed、blocking_label:stat/needs-squash"
+          "JOB_image 未定义 staticcheck 输出，镜像地址为空会导致任务失败",
+          "新 workflow 未注入 obs_path 等 env，且名称拼写缺 c"
         ],
-        "source": "deterministic-fallback",
         "model": "cannbot/deepseek-v4.1-flash",
-        "reviewed_at": "2026-11-25T01:38:56.316Z"
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-25T07:38:51.674Z"
       }
     },
     "73": {
@@ -437,7 +434,7 @@
       "number": 78,
       "title": "Add Speed-of-light profiling feature",
       "author": "fomichevoleg5",
-      "fingerprint": "c5dd5d7847c937f8",
+      "fingerprint": "8d7f76a4de2a2288",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -470,27 +467,29 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 SOL 分析器、--sol 选项、表结构与文档及测试",
-        "issue_alignment": "无关联 Issue，需补方案讨论",
-        "committer_action": "需修复 CI 失败、压缩提交并重跑门禁后再合入",
+        "summary": "新增 sol 分析特性，测算 Cube/Vector/内存吞吐相对硬件上限的占比",
+        "issue_alignment": "无关联 Issue，属新增特性需先补方案讨论",
+        "committer_action": "需压缩提交（needs-squash）并修复失败的 CI 流水线后再合入",
         "detail_points": [
-          "contract version 放宽接受 7/8，需说明 version 7 缺 SOL 表时的降级处理",
-          "CUBE/VECTOR 计算缺异常保护，且 MMAD 查询未按 CoreTypeId 过滤，SOL 口径可能失真"
+          "contract version 放宽接受 7 但未说明旧库缺 SOL 表的兼容策略，需明确跳过或提示",
+          "CUBE/VECTOR 计算缺少异常保护且 MMAD 查询未按 CoreTypeId 过滤，指标可能失真"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-25T03:38:54.669Z"
+        "reviewed_at": "2026-11-25T08:38:52.884Z"
       }
     },
     "80": {
       "number": 80,
       "title": "chore(comm): 欢迎页引导地址改为开源仓库",
       "author": "zengzihui",
-      "fingerprint": "dd70dfd50a12cf54",
+      "fingerprint": "7406656bd4c81989",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
-        "substantive_diff: 1 file(s)"
+        "approved_label",
+        "substantive_diff: 1 file(s)",
+        "external_participant: liangbinglong"
       ],
       "signals": [
         "pr_substantive_diff"
@@ -512,16 +511,16 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修改启动 banner 常量，引导地址由发布讨论帖改为开源仓库首页",
-        "issue_alignment": "针对性修复 #73 引导地址失效",
-        "committer_action": "CLA 与 CI 均通过、无冲突，建议直接合入",
+        "summary": "将启动 banner 的一次性讨论帖地址改为开源仓库首页并调整引导文案",
+        "issue_alignment": "已针对性修复 #73 欢迎页入口失效",
+        "committer_action": "已获 approved 且门禁全绿无冲突，建议直接合入",
         "detail_points": [
-          "仅替换 welcome 字符串两行，无逻辑变更，风险极低",
-          "全仓仅此一处引用，无测试依赖，新地址长期有效"
+          "仅替换 comm.py 中 welcome 常量的两行字符串，无逻辑变更，风险极低",
+          "全仓检索确认无测试或工具引用该文本，不影响现有功能与 CI"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-25T04:38:49.124Z"
+        "reviewed_at": "2026-11-25T06:38:58.184Z"
       }
     }
   }
