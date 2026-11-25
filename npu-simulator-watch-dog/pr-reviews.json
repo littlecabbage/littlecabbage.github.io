@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-25T00:38:56.413Z",
-  "generatedAtCst": "2026-11-25 08:38",
+  "generatedAt": "2026-11-25T03:38:54.684Z",
+  "generatedAtCst": "2026-11-25 11:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
-    "issues_total": 72,
-    "issues_keep": 71,
+    "issues_total": 73,
+    "issues_keep": 72,
     "issues_close": 0,
-    "prs_open": 10,
-    "prs_merge_ready": 5,
+    "prs_open": 11,
+    "prs_merge_ready": 6,
     "prs_low_value": 0,
     "cache_hits": 9,
-    "agent_calls": 1
+    "agent_calls": 2
   },
   "reviews": {
     "59": {
@@ -159,7 +159,7 @@
       "number": 72,
       "title": "CI 添加StaticCheck_md_check检查项",
       "author": "zhouchongshun",
-      "fingerprint": "d61a4a3933e949ac",
+      "fingerprint": "7d0c9c1626d7ad73",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -191,17 +191,16 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "CI 新增 md_check 静态检查复用 workflow 并接入 CodeCheck 阶段",
-        "issue_alignment": "无关联 Issue，属 CI 检查能力补强",
-        "committer_action": "需签署 CLA、补 JOB_image staticcheck 输出并 squash 后重跑 CI",
+        "summary": "实质改动（2 文件 +80/-0），当前存在合路阻塞",
+        "issue_alignment": "无关联 Issue",
+        "committer_action": "解决门禁阻塞（cla_not_signed(cann-cla/no)、missing_label:cann-cla/yes、missing_label:ci-pipeline-passed、blocking_label:stat/needs-squash）后再推进合入",
         "detail_points": [
-          "新增 JOB_staticcheck_md_check 引用 jobs.JOB_image.outputs.staticcheck，但 JOB_image 未定义该输出，镜像地址为空将致任务失败",
-          "子 workflow 引用 env.obs_path/TARGET_BRANCH/MERGE_ID 等变量却无 env 段或 inputs 传入，下载上传路径可能为空",
-          "workflow 名 'staticheck_action' 拼写缺 c，建议修正；通过后仍受 cann-cla/no 与 needs-squash 门禁阻塞"
+          "守卫判定：substantive_diff: 2 file(s); external_participant: Arerere",
+          "门禁阻塞：cla_not_signed(cann-cla/no)、missing_label:cann-cla/yes、missing_label:ci-pipeline-passed、blocking_label:stat/needs-squash"
         ],
+        "source": "deterministic-fallback",
         "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-24T15:39:08.033Z"
+        "reviewed_at": "2026-11-25T01:38:56.316Z"
       }
     },
     "73": {
@@ -342,10 +341,11 @@
       "number": 76,
       "title": "删除冗余代码",
       "author": "cui_jiahao",
-      "fingerprint": "90ea36f112ca85f5",
+      "fingerprint": "e222004e5785d327",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
+        "approved_label",
         "substantive_diff: 2 file(s)",
         "linked_issue_legit: #67",
         "external_participant: Arerere"
@@ -354,10 +354,8 @@
         "pr_substantive_diff",
         "linked_issues:67"
       ],
-      "merge_ready": false,
-      "blockers": [
-        "missing_label:ci-pipeline-passed"
-      ],
+      "merge_ready": true,
+      "blockers": [],
       "diff_stats": {
         "files": 2,
         "added_lines": 2,
@@ -373,18 +371,18 @@
         67
       ],
       "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "清理 compile.sh/ut.sh 死代码并修正仓名为 npu-simulator",
-        "issue_alignment": "已针对性清理 #67 所列冗余项",
-        "committer_action": "需作者补跑流水线取得 ci-pipeline-passed，并补充说明卸载逻辑移除",
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "清理 compile.sh/ut.sh 中 GE/ops-math 拷贝残留死代码并修正仓库名",
+        "issue_alignment": "已针对性修复 #67 脚本冗余清理",
+        "committer_action": "已获 approved/lgtm 且门禁全绿，建议直接合入",
         "detail_points": [
-          "删除 LOG_HEAD、ge_st_rt2 打印等死代码，逻辑无功能变更，属安全清理",
-          "REPOSITORY_NAME 由 ops-math 改为 npu-simulator 是实质修正，需说明产物路径影响；另需确认 ops_math 卸载逻辑移除不影响 CI 环境洁净"
+          "删除未使用的 LOG_HEAD 函数与 ge_st_rt2 死打印，不影响功能逻辑",
+          "REPOSITORY_NAME 由 ops-math 修正为 npu-simulator，建议补充产物路径影响说明"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T15:38:58.249Z"
+        "reviewed_at": "2026-11-25T02:38:53.069Z"
       }
     },
     "77": {
@@ -439,7 +437,7 @@
       "number": 78,
       "title": "Add Speed-of-light profiling feature",
       "author": "fomichevoleg5",
-      "fingerprint": "d7e014c74a712d9f",
+      "fingerprint": "c5dd5d7847c937f8",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -472,18 +470,60 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 SOL 分析功能，含采集、参数、SQL 表、文档与测试",
-        "issue_alignment": "无关联 Issue，新特性缺少方案讨论",
-        "committer_action": "需压缩提交并补齐 ci-pipeline-passed，再重跑门禁",
+        "summary": "新增 SOL 分析器、--sol 选项、表结构与文档及测试",
+        "issue_alignment": "无关联 Issue，需补方案讨论",
+        "committer_action": "需修复 CI 失败、压缩提交并重跑门禁后再合入",
         "detail_points": [
-          "新增 13 文件 571 行，含 SpeedOfLightAnalyzer 及两项测试，属实质特性",
-          "仅放宽 version 7/8 校验未说明旧库缺 SOL 表，且 CUBE/VECTOR 缺异常保护",
-          "已获 approved/lgtm，但缺 ci-pipeline-passed 且有 needs-squash 阻塞",
-          "无关联 Issue，新特性应先补方案讨论与兼容性说明"
+          "contract version 放宽接受 7/8，需说明 version 7 缺 SOL 表时的降级处理",
+          "CUBE/VECTOR 计算缺异常保护，且 MMAD 查询未按 CoreTypeId 过滤，SOL 口径可能失真"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T15:38:54.185Z"
+        "reviewed_at": "2026-11-25T03:38:54.669Z"
+      }
+    },
+    "80": {
+      "number": 80,
+      "title": "chore(comm): 欢迎页引导地址改为开源仓库",
+      "author": "zengzihui",
+      "fingerprint": "e308e8a0af6c7fd7",
+      "triage_verdict": "KEEP",
+      "guard_allowed": false,
+      "verdict_reasons": [
+        "substantive_diff: 1 file(s)"
+      ],
+      "signals": [
+        "pr_substantive_diff"
+      ],
+      "merge_ready": false,
+      "blockers": [
+        "missing_label:ci-pipeline-passed"
+      ],
+      "diff_stats": {
+        "files": 1,
+        "added_lines": 2,
+        "removed_lines": 2,
+        "surface_files": 0,
+        "substantive_files": 1,
+        "test_files": 0,
+        "test_added_lines": 0,
+        "docs_only": false,
+        "files_without_patch": 0
+      },
+      "linked_issues": [],
+      "agent_review": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "将启动 banner 引导链接改为开源仓库并更新文案",
+        "issue_alignment": "对应 Issue #73，修正 banner 入口失效",
+        "committer_action": "需等待 ci-pipeline-passed 门禁通过后再合入",
+        "detail_points": [
+          "仅替换 comm.py 中 welcome 常量两行字符串，无逻辑变更，风险低",
+          "当前缺 ci-pipeline-passed 标签且为 running，门禁未全绿需先解决"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-25T03:38:50.513Z"
       }
     }
   }

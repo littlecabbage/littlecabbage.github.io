@@ -1,54 +1,58 @@
-总览指标 · cann/npu-simulator · 2026-11-25 08:38 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-25 11:38 (UTC+8)
 归组基准 UTC+8 2026-11 · 时间口径：working-hours (剥离周末+中国大陆法定节假日，24h=24工作小时)
 概览：❌ 不合规 2 · ✅ 合规 0 · ➖ 仅展示 6
 
 ❌ 不合规 (2 项)
-  闭环率：月 81.1% / 年 86.1%  (月 43/53 · 年 62/72（阈值 ≥90%）)
-      原因：月 81.1% 落在橙区（50%~90%）；年 86.1% 落在橙区（50%~90%）
-  首响达标率：月 66.7% / 年 60.5%  (月 22/33 · 年 23/38（阈值 ≥80%）)
-      原因：月 66.7% 落在橙区（50%~80%）；年 60.5% 落在橙区（50%~80%）
+  闭环率：月 79.6% / 年 84.9%  (月 43/54 · 年 62/73（阈值 ≥90%）)
+      原因：月 79.6% 落在橙区（50%~90%）；年 84.9% 落在橙区（50%~90%）
+  首响达标率：月 67.6% / 年 61.5%  (月 23/34 · 年 24/39（阈值 ≥80%）)
+      原因：月 67.6% 落在橙区（50%~80%）；年 61.5% 落在橙区（50%~80%）
 
 ✅ 合规 (0 项)
   （无）
 
 ➖ 仅展示 (6 项)
-  Issue 总数：72  (全仓 Issue)
-  开启总数：10  (当前 open)
+  Issue 总数：73  (全仓 Issue)
+  开启总数：11  (当前 open)
   平均闭环时长：月 2.4天 / 年 4.3天  (月样本 43 · 年样本 62)
-  开启未响应 超时/总数：0/5  (当前 open·非自处理·未响应)
-  首响未达标数：月 11 / 年 15  (月统计 33 · 年统计 38)
+  开启未响应 超时/总数：0/6  (当前 open·非自处理·未响应)
+  首响未达标数：月 11 / 年 15  (月统计 34 · 年统计 39)
   平均首响：月 4.6H / 年 13.3H  (月样本 18 · 年样本 21)
 
-【oncall 待处理】待首次响应的用户问题 (5)
-  #69 停留 11.9H  "[Bug-Report|缺陷反馈]cannsim_helper目录不存在？如果是写错numsim_helper，建议全仓扫描
-  #68 停留 11.9H  "[Documentation|文档反馈]cannsim是什么？
-  #70 停留 11.7H  "[Documentation|文档反馈]文档描述中有一些中英文符号混用/缺少句号等常见问题，建议使用agent工具，扫描修复一遍
-  #71 停留 10.7H  [Requirement|需求/特性]: Add Speed of Light profiling to NPUSim
-  #72 停留 9.8H  [Requirement|需求/特性]: Add Speed of Light profiling to NPUSim
+【oncall 待处理】待首次响应的用户问题 (6)
+  #69 停留 14.9H  "[Bug-Report|缺陷反馈]cannsim_helper目录不存在？如果是写错numsim_helper，建议全仓扫描
+  #68 停留 14.9H  "[Documentation|文档反馈]cannsim是什么？
+  #70 停留 14.7H  "[Documentation|文档反馈]文档描述中有一些中英文符号混用/缺少句号等常见问题，建议使用agent工具，扫描修复一遍
+  #71 停留 13.7H  [Requirement|需求/特性]: Add Speed of Light profiling to NPUSim
+  #72 停留 12.8H  [Requirement|需求/特性]: Add Speed of Light profiling to NPUSim
+  #73 停留 0.5H  [Requirement|需求/特性]: 欢迎页引导地址从社区讨论帖改为开源仓库地址
 
-【committer 待 Review / 合并】open PR (10，可合入 5 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
-  PR #59 ✅可合入 · 停留 176.6H → Issue #60  fix(record): recognize versioned Python executables
+【committer 待 Review / 合并】open PR (11，可合入 6 · AI评审(cannbot/deepseek-v4.1-flash) 低价值候选 0)
+  PR #59 ✅可合入 · 停留 179.6H → Issue #60  fix(record): recognize versioned Python executables
       └─ 🤖 值得合入：用正则识别版本化 Python 解释器，修复记录启动路径分类错误 ｜ 建议：CLA 与 CI 均通过且冲突已解，建议合入并跟进 ABI 后缀建议
-  PR #70 ✅可合入 · 停留 56.6H → Issue #66  docs(npu-simulator): fix spacing in examples
+  PR #70 ✅可合入 · 停留 59.6H → Issue #66  docs(npu-simulator): fix spacing in examples
       └─ 🤖 值得合入：修复两份中文最佳实践文档中英文间距问题 ｜ 建议：CLA 与 CI 均通过、无冲突，建议直接合入
-  PR #74 ✅可合入 · 停留 19.5H  fix(prof): fix AIV1 overlap label, SIMT f-string log, and analyzer guards
+  PR #74 ✅可合入 · 停留 22.5H  fix(prof): fix AIV1 overlap label, SIMT f-string log, and analyzer guards
       └─ 🤖 值得合入：修正AIV1指标键名复制错误，并补除零、越界与日志异常防护 ｜ 建议：CLA与CI均通过，采纳检视建议后可合入
-  PR #73 ✅可合入 · 停留 19.5H → Issue #61  fix(ci): update REPOSITORY_NAME to npu-simulator and remove stale bandit path
+  PR #73 ✅可合入 · 停留 22.5H → Issue #61  fix(ci): update REPOSITORY_NAME to npu-simulator and remove stale bandit path
       └─ 🤖 值得合入：修正 CI 脚本中仓库名的复制残留，并清理 bandit 的无效路径 ｜ 建议：CLA（贡献者许可协议）与 CI 检查全绿且无冲突，建议直接合入
-  PR #75 ✅可合入 · 停留 19.4H  refactor: remove unused _bar helper and duplicate _parse definition
+  PR #75 ✅可合入 · 停留 22.4H  refactor: remove unused _bar helper and duplicate _parse definition
       └─ 🤖 值得合入：删除 dashboard 未引用的 _bar 辅助函数及测试中重复的 _parse 定义 ｜ 建议：CLA 与 CI 均已通过且无冲突，建议直接合入
-  PR #60 ❌缺 ci-pipeline-passed · 停留 176.6H → Issue #56  fix(report): collapse the fixpipe twin rows by identity, not by adjacency
+  PR #76 ✅可合入 · 停留 15.9H → Issue #67  删除冗余代码
+      └─ 🤖 值得合入：清理 compile.sh/ut.sh 中 GE/ops-math 拷贝残留死代码并修正仓库名 ｜ 建议：已获 approved/lgtm 且门禁全绿，建议直接合入
+  PR #60 ❌缺 ci-pipeline-passed · 停留 179.6H → Issue #56  fix(report): collapse the fixpipe twin rows by identity, not by adjacency
       └─ 🤖 阻塞待解：按 twin_key 字典折叠 fixpipe 孪生行，修复 UB 写重复计数 ｜ 建议：需补跑 CI 取得 ci-pipeline-passed 标签后再合入
-  PR #72 ❌CLA未签(cann-cla/no)、缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 39.9H  CI 添加StaticCheck_md_check检查项
-      └─ 🤖 阻塞待解：CI 新增 md_check 静态检查复用 workflow 并接入 CodeCheck 阶段 ｜ 建议：需签署 CLA、补 JOB_image staticcheck 输出并 squash 后重跑 CI
-  PR #76 ❌缺 ci-pipeline-passed · 停留 12.9H → Issue #67  删除冗余代码
-      └─ 🤖 阻塞待解：清理 compile.sh/ut.sh 死代码并修正仓名为 npu-simulator ｜ 建议：需作者补跑流水线取得 ci-pipeline-passed，并补充说明卸载逻辑移除
-  PR #77 ❌缺 ci-pipeline-passed · 停留 11.6H → Issue #68  docs: clarify cannsim package and CLI aliases
+  PR #72 ❌CLA未签(cann-cla/no)、缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 42.9H  CI 添加StaticCheck_md_check检查项
+      └─ 🤖 阻塞待解：实质改动（2 文件 +80/-0），当前存在合路阻塞 ｜ 建议：解决门禁阻塞（cla_not_signed(cann-cla/no)、missing_label:cann-cla/yes、missing_label:ci-pipeline-passed、blocking_label:stat/needs-squash）后再推进合入
+  PR #77 ❌缺 ci-pipeline-passed · 停留 14.6H → Issue #68  docs: clarify cannsim package and CLI aliases
       └─ 🤖 阻塞待解：README 补两行说明 cannsim 为分发名、与 npusim 共用 CLI ｜ 建议：需先补齐 ci-pipeline-passed 门禁后即可合入
-  PR #78 ❌缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 9.7H  Add Speed-of-light profiling feature
-      └─ 🤖 阻塞待解：新增 SOL 分析功能，含采集、参数、SQL 表、文档与测试 ｜ 建议：需压缩提交并补齐 ci-pipeline-passed，再重跑门禁
+  PR #78 ❌缺 ci-pipeline-passed、需squash(stat/needs-squash) · 停留 12.7H  Add Speed-of-light profiling feature
+      └─ 🤖 阻塞待解：新增 SOL 分析器、--sol 选项、表结构与文档及测试 ｜ 建议：需修复 CI 失败、压缩提交并重跑门禁后再合入
+  PR #80 ❌缺 ci-pipeline-passed · 停留 0.2H  chore(comm): 欢迎页引导地址改为开源仓库
+      └─ 🤖 阻塞待解：将启动 banner 引导链接改为开源仓库并更新文案 ｜ 建议：需等待 ci-pipeline-passed 门禁通过后再合入
 
-【自动化 Bot 行为记录】48 条（Issue 已收到 37 / PR 首响催办 5 / 其他评论 6）
+【自动化 Bot 行为记录】49 条（Issue 已收到 38 / PR 首响催办 5 / 其他评论 6）
+  2026-11-25 11:18  Issue 已收到 · Issue #73  [Requirement|需求/特性]: 欢迎页引导地址从社区讨论帖改为
   2026-11-24 23:18  Issue 已收到 · Issue #72  [Requirement|需求/特性]: Add Speed of Li
   2026-11-24 22:18  Issue 已收到 · Issue #71  [Requirement|需求/特性]: Add Speed of Li
   2026-11-24 21:17  Issue 已收到 · Issue #67  清理 .gitcode/scripts 冗余代码（compile.sh/
@@ -58,7 +62,6 @@
   2026-11-24 16:19  PR 首响催办 · PR #70  docs(npu-simulator): fix spacing in 
   2026-11-24 14:17  PR 首响催办 · PR #73  fix(ci): update REPOSITORY_NAME to n
   2026-11-24 14:17  PR 首响催办 · PR #74  fix(prof): fix AIV1 overlap label, S
-  2026-11-24 14:17  PR 首响催办 · PR #75  refactor: remove unused _bar helper 
-  … 其余 38 条见网页
+  … 其余 39 条见网页
 
 闭环率色带：蓝 ≥90% / 橙 50%~90% / 红 <50%；首响达标率色带：蓝 ≥80% / 橙 50%~80% / 红 <50%。
