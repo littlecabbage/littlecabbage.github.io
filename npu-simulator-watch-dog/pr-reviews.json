@@ -1,17 +1,17 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-25T03:38:54.684Z",
-  "generatedAtCst": "2026-11-25 11:38",
+  "generatedAt": "2026-11-25T04:38:49.133Z",
+  "generatedAtCst": "2026-11-25 12:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 73,
     "issues_keep": 72,
     "issues_close": 0,
     "prs_open": 11,
-    "prs_merge_ready": 6,
+    "prs_merge_ready": 7,
     "prs_low_value": 0,
-    "cache_hits": 9,
-    "agent_calls": 2
+    "cache_hits": 10,
+    "agent_calls": 1
   },
   "reviews": {
     "59": {
@@ -486,7 +486,7 @@
       "number": 80,
       "title": "chore(comm): 欢迎页引导地址改为开源仓库",
       "author": "zengzihui",
-      "fingerprint": "e308e8a0af6c7fd7",
+      "fingerprint": "dd70dfd50a12cf54",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -495,10 +495,8 @@
       "signals": [
         "pr_substantive_diff"
       ],
-      "merge_ready": false,
-      "blockers": [
-        "missing_label:ci-pipeline-passed"
-      ],
+      "merge_ready": true,
+      "blockers": [],
       "diff_stats": {
         "files": 1,
         "added_lines": 2,
@@ -512,18 +510,18 @@
       },
       "linked_issues": [],
       "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "将启动 banner 引导链接改为开源仓库并更新文案",
-        "issue_alignment": "对应 Issue #73，修正 banner 入口失效",
-        "committer_action": "需等待 ci-pipeline-passed 门禁通过后再合入",
+        "verdict": "WORTH_MERGING",
+        "verdict_label": "🤖 值得合入",
+        "summary": "修改启动 banner 常量，引导地址由发布讨论帖改为开源仓库首页",
+        "issue_alignment": "针对性修复 #73 引导地址失效",
+        "committer_action": "CLA 与 CI 均通过、无冲突，建议直接合入",
         "detail_points": [
-          "仅替换 comm.py 中 welcome 常量两行字符串，无逻辑变更，风险低",
-          "当前缺 ci-pipeline-passed 标签且为 running，门禁未全绿需先解决"
+          "仅替换 welcome 字符串两行，无逻辑变更，风险极低",
+          "全仓仅此一处引用，无测试依赖，新地址长期有效"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-25T03:38:50.513Z"
+        "reviewed_at": "2026-11-25T04:38:49.124Z"
       }
     }
   }
