@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-25T08:42:13.038Z",
-  "generatedAtCst": "2026-11-25 16:42",
+  "generatedAt": "2026-11-25T09:38:53.359Z",
+  "generatedAtCst": "2026-11-25 17:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 73,
@@ -10,8 +10,8 @@
     "prs_open": 11,
     "prs_merge_ready": 7,
     "prs_low_value": 0,
-    "cache_hits": 11,
-    "agent_calls": 0
+    "cache_hits": 10,
+    "agent_calls": 1
   },
   "reviews": {
     "59": {
@@ -434,7 +434,7 @@
       "number": 78,
       "title": "Add Speed-of-light profiling feature",
       "author": "fomichevoleg5",
-      "fingerprint": "8d7f76a4de2a2288",
+      "fingerprint": "217427d21485a9fc",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -467,16 +467,16 @@
       "agent_review": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 sol 分析特性，测算 Cube/Vector/内存吞吐相对硬件上限的占比",
-        "issue_alignment": "无关联 Issue，属新增特性需先补方案讨论",
-        "committer_action": "需压缩提交（needs-squash）并修复失败的 CI 流水线后再合入",
+        "summary": "新增 Speed-of-Light 分析，实现 Cube/Vector/内存吞吐评估与 sol 特性开关",
+        "issue_alignment": "无关联 Issue，新特性缺方案讨论",
+        "committer_action": "需先 squash 提交并修复 CI 失败，门禁转绿后再合入",
         "detail_points": [
-          "contract version 放宽接受 7 但未说明旧库缺 SOL 表的兼容策略，需明确跳过或提示",
-          "CUBE/VECTOR 计算缺少异常保护且 MMAD 查询未按 CoreTypeId 过滤，指标可能失真"
+          "实质改动 13 文件 571 行，新增 sol 特征、--sol 参数、SOL 分析器与数据表，并补充 2 处测试及文档",
+          "contract version 放宽至 7/8，AI 检视指出旧库缺 SpeedOfLightData 表时需跳过 sol 或明确提示，且 CUBE 统计需按 CoreTypeId 过滤"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-25T08:38:52.884Z"
+        "reviewed_at": "2026-11-25T09:38:53.346Z"
       }
     },
     "80": {

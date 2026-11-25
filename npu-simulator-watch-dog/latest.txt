@@ -1,4 +1,4 @@
-总览指标 · cann/npu-simulator · 2026-11-25 16:42 (UTC+8)
+总览指标 · cann/npu-simulator · 2026-11-25 17:38 (UTC+8)
 数据源：CANN 数字化平台（https://digital.hicann.cn，平台口径）
 窗口：月 2026-11-01 → 2026-11-25 · 年 2026-01-01 → 2026-11-25
 概览：❌ 不合规 1 · ✅ 合规 1 · ➖ 仅展示 6
@@ -39,12 +39,12 @@
       └─ 🤖 值得合入：将启动 banner 的一次性讨论帖地址改为开源仓库首页并调整引导文案 ｜ 建议：已获 approved 且门禁全绿无冲突，建议直接合入
   PR #60 ❌CI 未执行(ci_status=not_executed) · 停留 184.3H → Issue #56  fix(report): collapse the fixpipe twin rows by identity, not by adjacency
       └─ 🤖 阻塞待解：按 twin_key 字典折叠 fixpipe 孪生行，修复 UB 写重复计数 ｜ 建议：需补跑 CI 取得 ci-pipeline-passed 标签后再合入
-  PR #72 ❌CI 未执行(ci_status=not_executed) · 停留 47.5H  CI 添加StaticCheck_md_check检查项
+  PR #72 ❌CI 未执行(ci_status=not_executed) · 停留 48.5H  CI 添加StaticCheck_md_check检查项
       └─ 🤖 阻塞待解：为 CI 新增 md_check 静态检查 workflow 及流水线任务 ｜ 建议：需补齐 staticcheck 镜像输出并重跑 CI 门禁
   PR #77 ❌CI 未执行(ci_status=not_executed) · 停留 19.2H → Issue #68  docs: clarify cannsim package and CLI aliases
       └─ 🤖 阻塞待解：README 补两行说明 cannsim 为分发名、与 npusim 共用 CLI ｜ 建议：需先补齐 ci-pipeline-passed 门禁后即可合入
-  PR #78 ❌CI 未通过(ci_status=failed) · 停留 17.3H  Add Speed-of-light profiling feature
-      └─ 🤖 阻塞待解：新增 sol 分析特性，测算 Cube/Vector/内存吞吐相对硬件上限的占比 ｜ 建议：需压缩提交（needs-squash）并修复失败的 CI 流水线后再合入
+  PR #78 ❌CI 未通过(ci_status=failed) · 停留 18.3H  Add Speed-of-light profiling feature
+      └─ 🤖 阻塞待解：新增 Speed-of-Light 分析，实现 Cube/Vector/内存吞吐评估与 sol 特性开关 ｜ 建议：需先 squash 提交并修复 CI 失败，门禁转绿后再合入
 
 【自动化 Bot 行为记录】49 条（Issue 已收到 38 / PR 首响催办 5 / 其他评论 6）
   2026-11-25 11:18  Issue 已收到 · Issue #73  [Requirement|需求/特性]: 欢迎页引导地址从社区讨论帖改为
