@@ -6,8 +6,8 @@
     "jwtSource": "/root/.config/gc/agent-tokens/hicann.jwt",
     "jwtExpiresAt": "2027-09-21T03:49:39.000Z"
   },
-  "runAt": "2026-11-25T20:38:47.251Z",
-  "runAtCst": "2026-11-26 04:38",
+  "runAt": "2026-11-25T21:38:50.012Z",
+  "runAtCst": "2026-11-26 05:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
