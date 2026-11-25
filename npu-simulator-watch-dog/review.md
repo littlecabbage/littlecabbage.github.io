@@ -3,7 +3,7 @@
 | 维度 | 详情 |
 |---|---|
 | **目标仓库** | [cann/npu-simulator](https://gitcode.com/cann/npu-simulator)（GitCode） |
-| **巡检时间** | 2026-11-25 22:38 (UTC+8) |
+| **巡检时间** | 2026-11-25 23:38 (UTC+8) |
 | **分析引擎** | `gitcode-issue-triage` 确定性守卫 + Pi Agent (`cannbot/deepseek-v4.1-flash`) |
 | **判定原则** | 宁漏勿错：强灌水信号 + 无安全否决 → 低价值候选；有任何实质代码/测试/关联 Issue → 保留并给出合路建议 |
 
@@ -33,7 +33,7 @@
 
 ### PR #77：docs: clarify cannsim package and CLI aliases
 
-- **作者**：`@lilong555` · **停留自然时长**：25.6h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@lilong555` · **停留自然时长**：26.6h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：针对性澄清 #68 中 cannsim 命名疑问
 - **核心改动摘要**：README 补两行说明 cannsim 为分发名、与 npusim 共用 CLI
@@ -43,7 +43,7 @@
 
 ### PR #76：删除冗余代码
 
-- **作者**：`@cui_jiahao` · **停留自然时长**：26.9h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@cui_jiahao` · **停留自然时长**：27.9h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #67 脚本冗余清理
 - **核心改动摘要**：清理 compile.sh/ut.sh 中 GE/ops-math 拷贝残留死代码并修正仓库名
@@ -53,7 +53,7 @@
 
 ### PR #75：refactor: remove unused _bar helper and duplicate _parse definition
 
-- **作者**：`@qunzhongjia` · **停留自然时长**：33.4h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@qunzhongjia` · **停留自然时长**：34.4h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，纯代码清理重构
 - **核心改动摘要**：删除 dashboard 未引用的 _bar 辅助函数及测试中重复的 _parse 定义
@@ -63,7 +63,7 @@
 
 ### PR #74：fix(prof): fix AIV1 overlap label, SIMT f-string log, and analyzer guards
 
-- **作者**：`@qunzhongjia` · **停留自然时长**：33.4h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@qunzhongjia` · **停留自然时长**：34.4h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：7 个文件（实质改动文件 6 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联Issue，为自主发现的缺陷修复
 - **核心改动摘要**：修正AIV1指标键名复制错误，并补除零、越界与日志异常防护
@@ -74,7 +74,7 @@
 
 ### PR #73：fix(ci): update REPOSITORY_NAME to npu-simulator and remove stale bandit path
 
-- **作者**：`@qunzhongjia` · **停留自然时长**：33.5h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@qunzhongjia` · **停留自然时长**：34.5h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：3 个文件（实质改动文件 3 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #61 配置残留问题
 - **核心改动摘要**：修正 CI 脚本中仓库名的复制残留，并清理 bandit 的无效路径
@@ -84,7 +84,7 @@
 
 ### PR #72：CI 添加StaticCheck_md_check检查项
 
-- **作者**：`@zhouchongshun` · **停留自然时长**：53.9h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@zhouchongshun` · **停留自然时长**：54.9h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：2 个文件（实质改动文件 2 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：无关联 Issue，属 CI 能力增强
 - **核心改动摘要**：为 CI 新增 md_check 静态检查 workflow 及流水线任务
@@ -94,7 +94,7 @@
 
 ### PR #70：docs(npu-simulator): fix spacing in examples
 
-- **作者**：`@gcw_WJCkAUuk` · **停留自然时长**：89.4h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@gcw_WJCkAUuk` · **停留自然时长**：90.4h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：2 个文件（实质改动文件 0 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #66 列明的间距问题
 - **核心改动摘要**：修复两份中文最佳实践文档中英文间距问题
@@ -104,7 +104,7 @@
 
 ### PR #60：fix(report): collapse the fixpipe twin rows by identity, not by adjacency
 
-- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：239.3h · **AI 判定**：**🤖 阻塞待解**
+- **作者**：`@gcw_EkTYFH3T` · **停留自然时长**：240.3h · **AI 判定**：**🤖 阻塞待解**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #56 孪生行重复计入缺陷
 - **核心改动摘要**：按 twin_key 字典折叠 fixpipe 孪生行，修复 UB 写重复计数
@@ -114,7 +114,7 @@
 
 ### PR #59：fix(record): recognize versioned Python executables
 
-- **作者**：`@liangjinxuan-2026` · **停留自然时长**：265.7h · **AI 判定**：**🤖 值得合入**
+- **作者**：`@liangjinxuan-2026` · **停留自然时长**：266.7h · **AI 判定**：**🤖 值得合入**
 - **代码规模**：1 个文件（实质改动文件 1 个，表面改动文件 0 个，新增测试 +0 行）
 - **关联 Issue 对齐**：已针对性修复 #60 版本化解释器识别缺陷
 - **核心改动摘要**：用正则识别版本化 Python 解释器，修复记录启动路径分类错误

@@ -6,8 +6,8 @@
     "jwtSource": "/root/.config/gc/agent-tokens/hicann.jwt",
     "jwtExpiresAt": "2027-09-21T03:49:39.000Z"
   },
-  "runAt": "2026-11-25T14:38:46.615Z",
-  "runAtCst": "2026-11-25 22:38",
+  "runAt": "2026-11-25T15:38:50.010Z",
+  "runAtCst": "2026-11-25 23:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -19,20 +19,20 @@
   },
   "closeLoop": {
     "issuesTotal": 73,
-    "openTotal": 11,
+    "openTotal": 9,
     "month": {
       "total": 54,
-      "closed": 43,
-      "rate": 80,
+      "closed": 45,
+      "rate": 83,
       "rateColor": "orange",
-      "avgCloseDays": 2.4
+      "avgCloseDays": 2.3
     },
     "year": {
       "total": 73,
-      "closed": 62,
-      "rate": 85,
+      "closed": 64,
+      "rate": 88,
       "rateColor": "orange",
-      "avgCloseDays": 4.4
+      "avgCloseDays": 4.3
     }
   },
   "response": {
@@ -211,30 +211,6 @@
         "source": "pi-agent",
         "reviewed_at": "2026-11-25T02:38:53.069Z"
       }
-    },
-    {
-      "number": "78",
-      "title": "Add Speed-of-light profiling feature",
-      "url": "https://gitcode.com/cann/npu-simulator/pull/78",
-      "mergeable": true,
-      "reason": "",
-      "linkedIssues": [],
-      "waitHours": 23,
-      "ciStatus": "passed",
-      "agentReview": null
-    },
-    {
-      "number": "80",
-      "title": "chore(comm): 欢迎页引导地址改为开源仓库",
-      "url": "https://gitcode.com/cann/npu-simulator/pull/80",
-      "mergeable": true,
-      "reason": "",
-      "linkedIssues": [
-        "73"
-      ],
-      "waitHours": 10.4,
-      "ciStatus": "passed",
-      "agentReview": null
     },
     {
       "number": "60",
