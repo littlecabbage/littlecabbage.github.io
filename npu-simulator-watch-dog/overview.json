@@ -6,8 +6,8 @@
     "jwtSource": "/root/.config/gc/agent-tokens/hicann.jwt",
     "jwtExpiresAt": "2027-09-21T03:49:39.000Z"
   },
-  "runAt": "2026-11-25T21:38:50.012Z",
-  "runAtCst": "2026-11-26 05:38",
+  "runAt": "2026-11-25T22:38:49.904Z",
+  "runAtCst": "2026-11-26 06:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -68,7 +68,7 @@
       "linkedIssues": [
         "60"
       ],
-      "waitHours": 195.8,
+      "waitHours": 197.8,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -94,7 +94,7 @@
       "linkedIssues": [
         "66"
       ],
-      "waitHours": 75.8,
+      "waitHours": 77.8,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -118,7 +118,7 @@
       "mergeable": true,
       "reason": "",
       "linkedIssues": [],
-      "waitHours": 38.6,
+      "waitHours": 40.6,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -142,7 +142,7 @@
       "mergeable": true,
       "reason": "",
       "linkedIssues": [],
-      "waitHours": 38.6,
+      "waitHours": 40.6,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -169,7 +169,7 @@
       "linkedIssues": [
         "61"
       ],
-      "waitHours": 38.6,
+      "waitHours": 40.6,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -195,7 +195,7 @@
       "linkedIssues": [
         "67"
       ],
-      "waitHours": 32,
+      "waitHours": 34,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -221,7 +221,7 @@
       "linkedIssues": [
         "56"
       ],
-      "waitHours": 195.8,
+      "waitHours": 197.8,
       "ciStatus": "not_executed",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -245,7 +245,7 @@
       "mergeable": false,
       "reason": "CI 未执行(ci_status=not_executed)",
       "linkedIssues": [],
-      "waitHours": 59,
+      "waitHours": 61,
       "ciStatus": "not_executed",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -271,7 +271,7 @@
       "linkedIssues": [
         "68"
       ],
-      "waitHours": 30.8,
+      "waitHours": 32.8,
       "ciStatus": "not_executed",
       "agentReview": {
         "verdict": "NEEDS_WORK",
