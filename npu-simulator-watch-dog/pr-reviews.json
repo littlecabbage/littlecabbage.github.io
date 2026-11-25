@@ -1,7 +1,7 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-24T23:38:50.454Z",
-  "generatedAtCst": "2026-11-25 07:38",
+  "generatedAt": "2026-11-25T00:38:56.413Z",
+  "generatedAtCst": "2026-11-25 08:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 72,
@@ -10,8 +10,8 @@
     "prs_open": 10,
     "prs_merge_ready": 5,
     "prs_low_value": 0,
-    "cache_hits": 10,
-    "agent_calls": 0
+    "cache_hits": 9,
+    "agent_calls": 1
   },
   "reviews": {
     "59": {
@@ -255,7 +255,7 @@
       "number": 74,
       "title": "fix(prof): fix AIV1 overlap label, SIMT f-string log, and analyzer guards",
       "author": "qunzhongjia",
-      "fingerprint": "71b0a13ebd158be9",
+      "fingerprint": "bf3cef7f1448bd32",
       "triage_verdict": "KEEP",
       "guard_allowed": false,
       "verdict_reasons": [
@@ -282,16 +282,17 @@
       "agent_review": {
         "verdict": "WORTH_MERGING",
         "verdict_label": "🤖 值得合入",
-        "summary": "修复 AIV1 指标键名笔误、SIMT 日志花括号及多处除零越界防护",
-        "issue_alignment": "无关联 Issue，属自主缺陷修复",
-        "committer_action": "CLA 与 CI 均通过，建议同步采纳检视建议后直接合入",
+        "summary": "修正AIV1指标键名复制错误，并补除零、越界与日志异常防护",
+        "issue_alignment": "无关联Issue，为自主发现的缺陷修复",
+        "committer_action": "CLA与CI均通过，采纳检视建议后可合入",
         "detail_points": [
-          "AIV1_SCALAR_vs_AIV1_VEC 键名修正，消除与 AIV0_VEC 的指标覆盖冲突",
-          "log_level 空值回退为空串会丢 DEBUG traceback，建议按检视意见改为显式非空判断"
+          "summary_reporter与demo中AIV1_SCALAR重叠指标键名误写为AIV0_VEC，已改正",
+          "补total_exec_time除零、functions空列表越界，is not改!=比较更稳妥",
+          "runner改用list(root.handlers)避免遍历中删元素，log_level空值需显式判空"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-24T15:39:00.993Z"
+        "reviewed_at": "2026-11-25T00:38:56.406Z"
       }
     },
     "75": {
