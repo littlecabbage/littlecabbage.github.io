@@ -6,8 +6,8 @@
     "jwtSource": "/root/.config/gc/agent-tokens/hicann.jwt",
     "jwtExpiresAt": "2027-09-21T03:49:39.000Z"
   },
-  "runAt": "2026-11-25T10:38:52.292Z",
-  "runAtCst": "2026-11-25 18:38",
+  "runAt": "2026-11-25T12:38:56.741Z",
+  "runAtCst": "2026-11-25 20:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -68,7 +68,7 @@
       "linkedIssues": [
         "60"
       ],
-      "waitHours": 186.2,
+      "waitHours": 188,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -94,7 +94,7 @@
       "linkedIssues": [
         "66"
       ],
-      "waitHours": 66.2,
+      "waitHours": 68,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -118,7 +118,7 @@
       "mergeable": true,
       "reason": "",
       "linkedIssues": [],
-      "waitHours": 29,
+      "waitHours": 30.8,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -142,7 +142,7 @@
       "mergeable": true,
       "reason": "",
       "linkedIssues": [],
-      "waitHours": 29,
+      "waitHours": 30.8,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -169,7 +169,7 @@
       "linkedIssues": [
         "61"
       ],
-      "waitHours": 29,
+      "waitHours": 30.8,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -195,7 +195,7 @@
       "linkedIssues": [
         "67"
       ],
-      "waitHours": 22.4,
+      "waitHours": 24.2,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -221,7 +221,7 @@
       "linkedIssues": [
         "73"
       ],
-      "waitHours": 6.7,
+      "waitHours": 8.5,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -247,7 +247,7 @@
       "linkedIssues": [
         "56"
       ],
-      "waitHours": 186.2,
+      "waitHours": 188,
       "ciStatus": "not_executed",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -271,7 +271,7 @@
       "mergeable": false,
       "reason": "CI 未执行(ci_status=not_executed)",
       "linkedIssues": [],
-      "waitHours": 49.4,
+      "waitHours": 51.2,
       "ciStatus": "not_executed",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -297,7 +297,7 @@
       "linkedIssues": [
         "68"
       ],
-      "waitHours": 21.1,
+      "waitHours": 22.9,
       "ciStatus": "not_executed",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -321,21 +321,22 @@
       "mergeable": false,
       "reason": "CI 未通过(ci_status=failed)",
       "linkedIssues": [],
-      "waitHours": 19.2,
+      "waitHours": 21,
       "ciStatus": "failed",
       "agentReview": {
         "verdict": "NEEDS_WORK",
         "verdict_label": "🤖 阻塞待解",
-        "summary": "新增 Speed-of-Light 分析，实现 Cube/Vector/内存吞吐评估与 sol 特性开关",
-        "issue_alignment": "无关联 Issue，新特性缺方案讨论",
-        "committer_action": "需先 squash 提交并修复 CI 失败，门禁转绿后再合入",
+        "summary": "新增光速分析特性，采集 DDR 数据并输出 Cube/Vector/访存三类吞吐指标",
+        "issue_alignment": "无关联 Issue，属新特性需先完成方案讨论",
+        "committer_action": "需作者 squash 提交、回应 AI 检视意见后再合入",
         "detail_points": [
-          "实质改动 13 文件 571 行，新增 sol 特征、--sol 参数、SOL 分析器与数据表，并补充 2 处测试及文档",
-          "contract version 放宽至 7/8，AI 检视指出旧库缺 SpeedOfLightData 表时需跳过 sol 或明确提示，且 CUBE 统计需按 CoreTypeId 过滤"
+          "13 个文件、新增 633 行，含 SOL 分析器、SQL 表结构与格式文档，且补了两处单测",
+          "契约版本放宽至 7/8 但未区分旧库缺 SOL 表；CUBE 统计缺 CoreTypeId 过滤且无异常保护",
+          "门禁已被 stat/needs-squash 阻塞，需压缩提交后重跑流水线"
         ],
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
-        "reviewed_at": "2026-11-25T09:38:53.346Z"
+        "reviewed_at": "2026-11-25T12:38:56.612Z"
       }
     }
   ],
