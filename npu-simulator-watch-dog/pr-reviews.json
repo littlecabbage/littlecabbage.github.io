@@ -1,16 +1,16 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-25T13:38:52.166Z",
-  "generatedAtCst": "2026-11-25 21:38",
+  "generatedAt": "2026-11-25T14:38:46.474Z",
+  "generatedAtCst": "2026-11-25 22:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 73,
     "issues_keep": 72,
     "issues_close": 0,
-    "prs_open": 11,
-    "prs_merge_ready": 7,
+    "prs_open": 9,
+    "prs_merge_ready": 6,
     "prs_low_value": 0,
-    "cache_hits": 11,
+    "cache_hits": 9,
     "agent_calls": 0
   },
   "reviews": {
@@ -428,98 +428,6 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-24T13:38:54.546Z"
-      }
-    },
-    "78": {
-      "number": 78,
-      "title": "Add Speed-of-light profiling feature",
-      "author": "fomichevoleg5",
-      "fingerprint": "3cf57a2fed5dc55d",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "substantive_diff: 13 file(s)",
-        "adds_tests",
-        "external_participant: xiechengxuan"
-      ],
-      "signals": [
-        "pr_substantive_diff",
-        "pr_has_tests"
-      ],
-      "merge_ready": false,
-      "blockers": [
-        "blocking_label:stat/needs-squash"
-      ],
-      "diff_stats": {
-        "files": 13,
-        "added_lines": 633,
-        "removed_lines": 116,
-        "surface_files": 0,
-        "substantive_files": 13,
-        "test_files": 2,
-        "test_added_lines": 20,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [],
-      "agent_review": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "新增光速分析特性，采集 DDR 数据并输出 Cube/Vector/访存三类吞吐指标",
-        "issue_alignment": "无关联 Issue，属新特性需先完成方案讨论",
-        "committer_action": "需作者 squash 提交、回应 AI 检视意见后再合入",
-        "detail_points": [
-          "13 个文件、新增 633 行，含 SOL 分析器、SQL 表结构与格式文档，且补了两处单测",
-          "契约版本放宽至 7/8 但未区分旧库缺 SOL 表；CUBE 统计缺 CoreTypeId 过滤且无异常保护",
-          "门禁已被 stat/needs-squash 阻塞，需压缩提交后重跑流水线"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-25T12:38:56.612Z"
-      }
-    },
-    "80": {
-      "number": 80,
-      "title": "chore(comm): 欢迎页引导地址改为开源仓库",
-      "author": "zengzihui",
-      "fingerprint": "7406656bd4c81989",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "approved_label",
-        "substantive_diff: 1 file(s)",
-        "external_participant: liangbinglong"
-      ],
-      "signals": [
-        "pr_substantive_diff"
-      ],
-      "merge_ready": true,
-      "blockers": [],
-      "diff_stats": {
-        "files": 1,
-        "added_lines": 2,
-        "removed_lines": 2,
-        "surface_files": 0,
-        "substantive_files": 1,
-        "test_files": 0,
-        "test_added_lines": 0,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [],
-      "agent_review": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "将启动 banner 的一次性讨论帖地址改为开源仓库首页并调整引导文案",
-        "issue_alignment": "已针对性修复 #73 欢迎页入口失效",
-        "committer_action": "已获 approved 且门禁全绿无冲突，建议直接合入",
-        "detail_points": [
-          "仅替换 comm.py 中 welcome 常量的两行字符串，无逻辑变更，风险极低",
-          "全仓检索确认无测试或工具引用该文本，不影响现有功能与 CI"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-25T06:38:58.184Z"
       }
     }
   }
