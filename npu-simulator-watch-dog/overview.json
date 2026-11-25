@@ -6,8 +6,8 @@
     "jwtSource": "/root/.config/gc/agent-tokens/hicann.jwt",
     "jwtExpiresAt": "2027-09-21T03:49:39.000Z"
   },
-  "runAt": "2026-11-25T12:38:56.741Z",
-  "runAtCst": "2026-11-25 20:38",
+  "runAt": "2026-11-25T13:38:52.336Z",
+  "runAtCst": "2026-11-25 21:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -213,6 +213,31 @@
       }
     },
     {
+      "number": "78",
+      "title": "Add Speed-of-light profiling feature",
+      "url": "https://gitcode.com/cann/npu-simulator/pull/78",
+      "mergeable": true,
+      "reason": "",
+      "linkedIssues": [],
+      "waitHours": 22.3,
+      "ciStatus": "passed",
+      "agentReview": {
+        "verdict": "NEEDS_WORK",
+        "verdict_label": "🤖 阻塞待解",
+        "summary": "新增光速分析特性，采集 DDR 数据并输出 Cube/Vector/访存三类吞吐指标",
+        "issue_alignment": "无关联 Issue，属新特性需先完成方案讨论",
+        "committer_action": "需作者 squash 提交、回应 AI 检视意见后再合入",
+        "detail_points": [
+          "13 个文件、新增 633 行，含 SOL 分析器、SQL 表结构与格式文档，且补了两处单测",
+          "契约版本放宽至 7/8 但未区分旧库缺 SOL 表；CUBE 统计缺 CoreTypeId 过滤且无异常保护",
+          "门禁已被 stat/needs-squash 阻塞，需压缩提交后重跑流水线"
+        ],
+        "model": "cannbot/deepseek-v4.1-flash",
+        "source": "pi-agent",
+        "reviewed_at": "2026-11-25T12:38:56.612Z"
+      }
+    },
+    {
       "number": "80",
       "title": "chore(comm): 欢迎页引导地址改为开源仓库",
       "url": "https://gitcode.com/cann/npu-simulator/pull/80",
@@ -312,31 +337,6 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-24T13:38:54.546Z"
-      }
-    },
-    {
-      "number": "78",
-      "title": "Add Speed-of-light profiling feature",
-      "url": "https://gitcode.com/cann/npu-simulator/pull/78",
-      "mergeable": false,
-      "reason": "CI 未通过(ci_status=failed)",
-      "linkedIssues": [],
-      "waitHours": 21,
-      "ciStatus": "failed",
-      "agentReview": {
-        "verdict": "NEEDS_WORK",
-        "verdict_label": "🤖 阻塞待解",
-        "summary": "新增光速分析特性，采集 DDR 数据并输出 Cube/Vector/访存三类吞吐指标",
-        "issue_alignment": "无关联 Issue，属新特性需先完成方案讨论",
-        "committer_action": "需作者 squash 提交、回应 AI 检视意见后再合入",
-        "detail_points": [
-          "13 个文件、新增 633 行，含 SOL 分析器、SQL 表结构与格式文档，且补了两处单测",
-          "契约版本放宽至 7/8 但未区分旧库缺 SOL 表；CUBE 统计缺 CoreTypeId 过滤且无异常保护",
-          "门禁已被 stat/needs-squash 阻塞，需压缩提交后重跑流水线"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-25T12:38:56.612Z"
       }
     }
   ],
