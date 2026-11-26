@@ -6,8 +6,8 @@
     "jwtSource": "/root/.config/gc/agent-tokens/hicann.jwt",
     "jwtExpiresAt": "2027-09-21T03:49:39.000Z"
   },
-  "runAt": "2026-11-26T01:38:49.336Z",
-  "runAtCst": "2026-11-26 09:38",
+  "runAt": "2026-11-26T02:38:47.542Z",
+  "runAtCst": "2026-11-26 10:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -68,7 +68,7 @@
       "linkedIssues": [
         "60"
       ],
-      "waitHours": 199.8,
+      "waitHours": 201.9,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -94,7 +94,7 @@
       "linkedIssues": [
         "66"
       ],
-      "waitHours": 79.8,
+      "waitHours": 81.9,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -118,7 +118,7 @@
       "mergeable": true,
       "reason": "",
       "linkedIssues": [],
-      "waitHours": 42.6,
+      "waitHours": 44.7,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -142,7 +142,7 @@
       "mergeable": true,
       "reason": "",
       "linkedIssues": [],
-      "waitHours": 42.6,
+      "waitHours": 44.7,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -169,7 +169,7 @@
       "linkedIssues": [
         "61"
       ],
-      "waitHours": 42.6,
+      "waitHours": 44.7,
       "ciStatus": "passed",
       "agentReview": {
         "verdict": "WORTH_MERGING",
@@ -195,7 +195,7 @@
       "linkedIssues": [
         "56"
       ],
-      "waitHours": 199.8,
+      "waitHours": 201.9,
       "ciStatus": "not_executed",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -219,7 +219,7 @@
       "mergeable": false,
       "reason": "CI 未执行(ci_status=not_executed)",
       "linkedIssues": [],
-      "waitHours": 63,
+      "waitHours": 65.1,
       "ciStatus": "not_executed",
       "agentReview": {
         "verdict": "NEEDS_WORK",
@@ -245,7 +245,7 @@
       "linkedIssues": [
         "68"
       ],
-      "waitHours": 34.8,
+      "waitHours": 36.9,
       "ciStatus": "not_executed",
       "agentReview": {
         "verdict": "NEEDS_WORK",
