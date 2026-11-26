@@ -1,16 +1,16 @@
 {
   "repo": "cann/npu-simulator",
-  "generatedAt": "2026-11-26T00:38:47.352Z",
-  "generatedAtCst": "2026-11-26 08:38",
+  "generatedAt": "2026-11-26T01:38:49.221Z",
+  "generatedAtCst": "2026-11-26 09:38",
   "model": "cannbot/deepseek-v4.1-flash",
   "stats": {
     "issues_total": 73,
     "issues_keep": 72,
     "issues_close": 0,
-    "prs_open": 9,
-    "prs_merge_ready": 6,
+    "prs_open": 8,
+    "prs_merge_ready": 5,
     "prs_low_value": 0,
-    "cache_hits": 9,
+    "cache_hits": 8,
     "agent_calls": 0
   },
   "reviews": {
@@ -332,54 +332,6 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-24T08:38:49.931Z"
-      }
-    },
-    "76": {
-      "number": 76,
-      "title": "删除冗余代码",
-      "author": "cui_jiahao",
-      "fingerprint": "e222004e5785d327",
-      "triage_verdict": "KEEP",
-      "guard_allowed": false,
-      "verdict_reasons": [
-        "approved_label",
-        "substantive_diff: 2 file(s)",
-        "linked_issue_legit: #67",
-        "external_participant: Arerere"
-      ],
-      "signals": [
-        "pr_substantive_diff",
-        "linked_issues:67"
-      ],
-      "merge_ready": true,
-      "blockers": [],
-      "diff_stats": {
-        "files": 2,
-        "added_lines": 2,
-        "removed_lines": 22,
-        "surface_files": 0,
-        "substantive_files": 2,
-        "test_files": 0,
-        "test_added_lines": 0,
-        "docs_only": false,
-        "files_without_patch": 0
-      },
-      "linked_issues": [
-        67
-      ],
-      "agent_review": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "清理 compile.sh/ut.sh 中 GE/ops-math 拷贝残留死代码并修正仓库名",
-        "issue_alignment": "已针对性修复 #67 脚本冗余清理",
-        "committer_action": "已获 approved/lgtm 且门禁全绿，建议直接合入",
-        "detail_points": [
-          "删除未使用的 LOG_HEAD 函数与 ge_st_rt2 死打印，不影响功能逻辑",
-          "REPOSITORY_NAME 由 ops-math 修正为 npu-simulator，建议补充产物路径影响说明"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-25T02:38:53.069Z"
       }
     },
     "77": {

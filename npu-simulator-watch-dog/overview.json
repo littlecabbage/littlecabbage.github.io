@@ -6,8 +6,8 @@
     "jwtSource": "/root/.config/gc/agent-tokens/hicann.jwt",
     "jwtExpiresAt": "2027-09-21T03:49:39.000Z"
   },
-  "runAt": "2026-11-26T00:38:47.471Z",
-  "runAtCst": "2026-11-26 08:38",
+  "runAt": "2026-11-26T01:38:49.336Z",
+  "runAtCst": "2026-11-26 09:38",
   "tz": "UTC+8",
   "cursor": {
     "year": 2026,
@@ -19,18 +19,18 @@
   },
   "closeLoop": {
     "issuesTotal": 73,
-    "openTotal": 9,
+    "openTotal": 8,
     "month": {
       "total": 54,
-      "closed": 45,
-      "rate": 83,
+      "closed": 46,
+      "rate": 85,
       "rateColor": "orange",
       "avgCloseDays": 2.3
     },
     "year": {
       "total": 73,
-      "closed": 64,
-      "rate": 88,
+      "closed": 65,
+      "rate": 89,
       "rateColor": "orange",
       "avgCloseDays": 4.3
     }
@@ -184,32 +184,6 @@
         "model": "cannbot/deepseek-v4.1-flash",
         "source": "pi-agent",
         "reviewed_at": "2026-11-24T15:39:04.165Z"
-      }
-    },
-    {
-      "number": "76",
-      "title": "删除冗余代码",
-      "url": "https://gitcode.com/cann/npu-simulator/pull/76",
-      "mergeable": true,
-      "reason": "",
-      "linkedIssues": [
-        "67"
-      ],
-      "waitHours": 36,
-      "ciStatus": "passed",
-      "agentReview": {
-        "verdict": "WORTH_MERGING",
-        "verdict_label": "🤖 值得合入",
-        "summary": "清理 compile.sh/ut.sh 中 GE/ops-math 拷贝残留死代码并修正仓库名",
-        "issue_alignment": "已针对性修复 #67 脚本冗余清理",
-        "committer_action": "已获 approved/lgtm 且门禁全绿，建议直接合入",
-        "detail_points": [
-          "删除未使用的 LOG_HEAD 函数与 ge_st_rt2 死打印，不影响功能逻辑",
-          "REPOSITORY_NAME 由 ops-math 修正为 npu-simulator，建议补充产物路径影响说明"
-        ],
-        "model": "cannbot/deepseek-v4.1-flash",
-        "source": "pi-agent",
-        "reviewed_at": "2026-11-25T02:38:53.069Z"
       }
     },
     {
